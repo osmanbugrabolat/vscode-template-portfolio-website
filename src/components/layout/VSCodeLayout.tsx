@@ -14,13 +14,51 @@ export default function VSCodeLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [activeActivity, setActiveActivity] = useState("explorer");
+  const [openTabs, setOpenTabs] = useState<FileTab[]>([ALL_FILES[0]]);
+  const [chatOpen, setChatOpen] = useState(true);
+  const [sidebarWidth, setSidebarWidth] = useState(250);
+  const [chatWidth, setChatWidth] = useState(300);
+  const [isResizing, setIsResizing] = useState(false);
+  const [isChatResizing, setIsChatResizing] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
-  const [activeActivity, setActiveActivity] = useState("explorer");
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [openTabs, setOpenTabs] = useState<FileTab[]>([]);
-  const [chatOpen, setChatOpen] = useState(true);
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isResizing) {
+        // Activity Bar width is ~48px
+        const newWidth = Math.max(150, Math.min(e.clientX - 48, 800));
+        setSidebarWidth(newWidth);
+      } else if (isChatResizing) {
+        const newWidth = Math.max(200, Math.min(window.innerWidth - e.clientX, 800));
+        setChatWidth(newWidth);
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+      setIsChatResizing(false);
+    };
+
+    if (isResizing || isChatResizing) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+      document.body.style.userSelect = "none";
+      document.body.style.cursor = "col-resize";
+    } else {
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+    };
+  }, [isResizing, isChatResizing]);
 
   const activeFile =
     ALL_FILES.find((f) => f.path === pathname) || ALL_FILES[0];
@@ -86,12 +124,22 @@ export default function VSCodeLayout({
         />
 
         {sidebarOpen && (
-          <Sidebar
-            currentPath={pathname}
-            openTabs={openTabs}
-            onFileClick={openTab}
-            activeActivity={activeActivity}
-          />
+          <>
+            <Sidebar
+              currentPath={pathname}
+              openTabs={openTabs}
+              onFileClick={openTab}
+              activeActivity={activeActivity}
+              width={sidebarWidth}
+            />
+            <div 
+              className={`sidebar-resizer ${isResizing ? 'is-resizing' : ''}`} 
+              onMouseDown={(e) => {
+                e.preventDefault();
+                setIsResizing(true);
+              }}
+            />
+          </>
         )}
 
         <div className="vscode-editor-area">
@@ -109,7 +157,18 @@ export default function VSCodeLayout({
           </div>
         </div>
 
-        {chatOpen && <AIChat onClose={() => setChatOpen(false)} />}
+        {chatOpen && (
+          <>
+            <div 
+              className={`sidebar-resizer ${isChatResizing ? 'is-resizing' : ''}`} 
+              onMouseDown={(e) => {
+                e.preventDefault();
+                setIsChatResizing(true);
+              }}
+            />
+            <AIChat onClose={() => setChatOpen(false)} width={chatWidth} />
+          </>
+        )}
       </div>
 
       <StatusBar language={activeFile.language} />

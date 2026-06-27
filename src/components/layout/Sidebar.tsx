@@ -86,6 +86,7 @@ export interface SidebarProps {
   openTabs: FileTab[];
   onFileClick: (file: FileTab) => void;
   activeActivity?: string;
+  width?: number;
 }const ExtIcon = ({ ext }: { ext: string }) => {
   if (ext === "jpg" || ext === "png" || ext === "jpeg") {
     return (
@@ -242,13 +243,13 @@ const getSkillIcon = (name: string) => {
   }
 };
 
-export default function Sidebar({ currentPath, onFileClick, activeActivity = "explorer" }: SidebarProps) {
+export default function Sidebar({ currentPath, onFileClick, activeActivity = "explorer", width }: SidebarProps) {
   // Build tree at render time (inside component), not at module level
   const fileTree = buildFileTree();
 
   if (activeActivity === "technologies") {
     return (
-      <div className="vscode-sidebar">
+      <div className="vscode-sidebar" style={width ? { width } : undefined}>
         <div className="sidebar-header">Technologies</div>
         <div className="sidebar-body" style={{ padding: "12px 16px", overflowY: "auto" }}>
           {Object.entries(skills).map(([category, items]) => (
@@ -282,7 +283,7 @@ export default function Sidebar({ currentPath, onFileClick, activeActivity = "ex
   }
 
   return (
-    <div className="vscode-sidebar">
+    <div className="vscode-sidebar" style={width ? { width } : undefined}>
       <div className="sidebar-header">Explorer</div>
       <div className="sidebar-body">
         <div className="file-tree">

@@ -267,7 +267,17 @@ html, body {
   overflow: hidden;
   flex-shrink: 0;
   border-right: 1px solid var(--border-color);
-  transition: width 0.2s ease;
+}
+
+.sidebar-resizer {
+  width: 4px;
+  cursor: col-resize;
+  background: transparent;
+  flex-shrink: 0;
+  transition: background 0.1s;
+}
+.sidebar-resizer:hover, .sidebar-resizer.is-resizing {
+  background: var(--accent);
 }
 
 .sidebar-header {
@@ -1113,7 +1123,6 @@ textarea.form-input {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  transition: width 0.2s ease;
 }
 
 .aichat-header {

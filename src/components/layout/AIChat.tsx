@@ -9,7 +9,7 @@ interface Message {
   content: string;
 }
 
-export default function AIChat({ onClose }: { onClose?: () => void }) {
+export default function AIChat({ onClose, width }: { onClose?: () => void; width?: number }) {
   const [messages, setMessages] = useState<Message[]>([
     { role: "ai", content: "Hi! I'm BuğrAI. Ask me anything about Osman Buğra's portfolio." },
   ]);
@@ -44,7 +44,7 @@ export default function AIChat({ onClose }: { onClose?: () => void }) {
   };
 
   return (
-    <div className="vscode-aichat">
+    <div className="vscode-aichat" style={width ? { width } : undefined}>
       <div className="aichat-header">
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <LuBot size={16} />
