@@ -75,6 +75,10 @@ export default function VSCodeLayout({
   }, [activeFile]);
 
   const openTab = (file: FileTab) => {
+    if (file.isExternal) {
+      window.open(file.path, "_blank");
+      return;
+    }
     if (!openTabs.find((t) => t.id === file.id)) {
       setOpenTabs((prev) => [...prev, file]);
     }

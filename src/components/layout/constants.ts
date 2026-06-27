@@ -1,5 +1,6 @@
 // Shared constants — imported by both VSCodeLayout and Sidebar
 // Keeping this separate avoids circular dependency issues
+import { personal } from "@/data/portfolio";
 
 export interface FileTab {
   id: string;
@@ -8,6 +9,7 @@ export interface FileTab {
   ext: "tsx" | "ts" | "json" | "md" | "jpg" | "png" | "pdf" | string;
   language: string;
   filename?: string;
+  isExternal?: boolean;
 }
 
 export const ALL_FILES: FileTab[] = [
@@ -133,10 +135,35 @@ export const ALL_FILES: FileTab[] = [
     language: "Image",
   },
   {
-    id: "contact-readme",
-    name: "README.md",
-    path: "/contact",
-    ext: "md",
-    language: "Markdown",
+    id: "contact-linkedin",
+    name: "LinkedIn",
+    path: personal.linkedin,
+    ext: "linkedin",
+    language: "Social",
+    isExternal: true,
+  },
+  {
+    id: "contact-github",
+    name: "GitHub",
+    path: personal.github,
+    ext: "github",
+    language: "Social",
+    isExternal: true,
+  },
+  {
+    id: "contact-medium",
+    name: "Medium",
+    path: personal.medium,
+    ext: "medium",
+    language: "Social",
+    isExternal: true,
+  },
+  {
+    id: "contact-email",
+    name: "E-Mail",
+    path: `mailto:${personal.email}`,
+    ext: "email",
+    language: "Email",
+    isExternal: true,
   },
 ];
