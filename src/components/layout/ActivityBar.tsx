@@ -6,9 +6,9 @@ import {
   VscSparkle,
   VscGithub,
   VscMail,
-  VscAccount,
 } from "react-icons/vsc";
 import { FaLinkedin, FaMedium } from "react-icons/fa";
+import { TbFileCv } from "react-icons/tb";
 
 interface ActivityBarProps {
   activeActivity: string;
@@ -31,7 +31,7 @@ const activities = [
     id: "cv",
     label: "CV",
     fileId: "cv-file",
-    icon: <VscAccount size={24} />,
+    icon: <TbFileCv size={26} strokeWidth={1.5} />,
   },
   {
     id: "copilot",
