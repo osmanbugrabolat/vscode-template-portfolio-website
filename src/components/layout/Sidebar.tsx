@@ -3,6 +3,31 @@
 import { useState } from "react";
 import { ALL_FILES, FileTab } from "./constants";
 import { skills } from "@/data/portfolio";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiHtml5,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+  SiNodedotjs,
+  SiExpress,
+  SiPrisma,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiGithub,
+  SiDocker,
+  SiFigma,
+  SiLinux,
+  SiPytorch,
+  SiOpencv,
+  SiScikitlearn,
+} from "react-icons/si";
+import { FaDatabase, FaNetworkWired, FaRobot } from "react-icons/fa";
+import { VscCode } from "react-icons/vsc";
 
 type TreeFile = { name: string; file: FileTab };
 type TreeFolder = { name: string; children: (TreeFolder | TreeFile)[] };
@@ -173,6 +198,38 @@ function FileNode({
   );
 }
 
+const getSkillIcon = (name: string) => {
+  const iconProps = { size: 14, style: { marginRight: 8, color: "var(--sidebar-fg)" } };
+  switch (name) {
+    case "TypeScript": return <SiTypescript {...iconProps} color="#3178C6" />;
+    case "JavaScript": return <SiJavascript {...iconProps} color="#F7DF1E" />;
+    case "Python": return <SiPython {...iconProps} color="#3776AB" />;
+    case "SQL": return <FaDatabase {...iconProps} color="#336791" />;
+    case "HTML/CSS": return <SiHtml5 {...iconProps} color="#E34F26" />;
+    case "React": return <SiReact {...iconProps} color="#61DAFB" />;
+    case "Next.js": return <SiNextdotjs {...iconProps} color="#ffffff" />;
+    case "Tailwind CSS": return <SiTailwindcss {...iconProps} color="#06B6D4" />;
+    case "Framer Motion": return <SiFramer {...iconProps} color="#0055FF" />;
+    case "Node.js": return <SiNodedotjs {...iconProps} color="#339933" />;
+    case "Express.js": return <SiExpress {...iconProps} color="#ffffff" />;
+    case "Prisma ORM": return <SiPrisma {...iconProps} color="#2D3748" />;
+    case "REST APIs": return <FaNetworkWired {...iconProps} />;
+    case "PostgreSQL": return <SiPostgresql {...iconProps} color="#4169E1" />;
+    case "MongoDB": return <SiMongodb {...iconProps} color="#47A248" />;
+    case "Redis": return <SiRedis {...iconProps} color="#DC382D" />;
+    case "Git & GitHub": return <SiGithub {...iconProps} color="#ffffff" />;
+    case "Docker": return <SiDocker {...iconProps} color="#2496ED" />;
+    case "VS Code": return <VscCode {...iconProps} color="#007ACC" />;
+    case "Figma": return <SiFigma {...iconProps} color="#F24E1E" />;
+    case "Linux/macOS": return <SiLinux {...iconProps} color="#FCC624" />;
+    case "PyTorch": return <SiPytorch {...iconProps} color="#EE4C2C" />;
+    case "Ultralytics YOLO": return <FaRobot {...iconProps} color="#00FFFF" />;
+    case "OpenCV": return <SiOpencv {...iconProps} color="#5C3EE8" />;
+    case "Scikit-learn": return <SiScikitlearn {...iconProps} color="#F7931E" />;
+    default: return null;
+  }
+};
+
 export default function Sidebar({ currentPath, onFileClick, activeActivity = "explorer" }: SidebarProps) {
   // Build tree at render time (inside component), not at module level
   const fileTree = buildFileTree();
@@ -191,7 +248,10 @@ export default function Sidebar({ currentPath, onFileClick, activeActivity = "ex
                 {items.map((skill, i) => (
                   <li key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontSize: "13px", color: "var(--fg)" }}>{skill.name}</span>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        {getSkillIcon(skill.name)}
+                        <span style={{ fontSize: "13px", color: "var(--fg)" }}>{skill.name}</span>
+                      </div>
                       <span style={{ fontSize: "11px", color: "var(--sidebar-fg)" }}>
                         {skill.level}%
                       </span>
