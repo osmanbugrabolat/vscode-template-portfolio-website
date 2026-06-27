@@ -17,6 +17,8 @@ export default function PongReadmePage() {
         <h2>Özellikler</h2>
         <ul>
           <li><strong>Yapay Zeka Destekli El Takibi:</strong> Google Mediapipe sayesinde avuç içiniz anlık olarak tespit edilir ve raketiniz elinizle senkronize hareket eder.</li>
+          <li><strong>Kamera Mini-Ekranı:</strong> Oyun başladıktan sonra ekranın sağ alt köşesinde beliren kamera penceresi ile kendi hareketlerinizi ve tespit edilen el noktalarını anlık olarak takip edebilirsiniz.</li>
+          <li><strong>Retro Ses Efektleri:</strong> Web Audio API kullanılarak üretilen çarpma ve skor sesleriyle nostaljik atari deneyimini yaşayın. İstenirse menü üzerinden sesler tamamen kapatılabilir.</li>
           <li><strong>Takım Seçimi & Akıllı Yönlendirme:</strong> Başlangıçta oynamak istediğiniz takımı (Sol/Sağ) seçebilirsiniz. Seçiminize göre kamera ayna etkisini hesaba katarak doğru elinizi algılar. AI rakip ise otomatik olarak karşı tarafa geçer.</li>
           <li><strong>Neon / Cyberpunk Tasarım:</strong> Tamamen Vanilla CSS ile tasarlanmış cam efektli, karanlık temalı ve yüksek kaliteli parlamalara sahip interaktif oyun menüsü.</li>
           <li><strong>Akıllı Rakip:</strong> Topu takip eden ancak insanımsı bir hata payı barındıran bir yapay zeka. Ralliler uzadıkça heyecan artar, top hızlanır!</li>
@@ -27,6 +29,7 @@ export default function PongReadmePage() {
         <ul>
           <li><strong>HTML5 & CSS3:</strong> Modern, duyarlı ve şık arayüz tasarımı.</li>
           <li><strong>Vanilla JavaScript (ES6+):</strong> Oyun döngüsü, çarpışma fizikleri ve uygulama mantığı.</li>
+          <li><strong>Web Audio API:</strong> Performans dostu, dosya indirme gerektirmeyen tarayıcı tabanlı retro ses sentezleme.</li>
           <li><strong>HTML5 Canvas:</strong> Kesintisiz oyun çizimi, animasyonlar ve neon parlama efektleri.</li>
           <li><strong><a href="https://developers.google.com/mediapipe" target="_blank" rel="noreferrer">Google Mediapipe</a>:</strong> Kamera üzerinden anlık görüntü işleme ve iskelet tabanlı el takibi (Hand Tracking modeli).</li>
         </ul>

@@ -64,6 +64,21 @@ export const ALL_FILES: FileTab[] = [
     isExternal: true,
   },
   {
+    id: "project-6-readme",
+    name: "README.md",
+    path: "/projects/flying-birds-with-mediapipe",
+    ext: "md",
+    language: "Markdown",
+  },
+  {
+    id: "project-6-play",
+    name: "Play",
+    path: "https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/",
+    ext: "play",
+    language: "Game",
+    isExternal: true,
+  },
+  {
     id: "article-1",
     name: "Altyapıyı Unutun, Koda Odaklanın: FaaS",
     path: "https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739",
