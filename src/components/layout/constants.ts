@@ -46,6 +46,13 @@ export const ALL_FILES: FileTab[] = [
     language: "Markdown",
   },
   {
+    id: "articles-readme",
+    name: "README.md",
+    path: "/articles",
+    ext: "md",
+    language: "Markdown",
+  },
+  {
     id: "cert-oracle",
     name: "oracle_cert.jpg",
     path: "/certificates/oracle",

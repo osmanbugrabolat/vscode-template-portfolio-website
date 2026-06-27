@@ -27,7 +27,7 @@ const activities = [
   },
   {
     id: "copilot",
-    label: "Copilot",
+    label: "BuğrAI",
     icon: <VscSparkle size={24} />,
   },
 ];

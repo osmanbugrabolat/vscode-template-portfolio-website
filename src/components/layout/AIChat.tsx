@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { VscArrowRight } from "react-icons/vsc";
 
 interface Message {
   role: "user" | "ai";
@@ -9,7 +10,7 @@ interface Message {
 
 export default function AIChat({ onClose }: { onClose?: () => void }) {
   const [messages, setMessages] = useState<Message[]>([
-    { role: "ai", content: "Hi! I'm Copilot. Ask me anything about Buğra's portfolio." },
+    { role: "ai", content: "Hi! I'm BuğrAI. Ask me anything about Osman Buğra's portfolio." },
   ]);
   const [input, setInput] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ export default function AIChat({ onClose }: { onClose?: () => void }) {
             <path d="M12.5 3H3.5a2 2 0 00-2 2v6a2 2 0 002 2h9a2 2 0 002-2V5a2 2 0 00-2-2zM3.5 4h9a1 1 0 011 1v6a1 1 0 01-1 1h-9a1 1 0 01-1-1V5a1 1 0 011-1z" />
             <path d="M5.5 7.5a1 1 0 110-2 1 1 0 010 2zm5 0a1 1 0 110-2 1 1 0 010 2z" />
           </svg>
-          Copilot
+          BuğrAI
         </div>
         {onClose && (
           <div className="aichat-close" onClick={onClose} title="Close Panel">
@@ -66,19 +67,43 @@ export default function AIChat({ onClose }: { onClose?: () => void }) {
         <div ref={endRef} />
       </div>
       <div className="chat-input-container">
-        <form onSubmit={handleSubmit}>
-          <textarea
+        <form onSubmit={handleSubmit} style={{ position: "relative", display: "flex", alignItems: "center" }}>
+          <input
+            type="text"
             className="chat-input"
-            placeholder="Ask Copilot..."
+            placeholder="Ask me something about myself..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            style={{ paddingRight: "36px" }}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
+              if (e.key === "Enter") {
                 e.preventDefault();
                 handleSubmit(e);
               }
             }}
           />
+          <button 
+            type="submit"
+            disabled={!input.trim()}
+            style={{ 
+              position: "absolute", 
+              right: "6px", 
+              width: "26px", 
+              height: "26px", 
+              borderRadius: "50%", 
+              backgroundColor: "#007acc",
+              color: "#fff",
+              border: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: input.trim() ? "pointer" : "default",
+              transition: "opacity 0.2s",
+              opacity: input.trim() ? 1 : 0.6
+            }}
+          >
+            <VscArrowRight size={16} />
+          </button>
         </form>
       </div>
     </div>
