@@ -2,10 +2,7 @@
 import { personal } from "@/data/portfolio";
 import {
   VscFiles,
-  VscSearch,
-  VscSourceControl,
-  VscDebugAlt,
-  VscExtensions,
+  VscCode,
   VscSparkle,
   VscGithub,
   VscMail,
@@ -24,25 +21,9 @@ const activities = [
     icon: <VscFiles size={24} />,
   },
   {
-    id: "search",
-    label: "Search",
-    icon: <VscSearch size={24} />,
-  },
-  {
-    id: "git",
-    label: "Source Control",
-    icon: <VscSourceControl size={24} />,
-  },
-  {
-    id: "debug",
-    label: "Run and Debug",
-    icon: <VscDebugAlt size={24} />,
-  },
-  {
-    id: "extensions",
-    label: "Extensions",
-    badge: "1",
-    icon: <VscExtensions size={24} />,
+    id: "technologies",
+    label: "Technologies",
+    icon: <VscCode size={24} />,
   },
   {
     id: "copilot",

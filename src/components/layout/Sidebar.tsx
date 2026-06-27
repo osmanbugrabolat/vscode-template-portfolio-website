@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ALL_FILES, FileTab } from "./constants";
+import { skills } from "@/data/portfolio";
 
 type TreeFile = { name: string; file: FileTab };
 type TreeFolder = { name: string; children: (TreeFolder | TreeFile)[] };
@@ -20,7 +21,24 @@ function buildFileTree(): TreeFolder {
       },
       {
         name: "projects",
-        children: ALL_FILES.filter(f => ["projects-readme"].includes(f.id)).map((f) => ({ name: f.name, file: f })),
+        children: [
+          {
+            name: "apart-yonetim-sistemi",
+            children: ALL_FILES.filter(f => f.id === "project-1").map((f) => ({ name: f.name, file: f })),
+          },
+          {
+            name: "portfolyo-ai",
+            children: ALL_FILES.filter(f => f.id === "project-2").map((f) => ({ name: f.name, file: f })),
+          },
+          {
+            name: "fountain-detection-ai",
+            children: ALL_FILES.filter(f => f.id === "project-3").map((f) => ({ name: f.name, file: f })),
+          },
+          {
+            name: "web-scraper",
+            children: ALL_FILES.filter(f => f.id === "project-4").map((f) => ({ name: f.name, file: f })),
+          },
+        ]
       },
       {
         name: "certificates",
@@ -38,6 +56,7 @@ export interface SidebarProps {
   currentPath: string;
   openTabs: FileTab[];
   onFileClick: (file: FileTab) => void;
+  activeActivity?: string;
 }const ExtIcon = ({ ext }: { ext: string }) => {
   const map: Record<string, { color: string; letter: string }> = {
     tsx:  { color: "#61dafb", letter: "R"  },
@@ -154,9 +173,41 @@ function FileNode({
   );
 }
 
-export default function Sidebar({ currentPath, onFileClick }: SidebarProps) {
+export default function Sidebar({ currentPath, onFileClick, activeActivity = "explorer" }: SidebarProps) {
   // Build tree at render time (inside component), not at module level
   const fileTree = buildFileTree();
+
+  if (activeActivity === "technologies") {
+    return (
+      <div className="vscode-sidebar">
+        <div className="sidebar-header">Technologies</div>
+        <div className="sidebar-body" style={{ padding: "12px 16px", overflowY: "auto" }}>
+          {Object.entries(skills).map(([category, items]) => (
+            <div key={category} style={{ marginBottom: "20px" }}>
+              <h3 style={{ fontSize: "11px", textTransform: "uppercase", color: "var(--sidebar-fg)", marginBottom: "12px", fontWeight: "bold", letterSpacing: "0.05em" }}>
+                {category.replace("_", " ")}
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+                {items.map((skill, i) => (
+                  <li key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <span style={{ fontSize: "13px", color: "var(--fg)" }}>{skill.name}</span>
+                      <span style={{ fontSize: "11px", color: "var(--sidebar-fg)" }}>
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div style={{ width: "100%", height: "4px", backgroundColor: "var(--hover-bg)", borderRadius: "2px", overflow: "hidden" }}>
+                      <div style={{ width: `${skill.level}%`, height: "100%", backgroundColor: "#007acc" }} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="vscode-sidebar">

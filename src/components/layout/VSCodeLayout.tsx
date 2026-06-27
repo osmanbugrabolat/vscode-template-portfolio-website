@@ -83,6 +83,7 @@ export default function VSCodeLayout({
             currentPath={pathname}
             openTabs={openTabs}
             onFileClick={openTab}
+            activeActivity={activeActivity}
           />
         )}
 
