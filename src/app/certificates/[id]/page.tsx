@@ -33,9 +33,6 @@ export default async function CertificateViewer({
           className="shadow-2xl drop-shadow-2xl rounded-sm border border-[var(--border-color)]"
         />
       </div>
-      <div className="mt-4 text-sm text-[var(--sidebar-fg)] font-mono text-center flex-shrink-0">
-        {cert.name}
-      </div>
     </div>
   );
 }

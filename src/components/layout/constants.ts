@@ -60,6 +60,13 @@ export const ALL_FILES: FileTab[] = [
     language: "Image",
   },
   {
+    id: "cv-file",
+    name: "cv.pdf",
+    path: "/cv",
+    ext: "pdf",
+    language: "PDF",
+  },
+  {
     id: "cert-python",
     name: "python_tensorflow.jpg",
     path: "/certificates/python",

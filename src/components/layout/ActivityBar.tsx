@@ -6,12 +6,14 @@ import {
   VscSparkle,
   VscGithub,
   VscMail,
+  VscAccount,
 } from "react-icons/vsc";
 import { FaLinkedin, FaMedium } from "react-icons/fa";
 
 interface ActivityBarProps {
   activeActivity: string;
   onActivityChange: (activity: string) => void;
+  onFileOpen?: (fileId: string) => void;
 }
 
 const activities = [
@@ -24,6 +26,12 @@ const activities = [
     id: "technologies",
     label: "Technologies",
     icon: <VscCode size={24} />,
+  },
+  {
+    id: "cv",
+    label: "CV",
+    fileId: "cv-file",
+    icon: <VscAccount size={24} />,
   },
   {
     id: "copilot",
@@ -59,7 +67,7 @@ const bottomActivities = [
   },
 ];
 
-export default function ActivityBar({ activeActivity, onActivityChange }: ActivityBarProps) {
+export default function ActivityBar({ activeActivity, onActivityChange, onFileOpen }: ActivityBarProps) {
   return (
     <div className="vscode-activitybar">
       <div className="activitybar-top">
@@ -68,10 +76,14 @@ export default function ActivityBar({ activeActivity, onActivityChange }: Activi
             key={activity.id}
             className={`activity-item${activeActivity === activity.id ? " active" : ""}`}
             onClick={() => {
-              // @ts-ignore
+              // @ts-expect-error
               if (activity.link) {
-                // @ts-ignore
+                // @ts-expect-error
                 window.open(activity.link, "_blank");
+              // @ts-expect-error
+              } else if (activity.fileId && onFileOpen) {
+                // @ts-expect-error
+                onFileOpen(activity.fileId);
               } else {
                 onActivityChange(activity.id);
               }

@@ -75,7 +75,17 @@ export default function VSCodeLayout({
       <div className="vscode-body">
         <ActivityBar
           activeActivity={activeActivity}
-          onActivityChange={handleActivityChange}
+          onActivityChange={(id) => {
+            setActiveActivity(id);
+            setSidebarOpen(true);
+          }}
+          onFileOpen={(fileId) => {
+            const file = ALL_FILES.find((f) => f.id === fileId);
+            if (file) {
+              openTab(file);
+              router.push(file.path);
+            }
+          }}
         />
 
         {sidebarOpen && (
