@@ -96,7 +96,7 @@ export default function VSCodeLayout({
           />
 
           <div className="vscode-editor-content">
-            <div className="fade-in" style={{ width: "100%" }}>
+            <div className="fade-in" style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", overflow: "hidden", minWidth: 0, minHeight: 0 }}>
               {children}
             </div>
           </div>

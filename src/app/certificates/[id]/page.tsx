@@ -23,16 +23,17 @@ export default async function CertificateViewer({
   const imageUrl = `/certificates/${cert.name}`;
 
   return (
-    <div className="w-full h-full bg-[var(--editor-bg)] flex flex-col items-center justify-center overflow-auto p-4 relative">
-      <div className="relative w-full max-w-lg flex items-center justify-center flex-1">
+    <div className="w-full h-full bg-[var(--editor-bg)] flex flex-col p-8 overflow-hidden">
+      <div style={{ flex: 1, minHeight: 0, minWidth: 0, display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageUrl}
           alt={cert.name}
-          className="max-w-full max-h-[60vh] object-contain shadow-2xl drop-shadow-2xl rounded-sm border border-[var(--border-color)]"
+          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+          className="shadow-2xl drop-shadow-2xl rounded-sm border border-[var(--border-color)]"
         />
       </div>
-      <div className="mt-4 text-sm text-[var(--sidebar-fg)] font-mono text-center">
+      <div className="mt-4 text-sm text-[var(--sidebar-fg)] font-mono text-center flex-shrink-0">
         {cert.name}
       </div>
     </div>
