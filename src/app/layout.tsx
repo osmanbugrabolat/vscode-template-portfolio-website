@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Buğra Bolat | Full Stack Developer",
+  title: "Osman Buğra BOLAT",
   description:
     "Portfolio of Buğra Bolat — Full Stack Developer specializing in Next.js, TypeScript, and modern web technologies.",
   keywords: [

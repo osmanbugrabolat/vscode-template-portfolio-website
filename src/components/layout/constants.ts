@@ -12,7 +12,7 @@ export interface FileTab {
 export const ALL_FILES: FileTab[] = [
   {
     id: "about-readme",
-    name: "README.md",
+    name: "WhoAmI.md",
     path: "/",
     ext: "md",
     language: "Markdown",

@@ -27,7 +27,7 @@ import {
   SiScikitlearn,
 } from "react-icons/si";
 import { FaDatabase, FaNetworkWired, FaRobot } from "react-icons/fa";
-import { VscCode } from "react-icons/vsc";
+import { VscCode, VscFileMedia } from "react-icons/vsc";
 
 type TreeFile = { name: string; file: FileTab };
 type TreeFolder = { name: string; children: (TreeFolder | TreeFile)[] };
@@ -87,6 +87,14 @@ export interface SidebarProps {
   onFileClick: (file: FileTab) => void;
   activeActivity?: string;
 }const ExtIcon = ({ ext }: { ext: string }) => {
+  if (ext === "jpg" || ext === "png" || ext === "jpeg") {
+    return (
+      <span style={{ width: 16, height: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        <VscFileMedia size={14} color="#a074c4" />
+      </span>
+    );
+  }
+
   const map: Record<string, { color: string; letter: string }> = {
     tsx:  { color: "#61dafb", letter: "R"  },
     ts:   { color: "#007acc", letter: "TS" },
