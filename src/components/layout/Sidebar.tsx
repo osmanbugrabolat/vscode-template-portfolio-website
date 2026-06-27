@@ -26,7 +26,7 @@ import {
   SiOpencv,
   SiScikitlearn,
 } from "react-icons/si";
-import { FaDatabase, FaNetworkWired, FaRobot, FaLinkedin, FaMedium } from "react-icons/fa";
+import { FaDatabase, FaNetworkWired, FaRobot, FaLinkedin, FaMedium, FaPlay } from "react-icons/fa";
 import { VscCode, VscFileMedia, VscGithub, VscMail } from "react-icons/vsc";
 
 type TreeFile = { name: string; file: FileTab };
@@ -62,6 +62,10 @@ function buildFileTree(): TreeFolder {
           {
             name: "web-scraper",
             children: ALL_FILES.filter(f => f.id === "project-4").map((f) => ({ name: f.name, file: f })),
+          },
+          {
+            name: "pong-with-mediapipe",
+            children: ALL_FILES.filter(f => f.id.startsWith("project-5-")).map((f) => ({ name: f.name, file: f })),
           },
         ]
       },
@@ -100,6 +104,7 @@ export interface SidebarProps {
   if (ext === "github") return <span style={{ width: 16, height: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><VscGithub size={14} color="#fafafa" /></span>;
   if (ext === "medium") return <span style={{ width: 16, height: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><FaMedium size={14} color="#ffffff" /></span>;
   if (ext === "email") return <span style={{ width: 16, height: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><VscMail size={14} color="#a074c4" /></span>;
+  if (ext === "play") return <span style={{ width: 16, height: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><FaPlay size={12} color="#10b981" /></span>;
 
   const map: Record<string, { color: string; letter: string }> = {
     tsx:  { color: "#61dafb", letter: "R"  },
