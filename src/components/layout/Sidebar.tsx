@@ -67,7 +67,7 @@ function buildFileTree(): TreeFolder {
       },
       {
         name: "articles",
-        children: ALL_FILES.filter(f => ["articles-readme"].includes(f.id)).map((f) => ({ name: f.name, file: f })),
+        children: ALL_FILES.filter(f => f.id.startsWith("article-")).map((f) => ({ name: f.name, file: f })),
       },
       {
         name: "certificates",
