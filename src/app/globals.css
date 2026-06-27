@@ -271,6 +271,9 @@ html, body {
 
 .sidebar-resizer {
   width: 4px;
+  margin-left: -2px;
+  margin-right: -2px;
+  z-index: 100;
   cursor: col-resize;
   background: transparent;
   flex-shrink: 0;
@@ -1360,4 +1363,15 @@ textarea.form-input {
   padding: 0 1em;
   color: var(--sidebar-fg);
   border-left: 0.25em solid var(--border-color);
+}
+
+/* ============================================
+   Terminal Cursor
+   ============================================ */
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }

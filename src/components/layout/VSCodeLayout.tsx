@@ -7,6 +7,7 @@ import ActivityBar from "./ActivityBar";
 import TabBar from "./TabBar";
 import StatusBar from "./StatusBar";
 import AIChat from "./AIChat";
+import BottomPanel from "./BottomPanel";
 import { ALL_FILES, FileTab } from "./constants";
 
 export default function VSCodeLayout({
@@ -22,6 +23,7 @@ export default function VSCodeLayout({
   const [chatWidth, setChatWidth] = useState(300);
   const [isResizing, setIsResizing] = useState(false);
   const [isChatResizing, setIsChatResizing] = useState(false);
+  const [bottomPanelOpen, setBottomPanelOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -152,7 +154,12 @@ export default function VSCodeLayout({
 
           <div className="vscode-editor-content">
             <div className="fade-in" style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", overflow: "hidden", minWidth: 0, minHeight: 0 }}>
-              {children}
+              <div style={{ flex: 1, overflow: "auto", minHeight: 0, display: "flex", flexDirection: "column" }}>
+                {children}
+              </div>
+              {bottomPanelOpen && (
+                <BottomPanel onClose={() => setBottomPanelOpen(false)} />
+              )}
             </div>
           </div>
         </div>
@@ -171,7 +178,10 @@ export default function VSCodeLayout({
         )}
       </div>
 
-      <StatusBar language={activeFile.language} />
+      <StatusBar 
+        language={activeFile.language} 
+        onTogglePanel={() => setBottomPanelOpen(!bottomPanelOpen)} 
+      />
     </div>
   );
 }

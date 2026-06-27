@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 
 interface StatusBarProps {
   language: string;
+  onTogglePanel?: () => void;
 }
 
-export default function StatusBar({ language }: StatusBarProps) {
+export default function StatusBar({ language, onTogglePanel }: StatusBarProps) {
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -45,7 +46,12 @@ export default function StatusBar({ language }: StatusBarProps) {
           </svg>
           <span>main</span>
         </div>
-        <div className="statusbar-item">
+        <div 
+          className="statusbar-item" 
+          onClick={onTogglePanel}
+          style={{ cursor: "pointer" }}
+          title="Toggle Bottom Panel"
+        >
           {/* Error icon */}
           <svg
             viewBox="0 0 16 16"
