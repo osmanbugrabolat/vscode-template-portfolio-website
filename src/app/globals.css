@@ -188,7 +188,7 @@ html, body {
 }
 
 .activitybar-top { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0; }
-.activitybar-bottom { display: flex; flex-direction: column; align-items: center; gap: 0; padding-bottom: 8px; }
+.activitybar-bottom { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 0; padding-bottom: 8px; }
 
 .activity-item {
   width: 48px;
