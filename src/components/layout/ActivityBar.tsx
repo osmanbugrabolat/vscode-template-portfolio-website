@@ -9,6 +9,7 @@ import {
 } from "react-icons/vsc";
 import { FaLinkedin, FaMedium } from "react-icons/fa";
 import { TbFileCv } from "react-icons/tb";
+import { LuBot } from "react-icons/lu";
 
 interface ActivityBarProps {
   activeActivity: string;
@@ -36,7 +37,7 @@ const activities = [
   {
     id: "copilot",
     label: "BuğrAI",
-    icon: <VscSparkle size={24} />,
+    icon: <LuBot size={24} />,
   },
 ];
 

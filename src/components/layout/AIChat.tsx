@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { VscArrowRight, VscSparkle, VscChevronDown } from "react-icons/vsc";
+import { VscArrowRight, VscChevronDown } from "react-icons/vsc";
+import { LuBot } from "react-icons/lu";
 
 interface Message {
   role: "user" | "ai";
@@ -46,10 +47,7 @@ export default function AIChat({ onClose }: { onClose?: () => void }) {
     <div className="vscode-aichat">
       <div className="aichat-header">
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
-            <path d="M12.5 3H3.5a2 2 0 00-2 2v6a2 2 0 002 2h9a2 2 0 002-2V5a2 2 0 00-2-2zM3.5 4h9a1 1 0 011 1v6a1 1 0 01-1 1h-9a1 1 0 01-1-1V5a1 1 0 011-1z" />
-            <path d="M5.5 7.5a1 1 0 110-2 1 1 0 010 2zm5 0a1 1 0 110-2 1 1 0 010 2z" />
-          </svg>
+          <LuBot size={16} />
           BuğrAI
         </div>
         {onClose && (
@@ -109,7 +107,7 @@ export default function AIChat({ onClose }: { onClose?: () => void }) {
               onClick={() => setShowDropdown(!showDropdown)}
               style={{ fontSize: "11px", color: "#aaa", display: "flex", alignItems: "center", gap: "6px", cursor: "pointer", fontWeight: "500", padding: "4px 8px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", userSelect: "none" }}
             >
-              <VscSparkle size={12} /> {model} <VscChevronDown size={14} style={{ transform: showDropdown ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }} />
+              <LuBot size={14} /> {model} <VscChevronDown size={14} style={{ transform: showDropdown ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }} />
             </div>
             
             {showDropdown && (
