@@ -20,7 +20,7 @@ export default async function CertificateViewer({
   }
 
   // The actual image is stored in public/certificates/
-  const imageUrl = `/certificates/${cert.name}`;
+  const imageUrl = `/certificates/${cert.filename || cert.name}`;
 
   return (
     <div className="w-full h-full bg-[var(--editor-bg)] flex flex-col p-8 overflow-hidden">

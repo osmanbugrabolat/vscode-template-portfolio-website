@@ -172,7 +172,7 @@ function FileNode({
         >
           <ChevronIcon open={open} />
           <FolderSvg />
-          <span style={{ fontSize: 13, color: "var(--sidebar-fg)", marginLeft: 3 }}>
+          <span style={{ fontSize: 13, color: "var(--sidebar-fg)", marginLeft: 3, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
             {node.name}
           </span>
         </div>
@@ -193,7 +193,7 @@ function FileNode({
     );
   }
 
-  const ext = node.name.split(".").pop() || "";
+  const ext = node.file?.ext || node.name.split(".").pop() || "";
   const isActive = !!node.file && node.file.path === currentPath;
 
   return (
@@ -203,7 +203,7 @@ function FileNode({
       onClick={() => node.file && onFileClick(node.file)}
     >
       <ExtIcon ext={ext} />
-      <span style={{ fontSize: 13, color: "var(--sidebar-fg)", marginLeft: 2 }}>
+      <span style={{ fontSize: 13, color: "var(--sidebar-fg)", marginLeft: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
         {node.name}
       </span>
     </div>
