@@ -20,34 +20,7 @@ export const ALL_FILES: FileTab[] = [
     ext: "md",
     language: "Markdown",
   },
-  {
-    id: "project-1",
-    name: "README.md",
-    path: "/projects/1",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-2",
-    name: "README.md",
-    path: "/projects/2",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-3",
-    name: "README.md",
-    path: "/projects/3",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-4",
-    name: "README.md",
-    path: "/projects/4",
-    ext: "md",
-    language: "Markdown",
-  },
+
   {
     id: "project-5-readme",
     name: "README.md",

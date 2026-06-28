@@ -47,22 +47,7 @@ function buildFileTree(): TreeFolder {
       {
         name: "projects",
         children: [
-          {
-            name: "apart-yonetim-sistemi",
-            children: ALL_FILES.filter(f => f.id === "project-1").map((f) => ({ name: f.name, file: f })),
-          },
-          {
-            name: "portfolyo-ai",
-            children: ALL_FILES.filter(f => f.id === "project-2").map((f) => ({ name: f.name, file: f })),
-          },
-          {
-            name: "fountain-detection-ai",
-            children: ALL_FILES.filter(f => f.id === "project-3").map((f) => ({ name: f.name, file: f })),
-          },
-          {
-            name: "web-scraper",
-            children: ALL_FILES.filter(f => f.id === "project-4").map((f) => ({ name: f.name, file: f })),
-          },
+
           {
             name: "pong-with-mediapipe",
             children: ALL_FILES.filter(f => f.id.startsWith("project-5-")).map((f) => ({ name: f.name, file: f })),
