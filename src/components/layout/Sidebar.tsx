@@ -71,6 +71,10 @@ function buildFileTree(): TreeFolder {
             name: "flying-birds-with-mediapipe",
             children: ALL_FILES.filter(f => f.id.startsWith("project-6-")).map((f) => ({ name: f.name, file: f })),
           },
+          {
+            name: "sihirli-sapan",
+            children: ALL_FILES.filter(f => f.id.startsWith("project-7-")).map((f) => ({ name: f.name, file: f })),
+          },
         ]
       },
       {

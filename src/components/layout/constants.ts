@@ -58,10 +58,9 @@ export const ALL_FILES: FileTab[] = [
   {
     id: "project-5-play",
     name: "Play",
-    path: "https://osmanbugrabolat.github.io/pong-with-mediapipe/",
+    path: "/projects/pong-with-mediapipe/play",
     ext: "play",
     language: "Game",
-    isExternal: true,
   },
   {
     id: "project-6-readme",
@@ -73,10 +72,23 @@ export const ALL_FILES: FileTab[] = [
   {
     id: "project-6-play",
     name: "Play",
-    path: "https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/",
+    path: "/projects/flying-birds-with-mediapipe/play",
     ext: "play",
     language: "Game",
-    isExternal: true,
+  },
+  {
+    id: "project-7-readme",
+    name: "README.md",
+    path: "/projects/sihirli-sapan",
+    ext: "md",
+    language: "Markdown",
+  },
+  {
+    id: "project-7-play",
+    name: "Play",
+    path: "/projects/sihirli-sapan/play",
+    ext: "play",
+    language: "Game",
   },
   {
     id: "article-1",
