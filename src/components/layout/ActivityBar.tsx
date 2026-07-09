@@ -147,9 +147,6 @@ export default function ActivityBar({ activeActivity, onActivityChange, onFileOp
               title={activity.label}
             >
               {activity.icon}
-              {'badge' in activity && activity.badge && (
-                <span className="activity-badge">{activity.badge as React.ReactNode}</span>
-              )}
               <span className="activity-tooltip">{activity.label}</span>
             </div>
           );
