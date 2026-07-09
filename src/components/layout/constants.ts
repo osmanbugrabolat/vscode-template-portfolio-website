@@ -107,6 +107,14 @@ export const ALL_FILES: FileTab[] = [
     language: "Game",
   },
   {
+    id: "project-11-more",
+    name: "For more...",
+    path: personal.github,
+    ext: "github",
+    language: "Social",
+    isExternal: true,
+  },
+  {
     id: "article-1",
     name: "Altyapıyı Unutun, Koda Odaklanın: FaaS",
     path: "https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739",

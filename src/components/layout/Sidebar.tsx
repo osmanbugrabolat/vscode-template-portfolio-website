@@ -72,6 +72,7 @@ function buildFileTree(): TreeFolder {
             name: "kozmik-toz-enstalasyon",
             children: ALL_FILES.filter(f => f.id.startsWith("project-10-")).map((f) => ({ name: f.name, file: f })),
           },
+          ...ALL_FILES.filter(f => f.id === "project-11-more").map(f => ({ name: f.name, file: f }))
         ]
       },
       {
