@@ -5,11 +5,27 @@ export default function AboutPage() {
   return (
     <div className="w-full h-full overflow-y-auto">
       <div className="markdown-body">
-        <h1>Hi, I'm {personal.name} 👋</h1>
-        <p>
-          <strong>{personal.title}</strong> based in {personal.location}.<br />
-          <em>{personal.subtitle}</em>
-        </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '24px' }}>
+          <img 
+            src="/bugra.png" 
+            alt="Osman Buğra BOLAT" 
+            style={{ 
+              width: '120px', 
+              height: '120px', 
+              borderRadius: '50%', 
+              objectFit: 'cover', 
+              border: '3px solid var(--accent)',
+              boxShadow: '0 4px 14px rgba(0, 0, 0, 0.3)'
+            }} 
+          />
+          <div>
+            <h1 style={{ marginTop: 0, marginBottom: '8px', borderBottom: 'none', paddingBottom: 0 }}>Hi, I'm {personal.name} 👋</h1>
+            <p style={{ margin: 0, lineHeight: '1.6' }}>
+              <strong>{personal.title}</strong> based in {personal.location}.<br />
+              <em style={{ color: 'var(--sidebar-fg)' }}>{personal.subtitle}</em>
+            </p>
+          </div>
+        </div>
 
         <div style={{ display: "flex", gap: "12px", marginTop: "16px", marginBottom: "32px" }}>
           <a href={personal.github} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
