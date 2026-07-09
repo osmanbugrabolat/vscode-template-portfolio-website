@@ -138,13 +138,7 @@ export default function ActivityBar({ activeActivity, onActivityChange, onFileOp
               key={`desktop-${activity.id}`}
               className={`activity-item desktop-only${isActive ? " active" : ""}${isMobileActive ? " mobile-active" : ""}`}
               onClick={() => {
-                // @ts-expect-error
-                if (activity.link) {
-                  // @ts-expect-error
-                  window.open(activity.link, "_blank");
-                // @ts-expect-error
-                } else if (activity.fileId && onFileOpen) {
-                  // @ts-expect-error
+                if ('fileId' in activity && activity.fileId && onFileOpen) {
                   onFileOpen(activity.fileId);
                 } else {
                   onActivityChange(activity.id);
