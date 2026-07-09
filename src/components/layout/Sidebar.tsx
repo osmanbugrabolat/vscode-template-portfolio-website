@@ -227,14 +227,14 @@ function FileNode({
 }
 
 const categoryNames: Record<string, string> = {
-  ai_ml: "AI & Machine Learning",
-  cloud: "Cloud Platforms",
-  frontend: "Frontend",
-  backend: "Backend",
-  databases: "Databases",
-  tools: "Tools & Environments",
-  ai_tools: "AI Tools",
-  project_management: "Project Management",
+  ai_ml: "AI & MACHINE LEARNING",
+  cloud: "CLOUD PLATFORMS",
+  frontend: "FRONTEND",
+  backend: "BACKEND",
+  databases: "DATABASES",
+  tools: "TOOLS & ENVIRONMENTS",
+  ai_tools: "AI TOOLS",
+  project_management: "PROJECT MANAGEMENT",
 };
 
 export default function Sidebar({ currentPath, onFileClick, activeActivity = "explorer", width }: SidebarProps) {
@@ -244,7 +244,7 @@ export default function Sidebar({ currentPath, onFileClick, activeActivity = "ex
   if (activeActivity === "technologies") {
     return (
       <div className="vscode-sidebar" style={width ? { width } : undefined}>
-        <div className="sidebar-header">Technologies</div>
+        <div className="sidebar-header">TECHNOLOGIES</div>
         <div className="sidebar-body" style={{ padding: "12px 16px", overflowY: "auto" }}>
           {Object.entries(skills).map(([category, items]) => (
             <div key={category} style={{ marginBottom: "20px" }}>

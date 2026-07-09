@@ -3,11 +3,27 @@ import {
   SiHuawei, SiGooglecloud, SiNextdotjs, SiReact, SiFlutter,
   SiFastapi, SiNodedotjs, SiPrisma, SiPostgresql,
   SiGithub, SiDocker, SiFigma, SiLinux, SiClaude, SiGooglegemini,
-  SiSlack, SiTrello, SiJira
+  SiSlack, SiTrello, SiJira, SiTensorflow
 } from "react-icons/si";
-import { FaAws, FaICursor } from "react-icons/fa6";
+import { FaAws } from "react-icons/fa6";
 import { DiMsqlServer } from "react-icons/di";
 import { VscVscode } from "react-icons/vsc";
+
+export const CustomCursorIcon = (props: React.SVGProps<SVGSVGElement> & { size?: number | string }) => {
+  const { size = 24, style, ...rest } = props;
+  return (
+    <svg 
+      viewBox="0 0 24 24" 
+      width={size} 
+      height={size} 
+      fill="currentColor" 
+      style={{ display: 'inline-block', ...style }}
+      {...rest}
+    >
+      <path d="M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23"/>
+    </svg>
+  );
+};
 
 export const personal = {
   name: "Buğra Bolat",
@@ -80,6 +96,7 @@ export const skills = {
     { name: "Ultralytics YOLO", level: 75, icon: SiUltralytics },
     { name: "MediaPipe", level: 75, icon: SiMediapipe },
     { name: "OpenCV", level: 70, icon: SiOpencv },
+    { name: "TensorFlow", level: 70, icon: SiTensorflow },
     { name: "PyTorch", level: 65, icon: SiPytorch },
     { name: "Scikit-learn", level: 60, icon: SiScikitlearn },
   ],
@@ -112,7 +129,7 @@ export const skills = {
   ],
   ai_tools: [
     { name: "Claude", level: 80, icon: SiClaude },
-    { name: "Cursor", level: 70, icon: FaICursor },
+    { name: "Cursor", level: 70, icon: CustomCursorIcon },
     { name: "Gemini", level: 70, icon: SiGooglegemini },
   ],
   project_management: [
