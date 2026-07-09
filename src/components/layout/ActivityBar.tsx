@@ -7,6 +7,10 @@ import {
   VscSparkle,
   VscGithub,
   VscMail,
+  VscPerson,
+  VscRocket,
+  VscBook,
+  VscMortarBoard
 } from "react-icons/vsc";
 import { FaLinkedin, FaMedium } from "react-icons/fa";
 import { TbFileCv } from "react-icons/tb";
@@ -16,6 +20,9 @@ interface ActivityBarProps {
   activeActivity: string;
   onActivityChange: (activity: string) => void;
   onFileOpen?: (fileId: string) => void;
+  chatOpen?: boolean;
+  activeFileId?: string;
+  sidebarOpen?: boolean;
 }
 
 const activities = [
@@ -39,6 +46,46 @@ const activities = [
     id: "copilot",
     label: "BuğrAI",
     icon: <LuBot size={24} />,
+  },
+];
+
+const mobileActivities = [
+  {
+    id: "about",
+    label: "About Me",
+    fileId: "about-readme",
+    icon: <VscPerson size={24} />,
+  },
+  {
+    id: "cv",
+    label: "CV",
+    fileId: "cv-file",
+    icon: <TbFileCv size={26} strokeWidth={1.5} />,
+  },
+  {
+    id: "projects",
+    label: "Projects",
+    icon: <VscRocket size={24} />,
+  },
+  {
+    id: "articles",
+    label: "Articles",
+    icon: <VscBook size={24} />,
+  },
+  {
+    id: "certificates",
+    label: "Certificates",
+    icon: <VscMortarBoard size={24} />,
+  },
+  {
+    id: "copilot",
+    label: "BuğrAI",
+    icon: <LuBot size={24} />,
+  },
+  {
+    id: "contact",
+    label: "Contact",
+    icon: <VscMail size={24} />,
   },
 ];
 
@@ -70,36 +117,77 @@ const bottomActivities = [
 
 ];
 
-export default function ActivityBar({ activeActivity, onActivityChange, onFileOpen }: ActivityBarProps) {
+export default function ActivityBar({ activeActivity, onActivityChange, onFileOpen, chatOpen, activeFileId, sidebarOpen }: ActivityBarProps) {
   return (
     <div className="vscode-activitybar">
       <div className="activitybar-top">
-        {activities.map((activity) => (
-          <div
-            key={activity.id}
-            className={`activity-item${activeActivity === activity.id ? " active" : ""}`}
-            onClick={() => {
-              // @ts-expect-error
-              if (activity.link) {
+        {activities.map((activity) => {
+          const isActive = activeActivity === activity.id;
+          
+          let isMobileActive = false;
+          if (activity.id === "copilot") {
+            isMobileActive = !!chatOpen;
+          } else if (activity.fileId) {
+            isMobileActive = activeFileId === activity.fileId && !sidebarOpen && !chatOpen;
+          } else {
+            isMobileActive = !!sidebarOpen && activeActivity === activity.id;
+          }
+
+          return (
+            <div
+              key={`desktop-${activity.id}`}
+              className={`activity-item desktop-only${isActive ? " active" : ""}${isMobileActive ? " mobile-active" : ""}`}
+              onClick={() => {
                 // @ts-expect-error
-                window.open(activity.link, "_blank");
-              // @ts-expect-error
-              } else if (activity.fileId && onFileOpen) {
+                if (activity.link) {
+                  // @ts-expect-error
+                  window.open(activity.link, "_blank");
                 // @ts-expect-error
-                onFileOpen(activity.fileId);
-              } else {
-                onActivityChange(activity.id);
-              }
-            }}
-            title={activity.label}
-          >
-            {activity.icon}
-            {activity.badge && (
-              <span className="activity-badge">{activity.badge}</span>
-            )}
-            <span className="activity-tooltip">{activity.label}</span>
-          </div>
-        ))}
+                } else if (activity.fileId && onFileOpen) {
+                  // @ts-expect-error
+                  onFileOpen(activity.fileId);
+                } else {
+                  onActivityChange(activity.id);
+                }
+              }}
+              title={activity.label}
+            >
+              {activity.icon}
+              {activity.badge && (
+                <span className="activity-badge">{activity.badge}</span>
+              )}
+              <span className="activity-tooltip">{activity.label}</span>
+            </div>
+          );
+        })}
+
+        {mobileActivities.map((activity) => {
+          let isMobileActive = false;
+          if (activity.id === "copilot") {
+            isMobileActive = !!chatOpen;
+          } else if (activity.fileId) {
+            isMobileActive = activeFileId === activity.fileId && !sidebarOpen && !chatOpen;
+          } else {
+            isMobileActive = !!sidebarOpen && activeActivity === activity.id;
+          }
+
+          return (
+            <div
+              key={`mobile-${activity.id}`}
+              className={`activity-item mobile-only${isMobileActive ? " mobile-active" : ""}`}
+              onClick={() => {
+                if (activity.fileId && onFileOpen) {
+                  onFileOpen(activity.fileId);
+                } else {
+                  onActivityChange(activity.id);
+                }
+              }}
+              title={activity.label}
+            >
+              {activity.icon}
+            </div>
+          );
+        })}
       </div>
       <div className="activitybar-bottom">
         {bottomActivities.map((activity) => (

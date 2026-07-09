@@ -118,7 +118,7 @@ html, body {
 .vscode-root {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: var(--editor-bg);
 }
@@ -249,6 +249,10 @@ html, body {
   z-index: 100;
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.mobile-only {
+  display: none;
 }
 
 .activity-item:hover .activity-tooltip {
@@ -770,12 +774,13 @@ html, body {
   padding: 14px 18px;
   margin: 6px 0 6px 40px;
   max-width: 680px;
-  transition: border-color 0.2s, background 0.2s;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .experience-card-inline:hover {
-  background: rgba(255,255,255,0.05);
-  border-left-color: var(--token-type);
+  background: var(--hover-bg);
+  border-left-color: var(--focus-border);
 }
 
 .exp-header {
@@ -1239,12 +1244,7 @@ textarea.form-input {
     --sidebar-width: 220px;
   }
 
-  .vscode-sidebar {
-    position: absolute;
-    z-index: 50;
-    height: calc(100vh - var(--titlebar-height) - var(--statusbar-height));
-    box-shadow: 4px 0 16px rgba(0,0,0,0.4);
-  }
+
 
   .about-hero-inline { flex-direction: column; }
 }
@@ -1383,3 +1383,92 @@ textarea.form-input {
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+/* ============================================
+   Responsive (Mobile) Layout
+   ============================================ */
+@media (max-width: 768px) {
+  .vscode-body {
+    flex-direction: column-reverse;
+    position: relative;
+  }
+
+  .vscode-activitybar {
+    width: 100% !important;
+    height: var(--activitybar-width);
+    flex-direction: row;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0;
+    z-index: 100;
+  }
+
+  .activitybar-top {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .activitybar-bottom {
+    display: none;
+  }
+
+  .activity-tooltip {
+    display: none !important;
+  }
+
+  .activity-item {
+    border-left: none;
+    border-top: 2px solid transparent;
+  }
+  
+  .activity-item.active {
+    border-left-color: transparent;
+    color: var(--activitybar-inactive);
+  }
+
+  .activity-item.mobile-active {
+    border-top-color: var(--activitybar-fg) !important;
+    color: var(--activitybar-fg) !important;
+  }
+
+  .vscode-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: var(--activitybar-width);
+    width: 100% !important;
+    z-index: 50;
+    border-right: none;
+  }
+
+  .sidebar-resizer {
+    display: none;
+  }
+
+  .vscode-aichat {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: var(--activitybar-width);
+    width: 100% !important;
+    z-index: 60;
+  }
+
+  .vscode-statusbar {
+    display: none;
+  }
+}
+

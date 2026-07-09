@@ -18,7 +18,7 @@ export default function VSCodeLayout({
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeActivity, setActiveActivity] = useState("explorer");
   const [openTabs, setOpenTabs] = useState<FileTab[]>([ALL_FILES[0]]);
-  const [chatOpen, setChatOpen] = useState(true);
+  const [chatOpen, setChatOpen] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(250);
   const [chatWidth, setChatWidth] = useState(300);
   const [isResizing, setIsResizing] = useState(false);
@@ -26,6 +26,13 @@ export default function VSCodeLayout({
   const [bottomPanelOpen, setBottomPanelOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
+  useEffect(() => {
+    // Sadece masaüstünde chat penceresini varsayılan olarak açık tut
+    if (window.innerWidth > 768) {
+      setChatOpen(true);
+    }
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -83,6 +90,12 @@ export default function VSCodeLayout({
       setOpenTabs((prev) => [...prev, file]);
     }
     router.push(file.path);
+    
+    // Auto-close sidebar on mobile
+    if (window.innerWidth <= 768) {
+      setSidebarOpen(false);
+      setChatOpen(false);
+    }
   };
 
   const closeTab = (fileId: string, e: React.MouseEvent) => {
@@ -102,13 +115,21 @@ export default function VSCodeLayout({
 
   const handleActivityChange = (activity: string) => {
     if (activity === "copilot") {
-      setChatOpen((o) => !o);
+      setChatOpen((o) => {
+        if (!o && window.innerWidth <= 768) {
+          setSidebarOpen(false);
+        }
+        return !o;
+      });
     } else {
       if (activity === activeActivity) {
         setSidebarOpen((o) => !o);
       } else {
         setActiveActivity(activity);
         setSidebarOpen(true);
+        if (window.innerWidth <= 768) {
+          setChatOpen(false);
+        }
       }
     }
   };
@@ -120,6 +141,9 @@ export default function VSCodeLayout({
         <ActivityBar
           activeActivity={activeActivity}
           onActivityChange={handleActivityChange}
+          chatOpen={chatOpen}
+          activeFileId={activeFile.id}
+          sidebarOpen={sidebarOpen}
           onFileOpen={(fileId) => {
             const file = ALL_FILES.find((f) => f.id === fileId);
             if (file) {

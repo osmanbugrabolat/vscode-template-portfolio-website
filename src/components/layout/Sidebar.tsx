@@ -277,33 +277,47 @@ export default function Sidebar({ currentPath, onFileClick, activeActivity = "ex
     );
   }
 
+  let childrenToRender = fileTree.children;
+  let headerText = "Explorer";
+  let depth = 1;
+
+  if (activeActivity !== "explorer" && activeActivity !== "technologies") {
+    const targetNode = fileTree.children.find(c => c.name === activeActivity);
+    if (targetNode && "children" in targetNode) {
+      childrenToRender = targetNode.children;
+      headerText = targetNode.name.toUpperCase();
+      depth = 0;
+    }
+  }
+
   return (
     <div className="vscode-sidebar" style={width ? { width } : undefined}>
-      <div className="sidebar-header">Explorer</div>
+      <div className="sidebar-header">{headerText}</div>
       <div className="sidebar-body">
         <div className="file-tree">
-          {/* Root label */}
-          <div
-            className="tree-folder-header"
-            style={{
-              paddingLeft: 8,
-              fontWeight: 700,
-              fontSize: 11,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            <ChevronIcon open={true} />
-            <span style={{ color: "var(--sidebar-fg)", marginLeft: 4 }}>
-              MY-PORTFOLIO-WEBSITE
-            </span>
-          </div>
+          {activeActivity === "explorer" && (
+            <div
+              className="tree-folder-header"
+              style={{
+                paddingLeft: 8,
+                fontWeight: 700,
+                fontSize: 11,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+              }}
+            >
+              <ChevronIcon open={true} />
+              <span style={{ color: "var(--sidebar-fg)", marginLeft: 4 }}>
+                MY-PORTFOLIO-WEBSITE
+              </span>
+            </div>
+          )}
 
-          {fileTree.children.map((child, i) => (
+          {childrenToRender.map((child, i) => (
             <FileNode
               key={i}
               node={child}
-              depth={1}
+              depth={depth}
               currentPath={currentPath}
               onFileClick={onFileClick}
             />
