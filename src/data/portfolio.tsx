@@ -1,3 +1,14 @@
+import { 
+  SiUltralytics, SiMediapipe, SiOpencv, SiPytorch, SiScikitlearn,
+  SiHuawei, SiGooglecloud, SiNextdotjs, SiReact, SiFlutter,
+  SiFastapi, SiNodedotjs, SiPrisma, SiPostgresql,
+  SiGithub, SiDocker, SiFigma, SiLinux, SiClaude, SiGooglegemini,
+  SiSlack, SiTrello, SiJira
+} from "react-icons/si";
+import { FaAws, FaICursor } from "react-icons/fa6";
+import { DiMsqlServer } from "react-icons/di";
+import { VscVscode } from "react-icons/vsc";
+
 export const personal = {
   name: "Buğra Bolat",
   title: "Full Stack Developer",
@@ -65,43 +76,50 @@ export const projects = [
 ];
 
 export const skills = {
-  languages: [
-    { name: "TypeScript", level: 90 },
-    { name: "JavaScript", level: 92 },
-    { name: "Python", level: 78 },
-    { name: "SQL", level: 75 },
-    { name: "HTML/CSS", level: 95 },
+  ai_ml: [
+    { name: "Ultralytics YOLO", level: 75, icon: SiUltralytics },
+    { name: "MediaPipe", level: 75, icon: SiMediapipe },
+    { name: "OpenCV", level: 70, icon: SiOpencv },
+    { name: "PyTorch", level: 65, icon: SiPytorch },
+    { name: "Scikit-learn", level: 60, icon: SiScikitlearn },
+  ],
+  cloud: [
+    { name: "Huawei Cloud", level: 70, icon: SiHuawei },
+    { name: "GCP", level: 60, icon: SiGooglecloud },
+    { name: "AWS", level: 55, icon: FaAws },
   ],
   frontend: [
-    { name: "React", level: 90 },
-    { name: "Next.js", level: 88 },
-    { name: "Tailwind CSS", level: 92 },
-    { name: "Framer Motion", level: 70 },
+    { name: "Next.js", level: 90, icon: SiNextdotjs },
+    { name: "React", level: 85, icon: SiReact },
+    { name: "React Native", level: 80, icon: SiReact },
+    { name: "Flutter", level: 70, icon: SiFlutter },
   ],
   backend: [
-    { name: "Node.js", level: 80 },
-    { name: "Express.js", level: 78 },
-    { name: "Prisma ORM", level: 82 },
-    { name: "REST APIs", level: 85 },
+    { name: "Python FastAPI", level: 75, icon: SiFastapi },
+    { name: "Node.js", level: 70, icon: SiNodedotjs },
+    { name: "Prisma ORM", level: 60, icon: SiPrisma },
   ],
   databases: [
-    { name: "PostgreSQL", level: 78 },
-    { name: "MongoDB", level: 65 },
-    { name: "Redis", level: 60 },
+    { name: "PostgreSQL", level: 75, icon: SiPostgresql },
+    { name: "MSSQL", level: 65, icon: DiMsqlServer },
   ],
   tools: [
-    { name: "Git & GitHub", level: 88 },
-    { name: "Docker", level: 65 },
-    { name: "VS Code", level: 99 },
-    { name: "Figma", level: 70 },
-    { name: "Linux/macOS", level: 75 },
+    { name: "VS Code", level: 99, icon: VscVscode },
+    { name: "Git & GitHub", level: 80, icon: SiGithub },
+    { name: "Docker", level: 65, icon: SiDocker },
+    { name: "Figma", level: 60, icon: SiFigma },
+    { name: "Linux", level: 75, icon: SiLinux },
   ],
-  ai_ml: [
-    { name: "PyTorch", level: 65 },
-    { name: "Ultralytics YOLO", level: 72 },
-    { name: "OpenCV", level: 68 },
-    { name: "Scikit-learn", level: 60 },
+  ai_tools: [
+    { name: "Claude", level: 80, icon: SiClaude },
+    { name: "Cursor", level: 70, icon: FaICursor },
+    { name: "Gemini", level: 70, icon: SiGooglegemini },
   ],
+  project_management: [
+    { name: "Slack", level: 85, icon: SiSlack },
+    { name: "Trello", level: 80, icon: SiTrello },
+    { name: "Jira", level: 70, icon: SiJira },
+  ]
 };
 
 export const experience = [

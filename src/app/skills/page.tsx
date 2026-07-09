@@ -12,26 +12,33 @@ import CodeEditor, {
 } from "@/components/ui/CodeEditor";
 import { skills } from "@/data/portfolio";
 
+import { IconType } from "react-icons";
+
 const SkillGroup = ({
   title,
   items,
 }: {
   title: string;
-  items: { name: string; level: number }[];
+  items: { name: string; level: number; icon: IconType }[];
 }) => (
   <div className="skill-group-inline">
-    {items.map((skill) => (
-      <div key={skill.name} className="skill-item">
-        <span className="skill-name">&quot;{skill.name}&quot;</span>
-        <div className="skill-bar-bg">
-          <div
-            className="skill-bar-fill"
-            style={{ width: `${skill.level}%` }}
-          />
+    {items.map((skill) => {
+      const Icon = skill.icon;
+      return (
+        <div key={skill.name} className="skill-item">
+          <span className="skill-icon" style={{ display: 'inline-flex', verticalAlign: 'middle', marginRight: '10px', color: '#e2e8f0' }}>
+            <Icon size={18} />
+          </span>
+          <span className="skill-name">&quot;{skill.name}&quot;</span>
+          <div className="skill-bar-bg">
+            <div
+              className="skill-bar-fill"
+              style={{ width: `${skill.level}%` }}
+            />
+          </div>
         </div>
-        <span className="skill-level">{skill.level}%</span>
-      </div>
-    ))}
+      );
+    })}
   </div>
 );
 
@@ -42,12 +49,14 @@ type SkillSection = {
 };
 
 const sections: SkillSection[] = [
-  { key: "languages",  label: "languages",  typeName: "Language[]"  },
-  { key: "frontend",   label: "frontend",   typeName: "Framework[]" },
-  { key: "backend",    label: "backend",    typeName: "Framework[]" },
-  { key: "databases",  label: "databases",  typeName: "Database[]"  },
-  { key: "tools",      label: "tools",      typeName: "Tool[]"      },
-  { key: "ai_ml",      label: "ai_ml",      typeName: "MLTool[]"    },
+  { key: "ai_ml",     label: "ai_ml",     typeName: "MLTool[]"        },
+  { key: "cloud",     label: "cloud",     typeName: "CloudPlatform[]" },
+  { key: "frontend",  label: "frontend",  typeName: "Framework[]"     },
+  { key: "backend",   label: "backend",   typeName: "Framework[]"     },
+  { key: "databases", label: "databases", typeName: "Database[]"      },
+  { key: "tools",     label: "tools",     typeName: "Tool[]"          },
+  { key: "ai_tools",  label: "ai_tools",  typeName: "AITool[]"        },
+  { key: "project_management", label: "project_management", typeName: "PMTool[]" },
 ];
 
 const lines: React.ReactNode[] = [

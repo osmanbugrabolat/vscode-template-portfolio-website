@@ -226,36 +226,15 @@ function FileNode({
   );
 }
 
-const getSkillIcon = (name: string) => {
-  const iconProps = { size: 14, style: { marginRight: 8, color: "var(--sidebar-fg)" } };
-  switch (name) {
-    case "TypeScript": return <SiTypescript {...iconProps} color="#3178C6" />;
-    case "JavaScript": return <SiJavascript {...iconProps} color="#F7DF1E" />;
-    case "Python": return <SiPython {...iconProps} color="#3776AB" />;
-    case "SQL": return <FaDatabase {...iconProps} color="#336791" />;
-    case "HTML/CSS": return <SiHtml5 {...iconProps} color="#E34F26" />;
-    case "React": return <SiReact {...iconProps} color="#61DAFB" />;
-    case "Next.js": return <SiNextdotjs {...iconProps} color="#ffffff" />;
-    case "Tailwind CSS": return <SiTailwindcss {...iconProps} color="#06B6D4" />;
-    case "Framer Motion": return <SiFramer {...iconProps} color="#0055FF" />;
-    case "Node.js": return <SiNodedotjs {...iconProps} color="#339933" />;
-    case "Express.js": return <SiExpress {...iconProps} color="#ffffff" />;
-    case "Prisma ORM": return <SiPrisma {...iconProps} color="#2D3748" />;
-    case "REST APIs": return <FaNetworkWired {...iconProps} />;
-    case "PostgreSQL": return <SiPostgresql {...iconProps} color="#4169E1" />;
-    case "MongoDB": return <SiMongodb {...iconProps} color="#47A248" />;
-    case "Redis": return <SiRedis {...iconProps} color="#DC382D" />;
-    case "Git & GitHub": return <SiGithub {...iconProps} color="#ffffff" />;
-    case "Docker": return <SiDocker {...iconProps} color="#2496ED" />;
-    case "VS Code": return <VscCode {...iconProps} color="#007ACC" />;
-    case "Figma": return <SiFigma {...iconProps} color="#F24E1E" />;
-    case "Linux/macOS": return <SiLinux {...iconProps} color="#FCC624" />;
-    case "PyTorch": return <SiPytorch {...iconProps} color="#EE4C2C" />;
-    case "Ultralytics YOLO": return <FaRobot {...iconProps} color="#00FFFF" />;
-    case "OpenCV": return <SiOpencv {...iconProps} color="#5C3EE8" />;
-    case "Scikit-learn": return <SiScikitlearn {...iconProps} color="#F7931E" />;
-    default: return null;
-  }
+const categoryNames: Record<string, string> = {
+  ai_ml: "AI & Machine Learning",
+  cloud: "Cloud Platforms",
+  frontend: "Frontend",
+  backend: "Backend",
+  databases: "Databases",
+  tools: "Tools & Environments",
+  ai_tools: "AI Tools",
+  project_management: "Project Management",
 };
 
 export default function Sidebar({ currentPath, onFileClick, activeActivity = "explorer", width }: SidebarProps) {
@@ -270,25 +249,25 @@ export default function Sidebar({ currentPath, onFileClick, activeActivity = "ex
           {Object.entries(skills).map(([category, items]) => (
             <div key={category} style={{ marginBottom: "20px" }}>
               <h3 style={{ fontSize: "11px", textTransform: "uppercase", color: "var(--sidebar-fg)", marginBottom: "12px", fontWeight: "bold", letterSpacing: "0.05em" }}>
-                {category.replace("_", " ")}
+                {categoryNames[category] || category.replace("_", " ")}
               </h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
-                {items.map((skill, i) => (
+                {items.map((skill, i) => {
+                  const Icon = skill.icon;
+                  return (
                   <li key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <div style={{ display: "flex", alignItems: "center" }}>
-                        {getSkillIcon(skill.name)}
+                        {Icon && <Icon size={14} style={{ marginRight: 8, color: "var(--sidebar-fg)" }} />}
                         <span style={{ fontSize: "13px", color: "var(--fg)" }}>{skill.name}</span>
                       </div>
-                      <span style={{ fontSize: "11px", color: "var(--sidebar-fg)" }}>
-                        {skill.level}%
-                      </span>
                     </div>
                     <div style={{ width: "100%", height: "4px", backgroundColor: "var(--hover-bg)", borderRadius: "2px", overflow: "hidden" }}>
                       <div style={{ width: `${skill.level}%`, height: "100%", backgroundColor: "#007acc" }} />
                     </div>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           ))}
