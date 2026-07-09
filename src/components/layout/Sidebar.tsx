@@ -227,7 +227,7 @@ function FileNode({
 }
 
 const categoryNames: Record<string, string> = {
-  ai_ml: "AI & MACHINE LEARNING",
+  ai_ml: "AI-ML",
   cloud: "CLOUD PLATFORMS",
   frontend: "FRONTEND",
   backend: "BACKEND",

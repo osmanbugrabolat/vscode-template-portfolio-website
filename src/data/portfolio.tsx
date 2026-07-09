@@ -26,9 +26,9 @@ export const CustomCursorIcon = (props: React.SVGProps<SVGSVGElement> & { size?:
 };
 
 export const personal = {
-  name: "Buğra Bolat",
-  title: "Full Stack Developer",
-  subtitle: "Building the web, one commit at a time.",
+  name: "Osman Buğra BOLAT",
+  title: "AI powered AI & Cloud Engineer",
+  subtitle: "Like every engineer should, I solve problems.",
   bio: "Passionate full-stack developer crafting elegant, performant web applications. I thrive at the intersection of design and engineering — turning complex problems into simple, beautiful, and intuitive solutions.",
   location: "Turkey 🇹🇷",
   email: "contact@bugrabolat.dev",
@@ -36,11 +36,10 @@ export const personal = {
   linkedin: "https://linkedin.com/in/osmanbugrabolat",
   medium: "https://medium.com/@osmanbugrabolat",
   website: "https://bugrabolat.dev",
-  available: true,
+  available: false,
   currentFocus: [
-    "Building scalable Next.js applications",
+    "Building scalable Web & Mobil applications",
     "Exploring AI/ML integrations",
-    "Apartment Management Systems",
   ],
 };
 

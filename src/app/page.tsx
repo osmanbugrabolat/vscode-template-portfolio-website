@@ -1,4 +1,4 @@
-import { personal } from "@/data/portfolio";
+import { personal, skills } from "@/data/portfolio";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function AboutPage() {
@@ -24,7 +24,15 @@ export default function AboutPage() {
         </div>
 
         <h2>About Me</h2>
-        <p>{personal.bio}</p>
+        <p>
+          As a computer engineering graduate ranking 3rd in the Faculty of Technology and 2nd in my department at Selçuk University (graduated in 2026 with a 3.75 GPA), I have aligned my technical focus on integrating Computer Vision and Deep Learning models into cloud infrastructures throughout my studies, and I continue to advance my expertise in these fields.
+        </p>
+        <p>
+          During my undergraduate years, I gained hands-on experience in the automation and deployment of AI-based operational processes based on Docker, CI/CD pipelines, DevOps, and MLOps principles.
+        </p>
+        <p>
+          I combine this strong academic foundation with leadership and communication skills developed through technology community leadership and project management roles. I am a dynamic engineer who quickly adapts to the operational requirements of complex projects, takes responsibility in technical processes, and thrives in collaborative team environments.
+        </p>
 
         <h2>Current Focus</h2>
         <ul>
@@ -33,20 +41,27 @@ export default function AboutPage() {
           ))}
         </ul>
 
-        <h2>Tech Stack & Skills</h2>
-        <p>I specialize in building applications with modern technologies:</p>
+        <h2>Tech Stack & Ecosystem</h2>
+        <p>A high-level overview of the technologies I use to bring ideas to life:</p>
         <ul>
-          <li><strong>Languages:</strong> TypeScript, JavaScript, Python, SQL</li>
-          <li><strong>Frontend:</strong> React, Next.js, Tailwind CSS, Framer Motion</li>
-          <li><strong>Backend:</strong> Node.js, Express, PostgreSQL, Prisma</li>
-          <li><strong>AI/ML:</strong> PyTorch, Ultralytics YOLO, OpenCV</li>
+          {Object.entries(skills).map(([category, items]) => {
+            const labels: Record<string, string> = {
+              ai_ml: "AI-ML",
+              cloud: "Cloud",
+              frontend: "Frontend",
+              backend: "Backend",
+              databases: "Databases",
+              tools: "Tools",
+              ai_tools: "AI Tools",
+              project_management: "Project Management"
+            };
+            const categoryName = labels[category] || category;
+            const names = items.map(i => i.name).join(", ");
+            return (
+              <li key={category}><strong>{categoryName}:</strong> {names}</li>
+            );
+          })}
         </ul>
-
-        {personal.available && (
-          <blockquote style={{ marginTop: "32px" }}>
-            <p>🌟 <strong>Currently open for new opportunities!</strong> Feel free to reach out via email or LinkedIn.</p>
-          </blockquote>
-        )}
       </div>
     </div>
   );
