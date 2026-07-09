@@ -28,31 +28,33 @@ export default function SihirliSapanPlayPage() {
       ? "fixed inset-0 z-[9999] bg-black" 
       : "flex flex-col w-full h-[calc(100vh-120px)] min-h-[600px] bg-black/40 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative mt-4"}>
       
-      <div className={`absolute top-4 left-4 z-10 flex gap-2 ${isFullscreen ? 'top-6 left-6' : ''}`}>
+      <div className={`absolute top-4 left-4 z-10 flex gap-4 ${isFullscreen ? 'top-6 left-6' : ''}`}>
         <button 
           onClick={() => router.push("/projects/sihirli-sapan")}
-          className="px-4 py-2 bg-black/60 hover:bg-black/90 text-white rounded-lg backdrop-blur-md transition-all flex items-center gap-2 border border-white/20 text-sm font-medium shadow-lg"
+          style={{ padding: '10px 24px', flexShrink: 0 }}
+          className="bg-black/40 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-full transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-3 text-sm font-medium text-white/90 hover:text-white shadow-[0_4px_20px_rgba(0,0,0,0.5)] group whitespace-nowrap"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 shrink-0 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          Projeye Dön
+          Portfolyoya Dön
         </button>
         <button 
           onClick={() => setIsFullscreen(!isFullscreen)}
-          className="px-4 py-2 bg-black/60 hover:bg-black/90 text-white rounded-lg backdrop-blur-md transition-all flex items-center gap-2 border border-white/20 text-sm font-medium shadow-lg"
+          style={{ padding: '10px 24px', flexShrink: 0 }}
+          className="bg-black/40 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-full transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-3 text-sm font-medium text-white/90 hover:text-white shadow-[0_4px_20px_rgba(0,0,0,0.5)] group whitespace-nowrap"
         >
           {isFullscreen ? (
             <>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 4v4m0 0H4m4 0L3 3m13 1v4m0 0h4m-4 0l5-5m-5 13v-4m0 0h4m-4 0l5 5m-13-5v4m0 0H4m4 0l-5 5" />
+              <svg className="w-4 h-4 shrink-0 transition-transform group-hover:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5v4H5M9 9L4 4 M15 5v4h4M15 9l5-5 M9 19v-4H5M9 15l-5 5 M15 19v-4h4M15 15l5 5" />
               </svg>
               Küçült
             </>
           ) : (
             <>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              <svg className="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4h4M4 4l5 5 M20 8V4h-4M20 4l-5 5 M4 16v4h4M4 20l5-5 M20 16v4h-4M20 20l-5-5" />
               </svg>
               Tam Ekran
             </>

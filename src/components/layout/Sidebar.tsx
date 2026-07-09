@@ -68,6 +68,10 @@ function buildFileTree(): TreeFolder {
             name: "magic-frame",
             children: ALL_FILES.filter(f => f.id.startsWith("project-9-")).map((f) => ({ name: f.name, file: f })),
           },
+          {
+            name: "kozmik-toz-enstalasyon",
+            children: ALL_FILES.filter(f => f.id.startsWith("project-10-")).map((f) => ({ name: f.name, file: f })),
+          },
         ]
       },
       {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 
-export default function SihirliSapanHSDEditionPlayPage() {
+export default function KozmikTozPlayPage() {
   const router = useRouter();
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -15,7 +15,7 @@ export default function SihirliSapanHSDEditionPlayPage() {
         if (isFullscreen) {
           setIsFullscreen(false);
         } else {
-          router.push("/projects/sihirli-sapan-hsd-edition");
+          router.push("/projects/kozmik-toz-enstalasyon");
         }
       }
     };
@@ -30,7 +30,7 @@ export default function SihirliSapanHSDEditionPlayPage() {
       
       <div className={`absolute top-4 left-4 z-10 flex gap-4 ${isFullscreen ? 'top-6 left-6' : ''}`}>
         <button 
-          onClick={() => router.push("/projects/sihirli-sapan-hsd-edition")}
+          onClick={() => router.push("/projects/kozmik-toz-enstalasyon")}
           style={{ padding: '10px 24px', flexShrink: 0 }}
           className="bg-black/40 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-full transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-3 text-sm font-medium text-white/90 hover:text-white shadow-[0_4px_20px_rgba(0,0,0,0.5)] group whitespace-nowrap"
         >
@@ -62,10 +62,10 @@ export default function SihirliSapanHSDEditionPlayPage() {
         </button>
       </div>
       <iframe
-        src="https://osmanbugrabolat.github.io/sihirli-sapan-hsd-edition/"
+        src="https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/"
         className="w-full h-full border-0 outline-none"
         allow="camera; microphone; autoplay; fullscreen"
-        title="Sihirli Sapan HSD Edition"
+        title="Kozmik Toz Enstalasyonu"
       />
     </div>
   );

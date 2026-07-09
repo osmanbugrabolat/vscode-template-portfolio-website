@@ -93,6 +93,20 @@ export const ALL_FILES: FileTab[] = [
     isExternal: true,
   },
   {
+    id: "project-10-readme",
+    name: "README.md",
+    path: "/projects/kozmik-toz-enstalasyon",
+    ext: "md",
+    language: "Markdown",
+  },
+  {
+    id: "project-10-play",
+    name: "Deneyimle",
+    path: "/projects/kozmik-toz-enstalasyon/play",
+    ext: "play",
+    language: "Game",
+  },
+  {
     id: "article-1",
     name: "Altyapıyı Unutun, Koda Odaklanın: FaaS",
     path: "https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739",
