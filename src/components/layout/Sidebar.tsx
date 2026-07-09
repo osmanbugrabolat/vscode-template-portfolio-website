@@ -60,6 +60,14 @@ function buildFileTree(): TreeFolder {
             name: "sihirli-sapan",
             children: ALL_FILES.filter(f => f.id.startsWith("project-7-")).map((f) => ({ name: f.name, file: f })),
           },
+          {
+            name: "sihirli-sapan-hsd-edition",
+            children: ALL_FILES.filter(f => f.id.startsWith("project-8-")).map((f) => ({ name: f.name, file: f })),
+          },
+          {
+            name: "magic-frame",
+            children: ALL_FILES.filter(f => f.id.startsWith("project-9-")).map((f) => ({ name: f.name, file: f })),
+          },
         ]
       },
       {
