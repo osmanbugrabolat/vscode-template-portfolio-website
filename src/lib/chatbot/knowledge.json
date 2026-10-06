@@ -2725,8 +2725,8 @@
         "en": "How can I contact Buğra?"
       },
       "answer": {
-        "tr": "En kolay yol e-posta: contact@bugrabolat.dev\nGenellikle 24–48 saat içinde dönüş yapıyor. LinkedIn ve GitHub üzerinden de ulaşabilirsiniz.",
-        "en": "Email is the easiest way: contact@bugrabolat.dev\nHe usually replies within 24–48 hours. You can also reach him on LinkedIn and GitHub."
+        "tr": "En kolay yol e-posta: osmanbugrabolat@gmail.com\nGenellikle 24–48 saat içinde dönüş yapıyor. LinkedIn ve GitHub üzerinden de ulaşabilirsiniz.",
+        "en": "Email is the easiest way: osmanbugrabolat@gmail.com\nHe usually replies within 24–48 hours. You can also reach him on LinkedIn and GitHub."
       },
       "patterns": {
         "tr": [
@@ -2783,7 +2783,7 @@
             "tr": "E-posta gönder",
             "en": "Send email"
           },
-          "href": "mailto:contact@bugrabolat.dev"
+          "href": "mailto:osmanbugrabolat@gmail.com"
         }
       ],
       "followUps": [

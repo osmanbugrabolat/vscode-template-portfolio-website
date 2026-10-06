@@ -1422,9 +1422,9 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('contact-email', 'contact', 80, 'Buğra''ya nasıl ulaşırım?', 'How can I contact Buğra?', 'En kolay yol e-posta: contact@bugrabolat.dev
-Genellikle 24–48 saat içinde dönüş yapıyor. LinkedIn ve GitHub üzerinden de ulaşabilirsiniz.', 'Email is the easiest way: contact@bugrabolat.dev
-He usually replies within 24–48 hours. You can also reach him on LinkedIn and GitHub.', array['iletisim', 'ulas', 'ulasmak', 'mail', 'eposta', 'email', 'telefon', 'mesaj', 'contact', 'reach', 'phone', 'message', 'touch']::text[], '[{"label":{"tr":"İletişim sayfası","en":"Contact page"},"href":"/contact"},{"label":{"tr":"E-posta gönder","en":"Send email"},"href":"mailto:contact@bugrabolat.dev"}]'::jsonb, array['linkedin', 'github', 'availability']::text[])
+values ('contact-email', 'contact', 80, 'Buğra''ya nasıl ulaşırım?', 'How can I contact Buğra?', 'En kolay yol e-posta: osmanbugrabolat@gmail.com
+Genellikle 24–48 saat içinde dönüş yapıyor. LinkedIn ve GitHub üzerinden de ulaşabilirsiniz.', 'Email is the easiest way: osmanbugrabolat@gmail.com
+He usually replies within 24–48 hours. You can also reach him on LinkedIn and GitHub.', array['iletisim', 'ulas', 'ulasmak', 'mail', 'eposta', 'email', 'telefon', 'mesaj', 'contact', 'reach', 'phone', 'message', 'touch']::text[], '[{"label":{"tr":"İletişim sayfası","en":"Contact page"},"href":"/contact"},{"label":{"tr":"E-posta gönder","en":"Send email"},"href":"mailto:osmanbugrabolat@gmail.com"}]'::jsonb, array['linkedin', 'github', 'availability']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
