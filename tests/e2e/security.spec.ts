@@ -153,6 +153,14 @@ test.describe("authentication", () => {
   });
 });
 
+test.describe("cache revalidation webhook", () => {
+  test("refuses requests without the secret token", async ({ request }) => {
+    expect((await request.post("/api/revalidate")).status()).toBe(401);
+    expect((await request.post("/api/revalidate", { headers: { authorization: "Bearer guessed-token" } })).status()).toBe(401);
+    expect((await request.get("/api/revalidate")).status()).toBe(405);
+  });
+});
+
 test.describe("chat API hardening", () => {
   test("rejects wrong content types, oversized and malformed bodies", async ({ request }) => {
     expect((await request.post("/api/chat", { headers: { "content-type": "text/plain" }, data: "hi" })).status()).toBe(415);
