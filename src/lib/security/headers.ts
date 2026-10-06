@@ -27,7 +27,8 @@ export function buildContentSecurityPolicy({ nonce, isDev, supabaseUrl }: { nonc
     "object-src": ["'none'"],
     "base-uri": ["'self'"],
     "form-action": ["'self'"],
-    "frame-ancestors": ["'none'"],
+    // Our own pages may frame our own files (the CV PDF viewer); other sites may not.
+    "frame-ancestors": ["'self'"],
     "worker-src": ["'self'", "blob:"],
     "manifest-src": ["'self'"],
   };
@@ -40,7 +41,7 @@ export function buildContentSecurityPolicy({ nonce, isDev, supabaseUrl }: { nonc
 
 export const SECURITY_HEADERS: Record<string, string> = {
   "X-Content-Type-Options": "nosniff",
-  "X-Frame-Options": "DENY",
+  "X-Frame-Options": "SAMEORIGIN",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   // Camera/microphone stay delegable to embedded games (they request them via iframe allow=).
   "Permissions-Policy": "geolocation=(), payment=(), usb=(), serial=(), hid=(), bluetooth=(), browsing-topics=(), interest-cohort=()",

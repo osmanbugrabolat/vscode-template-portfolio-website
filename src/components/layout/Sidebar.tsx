@@ -158,7 +158,7 @@ export default function Sidebar({ items, files, skillCategories, currentPath, on
           {!folder && (
             <div className="tree-root-header">
               <ChevronIcon open />
-              <span>MY-PORTFOLIO-WEBSITE</span>
+              <span>my-portfolio-website</span>
             </div>
           )}
           {roots.map((item) => (

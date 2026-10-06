@@ -6,9 +6,9 @@ test.describe("security headers", () => {
     const res = await request.get("/");
     const h = res.headers();
     expect(h["content-security-policy"]).toMatch(/script-src 'self' 'nonce-[A-Za-z0-9+/=]+' 'strict-dynamic'/);
-    expect(h["content-security-policy"]).toContain("frame-ancestors 'none'");
+    expect(h["content-security-policy"]).toContain("frame-ancestors 'self'");
     expect(h["content-security-policy"]).toContain("object-src 'none'");
-    expect(h["x-frame-options"]).toBe("DENY");
+    expect(h["x-frame-options"]).toBe("SAMEORIGIN");
     expect(h["x-content-type-options"]).toBe("nosniff");
     expect(h["referrer-policy"]).toBe("strict-origin-when-cross-origin");
     expect(h["strict-transport-security"]).toContain("max-age=63072000");

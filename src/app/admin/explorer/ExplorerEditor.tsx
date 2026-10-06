@@ -198,7 +198,7 @@ export default function ExplorerEditor({
       <PageHeader
         title="Gezgin ve Sayfalar"
         icon={<VscFiles aria-hidden />}
-        description="Sitenin sol tarafındaki MY-PORTFOLIO-WEBSITE ağacı. Klasör ve dosya ekleyin, içerikleri düzenleyin, sıralayın, gizleyin ya da silin."
+        description="Sitenin sol tarafındaki my-portfolio-website ağacı. Klasör ve dosya ekleyin, içerikleri düzenleyin, sıralayın, gizleyin ya da silin."
       />
       <div className="adm-split">
         <section className="adm-card adm-split-pane" aria-label="Dosya ağacı">
@@ -227,7 +227,7 @@ export default function ExplorerEditor({
             </div>
           </div>
           <div className="adm-card-scroll">
-            <div className="adm-tree" role="tree" aria-label="MY-PORTFOLIO-WEBSITE">
+            <div className="adm-tree" role="tree" aria-label="my-portfolio-website">
               {nodes.length ? renderTree(null, 0) : <div className="adm-empty">Henüz öğe yok. Yukarıdan klasör ya da dosya ekleyin.</div>}
             </div>
           </div>
@@ -393,7 +393,7 @@ function NodeForm({
           />
 
           <SelectField label="Bulunduğu klasör" name="parent_id" value={parentId ?? ""} onChange={(e) => setParentId(e.target.value || null)} errors={errors}>
-            <option value="">(Kök) MY-PORTFOLIO-WEBSITE</option>
+            <option value="">(Kök) my-portfolio-website</option>
             {folderOptions.map((f) => (
               <option key={f.id} value={f.id}>
                 {f.label}

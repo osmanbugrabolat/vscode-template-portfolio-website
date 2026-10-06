@@ -74,7 +74,8 @@ describe("security headers", () => {
   });
 
   it("blocks framing, plugins and base-tag hijacking", () => {
-    expect(csp).toContain("frame-ancestors 'none'");
+    expect(csp).toContain("frame-ancestors 'self'");
+    expect(csp).not.toContain("frame-ancestors *");
     expect(csp).toContain("object-src 'none'");
     expect(csp).toContain("base-uri 'self'");
     expect(csp).toContain("form-action 'self'");
@@ -91,7 +92,7 @@ describe("security headers", () => {
 
   it("sets the hardening headers", () => {
     expect(SECURITY_HEADERS["X-Content-Type-Options"]).toBe("nosniff");
-    expect(SECURITY_HEADERS["X-Frame-Options"]).toBe("DENY");
+    expect(SECURITY_HEADERS["X-Frame-Options"]).toBe("SAMEORIGIN");
     expect(SECURITY_HEADERS["Referrer-Policy"]).toBe("strict-origin-when-cross-origin");
   });
 });
