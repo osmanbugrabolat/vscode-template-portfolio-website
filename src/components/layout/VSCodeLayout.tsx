@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useSyncExternalStore } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Sidebar from "./Sidebar";
 import ActivityBar from "./ActivityBar";
@@ -8,44 +8,67 @@ import TabBar from "./TabBar";
 import StatusBar from "./StatusBar";
 import AIChat from "./AIChat";
 import BottomPanel from "./BottomPanel";
-import { ALL_FILES, FileTab } from "./constants";
+import { useLanguage } from "./LanguageContext";
+import { toFileTab, type FileTab, type LayoutSettings } from "./constants";
+import type { ExplorerItem, SkillCategory } from "@/lib/cms/types";
+
+const MOBILE_BREAKPOINT = 768;
+
+function subscribeToResize(onChange: () => void) {
+  window.addEventListener("resize", onChange);
+  return () => window.removeEventListener("resize", onChange);
+}
 
 export default function VSCodeLayout({
   children,
+  items,
+  skillCategories,
+  settings,
 }: {
   children: React.ReactNode;
+  items: ExplorerItem[];
+  skillCategories: SkillCategory[];
+  settings: LayoutSettings;
 }) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const { language } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const files = useMemo(
+    () => items.map((i) => toFileTab(i, language)).filter((f): f is FileTab => f !== null),
+    [items, language],
+  );
+  const homeFile = files.find((f) => f.path === "/" && !f.isExternal) ?? files.find((f) => !f.isExternal);
+
   const [activeActivity, setActiveActivity] = useState("explorer");
-  const [openTabs, setOpenTabs] = useState<FileTab[]>([ALL_FILES[0]]);
-  const [chatOpen, setChatOpen] = useState(false);
+  const [openTabIds, setOpenTabIds] = useState<string[]>(() => (homeFile ? [homeFile.id] : []));
+  // null = not toggled yet: the chat starts open on desktop, closed on phones.
+  const [chatToggled, setChatToggled] = useState<boolean | null>(null);
+  const isDesktop = useSyncExternalStore(subscribeToResize, () => window.innerWidth > MOBILE_BREAKPOINT, () => false);
+  const chatOpen = chatToggled ?? isDesktop;
+  // Same for the explorer: on phones it is an overlay, so it starts closed.
+  // Until the user toggles a panel, CSS decides its visibility (.panel-default-desktop),
+  // so the server-rendered HTML is right on every screen size without a flash.
+  const [sidebarToggled, setSidebarToggled] = useState<boolean | null>(null);
+  const sidebarOpen = sidebarToggled ?? isDesktop;
+  const setSidebarOpen = (value: boolean | ((open: boolean) => boolean)) =>
+    setSidebarToggled(typeof value === "function" ? value(sidebarOpen) : value);
+  const setChatOpen = (value: boolean | ((open: boolean) => boolean)) =>
+    setChatToggled(typeof value === "function" ? value(chatOpen) : value);
   const [sidebarWidth, setSidebarWidth] = useState(250);
   const [chatWidth, setChatWidth] = useState(300);
   const [isResizing, setIsResizing] = useState(false);
   const [isChatResizing, setIsChatResizing] = useState(false);
   const [bottomPanelOpen, setBottomPanelOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
-
-  useEffect(() => {
-    // Sadece masaüstünde chat penceresini varsayılan olarak açık tut
-    if (window.innerWidth > 768) {
-      setChatOpen(true);
-    }
-  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (isResizing) {
-        // Activity Bar width is ~48px
-        const newWidth = Math.max(150, Math.min(e.clientX - 48, 800));
-        setSidebarWidth(newWidth);
+        setSidebarWidth(Math.max(150, Math.min(e.clientX - 48, 800)));
       } else if (isChatResizing) {
-        const newWidth = Math.max(200, Math.min(window.innerWidth - e.clientX, 800));
-        setChatWidth(newWidth);
+        setChatWidth(Math.max(200, Math.min(window.innerWidth - e.clientX, 800)));
       }
     };
-
     const handleMouseUp = () => {
       setIsResizing(false);
       setIsChatResizing(false);
@@ -56,11 +79,7 @@ export default function VSCodeLayout({
       document.addEventListener("mouseup", handleMouseUp);
       document.body.style.userSelect = "none";
       document.body.style.cursor = "col-resize";
-    } else {
-      document.body.style.userSelect = "";
-      document.body.style.cursor = "";
     }
-
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
@@ -69,147 +88,137 @@ export default function VSCodeLayout({
     };
   }, [isResizing, isChatResizing]);
 
-  const activeFile =
-    ALL_FILES.find((f) => f.path === pathname) || ALL_FILES[0];
+  const activeFile = files.find((f) => !f.isExternal && f.path === pathname);
 
-  useEffect(() => {
-    setOpenTabs((prev) => {
-      if (!prev.find((t) => t.id === activeFile.id)) {
-        return [...prev, activeFile];
-      }
-      return prev;
-    });
-  }, [activeFile]);
+  // Opening a page by URL (or via a link) adds its tab.
+  const [trackedId, setTrackedId] = useState<string | undefined>(undefined);
+  if (activeFile && activeFile.id !== trackedId) {
+    setTrackedId(activeFile.id);
+    if (!openTabIds.includes(activeFile.id)) setOpenTabIds([...openTabIds, activeFile.id]);
+  }
 
-  const openTab = (file: FileTab) => {
-    if (file.isExternal) {
-      window.open(file.path, "_blank");
-      return;
-    }
-    if (!openTabs.find((t) => t.id === file.id)) {
-      setOpenTabs((prev) => [...prev, file]);
-    }
-    router.push(file.path);
-    
-    // Auto-close sidebar on mobile
-    if (window.innerWidth <= 768) {
+  const openTabs = openTabIds.map((id) => files.find((f) => f.id === id)).filter((f): f is FileTab => !!f);
+
+  const closeMobilePanels = () => {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
       setSidebarOpen(false);
       setChatOpen(false);
     }
   };
 
+  const openTab = (file: FileTab) => {
+    if (file.isExternal) {
+      window.open(file.path, "_blank", "noopener,noreferrer");
+      return;
+    }
+    if (!openTabIds.includes(file.id)) setOpenTabIds((prev) => [...prev, file.id]);
+    router.push(file.path);
+    closeMobilePanels();
+  };
+
   const closeTab = (fileId: string, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    const newTabs = openTabs.filter((t) => t.id !== fileId);
-    if (newTabs.length === 0) {
-      setOpenTabs([ALL_FILES[0]]);
-      router.push(ALL_FILES[0].path);
+    const remaining = openTabIds.filter((id) => id !== fileId);
+    if (remaining.length === 0) {
+      if (homeFile) {
+        setOpenTabIds([homeFile.id]);
+        router.push(homeFile.path);
+      }
       return;
     }
-    setOpenTabs(newTabs);
-    if (activeFile.id === fileId) {
-      router.push(newTabs[newTabs.length - 1].path);
+    setOpenTabIds(remaining);
+    if (activeFile?.id === fileId) {
+      const last = files.find((f) => f.id === remaining[remaining.length - 1]);
+      if (last) router.push(last.path);
     }
   };
 
   const handleActivityChange = (activity: string) => {
     if (activity === "copilot") {
-      setChatOpen((o) => {
-        if (!o && window.innerWidth <= 768) {
-          setSidebarOpen(false);
-        }
-        return !o;
+      setChatOpen((open) => {
+        if (!open && window.innerWidth <= MOBILE_BREAKPOINT) setSidebarOpen(false);
+        return !open;
       });
+      return;
+    }
+    if (activity === activeActivity) {
+      setSidebarOpen((open) => !open);
     } else {
-      if (activity === activeActivity) {
-        setSidebarOpen((o) => !o);
-      } else {
-        setActiveActivity(activity);
-        setSidebarOpen(true);
-        if (window.innerWidth <= 768) {
-          setChatOpen(false);
-        }
-      }
+      setActiveActivity(activity);
+      setSidebarOpen(true);
+      if (window.innerWidth <= MOBILE_BREAKPOINT) setChatOpen(false);
     }
   };
 
   return (
     <div className="vscode-root fade-in">
-
       <div className="vscode-body">
         <ActivityBar
+          items={items}
+          settings={settings}
           activeActivity={activeActivity}
           onActivityChange={handleActivityChange}
           chatOpen={chatOpen}
-          activeFileId={activeFile.id}
+          activePath={pathname}
           sidebarOpen={sidebarOpen}
-          onFileOpen={(fileId) => {
-            const file = ALL_FILES.find((f) => f.id === fileId);
-            if (file) {
-              openTab(file);
-              router.push(file.path);
-            }
+          onOpenRoute={(route) => {
+            const file = files.find((f) => f.path === route && !f.isExternal);
+            if (file) openTab(file);
           }}
         />
 
-        {sidebarOpen && (
-          <>
+        {(sidebarToggled ?? true) && (
+          <div className={`panel-slot${sidebarToggled === null ? " panel-default-desktop" : ""}`}>
             <Sidebar
+              items={items}
+              files={files}
+              skillCategories={skillCategories}
               currentPath={pathname}
-              openTabs={openTabs}
               onFileClick={openTab}
               activeActivity={activeActivity}
               width={sidebarWidth}
             />
-            <div 
-              className={`sidebar-resizer ${isResizing ? 'is-resizing' : ''}`} 
+            <div
+              className={`sidebar-resizer ${isResizing ? "is-resizing" : ""}`}
               onMouseDown={(e) => {
                 e.preventDefault();
                 setIsResizing(true);
               }}
             />
-          </>
+          </div>
         )}
 
         <div className="vscode-editor-area">
-          <TabBar
-            tabs={openTabs}
-            activeTab={activeFile}
-            onTabClick={(tab) => router.push(tab.path)}
-            onTabClose={closeTab}
-          />
+          <TabBar tabs={openTabs} activeTabId={activeFile?.id} onTabClick={(tab) => router.push(tab.path)} onTabClose={closeTab} />
 
           <div className="vscode-editor-content">
-            <div className="fade-in" style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", overflow: "hidden", minWidth: 0, minHeight: 0 }}>
-              <div style={{ flex: 1, overflow: "auto", minHeight: 0, display: "flex", flexDirection: "column" }}>
-                {children}
-              </div>
-              {bottomPanelOpen && (
-                <BottomPanel onClose={() => setBottomPanelOpen(false)} />
-              )}
+            <div className="fade-in editor-frame">
+              <div className="editor-scroll">{children}</div>
+              {bottomPanelOpen && <BottomPanel onClose={() => setBottomPanelOpen(false)} whoami={settings.terminal_whoami} />}
             </div>
           </div>
         </div>
 
-        {chatOpen && (
-          <>
-            <div 
-              className={`sidebar-resizer ${isChatResizing ? 'is-resizing' : ''}`} 
+        {(chatToggled ?? true) && (
+          <div className={`panel-slot${chatToggled === null ? " panel-default-desktop" : ""}`}>
+            <div
+              className={`sidebar-resizer ${isChatResizing ? "is-resizing" : ""}`}
               onMouseDown={(e) => {
                 e.preventDefault();
                 setIsChatResizing(true);
               }}
             />
-            <AIChat onClose={() => setChatOpen(false)} width={chatWidth} />
-          </>
+            <AIChat
+              onClose={() => setChatOpen(false)}
+              width={chatWidth}
+              greeting={{ tr: settings.chat_greeting_tr, en: settings.chat_greeting_en }}
+            />
+          </div>
         )}
       </div>
 
-      <StatusBar 
-        language={activeFile.language} 
-        onTogglePanel={() => setBottomPanelOpen(!bottomPanelOpen)} 
-      />
+      <StatusBar language={activeFile?.language ?? "Markdown"} onTogglePanel={() => setBottomPanelOpen(!bottomPanelOpen)} />
     </div>
   );
 }

@@ -1,0 +1,1091 @@
+{
+  "settings": {
+    "name": "Osman Buğra BOLAT",
+    "title_tr": "",
+    "title_en": "AI powered AI & Cloud Engineer",
+    "subtitle_tr": "",
+    "subtitle_en": "Like every engineer should, I solve problems.",
+    "location_tr": "Türkiye",
+    "location_en": "Turkey",
+    "email": "contact@bugrabolat.dev",
+    "github_url": "https://github.com/osmanbugrabolat",
+    "linkedin_url": "https://linkedin.com/in/osmanbugrabolat",
+    "medium_url": "https://medium.com/@osmanbugrabolat",
+    "website_url": "https://bugrabolat.dev",
+    "avatar_url": "/bugra.png",
+    "available_for_work": false,
+    "current_focus_tr": [],
+    "current_focus_en": [
+      "Building scalable Web & Mobil applications",
+      "Exploring AI/ML integrations"
+    ],
+    "education_degree_tr": "",
+    "education_degree_en": "Computer Engineering",
+    "education_school": "University",
+    "education_years": "2020 – 2024",
+    "education_gpa": "3.4 / 4.0",
+    "seo_title": "Osman Buğra BOLAT",
+    "seo_description_tr": "",
+    "seo_description_en": "Portfolio of Buğra Bolat — Full Stack Developer specializing in Next.js, TypeScript, and modern web technologies.",
+    "chat_greeting_tr": "Merhaba! Ben BuğrAI. Osman Buğra'nın portfolyosu hakkında merak ettiğiniz her şeyi sorabilirsiniz.",
+    "chat_greeting_en": "Hi! I'm BuğrAI. Ask me anything about Osman Buğra's portfolio.",
+    "terminal_whoami": "Osman Buğra BOLAT - AI powered AI & Cloud Engineer"
+  },
+  "nodes": [
+    {
+      "key": "about",
+      "parent": null,
+      "kind": "folder",
+      "name": "about-me",
+      "sort_order": 0,
+      "icon": "person",
+      "show_in_explorer": true
+    },
+    {
+      "key": "home",
+      "parent": "about",
+      "kind": "file",
+      "name": "WhoAmI.md",
+      "name_en": null,
+      "file_type": "home",
+      "sort_order": 0,
+      "route": "/",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "{{profile-header}}\n\n## About Me\n\nAs a computer engineering graduate ranking 3rd in the Faculty of Technology and 2nd in my department at Selçuk University (graduated in 2026 with a 3.75 GPA), I have aligned my technical focus on integrating Computer Vision and Deep Learning models into cloud infrastructures throughout my studies, and I continue to advance my expertise in these fields.\n\nDuring my undergraduate years, I gained hands-on experience in the automation and deployment of AI-based operational processes based on Docker, CI/CD pipelines, DevOps, and MLOps principles.\n\nI combine this strong academic foundation with leadership and communication skills developed through technology community leadership and project management roles. I am a dynamic engineer who quickly adapts to the operational requirements of complex projects, takes responsibility in technical processes, and thrives in collaborative team environments.\n\n## Current Focus\n\n{{current-focus}}\n\n## Tech Stack & Ecosystem\n\nA high-level overview of the technologies I use to bring ideas to life:\n\n{{tech-stack}}",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "projects",
+      "parent": null,
+      "kind": "folder",
+      "name": "projects",
+      "sort_order": 1,
+      "icon": "rocket",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-pong-with-mediapipe",
+      "parent": "projects",
+      "kind": "folder",
+      "name": "pong-with-mediapipe",
+      "sort_order": 0,
+      "icon": null,
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-pong-with-mediapipe-readme",
+      "parent": "p-pong-with-mediapipe",
+      "kind": "file",
+      "name": "README.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 0,
+      "route": "/projects/pong-with-mediapipe",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Neon Pong AI: Hand-Tracking Web Game\n\n**Canlı Demo:** [Buraya tıklayarak oyunu hemen tarayıcınızda oynayabilirsiniz!](https://osmanbugrabolat.github.io/pong-with-mediapipe/)\n\n**Neon Pong AI**, Google's Mediapipe el takibi teknolojisini kullanan, fütüristik neon tasarıma sahip modern bir web tabanlı Pong oyunudur. Oyunu klavye veya fare ile değil, doğrudan **el hareketlerinizle** web kamerası üzerinden oynarsınız!\n\n![Oyun İçi Görüntü](https://raw.githubusercontent.com/osmanbugrabolat/pong-with-mediapipe/main/game.png)\n\n## Özellikler\n\n- **Yapay Zeka Destekli El Takibi:** Google Mediapipe sayesinde avuç içiniz anlık olarak tespit edilir ve raketiniz elinizle senkronize hareket eder.\n- **Kamera Mini-Ekranı:** Oyun başladıktan sonra ekranın sağ alt köşesinde beliren kamera penceresi ile kendi hareketlerinizi ve tespit edilen el noktalarını anlık olarak takip edebilirsiniz.\n- **Retro Ses Efektleri:** Web Audio API kullanılarak üretilen çarpma ve skor sesleriyle nostaljik atari deneyimini yaşayın. İstenirse menü üzerinden sesler tamamen kapatılabilir.\n- **Takım Seçimi & Akıllı Yönlendirme:** Başlangıçta oynamak istediğiniz takımı (Sol/Sağ) seçebilirsiniz. Seçiminize göre kamera ayna etkisini hesaba katarak doğru elinizi algılar. AI rakip ise otomatik olarak karşı tarafa geçer.\n- **Neon / Cyberpunk Tasarım:** Tamamen Vanilla CSS ile tasarlanmış cam efektli, karanlık temalı ve yüksek kaliteli parlamalara sahip interaktif oyun menüsü.\n- **Akıllı Rakip:** Topu takip eden ancak insanımsı bir hata payı barındıran bir yapay zeka. Ralliler uzadıkça heyecan artar, top hızlanır!\n- **Tam Kontrol:** Oyun başlamadan önce menü üzerinden topun başlangıç hızını ayarlayabilirsiniz.\n\n## Kullanılan Teknolojiler\n\n- **HTML5 & CSS3:** Modern, duyarlı ve şık arayüz tasarımı.\n- **Vanilla JavaScript (ES6+):** Oyun döngüsü, çarpışma fizikleri ve uygulama mantığı.\n- **Web Audio API:** Performans dostu, dosya indirme gerektirmeyen tarayıcı tabanlı retro ses sentezleme.\n- **HTML5 Canvas:** Kesintisiz oyun çizimi, animasyonlar ve neon parlama efektleri.\n- **[Google Mediapipe](https://developers.google.com/mediapipe):** Kamera üzerinden anlık görüntü işleme ve iskelet tabanlı el takibi (Hand Tracking modeli).\n\n## Nasıl Çalıştırılır?\n\nModern web tarayıcıları, güvenlik politikaları (CORS & Secure Context) gereği web kamerasına erişim için yerel bir sunucu bağlantısı gerektirir. Bu yüzden HTML dosyasına çift tıklamak yerine yerel sunucu kullanmalısınız.\n\n1. Bilgisayarınızda [Node.js](https://nodejs.org/)'in kurulu olduğundan emin olun.\n2. Projeyi bilgisayarınıza klonlayın:\n\n    ```\n    git clone https://github.com/osmanbugrabolat/pong-with-mediapipe.git\n    ```\n\n3. Klonlanan klasörün içine girin:\n\n    ```\n    cd pong-with-mediapipe\n    ```\n\n4. Yerel sunucuyu başlatmak için şu komutu çalıştırın:\n\n    ```\n    npx serve\n    ```\n\n5. Terminalde size verilen adresi (genellikle `http://localhost:3000`) tarayıcınızda açın.\n6. Tarayıcınızın sağ üst veya sol üst kısmında belirecek olan **Kamera İzni**ni onaylayın.\n7. Hızınızı, takımınızı seçin ve **OYUNA BAŞLA**'ya tıklayın!\n\n## Oynanış İpuçları\n\n- Kameranın elinizi (özellikle avuç içinizi) net görebileceği ve ortam ışığının iyi olduğu bir mesafede durun.\n- Seçtiğiniz takıma uygun olan elinizi kameraya doğru tutun (Örn: Sol takım için sol eliniz).\n- Elinizi yukarı-aşağı hareket ettirerek raketi kontrol edin.\n\n* * *\n\n**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)",
+      "content_en": "",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-pong-with-mediapipe-play",
+      "parent": "p-pong-with-mediapipe",
+      "kind": "file",
+      "name": "Play",
+      "name_en": null,
+      "file_type": "embed",
+      "sort_order": 1,
+      "route": "/projects/pong-with-mediapipe/play",
+      "url": "https://osmanbugrabolat.github.io/pong-with-mediapipe/",
+      "asset_url": null,
+      "content_tr": "Neon Pong AI",
+      "content_en": "",
+      "icon": "play",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-flying-birds-with-mediapipe",
+      "parent": "projects",
+      "kind": "folder",
+      "name": "flying-birds-with-mediapipe",
+      "sort_order": 1,
+      "icon": null,
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-flying-birds-with-mediapipe-readme",
+      "parent": "p-flying-birds-with-mediapipe",
+      "kind": "file",
+      "name": "README.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 0,
+      "route": "/projects/flying-birds-with-mediapipe",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Flying Birds AI\n\n**Canlı Demo:** [Oyunu Buradan Oynayın](https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/)\n\n![Flying Birds AI Oynanış Görüntüsü](https://raw.githubusercontent.com/osmanbugrabolat/flying-birds-with-mediapipe/main/game.png)\n\n## Genel Bakış\n\nFlying Birds AI, klasik engellerden kaçma oyunlarından ilham alan etkileşimli, tarayıcı tabanlı bir oyundur. Bu projeyi diğerlerinden ayıran en önemli özellik, Google'ın MediaPipe makine öğrenimi modeliyle entegre çalışmasıdır. Oyuncular bir klavye veya fare kullanmak yerine, web kameraları aracılığıyla gerçek zamanlı olarak algılanan el hareketleriyle kuşu tamamen temassız bir şekilde kontrol ederler.\n\nProje, \"glassmorphism\" tasarım prensipleri, duyarlı tuval ölçeklendirmesi, kodla üretilmiş vektörel grafikler ve Web Audio API aracılığıyla sentezlenen dinamik ses efektleri ile modern bir kullanıcı arayüzü sunmaya odaklanılarak geliştirilmiştir.\n\n## Özellikler\n\n- **Bilgisayarlı Görü Kontrolleri:** Kullanıcının işaret parmağını gerçek zamanlı olarak takip etmek için MediaPipe Hands modelini kullanır. Kuşun dikey konumu doğrudan kullanıcının el konumuna göre ayarlanır.\n- **Responsive Tasarım:** Oyun motoru, `ResizeObserver` kullanarak tuvali, çarpışma kutularını ve oyun içi öğeleri herhangi bir bozulma olmadan her ekran boyutuna veya en boy oranına mükemmel şekilde uyacak şekilde dinamik olarak ölçeklendirir.\n- **Modern Kullanıcı Arayüzü:** Şık bir glassmorphism tasarımı, açılır-kapanır ayar menüleri ve oyun alanını kapatmayan kamera önizleme ekranı içerir.\n- **Yerel Sentezlenmiş Ses:** Ses efektleri, harici ses dosyalarının indirilmesine gerek kalmadan ve gecikmesiz bir deneyim sağlamak için Web Audio API kullanılarak tarayıcıda doğrudan matematiksel olarak sentezlenir.\n- **Bağımsız Vektörel Grafikler:** Oyun varlıkları (örneğin kuş tasarımı), inline SVG kullanılarak matematiksel olarak oluşturulmuştur. Bu sayede yüksek çözünürlüklü ekranlarda bile sonsuz ölçeklenebilirlik ve keskin bir görüntü kalitesi sağlanır.\n\n## Kullanılan Teknolojiler\n\n- **HTML5 & CSS3:** Belgenin yapılandırılması ve kullanıcı arayüzünün tasarlanması için.\n- **JavaScript (ES6):** Temel oyun mantığı, fizik hesaplamaları ve DOM manipülasyonu için.\n- **HTML5 Canvas API:** Oyun döngüsü, borular ve grafiklerin 60 FPS hızında çizdirilmesi için.\n- **MediaPipe Hands:** Tarayıcı tabanlı, gerçek zamanlı el takibi ve eklem noktası tespiti için.\n- **Web Audio API:** Retro tarzı oyun ses efektlerinin sentezlenmesi için.\n\n## Nasıl Oynanır?\n\n1. Tarayıcınıza kameranıza erişim izni verin.\n2. Elinizi, sağ alt köşedeki önizleme penceresinde görünecek şekilde kameranın önüne yerleştirin.\n3. Kuşun dikey konumunu kontrol etmek için işaret parmağınızı yukarı ve aşağı doğru hareket ettirin.\n4. Puanınızı artırmak için size doğru yaklaşan boruların arasındaki boşluklardan geçin.\n5. Kuş borulara, tavana veya yere çarparsa oyun biter.\n\n## Ayarlar\n\nOyun, başlangıç ekranında oyuncuların deneyimlerini kişiselleştirebilmesi için açılır-kapanır yapıda bir ayarlar menüsü sunar:\n\n- **Hangi El:** Modelin kesinlikle Sağ El, Sol El veya herhangi bir eli takip etmesini seçin. Takip mantığı, web kamerasının yansımasını varsayılan olarak hesaba katar.\n- **Oyun Hızı:** Yaklaşan boruların hızını ve aralarındaki dikey boşluk miktarını ayarlayın (Yavaş, Normal, Hızlı).\n- **Oyun Sesi:** Web Audio API ile sentezlenen ses efektlerini açın veya kapatın.\n\n## Yerel Cihazda Çalıştırma\n\nProje kameraya erişim sağladığı ve dış kaynakları (CDN) yüklediği için, HTML dosyasının doğrudan dosya yöneticisinden açılması yerine yerel bir HTTP sunucusu üzerinden çalıştırılması gerekir.\n\n1. Depoyu yerel cihazınıza klonlayın:\n\n    ```\n    git clone https://github.com/osmanbugrabolat/flying-birds-with-mediapipe.git\n    ```\n\n2. Terminalinizde proje dizinine gidin:\n\n    ```\n    cd flying-birds-with-mediapipe\n    ```\n\n3. Yerel bir web sunucusu başlatın. Örneğin Python kullanarak:\n\n    ```\n    python3 -m http.server 8080\n    ```\n\n4. Web tarayıcınızı açın ve `http://localhost:8080` adresine gidin.\n\n* * *\n\n## Geliştirici\n\n**Osman Buğra Bolat** tarafından geliştirilmiştir.\nWeb Sitesi: [osmanbugrabolat.com.tr](https://osmanbugrabolat.com.tr)",
+      "content_en": "",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-flying-birds-with-mediapipe-play",
+      "parent": "p-flying-birds-with-mediapipe",
+      "kind": "file",
+      "name": "Play",
+      "name_en": null,
+      "file_type": "embed",
+      "sort_order": 1,
+      "route": "/projects/flying-birds-with-mediapipe/play",
+      "url": "https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/",
+      "asset_url": null,
+      "content_tr": "Flying Birds AI",
+      "content_en": "",
+      "icon": "play",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-sihirli-sapan",
+      "parent": "projects",
+      "kind": "folder",
+      "name": "sihirli-sapan",
+      "sort_order": 2,
+      "icon": null,
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-sihirli-sapan-readme",
+      "parent": "p-sihirli-sapan",
+      "kind": "file",
+      "name": "README.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 0,
+      "route": "/projects/sihirli-sapan",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Sihirli Sapan\n\nSihirli Sapan, Google'ın **MediaPipe** teknolojisini kullanarak yapay zeka destekli el takibi ile oynanabilen, **Matter.js** fizik motoruyla güçlendirilmiş, web tabanlı bir *Angry Birds* klonudur. Mouse veya klavyeye dokunmadan, sadece web kameranız karşısında el hareketleri yaparak kuşu sapanla fırlatıp hedefleri vurabilirsiniz!\n\n**Canlı Demo:** [Oyunu Buradan Oynayın](https://osmanbugrabolat.github.io/sihirli-sapan/)\n\n![Sihirli Sapan Oyun İçi Görsel](https://raw.githubusercontent.com/osmanbugrabolat/sihirli-sapan/main/game.png)\n\n## Özellikler\n\n- **Yapay Zeka Destekli El Takibi:** Elinizi yumruk yaparak kuşu kavrayın, geri çekin ve elinizi açarak fırlatın! (MediaPipe Hand Tracking)\n- **Gelişmiş Fizik Motoru:** Matter.js kullanılarak gerçekçi yerçekimi, çarpışma ve yıkım fizikleri.\n- **Dinamik Ses Efektleri:** Hiçbir harici ses dosyası kullanılmadan, tamamen *Web Audio API* ile kod üzerinden üretilen organik ses efektleri (gerilme, fırlatma, çarpışma).\n- **5 Farklı Bölüm:** Her biri kendine has tasarıma (ikiz kuleler, taş kale vb.) ve hedef puana sahip 5 zorlu seviye.\n- **Modern Arayüz:** Kullanıcı dostu ahşap paneller, şık butonlar ve akıcı animasyonlar (Vanilla CSS).\n\n## Nasıl Oynanır?\n\n1. Oyuna girdiğinizde **web kamerası izni** vermeniz gerekmektedir.\n2. Ekranda elinizin iskeletini (mavi noktalar) gördüğünüzde sistem hazır demektir.\n3. Elinizi sapanın üzerine getirip **yumruk (kapalı el)** yapın. Bu, kuşu kavramanızı sağlar.\n4. Yumruğunuzu bozmadan elinizi geri ve aşağı doğru çekerek sapanı gerin.\n5. Hedefi belirledikten sonra parmaklarınızı açarak kuşu fırlatın!\n6. Blokları devirip domuzcukları patlatarak hedef puana ulaşmaya çalışın.\n\n## Kurulum (Geliştiriciler İçin)\n\nProje tamamen **Vanilla JavaScript, HTML ve CSS** ile yazıldığı için herhangi bir derleme aşamasına (build step) veya sunucu tarafı bir teknolojiye ihtiyaç duymaz.\n\n1. Repoyu bilgisayarınıza klonlayın:\n\n    ```\n    git clone https://github.com/osmanbugrabolat/sihirli-sapan.git\n    ```\n\n2. Proje dizinine gidin:\n\n    ```\n    cd sihirli-sapan\n    ```\n\n3. Dosyaları yerel bir sunucuda çalıştırın (Örn. `npx serve` veya VS Code *Live Server* eklentisi):\n\n    ```\n    npx serve .\n    ```\n\n4. Tarayıcınızda `http://localhost:3000` (veya sunucunuzun portu) adresine giderek oynamaya başlayın.\n\n## Varlıklar (Assets) ve Teşekkürler\n\n- **Ahşap, Cam ve Taş Bloklar:** [Kenney.nl - Physics Assets](https://kenney.nl/assets/physics-assets) üzerinden alınmıştır (Ücretsiz ve Açık Kaynak).\n- **Sapan, Arkaplan ve Karakterler:** Projeye özgü olarak SVG ve PNG formatında özel üretilmiştir.\n- **İkonlar:** [FontAwesome](https://fontawesome.com/) ikon kütüphanesinden faydalanılmıştır.\n- **Fizik Motoru:** [Matter.js](https://brm.io/matter-js/)\n- **El Takibi (AI):** [Google MediaPipe Tasks Vision](https://developers.google.com/mediapipe)\n\n* * *\n\n**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)",
+      "content_en": "",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-sihirli-sapan-play",
+      "parent": "p-sihirli-sapan",
+      "kind": "file",
+      "name": "Play",
+      "name_en": null,
+      "file_type": "embed",
+      "sort_order": 1,
+      "route": "/projects/sihirli-sapan/play",
+      "url": "https://osmanbugrabolat.github.io/sihirli-sapan/",
+      "asset_url": null,
+      "content_tr": "Sihirli Sapan",
+      "content_en": "",
+      "icon": "play",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-sihirli-sapan-hsd-edition",
+      "parent": "projects",
+      "kind": "folder",
+      "name": "sihirli-sapan-hsd-edition",
+      "sort_order": 3,
+      "icon": null,
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-sihirli-sapan-hsd-edition-readme",
+      "parent": "p-sihirli-sapan-hsd-edition",
+      "kind": "file",
+      "name": "README.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 0,
+      "route": "/projects/sihirli-sapan-hsd-edition",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Sihirli Sapan - HSD Edition\n\nSihirli Sapan, Google'ın **MediaPipe** teknolojisini kullanarak yapay zeka destekli el takibi ile oynanabilen, **Matter.js** fizik motoruyla güçlendirilmiş, web tabanlı bir *Angry Birds* klonudur. HSD Türkiye için özel olarak geliştirilen bu versiyonda, HSD maskotunu sapanla fırlatarak yazılım böceklerini (bug) ezmeye çalışıyorsunuz!\n\n**Canlı Demo:** [Oyunu Buradan Oynayın](https://osmanbugrabolat.github.io/sihirli-sapan-hsd-edition/)\n\n![Sihirli Sapan HSD Edition Oyun İçi Görsel](https://raw.githubusercontent.com/osmanbugrabolat/sihirli-sapan-hsd-edition/main/game.png)\n\n## Özellikler\n\n- **Yapay Zeka Destekli El Takibi:** Elinizi yumruk yaparak maskotu kavrayın, geri çekin ve parmaklarınızı açarak fırlatın! Sadece web kameranız yeterli.\n- **Gelişmiş Fizik Motoru:** Matter.js kullanılarak gerçekçi yerçekimi, çarpışma ve yıkım fizikleri. Ahşap, cam ve taş yapıları stratejik olarak yıkın.\n- **Rekabetçi Lider Tablosu:** Oyun içi skorunuzdan harcadığınız süreye (saniye başına 30 puan ceza) bağlı olarak düşülen puanla oluşturulan adil bir \"Zaman Cezası\" sistemi. Günlük, Haftalık ve Aylık listelerde zirveye yerleşin!\n- **10 Farklı Bölüm:** Her seviyede giderek zorlaşan hedefler, rastgele (procedural) kule üretim sistemi.\n- **HSD Özel Tasarımı:** HSD Türkiye renk paleti (Sarı, Kırmızı, Lacivert, Pembe), hareketli maskot animasyonları, özel fontlar ve modern arayüz tasarımı.\n\n## Nasıl Oynanır?\n\n1. Oyuna girdiğinizde tarayıcınızın **kamera izni** uyarısına onay verin.\n2. Ekranda elinizin iskeletini (mavi noktalar) gördüğünüzde sistem oyuna hazır demektir.\n3. Adınızı girip oyuna başlayın.\n4. Elinizi sapanın üzerine getirip **YUMRUK (kapalı el)** yapın.\n5. Yumruğunuzu bozmadan elinizi geri ve aşağı doğru çekerek sapanı gerin.\n6. Hedefi belirledikten sonra parmaklarınızı **AÇARAK** maskotu fırlatın!\n7. Yapıları devirip böcekleri (bug) ezerek yüksek skor ve kısa süre yapmaya çalışın.\n\n## Kurulum (Geliştiriciler İçin)\n\nProje tamamen **Vanilla JavaScript, HTML ve CSS** ile geliştirilmiştir. Herhangi bir derleme (build) işlemine gerek yoktur.\n\n1. Repoyu bilgisayarınıza klonlayın:\n\n    ```\n    git clone https://github.com/osmanbugrabolat/sihirli-sapan-hsd-edition.git\n    ```\n\n2. Proje dizinine gidin:\n\n    ```\n    cd sihirli-sapan-hsd-edition\n    ```\n\n3. Tarayıcınızın güvenlik kuralları (CORS) gereği kameraya erişim için projeyi yerel bir sunucuda çalıştırmanız önerilir:\n\n    ```\n    npx serve .\n    ```\n\n4. Tarayıcınızda `http://localhost:3000` adresine giderek oynamaya başlayın.\n\n## Varlıklar (Assets) ve Teknolojiler\n\n- **Fizik Motoru:** [Matter.js](https://brm.io/matter-js/)\n- **El Takibi (AI):** [Google MediaPipe Tasks Vision](https://developers.google.com/mediapipe)\n- **Arayüz:** Saf (Vanilla) HTML/CSS. HSD kurumsal kimlik renkleri ve *Luckiest Guy* fontu kullanılmıştır.\n- **Grafikler:** Sapan, maskot ve böcek çizimleri projeye özel SVG formatında üretilmiştir. Kule blokları ise kod ile çizilmektedir.\n\n## Lisans\n\nBu proje **HSD Türkiye** için geliştirilmiş olup açık kaynak olarak paylaşılmaktadır.\n*Developed by Osman Buğra Bolat for HSD Türkiye.*\n\n* * *\n\n**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)",
+      "content_en": "",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-sihirli-sapan-hsd-edition-play",
+      "parent": "p-sihirli-sapan-hsd-edition",
+      "kind": "file",
+      "name": "Play",
+      "name_en": null,
+      "file_type": "embed",
+      "sort_order": 1,
+      "route": "/projects/sihirli-sapan-hsd-edition/play",
+      "url": "https://osmanbugrabolat.github.io/sihirli-sapan-hsd-edition/",
+      "asset_url": null,
+      "content_tr": "Sihirli Sapan - HSD Edition",
+      "content_en": "",
+      "icon": "play",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-magic-frame",
+      "parent": "projects",
+      "kind": "folder",
+      "name": "magic-frame",
+      "sort_order": 4,
+      "icon": null,
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-magic-frame-readme",
+      "parent": "p-magic-frame",
+      "kind": "file",
+      "name": "README.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 0,
+      "route": "/projects/magic-frame",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Magic Frame AR\n\n**Magic Frame**, bilgisayar kamerasını kullanarak ellerinizle oluşturduğunuz çerçeve alanına gerçek zamanlı **Yapay Zeka** ve **Artırılmış Gerçeklik (AR)** filtreleri uygulayan yenilikçi bir görüntü işleme projesidir.\n\nEllerinizin arasındaki boşluğu sihirli bir portala dönüştürün!\n\n## Özellikler\n\n- **Gerçek Zamanlı El Takibi:** Google MediaPipe altyapısı ile parmak uçlarınızı 3 boyutlu ve gecikmesiz olarak takip eder.\n- **15 Farklı Sanat & Görüntü Filtresi:** Sinirsel Stil Transferi ve görüntü işleme algoritmaları ile çerçevenin içini anında bambaşka bir dünyaya dönüştürür.\n- **Sihirli Ayna:** Sizi arka plandan ayırarak etrafınızı profesyonel kameralardaki gibi yoğun şekilde bulanıklaştırır.\n- **Cyberpunk Neon Çerçeve:** Seçtiğiniz tarza göre rengi değişen, fütüristik görünümlü parlayan bir \"HUD\" çerçevesi çizer.\n- **Hareket Algılama:** Efektleri değiştirmek için klavyeye dokunmanıza gerek yok. İki elinizle **çimdik atarak** filtreler arasında sihirli bir şekilde geçiş yapabilirsiniz.\n\n## Mevcut Tarzlar (15 Filtre)\n\nSistem aşağıdaki 15 farklı efekti destekler:\n\n1.  **Şeker (Candy)** - *Yapay Zeka*\n2.  **Yağlı Boya (Mosaic)** - *Yapay Zeka*\n3.  **Sanatsal (Udnie)** - *Yapay Zeka*\n4.  **Yağmur Prensesi** - *Yapay Zeka*\n5.  **Noktalıcılık (Pointilism)** - *Yapay Zeka*\n6.  **Sihirli Ayna** (Arka Plan Bulanıklaştırma) - *MediaPipe*\n7.  **Siyah Beyaz**\n8.  **Oyun Karakteri (Cartoon)**\n9.  **Kara Kalem (Siyah Beyaz)**\n10.  **Kara Kalem (Renkli)**\n11.  **Sulu Boya**\n12.  **Sepya (Eski Fotoğraf)**\n13.  **Negatif (X-Ray)**\n14.  **Minecraft Piksel**\n15.  **Termal Kamera (Isı Haritası)**\n\n## Kurulum\n\nProje Python tabanlıdır ve çalışması için bir kaç kütüphaneye ve yapay zeka model dosyasına ihtiyaç duyar.\n\n**1\\. Gerekli kütüphaneleri yükleyin:**\n\n```\npip install -r requirements.txt\n```\n\n**2\\. Yapay Zeka modellerini indirin:**\n*(Bu betik gerekli olan ONNX sanat modellerini ve MediaPipe yapay zeka modellerini tek tuşla otomatik indirecektir).*\n\n```\npython download_models.py\n```\n\n## Kullanım\n\nTüm kurulumları tamamladıktan sonra kameranızı açıp sihire başlamak için:\n\n```\npython main.py\n```\n\n### Kontroller\n\n- **Filtre Değiştirmek İçin:** Her iki elinizle kameraya çerçeve yaparken, işaret parmağınızı başparmağınıza değdirip bırakın (Çimdik hareketi).\n- **Çıkış Yapmak İçin:** Seçili olan pencere üzerindeyken klavyeden `q` tuşuna basın.\n\n## Kullanılan Teknolojiler\n\n- [OpenCV (DNN)](https://opencv.org/) - Görüntü işleme ve yapay zeka modellerini çalıştırma\n- [Google MediaPipe Tasks API](https://developers.google.com/mediapipe) - El ve insan tespiti (Hand Landmarker & Image Segmenter)\n- [ONNX Model Zoo](https://github.com/onnx/models) - Önceden eğitilmiş sanat modelleri\n\n* * *\n\n*Bu proje açık kaynaklı AI modelleri kullanılarak tasarlanmıştır.*\n**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)",
+      "content_en": "",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-magic-frame-src",
+      "parent": "p-magic-frame",
+      "kind": "file",
+      "name": "Source Code",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 1,
+      "route": null,
+      "url": "https://github.com/osmanbugrabolat/magic-frame",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "github",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-kozmik-toz-enstalasyon",
+      "parent": "projects",
+      "kind": "folder",
+      "name": "kozmik-toz-enstalasyon",
+      "sort_order": 5,
+      "icon": null,
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-kozmik-toz-enstalasyon-readme",
+      "parent": "p-kozmik-toz-enstalasyon",
+      "kind": "file",
+      "name": "README.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 0,
+      "route": "/projects/kozmik-toz-enstalasyon",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Kozmik Toz Enstalasyonu\n\nBu proje, **MediaPipe** kullanılarak geliştirilmiş interaktif, yapay zeka destekli bir görsel ve işitsel sanat deneyimidir. Web kamerası aracılığıyla kullanıcıların el hareketlerini algılar ve bu hareketlere göre ekranda dinamik \"kozmik tozlar\" ile eş zamanlı sesler/müzikler üretir.\n\n[Projeyi Deneyimle (Canlı Demo)](https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/)\n\n## Özellikler\n\n- **Gerçek Zamanlı El Takibi:** MediaPipe Hand Landmarker teknolojisi ile ellerin yüksek hassasiyetle izlenmesi.\n- **İnteraktif Hareketler (Gestures):**\n    - **Pinch (Çimdikleme):** Partiküllerin çekim kuvvetini ve yönünü kontrol eder.\n    - **Fist (Yumruk):** Partikül etkileşimlerini ve ses efektlerini değiştirir.\n    - **Clap (El Çırpma):** İki elin birbirine yaklaşmasıyla görsel patlamalar (burst) ve özel ses efektleri tetiklenir.\n- **İki Farklı Evren (Realm):**\n    - *Lydian Evreni:* Mavi, mor ve turkuaz gibi soğuk uzay tonlarına sahip varsayılan evren.\n    - *Phrygian Evreni:* Kırmızı, turuncu ve altın sarısı gibi sıcak tonlara sahip paralel evren.\n    - *Evren Değiştirme:* Her iki el de ekranın en üst kısımlarına (ilk %15'lik alana) kaldırıldığında iki evren arasında geçiş yapılır.\n- **Derinlik Algısı (Z-Axis):** Elin ekrandaki büyüklüğü baz alınarak kameraya olan uzaklığı hesaplanır. Bu, 3 boyutlu bir his yaratarak sistemin tepkilerini zenginleştirir.\n- **Bağımsız Motorlar:**\n    - `art_engine.js`: Ekranda gördüğümüz görsel şöleni ve partikül fiziğini hesaplar.\n    - `audio_engine.js`: El hareketlerine ve evren durumuna bağlı olarak dinamik ses sentezler.\n\n## GitHub'dan İndirme ve Kurulum\n\nProjede bir yapay zeka modeli (`hand_landmarker.task`) ve çeşitli modüler JavaScript dosyaları bulunduğu için, tarayıcıların güvenlik (CORS) kuralları gereği bu dosyaları yerel bir sunucu (Local Web Server) üzerinden çalıştırmalısınız.\n\nİşte adım adım kurulum rehberi:\n\n### Yöntem 1: Git Kullanarak (Önerilen)\n\n1. **Repoyu Klonlayın:** Terminal veya komut satırınızı açıp aşağıdaki komutu çalıştırarak projeyi bilgisayarınıza indirin:\n\n    ```\n    git clone https://github.com/osmanbugrabolat/kozmik-toz-enstalasyon.git\n    ```\n\n2. **Proje Klasörüne Girin:**\n\n    ```\n    cd kozmik-toz-enstalasyon\n    ```\n\n### Yöntem 2: ZIP Olarak İndirme\n\n1. Bu Github sayfasının sağ üst köşesindeki yeşil renkli **\"Code\"** butonuna tıklayın.\n2. Açılan menüden **\"Download ZIP\"** seçeneğini seçerek dosyaları bilgisayarınıza indirin.\n3. İnen ZIP dosyasını klasöre çıkartın (Extract).\n4. Çıkardığınız klasörü VS Code veya tercih ettiğiniz başka bir kod editörü ile açın.\n\n### Projeyi Çalıştırma\n\nProjeyi tarayıcıda açmak için yerel sunucu başlatmanız gerekir. Bunun için iki kolay yol vardır:\n\n- **Seçenek A (Node.js Yüklü İse):** Terminalinizde proje klasöründeyken şu komutu çalıştırın:\n\n    ```\n    npx serve .\n    ```\n\n- **Seçenek B (VS Code Kullanıyorsanız):** VS Code içerisinden eklentiler (Extensions) bölümüne gidip **\"Live Server\"** eklentisini kurun. Kurulum bittikten sonra `index.html` dosyasına sağ tıklayıp **\"Open with Live Server\"** seçeneğini seçin.\n\nTarayıcınız otomatik açılacak ve projeniz (genellikle `http://localhost:3000` veya `http://127.0.0.1:5500` adresinde) çalışmaya başlayacaktır.\nTarayıcının talep edeceği **Kamera İznini** onaylayın, sesi başlatmak için **ekrana bir kez tıklayın** ve ellerinizi kameraya göstererek evreni kontrol etmeye başlayın!\n\n## Dosya Yapısı\n\n- `index.html`: Projenin ana yapısı, video ve canvas bileşenleri.\n- `style.css`: Arayüz tasarımı, tam ekran yerleşimleri.\n- `script.js`: MediaPipe el algılama motorunun yüklenmesi, jest algılama (yumruk, çırpma vb.) ve ana kontrol döngüsü.\n- `art_engine.js`: Canvas tabanlı interaktif çizim ve görsel simülasyon motoru.\n- `audio_engine.js`: El hareketlerine ve derinliğe duyarlı çalışan dinamik ses motoru.\n- `hand_landmarker.task`: MediaPipe tarafından kullanılan el takibi yapay zeka model dosyası.\n\n## Kullanılan Teknolojiler\n\n- **HTML5 Canvas API** (Görselleştirme için)\n- **Web Audio API** (Ses sentezleme için)\n- **MediaPipe Tasks Vision** (Yapay Zeka / El Takibi için)\n- **Vanilla ES6+ JavaScript**",
+      "content_en": "",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-kozmik-toz-enstalasyon-play",
+      "parent": "p-kozmik-toz-enstalasyon",
+      "kind": "file",
+      "name": "Deneyimle",
+      "name_en": "Experience",
+      "file_type": "embed",
+      "sort_order": 1,
+      "route": "/projects/kozmik-toz-enstalasyon/play",
+      "url": "https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/",
+      "asset_url": null,
+      "content_tr": "Kozmik Toz Enstalasyonu",
+      "content_en": "",
+      "icon": "play",
+      "show_in_explorer": true
+    },
+    {
+      "key": "p-more",
+      "parent": "projects",
+      "kind": "file",
+      "name": "For more...",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 6,
+      "route": null,
+      "url": "https://github.com/osmanbugrabolat",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "github",
+      "show_in_explorer": true
+    },
+    {
+      "key": "pf-1",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Apart Yönetim Sistemi.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 101,
+      "route": "/projects/1",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "# Apart Yönetim Sistemi\n\n2026 · Active\n\nComprehensive apartment management platform with real-time updates, tenant management, payment tracking, and automated reporting.\n\n## Tech Stack\n\n`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)\n- [Live Demo](http://localhost:3000)",
+      "icon": "markdown",
+      "show_in_explorer": false
+    },
+    {
+      "key": "pf-2",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Portfolyo AI.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 102,
+      "route": "/projects/2",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "# Portfolyo AI\n\n2026 · Active\n\nAI-powered portfolio website with a VS Code-inspired theme. Features intelligent content generation and interactive code-like navigation.\n\n## Tech Stack\n\n`Next.js` `TypeScript` `AI/ML` `Tailwind CSS`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)",
+      "icon": "markdown",
+      "show_in_explorer": false
+    },
+    {
+      "key": "pf-3",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Fountain Detection AI.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 103,
+      "route": "/projects/3",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "# Fountain Detection AI\n\n2025 · Completed\n\nFine-tuned YOLOv8 & YOLOv11 model for detecting historical Ottoman fountains (hayrat çeşme) in images with high accuracy.\n\n## Tech Stack\n\n`Python` `YOLOv11` `Ultralytics` `OpenCV` `PyTorch`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)",
+      "icon": "markdown",
+      "show_in_explorer": false
+    },
+    {
+      "key": "pf-4",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Web Scraper & Dataset Builder.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 104,
+      "route": "/projects/4",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "# Web Scraper & Dataset Builder\n\n2025 · Completed\n\nAutomated image scraping tool for building custom computer vision datasets from Google Images search results.\n\n## Tech Stack\n\n`Python` `Selenium` `BeautifulSoup` `Requests`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)",
+      "icon": "markdown",
+      "show_in_explorer": false
+    },
+    {
+      "key": "articles",
+      "parent": null,
+      "kind": "folder",
+      "name": "articles",
+      "sort_order": 2,
+      "icon": "book",
+      "show_in_explorer": true
+    },
+    {
+      "key": "a-0",
+      "parent": "articles",
+      "kind": "file",
+      "name": "Altyapıyı Unutun, Koda Odaklanın: FaaS",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 0,
+      "route": null,
+      "url": "https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "medium",
+      "show_in_explorer": true
+    },
+    {
+      "key": "a-1",
+      "parent": "articles",
+      "kind": "file",
+      "name": "Açık Kaynak vs Açık Ağırlık",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 1,
+      "route": null,
+      "url": "https://medium.com/@osmanbugrabolat/yapay-zeka-d%C3%BCnyas%C4%B1nda-kavram-karma%C5%9Fas%C4%B1-open-source-model-vs-open-weight-model-32ccccd2f0f5",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "medium",
+      "show_in_explorer": true
+    },
+    {
+      "key": "a-2",
+      "parent": "articles",
+      "kind": "file",
+      "name": "Yapay Zeka İletişiminin Sessiz Devrimi: MCP",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 2,
+      "route": null,
+      "url": "https://medium.com/@osmanbugrabolat/yapay-zeka-i%CC%87leti%C5%9Fiminin-sessiz-devrimi-model-context-protocol-83ca52c1a82c",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "medium",
+      "show_in_explorer": true
+    },
+    {
+      "key": "a-3",
+      "parent": "articles",
+      "kind": "file",
+      "name": "Yeni Geleceğin Başlangıcı: Yapay Zeka",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 3,
+      "route": null,
+      "url": "https://medium.com/@osmanbugrabolat/yeni-gelece%C4%9Fin-ba%C5%9Flang%C4%B1c%C4%B1-yapay-zeka-9313cb13e31f",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "medium",
+      "show_in_explorer": true
+    },
+    {
+      "key": "a-more",
+      "parent": "articles",
+      "kind": "file",
+      "name": "For more...",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 4,
+      "route": null,
+      "url": "https://medium.com/@osmanbugrabolat",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "medium",
+      "show_in_explorer": true
+    },
+    {
+      "key": "articles-page",
+      "parent": "articles",
+      "kind": "file",
+      "name": "articles.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 99,
+      "route": "/articles",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "# Articles\n\nI enjoy sharing what I learn and writing about my journey in tech. Here are some of my recent articles.\n\n## [Building a VS Code Theme Portfolio with Next.js](#)\n\nJune 2026 • 5 min read\n\nAn in-depth look at how I built this portfolio website to mimic the VS Code interface, using Next.js, Tailwind CSS, and custom UI components.\n\n## [Fine-tuning YOLO Models for Custom Object Detection](#)\n\nMay 2026 • 8 min read\n\nA step-by-step guide to fine-tuning YOLOv11 and YOLOv8 on custom datasets, focusing on historical fountains detection.",
+      "icon": "markdown",
+      "show_in_explorer": false
+    },
+    {
+      "key": "certs",
+      "parent": null,
+      "kind": "folder",
+      "name": "certificates",
+      "sort_order": 3,
+      "icon": "certificate",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-oracle",
+      "parent": "certs",
+      "kind": "file",
+      "name": "SQL & Oracle Database",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 0,
+      "route": "/certificates/oracle",
+      "url": null,
+      "asset_url": "/certificates/oracle_cert.jpg",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-python",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Python & Tensorflow",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 1,
+      "route": "/certificates/python",
+      "url": null,
+      "asset_url": "/certificates/python_tensorflow.jpg",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-r-lang",
+      "parent": "certs",
+      "kind": "file",
+      "name": "R Programming",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 2,
+      "route": "/certificates/r-lang",
+      "url": null,
+      "asset_url": "/certificates/r_programming.jpg",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-hwend-177820",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Huawei HCCDA-AI",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 3,
+      "route": "/certificates/hwend-177820",
+      "url": null,
+      "asset_url": "/certificates/HWEND_177820.png",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-hwend-721526",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Huawei HCCDP-AI",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 4,
+      "route": "/certificates/hwend-721526",
+      "url": null,
+      "asset_url": "/certificates/HWEND_721526.png",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-hwend-036679",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Huawei HCCDP-Cloud Migration",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 5,
+      "route": "/certificates/hwend-036679",
+      "url": null,
+      "asset_url": "/certificates/HWEND_036679.png",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-hwend-580148",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Huawei HCCDP-Solution Architectures",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 6,
+      "route": "/certificates/hwend-580148",
+      "url": null,
+      "asset_url": "/certificates/HWEND_580148.png",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-hwend-690969",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Huawei HCCDA-Cloud Native",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 7,
+      "route": "/certificates/hwend-690969",
+      "url": null,
+      "asset_url": "/certificates/HWEND_690969.png",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "c-hwend-727737",
+      "parent": "certs",
+      "kind": "file",
+      "name": "Huawei HCCDA-Tech Essentials",
+      "name_en": null,
+      "file_type": "image",
+      "sort_order": 8,
+      "route": "/certificates/hwend-727737",
+      "url": null,
+      "asset_url": "/certificates/HWEND_727737.png",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "image",
+      "show_in_explorer": true
+    },
+    {
+      "key": "contact",
+      "parent": null,
+      "kind": "folder",
+      "name": "contact",
+      "sort_order": 4,
+      "icon": "mail",
+      "show_in_explorer": true
+    },
+    {
+      "key": "ct-li",
+      "parent": "contact",
+      "kind": "file",
+      "name": "LinkedIn",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 0,
+      "route": null,
+      "url": "https://linkedin.com/in/osmanbugrabolat",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "linkedin",
+      "show_in_explorer": true
+    },
+    {
+      "key": "ct-gh",
+      "parent": "contact",
+      "kind": "file",
+      "name": "GitHub",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 1,
+      "route": null,
+      "url": "https://github.com/osmanbugrabolat",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "github",
+      "show_in_explorer": true
+    },
+    {
+      "key": "ct-md",
+      "parent": "contact",
+      "kind": "file",
+      "name": "Medium",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 2,
+      "route": null,
+      "url": "https://medium.com/@osmanbugrabolat",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "medium",
+      "show_in_explorer": true
+    },
+    {
+      "key": "ct-mail",
+      "parent": "contact",
+      "kind": "file",
+      "name": "E-Mail",
+      "name_en": null,
+      "file_type": "link",
+      "sort_order": 3,
+      "route": null,
+      "url": "mailto:contact@bugrabolat.dev",
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "email",
+      "show_in_explorer": true
+    },
+    {
+      "key": "contact-page",
+      "parent": "contact",
+      "kind": "file",
+      "name": "contact.md",
+      "name_en": null,
+      "file_type": "markdown",
+      "sort_order": 99,
+      "route": "/contact",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "# Contact & Connect\n\nI'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.\n\n## Get in Touch\n\nThe best way to reach me is via email. I usually respond within 24-48 hours.\n\n{{contact-details}}\n\n## Social Profiles\n\n{{social-links}}\n\n> *\"Code is like humor. When you have to explain it, it’s bad.\"* – Cory House",
+      "icon": "markdown",
+      "show_in_explorer": false
+    },
+    {
+      "key": "cv",
+      "parent": null,
+      "kind": "file",
+      "name": "cv.pdf",
+      "name_en": null,
+      "file_type": "pdf",
+      "sort_order": 10,
+      "route": "/cv",
+      "url": null,
+      "asset_url": "/cv.pdf",
+      "content_tr": "",
+      "content_en": "",
+      "icon": "pdf",
+      "show_in_explorer": false
+    },
+    {
+      "key": "experience",
+      "parent": null,
+      "kind": "file",
+      "name": "experience.ts",
+      "name_en": null,
+      "file_type": "experience",
+      "sort_order": 11,
+      "route": "/experience",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "typescript",
+      "show_in_explorer": false
+    },
+    {
+      "key": "skills",
+      "parent": null,
+      "kind": "file",
+      "name": "skills.ts",
+      "name_en": null,
+      "file_type": "skills",
+      "sort_order": 12,
+      "route": "/skills",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "",
+      "content_en": "",
+      "icon": "typescript",
+      "show_in_explorer": false
+    }
+  ],
+  "skill_categories": [
+    {
+      "key": "ai_ml",
+      "label_tr": "AI-ML",
+      "label_en": "AI-ML",
+      "type_name": "MLTool[]",
+      "sort_order": 0,
+      "skills": [
+        {
+          "name": "Ultralytics YOLO",
+          "level": 75,
+          "icon": "ultralytics",
+          "sort_order": 0
+        },
+        {
+          "name": "MediaPipe",
+          "level": 75,
+          "icon": "mediapipe",
+          "sort_order": 1
+        },
+        {
+          "name": "OpenCV",
+          "level": 70,
+          "icon": "opencv",
+          "sort_order": 2
+        },
+        {
+          "name": "TensorFlow",
+          "level": 70,
+          "icon": "tensorflow",
+          "sort_order": 3
+        },
+        {
+          "name": "PyTorch",
+          "level": 65,
+          "icon": "pytorch",
+          "sort_order": 4
+        },
+        {
+          "name": "Scikit-learn",
+          "level": 60,
+          "icon": "scikitlearn",
+          "sort_order": 5
+        }
+      ]
+    },
+    {
+      "key": "cloud",
+      "label_tr": "Bulut Platformları",
+      "label_en": "Cloud Platforms",
+      "type_name": "CloudPlatform[]",
+      "sort_order": 1,
+      "skills": [
+        {
+          "name": "Huawei Cloud",
+          "level": 70,
+          "icon": "huawei",
+          "sort_order": 0
+        },
+        {
+          "name": "GCP",
+          "level": 60,
+          "icon": "googlecloud",
+          "sort_order": 1
+        },
+        {
+          "name": "AWS",
+          "level": 55,
+          "icon": "aws",
+          "sort_order": 2
+        }
+      ]
+    },
+    {
+      "key": "frontend",
+      "label_tr": "Frontend",
+      "label_en": "Frontend",
+      "type_name": "Framework[]",
+      "sort_order": 2,
+      "skills": [
+        {
+          "name": "Next.js",
+          "level": 90,
+          "icon": "nextjs",
+          "sort_order": 0
+        },
+        {
+          "name": "React",
+          "level": 85,
+          "icon": "react",
+          "sort_order": 1
+        },
+        {
+          "name": "React Native",
+          "level": 80,
+          "icon": "react",
+          "sort_order": 2
+        },
+        {
+          "name": "Flutter",
+          "level": 70,
+          "icon": "flutter",
+          "sort_order": 3
+        }
+      ]
+    },
+    {
+      "key": "backend",
+      "label_tr": "Backend",
+      "label_en": "Backend",
+      "type_name": "Framework[]",
+      "sort_order": 3,
+      "skills": [
+        {
+          "name": "Python FastAPI",
+          "level": 75,
+          "icon": "fastapi",
+          "sort_order": 0
+        },
+        {
+          "name": "Node.js",
+          "level": 70,
+          "icon": "nodejs",
+          "sort_order": 1
+        },
+        {
+          "name": "Prisma ORM",
+          "level": 60,
+          "icon": "prisma",
+          "sort_order": 2
+        }
+      ]
+    },
+    {
+      "key": "databases",
+      "label_tr": "Veritabanları",
+      "label_en": "Databases",
+      "type_name": "Database[]",
+      "sort_order": 4,
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": 75,
+          "icon": "postgresql",
+          "sort_order": 0
+        },
+        {
+          "name": "MSSQL",
+          "level": 65,
+          "icon": "mssql",
+          "sort_order": 1
+        }
+      ]
+    },
+    {
+      "key": "tools",
+      "label_tr": "Araçlar ve Ortamlar",
+      "label_en": "Tools & Environments",
+      "type_name": "Tool[]",
+      "sort_order": 5,
+      "skills": [
+        {
+          "name": "VS Code",
+          "level": 99,
+          "icon": "vscode",
+          "sort_order": 0
+        },
+        {
+          "name": "Git & GitHub",
+          "level": 80,
+          "icon": "github",
+          "sort_order": 1
+        },
+        {
+          "name": "Docker",
+          "level": 65,
+          "icon": "docker",
+          "sort_order": 2
+        },
+        {
+          "name": "Figma",
+          "level": 60,
+          "icon": "figma",
+          "sort_order": 3
+        },
+        {
+          "name": "Linux",
+          "level": 75,
+          "icon": "linux",
+          "sort_order": 4
+        }
+      ]
+    },
+    {
+      "key": "ai_tools",
+      "label_tr": "Yapay Zeka Araçları",
+      "label_en": "AI Tools",
+      "type_name": "AITool[]",
+      "sort_order": 6,
+      "skills": [
+        {
+          "name": "Claude",
+          "level": 80,
+          "icon": "claude",
+          "sort_order": 0
+        },
+        {
+          "name": "Cursor",
+          "level": 70,
+          "icon": "cursor",
+          "sort_order": 1
+        },
+        {
+          "name": "Gemini",
+          "level": 70,
+          "icon": "gemini",
+          "sort_order": 2
+        }
+      ]
+    },
+    {
+      "key": "project_management",
+      "label_tr": "Proje Yönetimi",
+      "label_en": "Project Management",
+      "type_name": "PMTool[]",
+      "sort_order": 7,
+      "skills": [
+        {
+          "name": "Slack",
+          "level": 85,
+          "icon": "slack",
+          "sort_order": 0
+        },
+        {
+          "name": "Trello",
+          "level": 80,
+          "icon": "trello",
+          "sort_order": 1
+        },
+        {
+          "name": "Jira",
+          "level": 70,
+          "icon": "jira",
+          "sort_order": 2
+        }
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Freelance",
+      "position_tr": "",
+      "position_en": "Full Stack Developer",
+      "duration_tr": "2024 – Günümüz",
+      "duration_en": "2024 – Present",
+      "location_tr": "Uzaktan",
+      "location_en": "Remote",
+      "description_tr": "",
+      "description_en": "Designing and developing custom web applications for clients. Specialized in Next.js, TypeScript, and database architecture.",
+      "highlights_tr": [],
+      "highlights_en": [
+        "Built Apart Yönetim Sistemi for property management",
+        "Developed AI-powered portfolio websites",
+        "Delivered 5+ projects on time and within scope"
+      ],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Tailwind CSS"
+      ],
+      "sort_order": 0
+    },
+    {
+      "company": "Self-Directed Learning",
+      "position_tr": "",
+      "position_en": "AI/ML Engineer (Learning)",
+      "duration_tr": "2025 – Günümüz",
+      "duration_en": "2025 – Present",
+      "location_tr": "Türkiye",
+      "location_en": "Turkey",
+      "description_tr": "",
+      "description_en": "Deep diving into computer vision and machine learning. Working on fine-tuning YOLO models for object detection tasks.",
+      "highlights_tr": [],
+      "highlights_en": [
+        "Fine-tuned YOLOv8 & YOLOv11 for fountain detection",
+        "Built custom datasets from web scraped images",
+        "Achieved 85%+ mAP on custom dataset"
+      ],
+      "tech": [
+        "Python",
+        "PyTorch",
+        "Ultralytics",
+        "OpenCV",
+        "NumPy"
+      ],
+      "sort_order": 1
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+/* =====================================================================
+   Site additions for the CMS-driven layout (buttons replace clickable
+   divs for keyboard access; content views for each file type).
+   ===================================================================== */
+
+/* Reset native button styles where buttons replaced clickable divs. */
+.activity-item,
+.tree-file,
+.tree-folder-header,
+.tab-main,
+.tab-close,
+.icon-button,
+.aichat-close {
+  appearance: none;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+.activity-item {
+  padding: 0;
+  text-decoration: none;
+}
+
+.activity-item:focus-visible,
+.tree-file:focus-visible,
+.tree-folder-header:focus-visible,
+.tab-main:focus-visible,
+.tab-close:focus-visible,
+.icon-button:focus-visible,
+.aichat-close:focus-visible,
+.chat-option:focus-visible,
+.embed-button:focus-visible {
+  outline: 1px solid var(--focus-border, #007fd4);
+  outline-offset: -1px;
+}
+
+.tree-folder-header,
+.tree-file {
+  width: 100%;
+  text-align: left;
+}
+
+.tree-file {
+  color: var(--sidebar-fg);
+}
+
+.tree-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tree-label {
+  font-size: 13px;
+  color: var(--sidebar-fg);
+  margin-left: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.tree-file.active .tree-label {
+  color: #ffffff;
+}
+
+.tree-root-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  height: 22px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sidebar-fg);
+}
+
+/* Tabs: the label and the close button are separate buttons. */
+.tab {
+  padding: 0 6px 0 0;
+}
+
+.tab-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px 0 12px;
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+.tab-close {
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-button {
+  cursor: pointer;
+  color: var(--sidebar-fg);
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Language menu wrapper keeps the activity item and its popover together. */
+.lang-menu-wrap {
+  position: relative;
+  display: flex;
+}
+
+/* The phone variant lives in the bottom bar; globals.css shows .mobile-only on small screens. */
+.lang-menu-wrap.mobile-only {
+  display: none;
+}
+
+/* Sidebar / chat wrappers: transparent to the flex layout. */
+.panel-slot {
+  display: contents;
+}
+
+/* Editor frame (was inline styles). */
+.editor-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.editor-scroll {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Markdown content */
+.markdown-body {
+  font-family: var(--font-ui);
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.markdown-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.markdown-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.markdown-body a {
+  word-break: break-word;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 12px 0 24px;
+}
+
+/* Higher specificity than ".markdown-body img" so the avatar stays a circle. */
+.markdown-body img.profile-avatar,
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.markdown-body h1.profile-name {
+  margin: 0 0 8px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.profile-meta {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.profile-subtitle {
+  color: var(--sidebar-fg);
+}
+
+.profile-links,
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0 32px;
+  flex-wrap: wrap;
+}
+
+.social-links {
+  flex-direction: column;
+  margin: 16px 0;
+}
+
+.profile-links a,
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding-top: 48px;
+}
+
+.not-found-icon {
+  color: var(--sidebar-fg);
+}
+
+/* Technologies sidebar */
+.tech-sidebar {
+  padding: 12px 16px;
+  overflow-y: auto;
+}
+
+.tech-group {
+  margin-bottom: 20px;
+}
+
+.tech-group-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--sidebar-fg);
+  margin: 0 0 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tech-row-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--fg, #ccc);
+}
+
+.tech-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--hover-bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tech-bar-fill {
+  height: 100%;
+  background: #007acc;
+}
+
+/* PDF and image viewers */
+.pdf-view {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-frame {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: #525659;
+}
+
+.pdf-fallback {
+  margin: 0;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.pdf-fallback a {
+  color: var(--token-keyword, #569cd6);
+}
+
+.image-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: var(--editor-bg);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.image-view-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Embedded games */
+.embed-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100dvh - 120px);
+  min-height: 420px;
+  margin-top: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+.embed-shell-full {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  height: 100dvh;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  background: #000;
+}
+
+.embed-toolbar {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.embed-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  color: rgba(255, 255, 255, 0.92);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.embed-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+.embed-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  /* Panels the user has not toggled yet stay closed on phones. */
+  .panel-default-desktop {
+    display: none;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .markdown-body img.profile-avatar,
+  .profile-avatar {
+    width: 96px;
+    height: 96px;
+  }
+
+  .embed-shell {
+    height: calc(100dvh - 140px);
+    min-height: 360px;
+    margin-top: 8px;
+    border-radius: 8px;
+  }
+
+  .embed-toolbar {
+    top: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .embed-button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .image-view {
+    padding: 12px;
+  }
+
+  .tab {
+    min-width: 0;
+  }
+}

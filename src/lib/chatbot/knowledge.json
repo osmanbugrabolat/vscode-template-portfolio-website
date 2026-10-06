@@ -1,0 +1,2946 @@
+{
+  "intents": [
+    {
+      "id": "greeting",
+      "category": "smalltalk",
+      "priority": 0,
+      "title": {
+        "tr": "Merhaba",
+        "en": "Hello"
+      },
+      "answer": {
+        "tr": "Merhaba! Ben BuğrAI, Osman Buğra'nın portfolyo asistanıyım. Eğitimi, deneyimleri, projeleri, yetenekleri veya sertifikaları hakkında soru sorabilirsiniz.",
+        "en": "Hi there! I'm BuğrAI, Osman Buğra's portfolio assistant. Ask me about his education, experience, projects, skills or certificates."
+      },
+      "patterns": {
+        "tr": [
+          "merhaba",
+          "selam",
+          "selamlar",
+          "merhabalar",
+          "slm",
+          "mrb",
+          "selamün aleyküm",
+          "hey",
+          "iyi günler",
+          "günaydın",
+          "iyi akşamlar"
+        ],
+        "en": [
+          "hello",
+          "hi",
+          "hey",
+          "hey there",
+          "good morning",
+          "good evening",
+          "greetings",
+          "hi there"
+        ]
+      },
+      "keywords": [
+        "merhaba",
+        "selam",
+        "hello",
+        "hi",
+        "hey",
+        "slm",
+        "mrb"
+      ],
+      "links": [],
+      "followUps": [
+        "about-me",
+        "projects-overview",
+        "experience-overview"
+      ]
+    },
+    {
+      "id": "how-are-you",
+      "category": "smalltalk",
+      "priority": 0,
+      "title": {
+        "tr": "Nasılsın?",
+        "en": "How are you?"
+      },
+      "answer": {
+        "tr": "İyiyim, teşekkürler! Kodlar derleniyor, hatalar sıfır. Size Buğra hakkında ne anlatmamı istersiniz?",
+        "en": "Doing great, thanks! Code compiles, zero errors. What would you like to know about Buğra?"
+      },
+      "patterns": {
+        "tr": [
+          "nasılsın",
+          "naber",
+          "ne haber",
+          "nasıl gidiyor",
+          "iyi misin",
+          "keyifler nasıl",
+          "napıyorsun"
+        ],
+        "en": [
+          "how are you",
+          "how is it going",
+          "how are you doing",
+          "whats up",
+          "sup"
+        ]
+      },
+      "keywords": [
+        "nasilsin",
+        "naber",
+        "napiyorsun"
+      ],
+      "links": [],
+      "followUps": [
+        "about-me",
+        "projects-overview"
+      ]
+    },
+    {
+      "id": "thanks",
+      "category": "smalltalk",
+      "priority": 0,
+      "title": {
+        "tr": "Teşekkürler",
+        "en": "Thanks"
+      },
+      "answer": {
+        "tr": "Rica ederim! Başka merak ettiğiniz bir şey olursa buradayım.",
+        "en": "You're welcome! I'm here if you have any other questions."
+      },
+      "patterns": {
+        "tr": [
+          "teşekkürler",
+          "teşekkür ederim",
+          "sağ ol",
+          "sağol",
+          "eyvallah",
+          "çok sağ ol",
+          "tşk",
+          "tesekkurler",
+          "süper teşekkürler"
+        ],
+        "en": [
+          "thanks",
+          "thank you",
+          "thx",
+          "thanks a lot",
+          "much appreciated",
+          "cheers"
+        ]
+      },
+      "keywords": [
+        "tesekkur",
+        "tesekkurler",
+        "sagol",
+        "eyvallah",
+        "thanks",
+        "thank",
+        "thx",
+        "tsk"
+      ],
+      "links": [],
+      "followUps": [
+        "contact-email",
+        "projects-overview"
+      ]
+    },
+    {
+      "id": "goodbye",
+      "category": "smalltalk",
+      "priority": 0,
+      "title": {
+        "tr": "Görüşürüz",
+        "en": "Goodbye"
+      },
+      "answer": {
+        "tr": "Görüşmek üzere! Buğra'ya ulaşmak isterseniz İletişim sayfasına göz atabilirsiniz.",
+        "en": "See you! If you'd like to reach Buğra, check out the Contact page."
+      },
+      "patterns": {
+        "tr": [
+          "görüşürüz",
+          "hoşça kal",
+          "bay bay",
+          "güle güle",
+          "kendine iyi bak",
+          "iyi günler dilerim",
+          "hoşçakal"
+        ],
+        "en": [
+          "bye",
+          "goodbye",
+          "see you",
+          "see ya",
+          "take care",
+          "bye bye"
+        ]
+      },
+      "keywords": [
+        "gorusuruz",
+        "hoscakal",
+        "bye",
+        "goodbye"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "İletişim",
+            "en": "Contact"
+          },
+          "href": "/contact"
+        }
+      ],
+      "followUps": []
+    },
+    {
+      "id": "bot-identity",
+      "category": "smalltalk",
+      "priority": 5,
+      "title": {
+        "tr": "BuğrAI nedir?",
+        "en": "What is BuğrAI?"
+      },
+      "answer": {
+        "tr": "Ben BuğrAI Buğra'nın portfolyosu için hazırlanmış bir soru-cevap asistanıyım. Yapay zekâ modeli kullanmıyorum; sorunuzu önceden hazırlanmış yüzlerce soru kalıbıyla karşılaştırıp en uygun cevabı buluyorum. Sorunuz birden fazla konuya benzerse size seçenek sunuyorum.",
+        "en": "I'm BuğrAI a Q&A assistant built for Buğra's portfolio. I don't use an AI model; I compare your question with hundreds of prepared question patterns and pick the best answer. If your question fits several topics, I'll offer you options."
+      },
+      "patterns": {
+        "tr": [
+          "sen kimsin",
+          "kimsin",
+          "sen nesin",
+          "buğrai nedir",
+          "bu bot ne",
+          "sen yapay zeka botu musun",
+          "gerçek misin",
+          "chatgpt misin",
+          "nasıl çalışıyorsun",
+          "bot musun",
+          "sen bir robot musun"
+        ],
+        "en": [
+          "who are you",
+          "what are you",
+          "what is buğrai",
+          "are you an ai",
+          "are you a bot",
+          "are you chatgpt",
+          "how do you work",
+          "are you real"
+        ]
+      },
+      "keywords": [
+        "bugrai",
+        "bot",
+        "robot",
+        "chatgpt",
+        "asistan",
+        "assistant"
+      ],
+      "links": [],
+      "followUps": [
+        "about-me",
+        "site-tech"
+      ]
+    },
+    {
+      "id": "about-me",
+      "category": "about",
+      "priority": 100,
+      "title": {
+        "tr": "Buğra kimdir?",
+        "en": "Who is Buğra?"
+      },
+      "answer": {
+        "tr": "Osman Buğra BOLAT, Selçuk Üniversitesi Bilgisayar Mühendisliği mezunu (2026, GPA 3.75) bir yapay zekâ ve bulut mühendisidir. Teknoloji Fakültesi 3.'sü, bölüm 2.'si olarak mezun oldu.\n\nÖğrenimi boyunca bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmeye odaklandı. Docker, CI/CD, DevOps ve MLOps ile yapay zekâ tabanlı süreçlerin otomasyonu ve dağıtımında deneyim kazandı. Şu anda Huawei Türkiye'de Bölge Lideri olarak İç Anadolu'daki altı HSD topluluğunu yönetiyor.",
+        "en": "Osman Buğra BOLAT is an AI & cloud engineer and a Computer Engineering graduate of Selçuk University (2026, GPA 3.75), ranking 3rd in the Faculty of Technology and 2nd in his department.\n\nThroughout his studies he focused on integrating computer vision and deep learning models into cloud infrastructure, and gained hands-on experience automating and deploying AI-based processes with Docker, CI/CD, DevOps and MLOps. He currently works as a Regional Leader at Huawei Türkiye, overseeing six HSD communities in Central Anatolia."
+      },
+      "patterns": {
+        "tr": [
+          "buğra kimdir",
+          "osman buğra kim",
+          "kendinden bahset",
+          "kendini tanıt",
+          "kimsin sen buğra",
+          "hakkında bilgi ver",
+          "biraz kendinden bahseder misin",
+          "buğra bolat kim",
+          "özgeçmişini anlat",
+          "seni tanıyabilir miyim",
+          "kim bu",
+          "sen kimsin buğra",
+          "hakkında"
+        ],
+        "en": [
+          "who is bugra",
+          "tell me about yourself",
+          "introduce yourself",
+          "who is osman bugra bolat",
+          "about you",
+          "tell me about bugra",
+          "who are you bugra",
+          "about him"
+        ]
+      },
+      "keywords": [
+        "kimdir",
+        "hakkinda",
+        "tanit",
+        "bahset",
+        "about",
+        "yourself",
+        "introduce",
+        "bugra",
+        "osman",
+        "bolat"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "WhoAmI.md",
+            "en": "WhoAmI.md"
+          },
+          "href": "/"
+        }
+      ],
+      "followUps": [
+        "education",
+        "experience-overview",
+        "projects-overview"
+      ]
+    },
+    {
+      "id": "title-role",
+      "category": "about",
+      "priority": 40,
+      "title": {
+        "tr": "Mesleği ne?",
+        "en": "What does he do?"
+      },
+      "answer": {
+        "tr": "Buğra bir Bilgisayar Mühendisi; kendini \"AI powered AI & Cloud Engineer\" olarak tanımlıyor. Yapay zekâ (özellikle bilgisayarlı görü), bulut mimarileri ve MLOps üzerine çalışıyor. Şu anki görevi Huawei Türkiye Bölge Liderliği.",
+        "en": "Buğra is a Computer Engineer who describes himself as an \"AI powered AI & Cloud Engineer\". He works on AI (especially computer vision), cloud architectures and MLOps. His current role is Regional Leader at Huawei Türkiye."
+      },
+      "patterns": {
+        "tr": [
+          "mesleğin ne",
+          "ne iş yapıyorsun",
+          "işin ne",
+          "unvanın ne",
+          "pozisyonun ne",
+          "ne mühendisisin",
+          "hangi alanda çalışıyorsun",
+          "uzmanlık alanın ne",
+          "ne yapıyorsun",
+          "neyle uğraşıyorsun"
+        ],
+        "en": [
+          "what do you do",
+          "what is your job",
+          "what is your title",
+          "what is your profession",
+          "what is your role",
+          "what is your specialty",
+          "what field do you work in"
+        ]
+      },
+      "keywords": [
+        "meslek",
+        "unvan",
+        "pozisyon",
+        "uzmanlik",
+        "job",
+        "title",
+        "profession",
+        "role",
+        "specialty"
+      ],
+      "links": [],
+      "followUps": [
+        "current-role",
+        "skills-overview"
+      ]
+    },
+    {
+      "id": "location",
+      "category": "about",
+      "priority": 10,
+      "title": {
+        "tr": "Nerede yaşıyor?",
+        "en": "Where is he based?"
+      },
+      "answer": {
+        "tr": "Buğra Türkiye'de yaşıyor Selçuk Üniversitesi'nde okudu ve şu anda İç Anadolu bölgesindeki HSD topluluklarından sorumlu.",
+        "en": "Buğra is based in Turkey He studied at Selçuk University and currently oversees the HSD communities in the Central Anatolia region."
+      },
+      "patterns": {
+        "tr": [
+          "nerede yaşıyorsun",
+          "nerelisin",
+          "hangi şehirdesin",
+          "nerede oturuyorsun",
+          "konumun ne",
+          "hangi ülkedesin",
+          "türkiyede misin",
+          "neredesin"
+        ],
+        "en": [
+          "where do you live",
+          "where are you from",
+          "where are you based",
+          "what is your location",
+          "which city",
+          "which country"
+        ]
+      },
+      "keywords": [
+        "nerede",
+        "nereli",
+        "sehir",
+        "konum",
+        "ulke",
+        "location",
+        "live",
+        "city",
+        "country",
+        "based"
+      ],
+      "links": [],
+      "followUps": [
+        "contact-email",
+        "about-me"
+      ]
+    },
+    {
+      "id": "education",
+      "category": "about",
+      "priority": 75,
+      "title": {
+        "tr": "Hangi okulda okudu?",
+        "en": "Where did he study?"
+      },
+      "answer": {
+        "tr": "Selçuk Üniversitesi, Bilgisayar Mühendisliği (Eylül 2021 – Haziran 2026)\n• GPA: 3.75 / 4\n• Teknoloji Fakültesi 3.'sü, bölüm 2.'si",
+        "en": "Selçuk University, Computer Engineering (Sep 2021 – Jun 2026)\n• GPA: 3.75 / 4\n• Ranked 3rd in the Faculty of Technology and 2nd in his department"
+      },
+      "patterns": {
+        "tr": [
+          "hangi okulda okudun",
+          "nerede okudun",
+          "hangi üniversite",
+          "üniversiten ne",
+          "eğitim durumun",
+          "eğitimin ne",
+          "mezun oldun mu",
+          "ne zaman mezun oldun",
+          "hangi bölüm",
+          "bölümün ne",
+          "selçuk üniversitesi",
+          "nereden mezunsun",
+          "okulun ne",
+          "diplomani"
+        ],
+        "en": [
+          "where did you study",
+          "which university",
+          "what is your education",
+          "what did you study",
+          "when did you graduate",
+          "what is your degree",
+          "did you graduate",
+          "which school",
+          "what is your major"
+        ]
+      },
+      "keywords": [
+        "okul",
+        "universite",
+        "egitim",
+        "mezun",
+        "mezuniyet",
+        "bolum",
+        "selcuk",
+        "lisans",
+        "diploma",
+        "university",
+        "school",
+        "education",
+        "degree",
+        "graduate",
+        "major",
+        "college"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "CV'yi aç",
+            "en": "Open CV"
+          },
+          "href": "/cv"
+        }
+      ],
+      "followUps": [
+        "gpa-ranking",
+        "experience-overview"
+      ]
+    },
+    {
+      "id": "gpa-ranking",
+      "category": "about",
+      "priority": 20,
+      "title": {
+        "tr": "Not ortalaması kaç?",
+        "en": "What was his GPA?"
+      },
+      "answer": {
+        "tr": "Buğra Selçuk Üniversitesi Bilgisayar Mühendisliği'nden 3.75 / 4 not ortalamasıyla mezun oldu. Teknoloji Fakültesi'nde 3., bölümünde 2. oldu",
+        "en": "Buğra graduated from Selçuk University Computer Engineering with a 3.75 / 4 GPA, ranking 3rd in the Faculty of Technology and 2nd in his department"
+      },
+      "patterns": {
+        "tr": [
+          "not ortalaman kaç",
+          "ortalaman kaç",
+          "gpa kaç",
+          "agno kaç",
+          "kaçıncı oldun",
+          "derece yaptın mı",
+          "bölüm birincisi misin",
+          "kaçıncılıkla mezun oldun",
+          "başarı sıralaman",
+          "notların nasıl"
+        ],
+        "en": [
+          "what is your gpa",
+          "what was your gpa",
+          "your grades",
+          "did you rank",
+          "what rank did you graduate",
+          "class rank",
+          "are you top of your class"
+        ]
+      },
+      "keywords": [
+        "gpa",
+        "agno",
+        "ortalama",
+        "not",
+        "derece",
+        "siralama",
+        "kacinci",
+        "grades",
+        "rank",
+        "ranking"
+      ],
+      "links": [],
+      "followUps": [
+        "education",
+        "certificates-overview"
+      ]
+    },
+    {
+      "id": "spoken-languages",
+      "category": "about",
+      "priority": 10,
+      "title": {
+        "tr": "Hangi dilleri konuşuyor?",
+        "en": "Which languages does he speak?"
+      },
+      "answer": {
+        "tr": "Türkçe: anadil\nİngilizce: okuma orta, dinleme orta, konuşma başlangıç seviyesinde",
+        "en": "Turkish: native\nEnglish: reading intermediate, listening intermediate, speaking beginner"
+      },
+      "patterns": {
+        "tr": [
+          "hangi dilleri biliyorsun",
+          "ingilizcen nasıl",
+          "ingilizce biliyor musun",
+          "yabancı dilin var mı",
+          "kaç dil biliyorsun",
+          "ingilizce seviyen",
+          "yabancı dil seviyesi",
+          "dil bilgin"
+        ],
+        "en": [
+          "what languages do you speak",
+          "do you speak english",
+          "how is your english",
+          "english level",
+          "foreign languages",
+          "spoken languages"
+        ]
+      },
+      "keywords": [
+        "ingilizce",
+        "yabanci",
+        "dil",
+        "turkce",
+        "english",
+        "speak",
+        "languages",
+        "turkish"
+      ],
+      "links": [],
+      "followUps": [
+        "education",
+        "about-me"
+      ]
+    },
+    {
+      "id": "current-focus",
+      "category": "about",
+      "priority": 15,
+      "title": {
+        "tr": "Şu an neye odaklanıyor?",
+        "en": "What is he focusing on now?"
+      },
+      "answer": {
+        "tr": "Buğra'nın şu anki odak noktaları:\n• Ölçeklenebilir web ve mobil uygulamalar geliştirmek\n• Yapay zekâ / makine öğrenmesi entegrasyonlarını keşfetmek\n\nBunun yanında Huawei Türkiye'de Bölge Lideri olarak HSD topluluklarını yönetiyor.",
+        "en": "Buğra is currently focused on:\n• Building scalable web & mobile applications\n• Exploring AI/ML integrations\n\nAlongside that, he leads HSD communities as a Regional Leader at Huawei Türkiye."
+      },
+      "patterns": {
+        "tr": [
+          "şu an ne üzerinde çalışıyorsun",
+          "şu anda neyle ilgileniyorsun",
+          "odak noktan ne",
+          "güncel olarak ne yapıyorsun",
+          "son zamanlarda ne yapıyorsun",
+          "ilgi alanların neler",
+          "neye ilgi duyuyorsun",
+          "hedeflerin neler"
+        ],
+        "en": [
+          "what are you working on",
+          "what are you focusing on",
+          "current focus",
+          "what are you interested in",
+          "your interests",
+          "what are your goals",
+          "what are you doing these days"
+        ]
+      },
+      "keywords": [
+        "odak",
+        "ilgi",
+        "guncel",
+        "hedef",
+        "focus",
+        "interests",
+        "goals",
+        "currently"
+      ],
+      "links": [],
+      "followUps": [
+        "current-role",
+        "projects-overview"
+      ]
+    },
+    {
+      "id": "availability",
+      "category": "contact",
+      "priority": 30,
+      "title": {
+        "tr": "İş tekliflerine açık mı?",
+        "en": "Is he open to opportunities?"
+      },
+      "answer": {
+        "tr": "Buğra yeni projeleri, yaratıcı fikirleri ve vizyonunuzun parçası olabileceği fırsatları konuşmaya her zaman açık En iyi yol e-posta; genellikle 24–48 saat içinde dönüş yapıyor.",
+        "en": "Buğra is always open to discussing new projects, creative ideas, or opportunities to be part of your vision Email is the best way to reach him; he usually replies within 24–48 hours."
+      },
+      "patterns": {
+        "tr": [
+          "iş arıyor musun",
+          "işe alabilir miyiz",
+          "iş teklifi yapmak istiyorum",
+          "çalışmaya açık mısın",
+          "freelance çalışıyor musun",
+          "birlikte çalışabilir miyiz",
+          "proje teklifi",
+          "staj teklifi",
+          "müsait misin",
+          "uygun musun",
+          "işe alım",
+          "seninle çalışmak istiyorum",
+          "proje yaptırmak istiyorum"
+        ],
+        "en": [
+          "are you available",
+          "are you open to work",
+          "can we hire you",
+          "are you looking for a job",
+          "do you freelance",
+          "can we work together",
+          "job offer",
+          "hire you",
+          "collaboration",
+          "i want to work with you"
+        ]
+      },
+      "keywords": [
+        "teklif",
+        "freelance",
+        "musait",
+        "calismak",
+        "isbirligi",
+        "ise",
+        "hire",
+        "hiring",
+        "job",
+        "available",
+        "opportunity",
+        "collaborate",
+        "collaboration",
+        "work"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "İletişim",
+            "en": "Contact"
+          },
+          "href": "/contact"
+        }
+      ],
+      "followUps": [
+        "contact-email",
+        "linkedin",
+        "cv"
+      ]
+    },
+    {
+      "id": "cv",
+      "category": "about",
+      "priority": 65,
+      "title": {
+        "tr": "CV'sini görebilir miyim?",
+        "en": "Can I see his CV?"
+      },
+      "answer": {
+        "tr": "Tabii! Buğra'nın CV'sini sitede görüntüleyebilir ya da PDF olarak indirebilirsiniz.",
+        "en": "Of course! You can view Buğra's CV on the site or download it as a PDF."
+      },
+      "patterns": {
+        "tr": [
+          "cv",
+          "cvni görebilir miyim",
+          "özgeçmiş",
+          "özgeçmişin",
+          "cv indir",
+          "cv nerede",
+          "resume",
+          "cv paylaşır mısın",
+          "cvn var mı",
+          "cv pdf"
+        ],
+        "en": [
+          "cv",
+          "resume",
+          "can i see your cv",
+          "download cv",
+          "where is your resume",
+          "share your cv",
+          "curriculum vitae"
+        ]
+      },
+      "keywords": [
+        "cv",
+        "ozgecmis",
+        "resume",
+        "pdf",
+        "vitae"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "CV'yi görüntüle",
+            "en": "View CV"
+          },
+          "href": "/cv"
+        },
+        {
+          "label": {
+            "tr": "PDF indir",
+            "en": "Download PDF"
+          },
+          "href": "/cv.pdf"
+        }
+      ],
+      "followUps": [
+        "experience-overview",
+        "education"
+      ]
+    },
+    {
+      "id": "experience-overview",
+      "category": "experience",
+      "priority": 90,
+      "title": {
+        "tr": "İş deneyimleri neler?",
+        "en": "What is his work experience?"
+      },
+      "answer": {
+        "tr": "Buğra'nın deneyimleri:\n• Huawei Türkiye: Bölge Lideri (Eylül 2025 – Günümüz)\n• Divizyon: Yazılım Program Yöneticisi Asistanı (Aralık 2024 – Ekim 2025)\n• Huawei Türkiye: Kampüs Elçisi (Ağustos 2024 – Eylül 2025)\n• Huawei Türkiye: Stajyer (Temmuz 2024 – Temmuz 2025)\n\nDetayını merak ettiğiniz bir rolü sorabilirsiniz.",
+        "en": "Buğra's experience:\n• Huawei Türkiye: Regional Leader (Sep 2025 – Present)\n• Divizyon: Software Program Manager Assistant (Dec 2024 – Oct 2025)\n• Huawei Türkiye: Campus Ambassador (Aug 2024 – Sep 2025)\n• Huawei Türkiye: Intern (Jul 2024 – Jul 2025)\n\nAsk me about any role for details."
+      },
+      "patterns": {
+        "tr": [
+          "iş deneyimlerin neler",
+          "deneyimlerin",
+          "nerelerde çalıştın",
+          "tecrüben var mı",
+          "iş tecrüben",
+          "çalıştığın yerler",
+          "kariyerin",
+          "hangi şirketlerde çalıştın",
+          "staj yaptın mı",
+          "iş geçmişin",
+          "profesyonel deneyim",
+          "deneyim"
+        ],
+        "en": [
+          "what is your experience",
+          "work experience",
+          "where have you worked",
+          "your career",
+          "previous jobs",
+          "which companies have you worked for",
+          "did you do an internship",
+          "work history",
+          "experience"
+        ]
+      },
+      "keywords": [
+        "deneyim",
+        "tecrube",
+        "kariyer",
+        "calistin",
+        "sirket",
+        "gecmis",
+        "experience",
+        "career",
+        "worked",
+        "companies",
+        "employment"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "CV'yi aç",
+            "en": "Open CV"
+          },
+          "href": "/cv"
+        }
+      ],
+      "followUps": [
+        "current-role",
+        "divizyon",
+        "huawei-internship"
+      ]
+    },
+    {
+      "id": "current-role",
+      "category": "experience",
+      "priority": 45,
+      "title": {
+        "tr": "Huawei'de ne yapıyor?",
+        "en": "What does he do at Huawei?"
+      },
+      "answer": {
+        "tr": "Buğra Eylül 2025'ten beri Huawei Türkiye'de Bölge Lideri. İç Anadolu bölgesindeki altı HSD (Huawei Student Developers) elçiliğini yönetip denetliyor, bu toplulukların yönetim süreçlerini ve etkinliklerini destekliyor.",
+        "en": "Since September 2025 Buğra has been a Regional Leader at Huawei Türkiye. He manages and supervises six HSD (Huawei Student Developers) embassies in Central Anatolia, supporting their management processes and activities."
+      },
+      "patterns": {
+        "tr": [
+          "huaweide ne yapıyorsun",
+          "şu an nerede çalışıyorsun",
+          "şimdiki işin ne",
+          "bölge lideri ne demek",
+          "bölge liderliği",
+          "huawei bölge lideri",
+          "şu anki görevin",
+          "güncel pozisyonun",
+          "huawei"
+        ],
+        "en": [
+          "what do you do at huawei",
+          "where do you work now",
+          "current job",
+          "current role",
+          "regional leader",
+          "huawei regional leader",
+          "what is your current position",
+          "huawei"
+        ]
+      },
+      "keywords": [
+        "huawei",
+        "bolge",
+        "lider",
+        "liderlik",
+        "simdiki",
+        "regional",
+        "leader",
+        "current"
+      ],
+      "links": [],
+      "followUps": [
+        "hsd",
+        "campus-ambassador",
+        "huawei-internship"
+      ]
+    },
+    {
+      "id": "huawei-internship",
+      "category": "experience",
+      "priority": 20,
+      "title": {
+        "tr": "Huawei stajında neler yaptı?",
+        "en": "What did he do as a Huawei intern?"
+      },
+      "answer": {
+        "tr": "Huawei Türkiye stajı (Temmuz 2024 – Temmuz 2025):\n• Geliştirme süreçlerini otomatikleştirmek için özel CLI araçları ve Bash scriptleri geliştirdi\n• Linux üzerinde Docker ile konteyner ortamlarını yönetti\n• Versiyon kontrolü ve ekip çalışması için Git kullandı",
+        "en": "Huawei Türkiye internship (Jul 2024 – Jul 2025):\n• Built custom CLI tools and Bash scripts to automate development workflows\n• Managed containerized environments with Docker on Linux\n• Used Git for version control and collaboration"
+      },
+      "patterns": {
+        "tr": [
+          "huawei stajı",
+          "staj deneyimin",
+          "stajda ne yaptın",
+          "nerede staj yaptın",
+          "huaweide staj",
+          "stajyerlik",
+          "staj"
+        ],
+        "en": [
+          "huawei internship",
+          "what did you do in your internship",
+          "where did you intern",
+          "internship experience",
+          "intern"
+        ]
+      },
+      "keywords": [
+        "staj",
+        "stajyer",
+        "stajyerlik",
+        "intern",
+        "internship",
+        "bash",
+        "cli"
+      ],
+      "links": [],
+      "followUps": [
+        "current-role",
+        "skills-tools"
+      ]
+    },
+    {
+      "id": "divizyon",
+      "category": "experience",
+      "priority": 20,
+      "title": {
+        "tr": "Divizyon'da ne yaptı?",
+        "en": "What did he do at Divizyon?"
+      },
+      "answer": {
+        "tr": "Divizyon'da Yazılım Program Yöneticisi Asistanı (Aralık 2024 – Ekim 2025):\n• Agile ve Scrum ile yürütülen yazılım projelerinde görev aldı\n• Center of Excellence (CoE) temsilcisi olarak sprint planlama, daily scrum ve retrospektiflere katıldı\n• Birden fazla ekipte çevik standartların ve en iyi uygulamaların benimsenmesini sağladı",
+        "en": "Software Program Manager Assistant at Divizyon (Dec 2024 – Oct 2025):\n• Worked on software projects run with Agile and Scrum\n• As a Center of Excellence (CoE) representative, took part in sprint planning, daily scrums and retrospectives\n• Drove adoption of agile standards and best practices across multiple teams"
+      },
+      "patterns": {
+        "tr": [
+          "divizyon",
+          "divizyonda ne yaptın",
+          "program yöneticisi asistanı",
+          "proje yönetimi deneyimin",
+          "scrum deneyimin",
+          "agile biliyor musun",
+          "çevik yöntemler",
+          "proje yöneticiliği"
+        ],
+        "en": [
+          "divizyon",
+          "what did you do at divizyon",
+          "program manager assistant",
+          "project management experience",
+          "scrum experience",
+          "agile experience"
+        ]
+      },
+      "keywords": [
+        "divizyon",
+        "scrum",
+        "agile",
+        "cevik",
+        "sprint",
+        "program",
+        "yonetici",
+        "coe",
+        "management"
+      ],
+      "links": [],
+      "followUps": [
+        "experience-overview",
+        "skills-tools"
+      ]
+    },
+    {
+      "id": "campus-ambassador",
+      "category": "experience",
+      "priority": 15,
+      "title": {
+        "tr": "Kampüs elçiliği nasıldı?",
+        "en": "What was the campus ambassador role?"
+      },
+      "answer": {
+        "tr": "Buğra Ağustos 2024 – Eylül 2025 arasında HSD Selçuk Üniversitesi'nde Huawei Kampüs Elçisi oldu. Eğitimler ve etkinlikler düzenledi, proje ekipleri kurup koordine ederek yönetim deneyimi kazandı.",
+        "en": "From August 2024 to September 2025 Buğra was a Huawei Campus Ambassador at HSD Selçuk University. He organized trainings and events, and built management skills by setting up and coordinating project teams."
+      },
+      "patterns": {
+        "tr": [
+          "kampüs elçisi",
+          "kampüs elçiliği",
+          "hsd selçuk",
+          "elçilik",
+          "huawei elçisi",
+          "etkinlik düzenledin mi",
+          "topluluk etkinlikleri"
+        ],
+        "en": [
+          "campus ambassador",
+          "hsd selcuk",
+          "huawei ambassador",
+          "did you organize events",
+          "community events"
+        ]
+      },
+      "keywords": [
+        "elci",
+        "elcisi",
+        "elcilik",
+        "kampus",
+        "ambassador",
+        "campus",
+        "etkinlik",
+        "events"
+      ],
+      "links": [],
+      "followUps": [
+        "hsd",
+        "current-role"
+      ]
+    },
+    {
+      "id": "hsd",
+      "category": "experience",
+      "priority": 25,
+      "title": {
+        "tr": "HSD nedir?",
+        "en": "What is HSD?"
+      },
+      "answer": {
+        "tr": "HSD (Huawei Student Developers), Huawei'nin üniversite öğrencilerine yönelik teknoloji topluluğu. Buğra önce HSD Selçuk Üniversitesi'nde Kampüs Elçisi oldu, şimdi Bölge Lideri olarak İç Anadolu'daki altı HSD elçiliğinden sorumlu. HSD Türkiye için web sitesi (v1 ve v2) ve \"Sihirli Sapan – HSD Edition\" oyununu da geliştirdi.",
+        "en": "HSD (Huawei Student Developers) is Huawei's tech community for university students. Buğra started as Campus Ambassador at HSD Selçuk University and now, as Regional Leader, oversees six HSD embassies in Central Anatolia. He also built the HSD Türkiye website (v1 and v2) and the \"Sihirli Sapan – HSD Edition\" game."
+      },
+      "patterns": {
+        "tr": [
+          "hsd nedir",
+          "hsd ne",
+          "huawei student developers",
+          "topluluk liderliği",
+          "hangi topluluklarda yer aldın",
+          "hsd türkiye",
+          "topluluk çalışmaların",
+          "gönüllü çalışmaların"
+        ],
+        "en": [
+          "what is hsd",
+          "huawei student developers",
+          "community leadership",
+          "communities you are part of",
+          "hsd turkiye",
+          "volunteer work"
+        ]
+      },
+      "keywords": [
+        "hsd",
+        "topluluk",
+        "community",
+        "student",
+        "developers",
+        "gonullu",
+        "volunteer"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Sihirli Sapan – HSD Edition",
+            "en": "Sihirli Sapan – HSD Edition"
+          },
+          "href": "/projects/sihirli-sapan-hsd-edition"
+        }
+      ],
+      "followUps": [
+        "project-hsd-website",
+        "project-sihirli-sapan-hsd",
+        "current-role"
+      ]
+    },
+    {
+      "id": "projects-overview",
+      "category": "projects",
+      "priority": 95,
+      "title": {
+        "tr": "Hangi projeleri yaptı?",
+        "en": "What projects has he built?"
+      },
+      "answer": {
+        "tr": "Sitedeki projeler (çoğu tarayıcıda oynanabilir!):\n• Neon Pong AI: el hareketiyle oynanan Pong\n• Flying Birds AI: parmakla yönetilen kuş oyunu\n• Sihirli Sapan: el takipli Angry Birds klonu\n• Sihirli Sapan – HSD Edition\n• Magic Frame AR: ellerle çizilen çerçevede yapay zekâ filtreleri\n• Kozmik Toz Enstalasyonu: etkileşimli ses-görsel sanat\n\nCV'deki diğer projeler: Yapay Zekâ Destekli Fizyoterapi Uygulaması, Dermatolojik Hastalık Tespiti, HSD Türkiye Web Sitesi (v1 & v2), Görüntü Ön İşleme Platformu.",
+        "en": "Projects on the site (most are playable in the browser!):\n• Neon Pong AI: Pong controlled by hand gestures\n• Flying Birds AI: a bird game steered with your finger\n• Sihirli Sapan: a hand-tracked Angry Birds clone\n• Sihirli Sapan – HSD Edition\n• Magic Frame AR: AI filters inside a frame drawn with your hands\n• Cosmic Dust Installation: interactive audio-visual art\n\nMore from his CV: AI-Powered Physiotherapy App, Dermatological Disease Detection, HSD Türkiye Website (v1 & v2), Image Preprocessing Platform."
+      },
+      "patterns": {
+        "tr": [
+          "projelerin neler",
+          "hangi projeleri yaptın",
+          "projeler",
+          "neler geliştirdin",
+          "yaptığın işler",
+          "portfolyondaki projeler",
+          "proje örnekleri",
+          "ne tür projeler yapıyorsun",
+          "projelerini göster",
+          "çalışmaların neler",
+          "kaç proje yaptın",
+          "projelerinden bahset"
+        ],
+        "en": [
+          "what projects have you built",
+          "your projects",
+          "projects",
+          "show me your projects",
+          "what have you built",
+          "portfolio projects",
+          "project examples",
+          "what have you made",
+          "tell me about your projects"
+        ]
+      },
+      "keywords": [
+        "proje",
+        "projeler",
+        "gelistirdin",
+        "calismalar",
+        "portfolyo",
+        "project",
+        "projects",
+        "built",
+        "portfolio",
+        "made"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "GitHub",
+            "en": "GitHub"
+          },
+          "href": "https://github.com/osmanbugrabolat"
+        }
+      ],
+      "followUps": [
+        "playable-games",
+        "project-physiotherapy",
+        "mediapipe-projects"
+      ]
+    },
+    {
+      "id": "playable-games",
+      "category": "projects",
+      "priority": 35,
+      "title": {
+        "tr": "Oynanabilir oyunlar hangileri?",
+        "en": "Which games can I play?"
+      },
+      "answer": {
+        "tr": "Bu oyunları doğrudan sitede, kameranızla oynayabilirsiniz:\n• Neon Pong AI\n• Flying Birds AI\n• Sihirli Sapan\n• Sihirli Sapan – HSD Edition\n• Kozmik Toz Enstalasyonu (deneyim)\n\nHepsi MediaPipe ile el takibi kullanıyor; kamera izni vermeniz yeterli.",
+        "en": "You can play these right on the site using your webcam:\n• Neon Pong AI\n• Flying Birds AI\n• Sihirli Sapan\n• Sihirli Sapan – HSD Edition\n• Cosmic Dust Installation (experience)\n\nThey all use MediaPipe hand tracking; just allow camera access."
+      },
+      "patterns": {
+        "tr": [
+          "oyun oynayabilir miyim",
+          "oyunların var mı",
+          "hangi oyunları yaptın",
+          "oynanabilir projeler",
+          "oyun",
+          "oyunlar",
+          "eğlenceli bir şey var mı",
+          "kamerayla oynanan oyun",
+          "sıkıldım"
+        ],
+        "en": [
+          "can i play a game",
+          "do you have games",
+          "which games did you make",
+          "playable projects",
+          "games",
+          "game",
+          "something fun",
+          "i am bored"
+        ]
+      },
+      "keywords": [
+        "oyun",
+        "oyunlar",
+        "oyna",
+        "oynanabilir",
+        "eglence",
+        "game",
+        "games",
+        "play",
+        "playable",
+        "fun"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Neon Pong'u oyna",
+            "en": "Play Neon Pong"
+          },
+          "href": "/projects/pong-with-mediapipe/play"
+        },
+        {
+          "label": {
+            "tr": "Flying Birds'ü oyna",
+            "en": "Play Flying Birds"
+          },
+          "href": "/projects/flying-birds-with-mediapipe/play"
+        },
+        {
+          "label": {
+            "tr": "Sihirli Sapan'ı oyna",
+            "en": "Play Sihirli Sapan"
+          },
+          "href": "/projects/sihirli-sapan/play"
+        }
+      ],
+      "followUps": [
+        "project-neon-pong",
+        "project-sihirli-sapan",
+        "project-kozmik-toz"
+      ]
+    },
+    {
+      "id": "mediapipe-projects",
+      "category": "projects",
+      "priority": 15,
+      "title": {
+        "tr": "El takibi projeleri nasıl çalışıyor?",
+        "en": "How do the hand-tracking projects work?"
+      },
+      "answer": {
+        "tr": "Buğra'nın sitedeki projelerinin çoğu Google MediaPipe ile tarayıcıda gerçek zamanlı el takibi yapıyor: web kamerası görüntüsünden elin eklem noktaları bulunuyor, hareketler (yumruk, çimdikleme, işaret parmağı vb.) oyun kontrollerine dönüşüyor. Oyunlar Vanilla JavaScript, HTML5 Canvas ve Web Audio API ile yazıldı; Sihirli Sapan'da fizik için Matter.js kullanılıyor. Magic Frame ise Python, OpenCV ve MediaPipe Tasks API ile çalışıyor.",
+        "en": "Most of Buğra's projects on the site use Google MediaPipe for real-time hand tracking in the browser: hand landmarks are detected from the webcam feed and gestures (fist, pinch, index finger, etc.) become game controls. The games are written in Vanilla JavaScript with HTML5 Canvas and the Web Audio API; Sihirli Sapan uses Matter.js for physics. Magic Frame runs on Python with OpenCV and the MediaPipe Tasks API."
+      },
+      "patterns": {
+        "tr": [
+          "mediapipe nedir",
+          "el takibi nasıl çalışıyor",
+          "mediapipe projeleri",
+          "kamerayla nasıl kontrol ediliyor",
+          "el hareketleri nasıl algılanıyor",
+          "bilgisayarlı görü projeleri",
+          "görüntü işleme projeleri"
+        ],
+        "en": [
+          "what is mediapipe",
+          "how does hand tracking work",
+          "mediapipe projects",
+          "how is it controlled with the camera",
+          "computer vision projects",
+          "gesture control"
+        ]
+      },
+      "keywords": [
+        "mediapipe",
+        "el",
+        "takip",
+        "takibi",
+        "kamera",
+        "hareket",
+        "hand",
+        "tracking",
+        "gesture",
+        "webcam",
+        "vision"
+      ],
+      "links": [],
+      "followUps": [
+        "playable-games",
+        "project-magic-frame",
+        "skills-ai-ml"
+      ]
+    },
+    {
+      "id": "project-neon-pong",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Neon Pong AI nedir?",
+        "en": "What is Neon Pong AI?"
+      },
+      "answer": {
+        "tr": "Neon Pong AI: Fütüristik neon görünümlü, web kamerası ve MediaPipe el takibiyle el hareketlerinizle oynadığınız bir Pong oyunu.\n• İnsansı hata payı olan yapay zekâ rakip; ralli uzadıkça top hızlanıyor\n• Takım seçimi (ayna etkisine göre sol/sağ), ayarlanabilir başlangıç hızı\n• Web Audio API ile retro sesler\n\nTeknolojiler: Vanilla JS, HTML5 Canvas, Web Audio API, MediaPipe",
+        "en": "Neon Pong AI: a futuristic neon Pong game you play with hand gestures via webcam and MediaPipe hand tracking.\n• AI opponent with a human-like error margin; the ball speeds up as rallies get longer\n• Team choice (left/right, mirror-aware), adjustable starting speed\n• Retro sounds via the Web Audio API\n\nTech: Vanilla JS, HTML5 Canvas, Web Audio API, MediaPipe"
+      },
+      "patterns": {
+        "tr": [
+          "neon pong",
+          "pong oyunu",
+          "neon pong ai nedir",
+          "pong with mediapipe",
+          "el ile pong",
+          "pong"
+        ],
+        "en": [
+          "neon pong",
+          "pong game",
+          "what is neon pong ai",
+          "pong with mediapipe",
+          "hand tracking pong",
+          "pong"
+        ]
+      },
+      "keywords": [
+        "pong",
+        "neon"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "README",
+            "en": "README"
+          },
+          "href": "/projects/pong-with-mediapipe"
+        },
+        {
+          "label": {
+            "tr": "Oyna",
+            "en": "Play"
+          },
+          "href": "/projects/pong-with-mediapipe/play"
+        }
+      ],
+      "followUps": [
+        "project-flying-birds",
+        "playable-games"
+      ]
+    },
+    {
+      "id": "project-flying-birds",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Flying Birds AI nedir?",
+        "en": "What is Flying Birds AI?"
+      },
+      "answer": {
+        "tr": "Flying Birds AI: Engellerden kaçtığınız bir tarayıcı oyunu; kuşu ekrana dokunmadan, MediaPipe Hands ile işaret parmağınızı takip ederek yönetiyorsunuz.\n• Glassmorphism arayüz, 60 FPS Canvas\n• El seçimi (sağ/sol/herhangi), hız ayarı (yavaş/normal/hızlı), ses açma/kapama\n\nTeknolojiler: HTML5/CSS3, JavaScript ES6, Canvas API, MediaPipe Hands, Web Audio API",
+        "en": "Flying Birds AI: a browser obstacle-dodging game where you steer the bird touch-free by tracking your index finger with MediaPipe Hands.\n• Glassmorphism UI, 60 FPS canvas\n• Hand choice (right/left/any), speed (slow/normal/fast), sound toggle\n\nTech: HTML5/CSS3, JavaScript ES6, Canvas API, MediaPipe Hands, Web Audio API"
+      },
+      "patterns": {
+        "tr": [
+          "flying birds",
+          "kuş oyunu",
+          "flying birds ai nedir",
+          "uçan kuş",
+          "parmakla oynanan oyun",
+          "flappy bird"
+        ],
+        "en": [
+          "flying birds",
+          "bird game",
+          "what is flying birds ai",
+          "flappy bird",
+          "finger controlled game"
+        ]
+      },
+      "keywords": [
+        "flying",
+        "birds",
+        "bird",
+        "kus",
+        "flappy"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "README",
+            "en": "README"
+          },
+          "href": "/projects/flying-birds-with-mediapipe"
+        },
+        {
+          "label": {
+            "tr": "Oyna",
+            "en": "Play"
+          },
+          "href": "/projects/flying-birds-with-mediapipe/play"
+        }
+      ],
+      "followUps": [
+        "project-sihirli-sapan",
+        "playable-games"
+      ]
+    },
+    {
+      "id": "project-sihirli-sapan",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Sihirli Sapan nedir?",
+        "en": "What is Sihirli Sapan?"
+      },
+      "answer": {
+        "tr": "Sihirli Sapan: MediaPipe el takibi ve Matter.js fizik motoruyla yapılmış bir Angry Birds klonu. Yumruk yapıp tutuyor, geri çekiyor, elinizi açarak fırlatıyorsunuz!\n• İkiz kuleler, taş kale gibi 5 bölüm\n• Web Audio API ses efektleri\n• Derleme adımı olmadan Vanilla JS/HTML/CSS",
+        "en": "Sihirli Sapan (\"Magic Slingshot\"): an Angry Birds clone built with MediaPipe hand tracking and the Matter.js physics engine. Make a fist to grab, pull back, and open your hand to launch!\n• 5 levels such as twin towers and a stone castle\n• Web Audio API sound effects\n• Vanilla JS/HTML/CSS with no build step"
+      },
+      "patterns": {
+        "tr": [
+          "sihirli sapan",
+          "sapan oyunu",
+          "angry birds",
+          "sihirli sapan nedir",
+          "sapan"
+        ],
+        "en": [
+          "sihirli sapan",
+          "slingshot game",
+          "angry birds clone",
+          "magic slingshot",
+          "slingshot"
+        ]
+      },
+      "keywords": [
+        "sapan",
+        "sihirli",
+        "angry",
+        "slingshot",
+        "matter"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "README",
+            "en": "README"
+          },
+          "href": "/projects/sihirli-sapan"
+        },
+        {
+          "label": {
+            "tr": "Oyna",
+            "en": "Play"
+          },
+          "href": "/projects/sihirli-sapan/play"
+        }
+      ],
+      "followUps": [
+        "project-sihirli-sapan-hsd",
+        "playable-games"
+      ]
+    },
+    {
+      "id": "project-sihirli-sapan-hsd",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Sihirli Sapan – HSD Edition nedir?",
+        "en": "What is Sihirli Sapan – HSD Edition?"
+      },
+      "answer": {
+        "tr": "Sihirli Sapan – HSD Edition: HSD Türkiye için özel geliştirilen sürüm. HSD maskotunu fırlatıp yazılım hatalarını (bug) eziyorsunuz!\n• Matter.js fiziği; tahta, cam ve taş bloklar\n• Prosedürel kulelerle 10 bölüm\n• Günlük/haftalık/aylık skor tablosu (saniye başına 30 puan zaman cezası)\n• HSD renk paleti ve özel SVG çizimler\n\nAçık kaynak olarak paylaşıldı.",
+        "en": "Sihirli Sapan – HSD Edition: a version built specially for HSD Türkiye. Launch the HSD mascot to crush software bugs!\n• Matter.js physics with wood, glass and stone blocks\n• 10 levels with procedural towers\n• Daily/weekly/monthly leaderboard (30-point time penalty per second)\n• HSD color palette and custom SVG art\n\nShared as open source."
+      },
+      "patterns": {
+        "tr": [
+          "sihirli sapan hsd",
+          "hsd edition",
+          "hsd oyunu",
+          "maskot oyunu",
+          "hsd sapan"
+        ],
+        "en": [
+          "sihirli sapan hsd edition",
+          "hsd edition",
+          "hsd game",
+          "mascot game"
+        ]
+      },
+      "keywords": [
+        "edition",
+        "maskot",
+        "mascot",
+        "leaderboard"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "README",
+            "en": "README"
+          },
+          "href": "/projects/sihirli-sapan-hsd-edition"
+        },
+        {
+          "label": {
+            "tr": "Oyna",
+            "en": "Play"
+          },
+          "href": "/projects/sihirli-sapan-hsd-edition/play"
+        }
+      ],
+      "followUps": [
+        "hsd",
+        "project-sihirli-sapan"
+      ]
+    },
+    {
+      "id": "project-magic-frame",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Magic Frame AR nedir?",
+        "en": "What is Magic Frame AR?"
+      },
+      "answer": {
+        "tr": "Magic Frame AR: Web kamerasında ellerinizle oluşturduğunuz çerçevenin içine gerçek zamanlı yapay zekâ ve AR filtreleri uygulayan bir Python projesi.\n• 15 filtre: yapay zekâ stil transferleri (Candy, Mosaic, Udnie, Rain Princess, Pointilism), MediaPipe ile arka plan bulanıklaştırma, karikatür, karakalem, suluboya, termal kamera, Minecraft piksel ve daha fazlası\n• İki elle çimdikleyerek filtre değiştirme, siberpunk neon HUD\n\nTeknolojiler: Python, OpenCV (DNN), MediaPipe Tasks API, ONNX Model Zoo",
+        "en": "Magic Frame AR: a Python project that applies real-time AI and AR filters inside a frame you form with your hands on the webcam.\n• 15 filters: AI style transfer (Candy, Mosaic, Udnie, Rain Princess, Pointilism), MediaPipe background blur, cartoon, pencil sketch, watercolor, thermal camera, Minecraft pixel and more\n• Pinch with both hands to switch filters, cyberpunk neon HUD\n\nTech: Python, OpenCV (DNN), MediaPipe Tasks API, ONNX Model Zoo"
+      },
+      "patterns": {
+        "tr": [
+          "magic frame",
+          "sihirli çerçeve",
+          "filtre projesi",
+          "ar filtreleri",
+          "stil transferi",
+          "magic frame nedir"
+        ],
+        "en": [
+          "magic frame",
+          "magic frame ar",
+          "filter project",
+          "ar filters",
+          "style transfer project"
+        ]
+      },
+      "keywords": [
+        "magic",
+        "frame",
+        "cerceve",
+        "filtre",
+        "filter",
+        "ar",
+        "stil",
+        "style",
+        "onnx"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "README",
+            "en": "README"
+          },
+          "href": "/projects/magic-frame"
+        },
+        {
+          "label": {
+            "tr": "Kaynak kod",
+            "en": "Source code"
+          },
+          "href": "https://github.com/osmanbugrabolat/magic-frame"
+        }
+      ],
+      "followUps": [
+        "mediapipe-projects",
+        "skills-ai-ml"
+      ]
+    },
+    {
+      "id": "project-kozmik-toz",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Kozmik Toz Enstalasyonu nedir?",
+        "en": "What is the Cosmic Dust Installation?"
+      },
+      "answer": {
+        "tr": "Kozmik Toz Enstalasyonu: MediaPipe Hand Landmarker ile çalışan, yapay zekâ destekli etkileşimli bir ses-görsel sanat enstalasyonu. El hareketleriniz \"kozmik toz\" parçacıkları ve senkron sesler üretiyor.\n• Çimdikleme çekim kuvvetini, yumruk etkileşim ve sesi değiştiriyor, alkış patlama yaratıyor\n• İki diyar: Lidya (soğuk mavi-mor tonlar) ve Frigya (sıcak kırmızı-altın tonlar); iki eli yukarı kaldırınca diyar değişiyor\n\nTeknolojiler: HTML5 Canvas, Web Audio API, MediaPipe Tasks Vision",
+        "en": "Cosmic Dust Installation: an AI-assisted interactive audio-visual art installation powered by MediaPipe Hand Landmarker. Your hand movements generate \"cosmic dust\" particles and synchronized sound.\n• Pinch controls attraction, a fist changes interactions and sound, a clap triggers bursts\n• Two realms: Lydian (cool blue-purple tones) and Phrygian (warm red-gold tones); raise both hands to switch\n\nTech: HTML5 Canvas, Web Audio API, MediaPipe Tasks Vision"
+      },
+      "patterns": {
+        "tr": [
+          "kozmik toz",
+          "enstalasyon",
+          "sanat projesi",
+          "kozmik toz enstalasyonu nedir",
+          "ses görsel sanat",
+          "parçacık projesi"
+        ],
+        "en": [
+          "cosmic dust",
+          "installation",
+          "art project",
+          "audio visual art",
+          "particle project",
+          "kozmik toz"
+        ]
+      },
+      "keywords": [
+        "kozmik",
+        "toz",
+        "enstalasyon",
+        "sanat",
+        "cosmic",
+        "dust",
+        "installation",
+        "art",
+        "particle"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "README",
+            "en": "README"
+          },
+          "href": "/projects/kozmik-toz-enstalasyon"
+        },
+        {
+          "label": {
+            "tr": "Deneyimle",
+            "en": "Experience it"
+          },
+          "href": "/projects/kozmik-toz-enstalasyon/play"
+        }
+      ],
+      "followUps": [
+        "playable-games",
+        "mediapipe-projects"
+      ]
+    },
+    {
+      "id": "project-physiotherapy",
+      "category": "projects",
+      "priority": 20,
+      "title": {
+        "tr": "Fizyoterapi uygulaması nedir?",
+        "en": "What is the physiotherapy app?"
+      },
+      "answer": {
+        "tr": "Yapay Zekâ Destekli Fizyoterapi Uygulaması: Android (Kotlin) ve Python/FastAPI ile geliştirilmiş, çift rollü bir uygulama.\n• MediaPipe ve CameraX ile gerçek zamanlı poz tahmini ve hareket fazı tespiti\n• Otomatik eklem açısı hesaplama ve uyarlanabilir tekrar sayma\n• PostgreSQL (SQLAlchemy, Alembic) veritabanı\n• Backend, Easypanel üzerinde Docker ile yayında",
+        "en": "AI-Powered Physiotherapy App: a dual-role application built with Android (Kotlin) and Python/FastAPI.\n• Real-time pose estimation and movement phase detection with MediaPipe and CameraX\n• Automatic joint angle calculation and adaptive repetition counting\n• PostgreSQL database (SQLAlchemy, Alembic)\n• Backend deployed with Docker on Easypanel"
+      },
+      "patterns": {
+        "tr": [
+          "fizyoterapi uygulaması",
+          "fizik tedavi projesi",
+          "poz tahmini",
+          "android uygulaman",
+          "mobil uygulama projen",
+          "kotlin projesi",
+          "sağlık uygulaması"
+        ],
+        "en": [
+          "physiotherapy app",
+          "physical therapy project",
+          "pose estimation",
+          "android app",
+          "mobile app project",
+          "kotlin project",
+          "health app"
+        ]
+      },
+      "keywords": [
+        "fizyoterapi",
+        "fizik",
+        "tedavi",
+        "poz",
+        "android",
+        "kotlin",
+        "physiotherapy",
+        "therapy",
+        "pose",
+        "mobile"
+      ],
+      "links": [],
+      "followUps": [
+        "project-dermatology",
+        "skills-backend"
+      ]
+    },
+    {
+      "id": "project-dermatology",
+      "category": "projects",
+      "priority": 15,
+      "title": {
+        "tr": "Dermatolojik hastalık tespiti projesi nedir?",
+        "en": "What is the dermatology detection project?"
+      },
+      "answer": {
+        "tr": "Dermatolojik Hastalık Tespiti: Fitzpatrick17k veri setiyle EfficientNet-B3 modelinin ince ayarı. Farklı cilt tiplerindeki değişkenliği hesaba katan özel kayıp fonksiyonları kullanıldı. Model, Hetzner sunucusunda FastAPI çıkarım servisi olarak yayında.",
+        "en": "Dermatological Disease Detection: fine-tuning EfficientNet-B3 on the Fitzpatrick17k dataset, with custom loss functions that account for skin type variability. The model is deployed as a FastAPI inference service on a Hetzner server."
+      },
+      "patterns": {
+        "tr": [
+          "dermatoloji projesi",
+          "cilt hastalığı tespiti",
+          "deri hastalığı",
+          "efficientnet",
+          "derin öğrenme projen",
+          "sağlık yapay zeka projesi",
+          "model eğittin mi"
+        ],
+        "en": [
+          "dermatology project",
+          "skin disease detection",
+          "efficientnet",
+          "deep learning project",
+          "medical ai project",
+          "did you train a model"
+        ]
+      },
+      "keywords": [
+        "dermatoloji",
+        "cilt",
+        "deri",
+        "efficientnet",
+        "fitzpatrick",
+        "dermatology",
+        "skin",
+        "medical"
+      ],
+      "links": [],
+      "followUps": [
+        "skills-ai-ml",
+        "project-physiotherapy"
+      ]
+    },
+    {
+      "id": "project-hsd-website",
+      "category": "projects",
+      "priority": 15,
+      "title": {
+        "tr": "HSD Türkiye web sitesi projesi nedir?",
+        "en": "What is the HSD Türkiye website project?"
+      },
+      "answer": {
+        "tr": "HSD Türkiye Web Sitesi\n• v1 (hsdturkiye.com): İhtiyaç analizi sonrası topluluk yönetimi için bir ERP platformu. Kampüs elçileri ve topluluk yöneticileri için.NET Core MVC backend ve HTML/CSS/JS frontend.\n• v2: v1 topluluk erişimine kapalı olduğu ve modern standartları karşılamadığı için baştan yazıldı..NET Core Web API + Nuxt.js; Huawei Cloud üzerinde VPC, ECS, SWR, RDS, OBS, ELB ve AS ile tamamen ölçeklenebilir mimari.",
+        "en": "HSD Türkiye Website\n• v1 (hsdturkiye.com): an ERP platform for community management, designed after a needs analysis..NET Core MVC backend and HTML/CSS/JS frontend for campus ambassadors and community managers.\n• v2: rebuilt because v1 was closed to community access and lacked modern standards..NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture."
+      },
+      "patterns": {
+        "tr": [
+          "hsd web sitesi",
+          "hsd türkiye sitesi",
+          "hsdturkiye.com",
+          "erp projesi",
+          "net core projesi",
+          "nuxt projesi",
+          "huawei cloud projesi",
+          "bulut projen"
+        ],
+        "en": [
+          "hsd website",
+          "hsd turkiye website",
+          "hsdturkiye.com",
+          "erp project",
+          ".net core project",
+          "nuxt project",
+          "huawei cloud project",
+          "cloud project"
+        ]
+      },
+      "keywords": [
+        "hsdturkiye",
+        "website",
+        "site",
+        "erp",
+        "nuxt",
+        "net",
+        "dotnet"
+      ],
+      "links": [],
+      "followUps": [
+        "skills-cloud",
+        "hsd"
+      ]
+    },
+    {
+      "id": "project-image-processing",
+      "category": "projects",
+      "priority": 10,
+      "title": {
+        "tr": "Görüntü Ön İşleme Platformu nedir?",
+        "en": "What is the Image Preprocessing Platform?"
+      },
+      "answer": {
+        "tr": "Görüntü Ön İşleme Platformu: FastAPI ve Django ile geliştirilmiş bir web platformu. Uzamsal dönüşümler, histogram optimizasyonu ve gürültü modelleri ekleme/çıkarma (Gaussian, Salt & Pepper) gibi işlemler sunuyor.",
+        "en": "Image Preprocessing Platform: a web platform built with FastAPI and Django, offering spatial transformations, histogram optimization, and adding/removing noise models (Gaussian, Salt & Pepper)."
+      },
+      "patterns": {
+        "tr": [
+          "görüntü işleme platformu",
+          "görüntü ön işleme",
+          "histogram projesi",
+          "gürültü filtresi",
+          "django projesi",
+          "goruntuIsleme"
+        ],
+        "en": [
+          "image processing platform",
+          "image preprocessing",
+          "histogram project",
+          "noise filter project",
+          "django project"
+        ]
+      },
+      "keywords": [
+        "goruntu",
+        "isleme",
+        "histogram",
+        "gurultu",
+        "django",
+        "image",
+        "preprocessing",
+        "noise"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "GitHub",
+            "en": "GitHub"
+          },
+          "href": "https://github.com/osmanbugrabolat/goruntuIsleme/tree/main"
+        }
+      ],
+      "followUps": [
+        "mediapipe-projects",
+        "skills-backend"
+      ]
+    },
+    {
+      "id": "skills-overview",
+      "category": "skills",
+      "priority": 85,
+      "title": {
+        "tr": "Hangi teknolojileri biliyor?",
+        "en": "What technologies does he know?"
+      },
+      "answer": {
+        "tr": "Öne çıkan yetenekler:\n• Yapay Zekâ / ML: YOLO, MediaPipe, OpenCV, TensorFlow, PyTorch, Scikit-learn\n• Bulut: Huawei Cloud, GCP, AWS\n• Frontend: Next.js, React, React Native, Flutter\n• Backend: Python FastAPI, Node.js,.NET, Prisma\n• Veritabanı: PostgreSQL, MSSQL\n• Araçlar: Git, Docker, Linux, Figma, CI/CD\n• Proje yönetimi: Jira, Trello, Slack, Agile/Scrum",
+        "en": "Key skills:\n• AI / ML: YOLO, MediaPipe, OpenCV, TensorFlow, PyTorch, Scikit-learn\n• Cloud: Huawei Cloud, GCP, AWS\n• Frontend: Next.js, React, React Native, Flutter\n• Backend: Python FastAPI, Node.js,.NET, Prisma\n• Databases: PostgreSQL, MSSQL\n• Tools: Git, Docker, Linux, Figma, CI/CD\n• Project management: Jira, Trello, Slack, Agile/Scrum"
+      },
+      "patterns": {
+        "tr": [
+          "hangi teknolojileri biliyorsun",
+          "yeteneklerin neler",
+          "yetenekler",
+          "teknoloji yığının",
+          "tech stack",
+          "hangi araçları kullanıyorsun",
+          "neleri biliyorsun",
+          "becerilerin",
+          "uzman olduğun teknolojiler",
+          "teknik becerilerin",
+          "hangi dillerde kod yazıyorsun"
+        ],
+        "en": [
+          "what technologies do you know",
+          "your skills",
+          "skills",
+          "tech stack",
+          "what tools do you use",
+          "technical skills",
+          "what are you good at",
+          "which technologies",
+          "what can you do"
+        ]
+      },
+      "keywords": [
+        "teknoloji",
+        "yetenek",
+        "beceri",
+        "stack",
+        "arac",
+        "skill",
+        "skills",
+        "technologies",
+        "tools",
+        "tech"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "skills-ai-ml",
+        "programming-languages",
+        "skills-cloud"
+      ]
+    },
+    {
+      "id": "programming-languages",
+      "category": "skills",
+      "priority": 40,
+      "title": {
+        "tr": "Hangi programlama dillerini biliyor?",
+        "en": "Which programming languages does he use?"
+      },
+      "answer": {
+        "tr": "Programlama dilleri: Python, JavaScript/TypeScript (Node.js, Next.js), C# (.NET) ve Kotlin. Yapay zekâ ve backend tarafında ağırlıklı olarak Python, web tarafında TypeScript kullanıyor. Ayrıca otomasyon için Bash scriptleri yazıyor.",
+        "en": "Programming languages: Python, JavaScript/TypeScript (Node.js, Next.js), C# (.NET) and Kotlin. He mostly uses Python for AI and backend work and TypeScript on the web, plus Bash scripts for automation."
+      },
+      "patterns": {
+        "tr": [
+          "hangi programlama dillerini biliyorsun",
+          "hangi dilde kod yazıyorsun",
+          "python biliyor musun",
+          "javascript biliyor musun",
+          "typescript",
+          "c sharp biliyor musun",
+          "en iyi bildiğin dil",
+          "kodlama dillerin"
+        ],
+        "en": [
+          "which programming languages do you know",
+          "what languages do you code in",
+          "do you know python",
+          "do you know javascript",
+          "typescript",
+          "c sharp",
+          "favorite programming language"
+        ]
+      },
+      "keywords": [
+        "programlama",
+        "python",
+        "javascript",
+        "typescript",
+        "kotlin",
+        "csharp",
+        "kodlama",
+        "programming",
+        "coding",
+        "language"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "skills-backend",
+        "skills-frontend"
+      ]
+    },
+    {
+      "id": "skills-ai-ml",
+      "category": "skills",
+      "priority": 50,
+      "title": {
+        "tr": "Yapay zekâ alanında neler biliyor?",
+        "en": "What are his AI/ML skills?"
+      },
+      "answer": {
+        "tr": "Yapay zekâ / makine öğrenmesi:\n• Bilgisayarlı görü: Ultralytics YOLO, MediaPipe, OpenCV\n• Derin öğrenme: TensorFlow, PyTorch (ör. EfficientNet-B3 ince ayarı)\n• Klasik ML: Scikit-learn\n• MLOps: Modelleri Docker ve CI/CD ile bulutta servis etme (FastAPI çıkarım servisleri)\n• Huawei Cloud HCCDA-AI ve HCCDP-AI sertifikaları",
+        "en": "AI / machine learning:\n• Computer vision: Ultralytics YOLO, MediaPipe, OpenCV\n• Deep learning: TensorFlow, PyTorch (e.g. fine-tuning EfficientNet-B3)\n• Classic ML: Scikit-learn\n• MLOps: serving models in the cloud with Docker and CI/CD (FastAPI inference services)\n• Huawei Cloud HCCDA-AI and HCCDP-AI certifications"
+      },
+      "patterns": {
+        "tr": [
+          "yapay zeka biliyor musun",
+          "makine öğrenmesi",
+          "derin öğrenme",
+          "yapay zeka yeteneklerin",
+          "bilgisayarlı görü",
+          "yolo biliyor musun",
+          "tensorflow",
+          "pytorch",
+          "mlops",
+          "ai deneyimin",
+          "görüntü işleme biliyor musun"
+        ],
+        "en": [
+          "ai skills",
+          "machine learning",
+          "deep learning",
+          "computer vision",
+          "do you know yolo",
+          "tensorflow",
+          "pytorch",
+          "mlops",
+          "ai experience",
+          "artificial intelligence"
+        ]
+      },
+      "keywords": [
+        "yapay",
+        "zeka",
+        "makine",
+        "ogrenme",
+        "derin",
+        "yolo",
+        "tensorflow",
+        "pytorch",
+        "opencv",
+        "mlops",
+        "ai",
+        "ml",
+        "machine",
+        "learning",
+        "deep",
+        "vision"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "project-dermatology",
+        "mediapipe-projects",
+        "certificates-huawei"
+      ]
+    },
+    {
+      "id": "skills-cloud",
+      "category": "skills",
+      "priority": 40,
+      "title": {
+        "tr": "Bulut deneyimi var mı?",
+        "en": "What cloud experience does he have?"
+      },
+      "answer": {
+        "tr": "Bulut:\n• Huawei Cloud: en güçlü olduğu platform; VPC, ECS, SWR, RDS, OBS, ELB ve AS ile ölçeklenebilir mimari kurdu (HSD Türkiye v2). 6 Huawei Cloud sertifikası var.\n• GCP ve AWS\n• Docker, CI/CD, DevOps ve MLOps uygulamaları",
+        "en": "Cloud:\n• Huawei Cloud: his strongest platform; built a scalable architecture with VPC, ECS, SWR, RDS, OBS, ELB and AS (HSD Türkiye v2). Holds 6 Huawei Cloud certifications.\n• GCP and AWS\n• Docker, CI/CD, DevOps and MLOps practices"
+      },
+      "patterns": {
+        "tr": [
+          "bulut deneyimin",
+          "cloud biliyor musun",
+          "huawei cloud",
+          "aws biliyor musun",
+          "gcp",
+          "google cloud",
+          "bulut bilişim",
+          "devops",
+          "docker biliyor musun",
+          "ci cd"
+        ],
+        "en": [
+          "cloud experience",
+          "do you know cloud",
+          "huawei cloud",
+          "aws",
+          "gcp",
+          "google cloud",
+          "cloud computing",
+          "devops",
+          "docker",
+          "ci cd"
+        ]
+      },
+      "keywords": [
+        "bulut",
+        "cloud",
+        "aws",
+        "gcp",
+        "google",
+        "devops",
+        "docker",
+        "kubernetes",
+        "cicd",
+        "deploy"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "certificates-huawei",
+        "project-hsd-website"
+      ]
+    },
+    {
+      "id": "skills-frontend",
+      "category": "skills",
+      "priority": 30,
+      "title": {
+        "tr": "Frontend'de neler kullanıyor?",
+        "en": "What frontend tech does he use?"
+      },
+      "answer": {
+        "tr": "Frontend ve mobil: Next.js, React, React Native ve Flutter. Ayrıca Nuxt.js (HSD Türkiye v2) ve Vanilla JS/HTML5 Canvas (tarayıcı oyunları). Bu site de Next.js ile yazıldı.",
+        "en": "Frontend & mobile: Next.js, React, React Native and Flutter, plus Nuxt.js (HSD Türkiye v2) and Vanilla JS/HTML5 Canvas (browser games). This site itself is built with Next.js."
+      },
+      "patterns": {
+        "tr": [
+          "frontend biliyor musun",
+          "react biliyor musun",
+          "nextjs",
+          "next.js",
+          "flutter",
+          "react native",
+          "mobil geliştirme",
+          "arayüz geliştirme",
+          "web geliştirme"
+        ],
+        "en": [
+          "frontend skills",
+          "do you know react",
+          "nextjs",
+          "next.js",
+          "flutter",
+          "react native",
+          "mobile development",
+          "web development",
+          "ui development"
+        ]
+      },
+      "keywords": [
+        "frontend",
+        "react",
+        "next",
+        "nextjs",
+        "flutter",
+        "native",
+        "nuxt",
+        "arayuz",
+        "mobil",
+        "mobile",
+        "web",
+        "ui"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "site-tech",
+        "skills-backend"
+      ]
+    },
+    {
+      "id": "skills-backend",
+      "category": "skills",
+      "priority": 30,
+      "title": {
+        "tr": "Backend'de neler kullanıyor?",
+        "en": "What backend tech does he use?"
+      },
+      "answer": {
+        "tr": "Backend ve veritabanı:\n• Python: FastAPI, Django, SQLAlchemy, Alembic\n•.NET Core (MVC ve Web API)\n• Node.js, Prisma ORM\n• PostgreSQL, MSSQL\n• Docker ile Easypanel ve Hetzner gibi sunuculara dağıtım",
+        "en": "Backend & databases:\n• Python: FastAPI, Django, SQLAlchemy, Alembic\n•.NET Core (MVC and Web API)\n• Node.js, Prisma ORM\n• PostgreSQL, MSSQL\n• Docker deployments to servers like Easypanel and Hetzner"
+      },
+      "patterns": {
+        "tr": [
+          "backend biliyor musun",
+          "fastapi",
+          "django",
+          "net core",
+          "nodejs",
+          "veritabanı bilgin",
+          "hangi veritabanlarını biliyorsun",
+          "postgresql",
+          "sql biliyor musun",
+          "api geliştirme"
+        ],
+        "en": [
+          "backend skills",
+          "fastapi",
+          "django",
+          ".net core",
+          "nodejs",
+          "databases",
+          "which databases do you know",
+          "postgresql",
+          "do you know sql",
+          "api development"
+        ]
+      },
+      "keywords": [
+        "backend",
+        "fastapi",
+        "django",
+        "node",
+        "nodejs",
+        "dotnet",
+        "veritabani",
+        "database",
+        "sql",
+        "postgresql",
+        "postgres",
+        "mssql",
+        "prisma",
+        "api"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "project-physiotherapy",
+        "skills-cloud"
+      ]
+    },
+    {
+      "id": "skills-tools",
+      "category": "skills",
+      "priority": 20,
+      "title": {
+        "tr": "Hangi araçları kullanıyor?",
+        "en": "Which tools does he use?"
+      },
+      "answer": {
+        "tr": "Araçlar:\n• Geliştirme: VS Code, Git & GitHub, Docker, Linux, Bash, Figma\n• Yapay zekâ araçları: Claude, Cursor, Gemini\n• Proje yönetimi: Slack, Trello, Jira; Agile/Scrum",
+        "en": "Tools:\n• Development: VS Code, Git & GitHub, Docker, Linux, Bash, Figma\n• AI tools: Claude, Cursor, Gemini\n• Project management: Slack, Trello, Jira; Agile/Scrum"
+      },
+      "patterns": {
+        "tr": [
+          "hangi araçları kullanıyorsun",
+          "hangi editörü kullanıyorsun",
+          "vs code",
+          "git biliyor musun",
+          "linux kullanıyor musun",
+          "figma",
+          "jira",
+          "trello",
+          "yapay zeka araçları",
+          "cursor kullanıyor musun"
+        ],
+        "en": [
+          "which tools do you use",
+          "which editor do you use",
+          "vs code",
+          "do you know git",
+          "linux",
+          "figma",
+          "jira",
+          "trello",
+          "ai tools",
+          "do you use cursor"
+        ]
+      },
+      "keywords": [
+        "arac",
+        "editor",
+        "vscode",
+        "git",
+        "github",
+        "linux",
+        "figma",
+        "jira",
+        "trello",
+        "slack",
+        "cursor",
+        "claude",
+        "gemini",
+        "tools"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Yetenekler",
+            "en": "Skills"
+          },
+          "href": "/skills"
+        }
+      ],
+      "followUps": [
+        "skills-overview",
+        "divizyon"
+      ]
+    },
+    {
+      "id": "certificates-overview",
+      "category": "certificates",
+      "priority": 70,
+      "title": {
+        "tr": "Hangi sertifikaları var?",
+        "en": "What certificates does he have?"
+      },
+      "answer": {
+        "tr": "Sertifikalar:\nHuawei Cloud (6):\n• HCCDA-AI, HCCDA-Cloud Native, HCCDA-Tech Essentials\n• HCCDP-AI, HCCDP-Cloud Migration, HCCDP-Solution Architectures\n\nBTK Akademi (3):\n• Veri Bilimi için Python ve TensorFlow\n• R ile Veri Bilimine Giriş\n• PL/SQL, Oracle Veri Tabanı Programlama",
+        "en": "Certificates:\nHuawei Cloud (6):\n• HCCDA-AI, HCCDA-Cloud Native, HCCDA-Tech Essentials\n• HCCDP-AI, HCCDP-Cloud Migration, HCCDP-Solution Architectures\n\nBTK Akademi (3):\n• Python and TensorFlow for Data Science\n• Introduction to Data Science with R\n• PL/SQL, Oracle Database Programming"
+      },
+      "patterns": {
+        "tr": [
+          "sertifikaların neler",
+          "hangi sertifikaların var",
+          "sertifika",
+          "sertifikalar",
+          "belgelerin",
+          "kurs aldın mı",
+          "eğitim belgeleri",
+          "sertifikan var mı",
+          "kaç sertifikan var"
+        ],
+        "en": [
+          "what certificates do you have",
+          "certifications",
+          "certificates",
+          "certificate",
+          "courses you took",
+          "do you have certifications",
+          "how many certificates"
+        ]
+      },
+      "keywords": [
+        "sertifika",
+        "sertifikalar",
+        "belge",
+        "kurs",
+        "certificate",
+        "certificates",
+        "certification",
+        "certifications",
+        "course"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Huawei HCCDP-AI",
+            "en": "Huawei HCCDP-AI"
+          },
+          "href": "/certificates/hwend-721526"
+        }
+      ],
+      "followUps": [
+        "certificates-huawei",
+        "certificates-btk"
+      ]
+    },
+    {
+      "id": "certificates-huawei",
+      "category": "certificates",
+      "priority": 30,
+      "title": {
+        "tr": "Huawei sertifikaları neler?",
+        "en": "What are his Huawei certifications?"
+      },
+      "answer": {
+        "tr": "Huawei Cloud sertifikaları (hepsi 2028 sonuna kadar geçerli):\n• Developer Associate: HCCDA-AI, HCCDA-Cloud Native, HCCDA-Tech Essentials\n• Developer Professional: HCCDP-AI, HCCDP-Cloud Migration, HCCDP-Solution Architectures",
+        "en": "Huawei Cloud certifications (all valid until late 2028):\n• Developer Associate: HCCDA-AI, HCCDA-Cloud Native, HCCDA-Tech Essentials\n• Developer Professional: HCCDP-AI, HCCDP-Cloud Migration, HCCDP-Solution Architectures"
+      },
+      "patterns": {
+        "tr": [
+          "huawei sertifikaları",
+          "hccda",
+          "hccdp",
+          "huawei cloud sertifikası",
+          "bulut sertifikaları",
+          "yapay zeka sertifikası"
+        ],
+        "en": [
+          "huawei certifications",
+          "hccda",
+          "hccdp",
+          "huawei cloud certificate",
+          "cloud certifications",
+          "ai certification"
+        ]
+      },
+      "keywords": [
+        "hccda",
+        "hccdp",
+        "huawei"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "HCCDP-AI",
+            "en": "HCCDP-AI"
+          },
+          "href": "/certificates/hwend-721526"
+        },
+        {
+          "label": {
+            "tr": "HCCDP-Solution Architectures",
+            "en": "HCCDP-Solution Architectures"
+          },
+          "href": "/certificates/hwend-580148"
+        },
+        {
+          "label": {
+            "tr": "HCCDA-AI",
+            "en": "HCCDA-AI"
+          },
+          "href": "/certificates/hwend-177820"
+        }
+      ],
+      "followUps": [
+        "skills-cloud",
+        "certificates-btk"
+      ]
+    },
+    {
+      "id": "certificates-btk",
+      "category": "certificates",
+      "priority": 15,
+      "title": {
+        "tr": "BTK Akademi sertifikaları neler?",
+        "en": "What are his BTK Akademi certificates?"
+      },
+      "answer": {
+        "tr": "BTK Akademi sertifikaları:\n• Veri Bilimi için Python ve TensorFlow (14.08.2024)\n• R ile Veri Bilimine Giriş (20.07.2024)\n• PL/SQL, Oracle Veri Tabanı Programlama (07.01.2025)",
+        "en": "BTK Akademi certificates:\n• Python and TensorFlow for Data Science (14 Aug 2024)\n• Introduction to Data Science with R (20 Jul 2024)\n• PL/SQL, Oracle Database Programming (7 Jan 2025)"
+      },
+      "patterns": {
+        "tr": [
+          "btk akademi",
+          "btk sertifikaları",
+          "python sertifikası",
+          "r sertifikası",
+          "oracle sertifikası",
+          "sql sertifikası",
+          "veri bilimi sertifikası"
+        ],
+        "en": [
+          "btk akademi",
+          "btk certificates",
+          "python certificate",
+          "r certificate",
+          "oracle certificate",
+          "sql certificate",
+          "data science certificate"
+        ]
+      },
+      "keywords": [
+        "btk",
+        "akademi",
+        "oracle",
+        "plsql",
+        "r",
+        "veri",
+        "bilimi",
+        "data",
+        "science"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Python & TensorFlow",
+            "en": "Python & TensorFlow"
+          },
+          "href": "/certificates/python"
+        },
+        {
+          "label": {
+            "tr": "R Programlama",
+            "en": "R Programming"
+          },
+          "href": "/certificates/r-lang"
+        },
+        {
+          "label": {
+            "tr": "SQL & Oracle",
+            "en": "SQL & Oracle"
+          },
+          "href": "/certificates/oracle"
+        }
+      ],
+      "followUps": [
+        "certificates-huawei",
+        "skills-ai-ml"
+      ]
+    },
+    {
+      "id": "articles-overview",
+      "category": "articles",
+      "priority": 55,
+      "title": {
+        "tr": "Yazdığı makaleler neler?",
+        "en": "What articles has he written?"
+      },
+      "answer": {
+        "tr": "Buğra Medium'da Türkçe teknoloji yazıları yazıyor:\n• Altyapıyı Unutun, Koda Odaklanın: FaaS\n• Açık Kaynak vs Açık Ağırlık (Open Source vs Open Weight modeller)\n• Yapay Zeka İletişiminin Sessiz Devrimi: MCP\n• Yeni Geleceğin Başlangıcı: Yapay Zeka",
+        "en": "Buğra writes Turkish tech articles on Medium:\n• Forget the Infrastructure, Focus on Code: FaaS\n• Open Source vs Open Weight Models\n• The Silent Revolution of AI Communication: MCP\n• The Beginning of a New Future: Artificial Intelligence"
+      },
+      "patterns": {
+        "tr": [
+          "makalelerin neler",
+          "yazıların",
+          "blog yazıyor musun",
+          "medium",
+          "makale",
+          "yazdığın yazılar",
+          "blogun var mı",
+          "yazılarını okuyabilir miyim"
+        ],
+        "en": [
+          "what articles have you written",
+          "your articles",
+          "do you blog",
+          "medium",
+          "articles",
+          "blog posts",
+          "can i read your writing"
+        ]
+      },
+      "keywords": [
+        "makale",
+        "yazi",
+        "blog",
+        "medium",
+        "article",
+        "articles",
+        "writing",
+        "post"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Medium",
+            "en": "Medium"
+          },
+          "href": "https://medium.com/@osmanbugrabolat"
+        }
+      ],
+      "followUps": [
+        "article-mcp",
+        "article-faas",
+        "article-open-weight"
+      ]
+    },
+    {
+      "id": "article-faas",
+      "category": "articles",
+      "priority": 5,
+      "title": {
+        "tr": "FaaS makalesi ne anlatıyor?",
+        "en": "What is the FaaS article about?"
+      },
+      "answer": {
+        "tr": "\"Altyapıyı Unutun, Koda Odaklanın: Function as a Service (FaaS)\" yazısı, sunucu yönetimiyle uğraşmadan yalnızca fonksiyon yazarak uygulama çalıştırmayı sağlayan sunucusuz (serverless) yaklaşımı anlatıyor.",
+        "en": "\"Forget the Infrastructure, Focus on Code: Function as a Service (FaaS)\" explains the serverless approach of running applications by writing only functions, without managing servers."
+      },
+      "patterns": {
+        "tr": [
+          "faas",
+          "function as a service",
+          "serverless makalesi",
+          "sunucusuz mimari",
+          "faas nedir"
+        ],
+        "en": [
+          "faas",
+          "function as a service",
+          "serverless article",
+          "what is faas"
+        ]
+      },
+      "keywords": [
+        "faas",
+        "serverless",
+        "sunucusuz",
+        "function"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Makaleyi oku",
+            "en": "Read article"
+          },
+          "href": "https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739"
+        }
+      ],
+      "followUps": [
+        "articles-overview",
+        "skills-cloud"
+      ]
+    },
+    {
+      "id": "article-open-weight",
+      "category": "articles",
+      "priority": 5,
+      "title": {
+        "tr": "Açık Kaynak vs Açık Ağırlık makalesi",
+        "en": "Open Source vs Open Weight article"
+      },
+      "answer": {
+        "tr": "\"Yapay Zeka Dünyasında Kavram Karmaşası: Open Source Model vs Open Weight Model\" yazısı, açık kaynak modellerle yalnızca ağırlıkları paylaşılan modeller arasındaki farkı açıklıyor.",
+        "en": "\"Confusion of Concepts in AI: Open Source Model vs Open Weight Model\" explains the difference between truly open-source models and models that only share their weights."
+      },
+      "patterns": {
+        "tr": [
+          "açık kaynak vs açık ağırlık",
+          "open weight",
+          "open source model",
+          "açık ağırlık nedir",
+          "açık kaynak model makalesi"
+        ],
+        "en": [
+          "open source vs open weight",
+          "open weight",
+          "open source model",
+          "what is an open weight model"
+        ]
+      },
+      "keywords": [
+        "acik",
+        "agirlik",
+        "weight",
+        "open",
+        "kaynak",
+        "source"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Makaleyi oku",
+            "en": "Read article"
+          },
+          "href": "https://medium.com/@osmanbugrabolat/yapay-zeka-d%C3%BCnyas%C4%B1nda-kavram-karma%C5%9Fas%C4%B1-open-source-model-vs-open-weight-model-32ccccd2f0f5"
+        }
+      ],
+      "followUps": [
+        "articles-overview",
+        "article-mcp"
+      ]
+    },
+    {
+      "id": "article-mcp",
+      "category": "articles",
+      "priority": 5,
+      "title": {
+        "tr": "MCP makalesi ne anlatıyor?",
+        "en": "What is the MCP article about?"
+      },
+      "answer": {
+        "tr": "\"Yapay Zeka İletişiminin Sessiz Devrimi: Model Context Protocol\" yazısı, yapay zekâ modellerinin araçlara ve veri kaynaklarına standart bir şekilde bağlanmasını sağlayan MCP'yi anlatıyor.",
+        "en": "\"The Silent Revolution of AI Communication: Model Context Protocol\" covers MCP, a standard way for AI models to connect to tools and data sources."
+      },
+      "patterns": {
+        "tr": [
+          "mcp",
+          "model context protocol",
+          "mcp nedir",
+          "mcp makalesi"
+        ],
+        "en": [
+          "mcp",
+          "model context protocol",
+          "what is mcp",
+          "mcp article"
+        ]
+      },
+      "keywords": [
+        "mcp",
+        "protocol",
+        "context"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Makaleyi oku",
+            "en": "Read article"
+          },
+          "href": "https://medium.com/@osmanbugrabolat/yapay-zeka-i%CC%87leti%C5%9Fiminin-sessiz-devrimi-model-context-protocol-83ca52c1a82c"
+        }
+      ],
+      "followUps": [
+        "articles-overview",
+        "article-ai-future"
+      ]
+    },
+    {
+      "id": "article-ai-future",
+      "category": "articles",
+      "priority": 5,
+      "title": {
+        "tr": "Yapay Zeka makalesi ne anlatıyor?",
+        "en": "What is the AI article about?"
+      },
+      "answer": {
+        "tr": "\"Yeni Geleceğin Başlangıcı: Yapay Zeka\" yazısı, yapay zekânın ne olduğunu ve geleceği nasıl şekillendirdiğini anlatan bir giriş yazısı.",
+        "en": "\"The Beginning of a New Future: Artificial Intelligence\" is an introductory piece on what AI is and how it is shaping the future."
+      },
+      "patterns": {
+        "tr": [
+          "yeni geleceğin başlangıcı",
+          "yapay zeka makalesi",
+          "yapay zeka yazısı",
+          "yapay zekanın geleceği"
+        ],
+        "en": [
+          "beginning of a new future",
+          "ai article",
+          "future of ai article"
+        ]
+      },
+      "keywords": [
+        "gelecek",
+        "gelecegin",
+        "future"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "Makaleyi oku",
+            "en": "Read article"
+          },
+          "href": "https://medium.com/@osmanbugrabolat/yeni-gelece%C4%9Fin-ba%C5%9Flang%C4%B1c%C4%B1-yapay-zeka-9313cb13e31f"
+        }
+      ],
+      "followUps": [
+        "articles-overview",
+        "skills-ai-ml"
+      ]
+    },
+    {
+      "id": "contact-email",
+      "category": "contact",
+      "priority": 80,
+      "title": {
+        "tr": "Buğra'ya nasıl ulaşırım?",
+        "en": "How can I contact Buğra?"
+      },
+      "answer": {
+        "tr": "En kolay yol e-posta: contact@bugrabolat.dev\nGenellikle 24–48 saat içinde dönüş yapıyor. LinkedIn ve GitHub üzerinden de ulaşabilirsiniz.",
+        "en": "Email is the easiest way: contact@bugrabolat.dev\nHe usually replies within 24–48 hours. You can also reach him on LinkedIn and GitHub."
+      },
+      "patterns": {
+        "tr": [
+          "sana nasıl ulaşırım",
+          "iletişim",
+          "iletişim bilgilerin",
+          "mail adresin",
+          "e-posta adresin",
+          "email",
+          "seninle iletişime geçmek istiyorum",
+          "nasıl iletişim kurabilirim",
+          "mailin ne",
+          "telefon numaran",
+          "ulaşmak istiyorum",
+          "mesaj atmak istiyorum"
+        ],
+        "en": [
+          "how can i contact you",
+          "contact",
+          "contact info",
+          "email address",
+          "email",
+          "how to reach you",
+          "i want to get in touch",
+          "phone number",
+          "send you a message"
+        ]
+      },
+      "keywords": [
+        "iletisim",
+        "ulas",
+        "ulasmak",
+        "mail",
+        "eposta",
+        "email",
+        "telefon",
+        "mesaj",
+        "contact",
+        "reach",
+        "phone",
+        "message",
+        "touch"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "İletişim sayfası",
+            "en": "Contact page"
+          },
+          "href": "/contact"
+        },
+        {
+          "label": {
+            "tr": "E-posta gönder",
+            "en": "Send email"
+          },
+          "href": "mailto:contact@bugrabolat.dev"
+        }
+      ],
+      "followUps": [
+        "linkedin",
+        "github",
+        "availability"
+      ]
+    },
+    {
+      "id": "github",
+      "category": "contact",
+      "priority": 25,
+      "title": {
+        "tr": "GitHub hesabı var mı?",
+        "en": "What is his GitHub?"
+      },
+      "answer": {
+        "tr": "GitHub: github.com/osmanbugrabolat\nProjelerin kaynak kodlarını burada bulabilirsiniz.",
+        "en": "GitHub: github.com/osmanbugrabolat\nYou'll find the source code of his projects there."
+      },
+      "patterns": {
+        "tr": [
+          "github",
+          "github hesabın",
+          "kaynak kodlar nerede",
+          "kodlarını görebilir miyim",
+          "repoların",
+          "açık kaynak projelerin",
+          "github linki"
+        ],
+        "en": [
+          "github",
+          "github profile",
+          "where is the source code",
+          "can i see your code",
+          "your repos",
+          "open source projects",
+          "github link"
+        ]
+      },
+      "keywords": [
+        "github",
+        "repo",
+        "kaynak",
+        "kod",
+        "source",
+        "code",
+        "repository"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "GitHub'ı aç",
+            "en": "Open GitHub"
+          },
+          "href": "https://github.com/osmanbugrabolat"
+        }
+      ],
+      "followUps": [
+        "projects-overview",
+        "linkedin"
+      ]
+    },
+    {
+      "id": "linkedin",
+      "category": "contact",
+      "priority": 25,
+      "title": {
+        "tr": "LinkedIn hesabı var mı?",
+        "en": "What is his LinkedIn?"
+      },
+      "answer": {
+        "tr": "LinkedIn: linkedin.com/in/osmanbugrabolat",
+        "en": "LinkedIn: linkedin.com/in/osmanbugrabolat"
+      },
+      "patterns": {
+        "tr": [
+          "linkedin",
+          "linkedin hesabın",
+          "linkedin profilin",
+          "linkedin linki",
+          "sosyal medya hesapların",
+          "sosyal medya"
+        ],
+        "en": [
+          "linkedin",
+          "linkedin profile",
+          "linkedin link",
+          "social media",
+          "social links"
+        ]
+      },
+      "keywords": [
+        "linkedin",
+        "sosyal",
+        "medya",
+        "social"
+      ],
+      "links": [
+        {
+          "label": {
+            "tr": "LinkedIn'i aç",
+            "en": "Open LinkedIn"
+          },
+          "href": "https://linkedin.com/in/osmanbugrabolat"
+        }
+      ],
+      "followUps": [
+        "github",
+        "contact-email"
+      ]
+    },
+    {
+      "id": "site-tech",
+      "category": "site",
+      "priority": 20,
+      "title": {
+        "tr": "Bu site nasıl yapıldı?",
+        "en": "How was this site built?"
+      },
+      "answer": {
+        "tr": "Bu portfolyo VS Code arayüzünden ilham alınarak Next.js, React ve TypeScript ile geliştirildi. Dosya gezgini, sekmeler, terminal ve durum çubuğu gibi VS Code öğeleri var; projelerin çoğunu doğrudan sitede deneyebilirsiniz. Ben (BuğrAI) ise Supabase üzerinde tutulan soru kalıplarıyla çalışan bir soru-cevap asistanıyım.",
+        "en": "This portfolio is inspired by the VS Code interface and built with Next.js, React and TypeScript. It has VS Code elements like the file explorer, tabs, terminal and status bar, and you can try most projects right on the site. I (BuğrAI) am a Q&A assistant powered by question patterns stored in Supabase."
+      },
+      "patterns": {
+        "tr": [
+          "bu site nasıl yapıldı",
+          "siteyi neyle yaptın",
+          "bu site hangi teknolojiyle",
+          "vs code teması",
+          "portfolyo sitesi",
+          "site kaynak kodu",
+          "bu tasarım ne"
+        ],
+        "en": [
+          "how was this site built",
+          "what is this site made with",
+          "vs code theme",
+          "portfolio website",
+          "site source code",
+          "what tech is this site"
+        ]
+      },
+      "keywords": [
+        "site",
+        "website",
+        "tasarim",
+        "tema",
+        "theme",
+        "vscode",
+        "portfolyo"
+      ],
+      "links": [],
+      "followUps": [
+        "skills-frontend",
+        "bot-identity"
+      ]
+    }
+  ]
+}

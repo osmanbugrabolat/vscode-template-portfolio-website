@@ -1,268 +1,42 @@
-// Shared constants — imported by both VSCodeLayout and Sidebar
-// Keeping this separate avoids circular dependency issues
-import { personal } from "@/data/portfolio";
+import type { Lang } from "@/lib/chatbot/types";
+import { DEFAULT_FILE_ICON, STATUS_LANGUAGE, nodeName, type ExplorerItem } from "@/lib/cms/types";
 
 export interface FileTab {
   id: string;
   name: string;
+  /** Site route for pages, absolute URL for external links. */
   path: string;
-  ext: "tsx" | "ts" | "json" | "md" | "jpg" | "png" | "pdf" | string;
+  icon: string;
   language: string;
-  filename?: string;
-  isExternal?: boolean;
+  isExternal: boolean;
 }
 
-export const ALL_FILES: FileTab[] = [
-  {
-    id: "about-readme",
-    name: "WhoAmI.md",
-    path: "/",
-    ext: "md",
-    language: "Markdown",
-  },
+export interface LayoutSettings {
+  name: string;
+  email: string;
+  github_url: string;
+  linkedin_url: string;
+  medium_url: string;
+  terminal_whoami: string;
+  chat_greeting_tr: string;
+  chat_greeting_en: string;
+}
 
-  {
-    id: "project-5-readme",
-    name: "README.md",
-    path: "/projects/pong-with-mediapipe",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-5-play",
-    name: "Play",
-    path: "/projects/pong-with-mediapipe/play",
-    ext: "play",
-    language: "Game",
-  },
-  {
-    id: "project-6-readme",
-    name: "README.md",
-    path: "/projects/flying-birds-with-mediapipe",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-6-play",
-    name: "Play",
-    path: "/projects/flying-birds-with-mediapipe/play",
-    ext: "play",
-    language: "Game",
-  },
-  {
-    id: "project-7-readme",
-    name: "README.md",
-    path: "/projects/sihirli-sapan",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-7-play",
-    name: "Play",
-    path: "/projects/sihirli-sapan/play",
-    ext: "play",
-    language: "Game",
-  },
-  {
-    id: "project-8-readme",
-    name: "README.md",
-    path: "/projects/sihirli-sapan-hsd-edition",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-8-play",
-    name: "Play",
-    path: "/projects/sihirli-sapan-hsd-edition/play",
-    ext: "play",
-    language: "Game",
-  },
-  {
-    id: "project-9-readme",
-    name: "README.md",
-    path: "/projects/magic-frame",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-9-github",
-    name: "Source Code",
-    path: "https://github.com/osmanbugrabolat/magic-frame",
-    ext: "github",
-    language: "Social",
-    isExternal: true,
-  },
-  {
-    id: "project-10-readme",
-    name: "README.md",
-    path: "/projects/kozmik-toz-enstalasyon",
-    ext: "md",
-    language: "Markdown",
-  },
-  {
-    id: "project-10-play",
-    name: "Deneyimle",
-    path: "/projects/kozmik-toz-enstalasyon/play",
-    ext: "play",
-    language: "Game",
-  },
-  {
-    id: "project-11-more",
-    name: "For more...",
-    path: personal.github,
-    ext: "github",
-    language: "Social",
-    isExternal: true,
-  },
-  {
-    id: "article-1",
-    name: "Altyapıyı Unutun, Koda Odaklanın: FaaS",
-    path: "https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739",
-    ext: "medium",
-    language: "Article",
-    isExternal: true,
-  },
-  {
-    id: "article-2",
-    name: "Açık Kaynak vs Açık Ağırlık",
-    path: "https://medium.com/@osmanbugrabolat/yapay-zeka-d%C3%BCnyas%C4%B1nda-kavram-karma%C5%9Fas%C4%B1-open-source-model-vs-open-weight-model-32ccccd2f0f5",
-    ext: "medium",
-    language: "Article",
-    isExternal: true,
-  },
-  {
-    id: "article-3",
-    name: "Yapay Zeka İletişiminin Sessiz Devrimi: MCP",
-    path: "https://medium.com/@osmanbugrabolat/yapay-zeka-i%CC%87leti%C5%9Fiminin-sessiz-devrimi-model-context-protocol-83ca52c1a82c",
-    ext: "medium",
-    language: "Article",
-    isExternal: true,
-  },
-  {
-    id: "article-4",
-    name: "Yeni Geleceğin Başlangıcı: Yapay Zeka",
-    path: "https://medium.com/@osmanbugrabolat/yeni-gelece%C4%9Fin-ba%C5%9Flang%C4%B1c%C4%B1-yapay-zeka-9313cb13e31f",
-    ext: "medium",
-    language: "Article",
-    isExternal: true,
-  },
-  {
-    id: "article-5",
-    name: "For more...",
-    path: personal.medium,
-    ext: "medium",
-    language: "Article",
-    isExternal: true,
-  },
-  {
-    id: "cert-oracle",
-    name: "SQL & Oracle Database",
-    filename: "oracle_cert.jpg",
-    path: "/certificates/oracle",
-    ext: "jpg",
-    language: "Image",
-  },
-  {
-    id: "cv-file",
-    name: "cv.pdf",
-    path: "/cv",
-    ext: "pdf",
-    language: "PDF",
-  },
-  {
-    id: "cert-python",
-    name: "Python & Tensorflow",
-    filename: "python_tensorflow.jpg",
-    path: "/certificates/python",
-    ext: "jpg",
-    language: "Image",
-  },
-  {
-    id: "cert-r",
-    name: "R Programming",
-    filename: "r_programming.jpg",
-    path: "/certificates/r-lang",
-    ext: "jpg",
-    language: "Image",
-  },
-  {
-    id: "cert-hwend-1",
-    name: "Huawei HCCDA-AI",
-    filename: "HWEND_177820.png",
-    path: "/certificates/hwend-177820",
-    ext: "png",
-    language: "Image",
-  },
-  {
-    id: "cert-hwend-2",
-    name: "Huawei HCCDP-AI",
-    filename: "HWEND_721526.png",
-    path: "/certificates/hwend-721526",
-    ext: "png",
-    language: "Image",
-  },
-  {
-    id: "cert-hwend-3",
-    name: "Huawei HCCDP-Cloud Migration",
-    filename: "HWEND_036679.png",
-    path: "/certificates/hwend-036679",
-    ext: "png",
-    language: "Image",
-  },
-  {
-    id: "cert-hwend-4",
-    name: "Huawei HCCDP-Solution Architectures",
-    filename: "HWEND_580148.png",
-    path: "/certificates/hwend-580148",
-    ext: "png",
-    language: "Image",
-  },
-  {
-    id: "cert-hwend-5",
-    name: "Huawei HCCDA-Cloud Native",
-    filename: "HWEND_690969.png",
-    path: "/certificates/hwend-690969",
-    ext: "png",
-    language: "Image",
-  },
-  {
-    id: "cert-hwend-6",
-    name: "Huawei HCCDA-Tech Essentials",
-    filename: "HWEND_727737.png",
-    path: "/certificates/hwend-727737",
-    ext: "png",
-    language: "Image",
-  },
-  {
-    id: "contact-linkedin",
-    name: "LinkedIn",
-    path: personal.linkedin,
-    ext: "linkedin",
-    language: "Social",
-    isExternal: true,
-  },
-  {
-    id: "contact-github",
-    name: "GitHub",
-    path: personal.github,
-    ext: "github",
-    language: "Social",
-    isExternal: true,
-  },
-  {
-    id: "contact-medium",
-    name: "Medium",
-    path: personal.medium,
-    ext: "medium",
-    language: "Social",
-    isExternal: true,
-  },
-  {
-    id: "contact-email",
-    name: "E-Mail",
-    path: `mailto:${personal.email}`,
-    ext: "email",
-    language: "Email",
-    isExternal: true,
-  },
-];
+export function toFileTab(item: ExplorerItem, lang: Lang): FileTab | null {
+  if (item.kind !== "file" || !item.file_type) return null;
+  const isExternal = item.file_type === "link";
+  const path = isExternal ? item.url : item.route;
+  if (!path) return null;
+  return {
+    id: item.id,
+    name: nodeName(item, lang),
+    path,
+    icon: item.icon || DEFAULT_FILE_ICON[item.file_type],
+    language: STATUS_LANGUAGE[item.file_type],
+    isExternal,
+  };
+}
+
+export function sortItems<T extends Pick<ExplorerItem, "sort_order" | "name" | "kind">>(items: T[]): T[] {
+  return [...items].sort((a, b) => a.sort_order - b.sort_order || a.name.localeCompare(b.name, "tr"));
+}
