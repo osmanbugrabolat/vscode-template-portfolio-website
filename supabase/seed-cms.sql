@@ -2,10 +2,28 @@
 -- Initial content only: ON CONFLICT DO NOTHING keeps later admin edits intact.
 begin;
 
-insert into public.site_settings (id, name, title_tr, title_en, subtitle_tr, subtitle_en, location_tr, location_en, email, github_url, linkedin_url, medium_url, website_url, avatar_url, available_for_work, current_focus_tr, current_focus_en, education_degree_tr, education_degree_en, education_school, education_years, education_gpa, seo_title, seo_description_tr, seo_description_en, chat_greeting_tr, chat_greeting_en, terminal_whoami) values (1, 'Osman Buğra BOLAT', '', 'AI powered AI & Cloud Engineer', '', 'Like every engineer should, I solve problems.', 'Türkiye', 'Turkey', 'osmanbugrabolat@gmail.com', 'https://github.com/osmanbugrabolat', 'https://linkedin.com/in/osmanbugrabolat', 'https://medium.com/@osmanbugrabolat', 'https://osmanbugrabolat.com.tr', '/bugra.png', false, array[]::text[], array['Building scalable Web & Mobil applications', 'Exploring AI/ML integrations']::text[], '', 'Computer Engineering', 'University', '2020 – 2024', '3.4 / 4.0', 'Osman Buğra BOLAT', '', 'Portfolio of Buğra Bolat — Full Stack Developer specializing in Next.js, TypeScript, and modern web technologies.', 'Merhaba! Ben BuğrAI. Osman Buğra''nın portfolyosu hakkında merak ettiğiniz her şeyi sorabilirsiniz.', 'Hi! I''m BuğrAI. Ask me anything about Osman Buğra''s portfolio.', 'Osman Buğra BOLAT - AI powered AI & Cloud Engineer') on conflict (id) do nothing;
+insert into public.site_settings (id, name, title_tr, title_en, subtitle_tr, subtitle_en, location_tr, location_en, email, github_url, linkedin_url, medium_url, website_url, avatar_url, available_for_work, current_focus_tr, current_focus_en, education_degree_tr, education_degree_en, education_school, education_years, education_gpa, seo_title, seo_description_tr, seo_description_en, chat_greeting_tr, chat_greeting_en, terminal_whoami) values (1, 'Osman Buğra BOLAT', 'Yapay Zekâ Destekli Yapay Zekâ ve Bulut Mühendisi', 'AI powered AI & Cloud Engineer', 'Her mühendisin yapması gerektiği gibi, problem çözerim.', 'Like every engineer should, I solve problems.', 'Türkiye', 'Turkey', 'osmanbugrabolat@gmail.com', 'https://github.com/osmanbugrabolat', 'https://linkedin.com/in/osmanbugrabolat', 'https://medium.com/@osmanbugrabolat', 'https://osmanbugrabolat.com.tr', '/bugra.png', false, array['Ölçeklenebilir web ve mobil uygulamalar geliştirmek', 'Yapay zekâ ve makine öğrenmesi entegrasyonlarını keşfetmek']::text[], array['Building scalable Web & Mobil applications', 'Exploring AI/ML integrations']::text[], 'Bilgisayar Mühendisliği', 'Computer Engineering', 'University', '2020 – 2024', '3.4 / 4.0', 'Osman Buğra BOLAT', 'Osman Buğra BOLAT''ın portfolyosu: Next.js, TypeScript ve modern web teknolojilerinde uzmanlaşmış yapay zekâ ve bulut mühendisi.', 'Portfolio of Buğra Bolat — Full Stack Developer specializing in Next.js, TypeScript, and modern web technologies.', 'Merhaba! Ben BuğrAI. Osman Buğra''nın portfolyosu hakkında merak ettiğiniz her şeyi sorabilirsiniz.', 'Hi! I''m BuğrAI. Ask me anything about Osman Buğra''s portfolio.', 'Osman Buğra BOLAT - AI powered AI & Cloud Engineer') on conflict (id) do nothing;
 
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('39187750-6cde-592d-b967-a018a7487af5', null, 'folder', 'about-me', 0, 'person', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('2979537e-ca14-5116-95ef-df81892e6a63', '39187750-6cde-592d-b967-a018a7487af5', 'file', 'WhoAmI.md', null, 'home', 0, '/', null, null, '', '{{profile-header}}
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('2979537e-ca14-5116-95ef-df81892e6a63', '39187750-6cde-592d-b967-a018a7487af5', 'file', 'WhoAmI.md', null, 'home', 0, '/', null, null, '{{profile-header}}
+
+## Hakkımda
+
+Selçuk Üniversitesi Teknoloji Fakültesi''ni fakülte üçüncüsü ve bölüm ikincisi olarak 3.75 not ortalamasıyla tamamlamış (2026) bir bilgisayar mühendisiyim. Öğrenimim boyunca teknik odağımı bilgisayarlı görü ve derin öğrenme modellerinin bulut altyapılarına entegrasyonu üzerine yoğunlaştırdım ve bu alanlardaki uzmanlığımı geliştirmeye devam ediyorum.
+
+Lisans yıllarımda Docker, CI/CD süreçleri, DevOps ve MLOps prensiplerine dayalı yapay zekâ tabanlı operasyonel süreçlerin otomasyonu ve dağıtımı konusunda uygulamalı deneyim kazandım.
+
+Bu güçlü akademik temeli, teknoloji topluluğu liderliği ve proje yönetimi rolleriyle geliştirdiğim liderlik ve iletişim becerileriyle birleştiriyorum. Karmaşık projelerin operasyonel gereksinimlerine hızla uyum sağlayan, teknik süreçlerde sorumluluk alan ve iş birliğine dayalı ekip ortamlarında başarılı olan dinamik bir mühendisim.
+
+## Şu Anki Odak
+
+{{current-focus}}
+
+## Teknoloji Yığını ve Ekosistem
+
+Fikirleri hayata geçirmek için kullandığım teknolojilere genel bir bakış:
+
+{{tech-stack}}', '{{profile-header}}
 
 ## About Me
 
@@ -87,8 +105,69 @@ Modern web tarayıcıları, güvenlik politikaları (CORS & Secure Context) gere
 
 * * *
 
-**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('4b55268d-02af-5e27-9aeb-4d53852a5077', '704f64e6-d5c5-58f9-9efe-2024daccc86b', 'file', 'Play', null, 'embed', 1, '/projects/pong-with-mediapipe/play', 'https://osmanbugrabolat.github.io/pong-with-mediapipe/', null, 'Neon Pong AI', '', 'play', true) on conflict (id) do nothing;
+**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '# Neon Pong AI: Hand-Tracking Web Game
+
+**Live Demo:** [Click here to play the game right now in your browser!](https://osmanbugrabolat.github.io/pong-with-mediapipe/)
+
+**Neon Pong AI** is a modern, web-based Pong game with a futuristic neon design, powered by Google''s Mediapipe hand-tracking technology. You don''t play it with a keyboard or mouse, but directly with your **hand movements** through your webcam!
+
+![In-Game Screenshot](https://raw.githubusercontent.com/osmanbugrabolat/pong-with-mediapipe/main/game.png)
+
+## Features
+
+- **AI-Powered Hand Tracking:** Thanks to Google Mediapipe, your palm is detected in real time and your paddle moves in sync with your hand.
+- **Camera Mini-Screen:** Once the game starts, a camera window appears in the bottom-right corner of the screen, letting you follow your own movements and the detected hand landmarks in real time.
+- **Retro Sound Effects:** Enjoy a nostalgic arcade experience with hit and score sounds generated using the Web Audio API. Sounds can be turned off completely from the menu if desired.
+- **Team Selection & Smart Orientation:** At the start, you can choose which side (Left/Right) you want to play on. Based on your choice, the game detects the correct hand while accounting for the camera''s mirror effect. The AI opponent automatically takes the opposite side.
+- **Neon / Cyberpunk Design:** An interactive game menu built entirely with Vanilla CSS, featuring a glass effect, a dark theme, and high-quality glow effects.
+- **Smart Opponent:** An AI that tracks the ball but has a human-like margin of error. The longer the rallies, the higher the excitement, and the faster the ball!
+- **Full Control:** You can set the ball''s starting speed from the menu before the game begins.
+
+## Technologies Used
+
+- **HTML5 & CSS3:** Modern, responsive, and elegant interface design.
+- **Vanilla JavaScript (ES6+):** Game loop, collision physics, and application logic.
+- **Web Audio API:** Performance-friendly, browser-based retro sound synthesis with no file downloads required.
+- **HTML5 Canvas:** Seamless game rendering, animations, and neon glow effects.
+- **[Google Mediapipe](https://developers.google.com/mediapipe):** Real-time image processing from the camera and skeleton-based hand tracking (Hand Tracking model).
+
+## How to Run
+
+Due to their security policies (CORS & Secure Context), modern web browsers require a local server connection to access the webcam. For this reason, you should use a local server instead of double-clicking the HTML file.
+
+1. Make sure [Node.js](https://nodejs.org/) is installed on your computer.
+2. Clone the project to your computer:
+
+    ```
+    git clone https://github.com/osmanbugrabolat/pong-with-mediapipe.git
+    ```
+
+3. Navigate into the cloned folder:
+
+    ```
+    cd pong-with-mediapipe
+    ```
+
+4. Run the following command to start the local server:
+
+    ```
+    npx serve
+    ```
+
+5. Open the address shown in the terminal (usually `http://localhost:3000`) in your browser.
+6. Approve the **Camera Permission** prompt that appears in the top-right or top-left corner of your browser.
+7. Choose your speed and team, then click **START GAME** ("OYUNA BAŞLA")!
+
+## Gameplay Tips
+
+- Stand at a distance where the camera can clearly see your hand (especially your palm) and the room is well lit.
+- Hold the hand that matches your chosen team toward the camera (e.g., your left hand for the Left team).
+- Move your hand up and down to control the paddle.
+
+* * *
+
+**Developer:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('4b55268d-02af-5e27-9aeb-4d53852a5077', '704f64e6-d5c5-58f9-9efe-2024daccc86b', 'file', 'Oyna', 'Play', 'embed', 1, '/projects/pong-with-mediapipe/play', 'https://osmanbugrabolat.github.io/pong-with-mediapipe/', null, 'Neon Pong AI', 'Neon Pong AI', 'play', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('5d2e4182-2cf7-508f-975d-6e8fd47336db', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'flying-birds-with-mediapipe', 1, null, true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('3fb734bb-6ab8-56cf-a10d-79d346358997', '5d2e4182-2cf7-508f-975d-6e8fd47336db', 'file', 'README.md', null, 'markdown', 0, '/projects/flying-birds-with-mediapipe', null, null, '# Flying Birds AI
 
@@ -163,8 +242,81 @@ Proje kameraya erişim sağladığı ve dış kaynakları (CDN) yüklediği içi
 ## Geliştirici
 
 **Osman Buğra Bolat** tarafından geliştirilmiştir.
-Web Sitesi: [osmanbugrabolat.com.tr](https://osmanbugrabolat.com.tr)', '', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('7d1203f6-c823-5cd7-bcea-9f6052333a96', '5d2e4182-2cf7-508f-975d-6e8fd47336db', 'file', 'Play', null, 'embed', 1, '/projects/flying-birds-with-mediapipe/play', 'https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/', null, 'Flying Birds AI', '', 'play', true) on conflict (id) do nothing;
+Web Sitesi: [osmanbugrabolat.com.tr](https://osmanbugrabolat.com.tr)', '# Flying Birds AI
+
+**Live Demo:** [Play the Game Here](https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/)
+
+![Flying Birds AI Gameplay Screenshot](https://raw.githubusercontent.com/osmanbugrabolat/flying-birds-with-mediapipe/main/game.png)
+
+## Overview
+
+Flying Birds AI is an interactive, browser-based game inspired by classic obstacle-dodging games. What sets this project apart is its integration with Google''s MediaPipe machine learning model. Instead of using a keyboard or mouse, players control the bird completely touch-free with hand movements detected in real time through their webcam.
+
+The project was developed with a focus on delivering a modern user interface, featuring "glassmorphism" design principles, responsive canvas scaling, code-generated vector graphics, and dynamic sound effects synthesized via the Web Audio API.
+
+## Features
+
+- **Computer Vision Controls:** Uses the MediaPipe Hands model to track the user''s index finger in real time. The bird''s vertical position is set directly by the position of the user''s hand.
+- **Responsive Design:** Using `ResizeObserver`, the game engine dynamically scales the canvas, hitboxes, and in-game elements to fit any screen size or aspect ratio perfectly, without any distortion.
+- **Modern User Interface:** Includes a sleek glassmorphism design, collapsible settings menus, and a camera preview window that does not obstruct the play area.
+- **Locally Synthesized Audio:** Sound effects are synthesized mathematically right in the browser using the Web Audio API, providing a latency-free experience without downloading any external audio files.
+- **Self-Contained Vector Graphics:** Game assets (such as the bird design) are generated mathematically using inline SVG. This ensures infinite scalability and crisp image quality, even on high-resolution displays.
+
+## Technologies Used
+
+- **HTML5 & CSS3:** For structuring the document and designing the user interface.
+- **JavaScript (ES6):** For core game logic, physics calculations, and DOM manipulation.
+- **HTML5 Canvas API:** For rendering the game loop, pipes, and graphics at 60 FPS.
+- **MediaPipe Hands:** For browser-based, real-time hand tracking and landmark detection.
+- **Web Audio API:** For synthesizing retro-style game sound effects.
+
+## How to Play
+
+1. Allow your browser to access your camera.
+2. Place your hand in front of the camera so that it is visible in the preview window in the bottom-right corner.
+3. Move your index finger up and down to control the bird''s vertical position.
+4. Fly through the gaps between the oncoming pipes to increase your score.
+5. The game ends if the bird hits a pipe, the ceiling, or the ground.
+
+## Settings
+
+The game offers a collapsible settings menu on the start screen so players can customize their experience:
+
+- **Which Hand:** Choose whether the model should track only the Right Hand, only the Left Hand, or any hand. The tracking logic accounts for the webcam''s mirroring by default.
+- **Game Speed:** Adjust the speed of the oncoming pipes and the size of the vertical gap between them (Slow, Normal, Fast).
+- **Game Sound:** Turn the sound effects synthesized with the Web Audio API on or off.
+
+## Running Locally
+
+Because the project accesses the camera and loads external resources (CDN), it must be served through a local HTTP server rather than opening the HTML file directly from your file manager.
+
+1. Clone the repository to your local machine:
+
+    ```
+    git clone https://github.com/osmanbugrabolat/flying-birds-with-mediapipe.git
+    ```
+
+2. Navigate to the project directory in your terminal:
+
+    ```
+    cd flying-birds-with-mediapipe
+    ```
+
+3. Start a local web server. For example, using Python:
+
+    ```
+    python3 -m http.server 8080
+    ```
+
+4. Open your web browser and go to `http://localhost:8080`.
+
+* * *
+
+## Developer
+
+Developed by **Osman Buğra Bolat**.
+Website: [osmanbugrabolat.com.tr](https://osmanbugrabolat.com.tr)', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('7d1203f6-c823-5cd7-bcea-9f6052333a96', '5d2e4182-2cf7-508f-975d-6e8fd47336db', 'file', 'Oyna', 'Play', 'embed', 1, '/projects/flying-birds-with-mediapipe/play', 'https://osmanbugrabolat.github.io/flying-birds-with-mediapipe/', null, 'Flying Birds AI', 'Flying Birds AI', 'play', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('cb840721-7581-5c03-8312-dda1079428ad', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'sihirli-sapan', 2, null, true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('c7ca3fc6-010b-5958-9f41-0658b8cefef4', 'cb840721-7581-5c03-8312-dda1079428ad', 'file', 'README.md', null, 'markdown', 0, '/projects/sihirli-sapan', null, null, '# Sihirli Sapan
 
@@ -225,8 +377,67 @@ Proje tamamen **Vanilla JavaScript, HTML ve CSS** ile yazıldığı için herhan
 
 * * *
 
-**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('a2532fc2-f58a-563b-9a6c-3775078dd98b', 'cb840721-7581-5c03-8312-dda1079428ad', 'file', 'Play', null, 'embed', 1, '/projects/sihirli-sapan/play', 'https://osmanbugrabolat.github.io/sihirli-sapan/', null, 'Sihirli Sapan', '', 'play', true) on conflict (id) do nothing;
+**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '# Sihirli Sapan
+
+Sihirli Sapan (Magic Slingshot) is a web-based *Angry Birds* clone powered by the **Matter.js** physics engine and played with AI-driven hand tracking using Google''s **MediaPipe** technology. Without touching your mouse or keyboard, you can launch the bird from the slingshot and hit your targets just by making hand gestures in front of your webcam!
+
+**Live Demo:** [Play the Game Here](https://osmanbugrabolat.github.io/sihirli-sapan/)
+
+![Sihirli Sapan In-Game Screenshot](https://raw.githubusercontent.com/osmanbugrabolat/sihirli-sapan/main/game.png)
+
+## Features
+
+- **AI-Powered Hand Tracking:** Make a fist to grab the bird, pull back, and open your hand to launch it! (MediaPipe Hand Tracking)
+- **Advanced Physics Engine:** Realistic gravity, collision, and destruction physics powered by Matter.js.
+- **Dynamic Sound Effects:** Organic sound effects (stretching, launching, impact) generated entirely in code with the *Web Audio API*, without using any external audio files.
+- **5 Different Levels:** 5 challenging levels, each with its own unique layout (twin towers, stone fortress, etc.) and target score.
+- **Modern Interface:** User-friendly wooden panels, sleek buttons, and smooth animations (Vanilla CSS).
+
+## How to Play
+
+1. When you start the game, you need to grant **webcam permission**.
+2. Once you see your hand''s skeleton (blue dots) on the screen, the system is ready.
+3. Move your hand over the slingshot and make a **fist (closed hand)**. This lets you grab the bird.
+4. Keeping your fist closed, pull your hand back and down to stretch the slingshot.
+5. Once you''ve lined up your target, open your fingers to launch the bird!
+6. Try to reach the target score by knocking down blocks and popping the pigs.
+
+## Installation (For Developers)
+
+Since the project is written entirely in **Vanilla JavaScript, HTML, and CSS**, it does not require a build step or any server-side technology.
+
+1. Clone the repository to your computer:
+
+    ```
+    git clone https://github.com/osmanbugrabolat/sihirli-sapan.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```
+    cd sihirli-sapan
+    ```
+
+3. Run the files on a local server (e.g. `npx serve` or the VS Code *Live Server* extension):
+
+    ```
+    npx serve .
+    ```
+
+4. Open `http://localhost:3000` (or your server''s port) in your browser and start playing.
+
+## Assets and Acknowledgements
+
+- **Wood, Glass, and Stone Blocks:** Sourced from [Kenney.nl - Physics Assets](https://kenney.nl/assets/physics-assets) (Free and Open Source).
+- **Slingshot, Background, and Characters:** Custom-made for this project in SVG and PNG formats.
+- **Icons:** Provided by the [FontAwesome](https://fontawesome.com/) icon library.
+- **Physics Engine:** [Matter.js](https://brm.io/matter-js/)
+- **Hand Tracking (AI):** [Google MediaPipe Tasks Vision](https://developers.google.com/mediapipe)
+
+* * *
+
+**Developer:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('a2532fc2-f58a-563b-9a6c-3775078dd98b', 'cb840721-7581-5c03-8312-dda1079428ad', 'file', 'Oyna', 'Play', 'embed', 1, '/projects/sihirli-sapan/play', 'https://osmanbugrabolat.github.io/sihirli-sapan/', null, 'Sihirli Sapan', 'Sihirli Sapan (Magic Slingshot)', 'play', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('ac22b563-fd9a-5109-b10f-dbb7ec4e9b53', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'sihirli-sapan-hsd-edition', 3, null, true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('7acf024c-d1bf-5fa8-bf1b-45d018657c9a', 'ac22b563-fd9a-5109-b10f-dbb7ec4e9b53', 'file', 'README.md', null, 'markdown', 0, '/projects/sihirli-sapan-hsd-edition', null, null, '# Sihirli Sapan - HSD Edition
 
@@ -292,8 +503,72 @@ Bu proje **HSD Türkiye** için geliştirilmiş olup açık kaynak olarak payla�
 
 * * *
 
-**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('dc512c61-493d-598b-b55e-f39b42bf22b1', 'ac22b563-fd9a-5109-b10f-dbb7ec4e9b53', 'file', 'Play', null, 'embed', 1, '/projects/sihirli-sapan-hsd-edition/play', 'https://osmanbugrabolat.github.io/sihirli-sapan-hsd-edition/', null, 'Sihirli Sapan - HSD Edition', '', 'play', true) on conflict (id) do nothing;
+**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '# Sihirli Sapan - HSD Edition
+
+Sihirli Sapan (Magic Slingshot) is a web-based *Angry Birds* clone powered by the **Matter.js** physics engine and played with AI-driven hand tracking using Google''s **MediaPipe** technology. In this version, developed especially for HSD Türkiye, you launch the HSD mascot from the slingshot to squash software bugs!
+
+**Live Demo:** [Play the Game Here](https://osmanbugrabolat.github.io/sihirli-sapan-hsd-edition/)
+
+![Sihirli Sapan HSD Edition In-Game Screenshot](https://raw.githubusercontent.com/osmanbugrabolat/sihirli-sapan-hsd-edition/main/game.png)
+
+## Features
+
+- **AI-Powered Hand Tracking:** Make a fist to grab the mascot, pull back, and open your fingers to launch it! All you need is your webcam.
+- **Advanced Physics Engine:** Realistic gravity, collision, and destruction physics powered by Matter.js. Strategically bring down wood, glass, and stone structures.
+- **Competitive Leaderboard:** A fair "Time Penalty" system that deducts points from your in-game score based on the time you take (a 30-point penalty per second). Climb to the top of the Daily, Weekly, and Monthly rankings!
+- **10 Different Levels:** Increasingly difficult targets at each level, with a random (procedural) tower generation system.
+- **Custom HSD Design:** HSD Türkiye color palette (Yellow, Red, Navy, Pink), animated mascot, custom fonts, and a modern interface design.
+
+## How to Play
+
+1. When you start the game, accept your browser''s **camera permission** prompt.
+2. Once you see your hand''s skeleton (blue dots) on the screen, the system is ready to play.
+3. Enter your name and start the game.
+4. Move your hand over the slingshot and make a **FIST (closed hand)**.
+5. Keeping your fist closed, pull your hand back and down to stretch the slingshot.
+6. Once you''ve lined up your target, launch the mascot by **OPENING** your fingers!
+7. Knock down the structures and squash the bugs to get a high score in the shortest time.
+
+## Installation (For Developers)
+
+The project is built entirely with **Vanilla JavaScript, HTML, and CSS**. No build process is required.
+
+1. Clone the repository to your computer:
+
+    ```
+    git clone https://github.com/osmanbugrabolat/sihirli-sapan-hsd-edition.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```
+    cd sihirli-sapan-hsd-edition
+    ```
+
+3. Due to your browser''s security rules (CORS), it is recommended to run the project on a local server to allow camera access:
+
+    ```
+    npx serve .
+    ```
+
+4. Open `http://localhost:3000` in your browser and start playing.
+
+## Assets and Technologies
+
+- **Physics Engine:** [Matter.js](https://brm.io/matter-js/)
+- **Hand Tracking (AI):** [Google MediaPipe Tasks Vision](https://developers.google.com/mediapipe)
+- **Interface:** Pure (Vanilla) HTML/CSS. Uses HSD corporate identity colors and the *Luckiest Guy* font.
+- **Graphics:** The slingshot, mascot, and bug illustrations were custom-made for the project in SVG format. The tower blocks are drawn in code.
+
+## License
+
+This project was developed for **HSD Türkiye** and is shared as open source.
+*Developed by Osman Buğra Bolat for HSD Türkiye.*
+
+* * *
+
+**Developer:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('dc512c61-493d-598b-b55e-f39b42bf22b1', 'ac22b563-fd9a-5109-b10f-dbb7ec4e9b53', 'file', 'Oyna', 'Play', 'embed', 1, '/projects/sihirli-sapan-hsd-edition/play', 'https://osmanbugrabolat.github.io/sihirli-sapan-hsd-edition/', null, 'Sihirli Sapan - HSD Edition', 'Sihirli Sapan - HSD Edition', 'play', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('9dfcfbdb-1d56-52d2-bc7e-3ef2504c26dd', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'magic-frame', 4, null, true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('1cd69a53-4f0c-5746-bde9-54ce99f0c56f', '9dfcfbdb-1d56-52d2-bc7e-3ef2504c26dd', 'file', 'README.md', null, 'markdown', 0, '/projects/magic-frame', null, null, '# Magic Frame AR
 
@@ -368,8 +643,81 @@ python main.py
 * * *
 
 *Bu proje açık kaynaklı AI modelleri kullanılarak tasarlanmıştır.*
-**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5afe51fe-e8d6-5833-8fd4-07290c4e5fdf', '9dfcfbdb-1d56-52d2-bc7e-3ef2504c26dd', 'file', 'Source Code', null, 'link', 1, null, 'https://github.com/osmanbugrabolat/magic-frame', null, '', '', 'github', true) on conflict (id) do nothing;
+**Geliştirici:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', '# Magic Frame AR
+
+**Magic Frame** is an innovative image processing project that uses your computer''s camera to apply real-time **Artificial Intelligence** and **Augmented Reality (AR)** filters to the frame area you create with your hands.
+
+Turn the space between your hands into a magical portal!
+
+## Features
+
+- **Real-Time Hand Tracking:** Tracks your fingertips in 3D with zero latency, powered by Google MediaPipe.
+- **15 Different Art & Image Filters:** Instantly transforms the inside of the frame into an entirely different world using Neural Style Transfer and image processing algorithms.
+- **Magic Mirror:** Separates you from the background and heavily blurs your surroundings, just like professional cameras.
+- **Cyberpunk Neon Frame:** Draws a futuristic, glowing "HUD" frame whose color changes based on the style you select.
+- **Gesture Detection:** No need to touch the keyboard to change effects. You can magically switch between filters by **pinching** with both hands.
+
+## Available Styles (15 Filters)
+
+The system supports the following 15 different effects:
+
+1.  **Candy (Candy)** - *Artificial Intelligence*
+2.  **Oil Painting (Mosaic)** - *Artificial Intelligence*
+3.  **Artistic (Udnie)** - *Artificial Intelligence*
+4.  **Rain Princess** - *Artificial Intelligence*
+5.  **Pointillism (Pointilism)** - *Artificial Intelligence*
+6.  **Magic Mirror** (Background Blur) - *MediaPipe*
+7.  **Black and White**
+8.  **Game Character (Cartoon)**
+9.  **Pencil Sketch (Black and White)**
+10.  **Pencil Sketch (Color)**
+11.  **Watercolor**
+12.  **Sepia (Vintage Photo)**
+13.  **Negative (X-Ray)**
+14.  **Minecraft Pixel**
+15.  **Thermal Camera (Heat Map)**
+
+## Installation
+
+The project is Python-based and requires a few libraries and AI model files to run.
+
+**1\. Install the required libraries:**
+
+```
+pip install -r requirements.txt
+```
+
+**2\. Download the AI models:**
+*(This script will automatically download the required ONNX art models and MediaPipe AI models in a single step).*
+
+```
+python download_models.py
+```
+
+## Usage
+
+Once all installation steps are complete, to turn on your camera and start the magic:
+
+```
+python main.py
+```
+
+### Controls
+
+- **To Change Filters:** While framing the camera with both hands, touch your index finger to your thumb and release (pinch gesture).
+- **To Exit:** With the window selected, press the `q` key on your keyboard.
+
+## Technologies Used
+
+- [OpenCV (DNN)](https://opencv.org/) - Image processing and running AI models
+- [Google MediaPipe Tasks API](https://developers.google.com/mediapipe) - Hand and person detection (Hand Landmarker & Image Segmenter)
+- [ONNX Model Zoo](https://github.com/onnx/models) - Pre-trained art models
+
+* * *
+
+*This project was built using open-source AI models.*
+**Developer:** [Osman Buğra Bolat](https://osmanbugrabolat.com.tr)', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5afe51fe-e8d6-5833-8fd4-07290c4e5fdf', '9dfcfbdb-1d56-52d2-bc7e-3ef2504c26dd', 'file', 'Kaynak Kod', 'Source Code', 'link', 1, null, 'https://github.com/osmanbugrabolat/magic-frame', null, '', '', 'github', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('259fe09b-c0a5-5faf-8b7b-7b68465b1ad1', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'kozmik-toz-enstalasyon', 5, null, true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('087940ab-ce16-547a-bf77-432a7d502003', '259fe09b-c0a5-5faf-8b7b-7b68465b1ad1', 'file', 'README.md', null, 'markdown', 0, '/projects/kozmik-toz-enstalasyon', null, null, '# Kozmik Toz Enstalasyonu
 
@@ -449,10 +797,101 @@ Tarayıcının talep edeceği **Kamera İznini** onaylayın, sesi başlatmak iç
 - **HTML5 Canvas API** (Görselleştirme için)
 - **Web Audio API** (Ses sentezleme için)
 - **MediaPipe Tasks Vision** (Yapay Zeka / El Takibi için)
-- **Vanilla ES6+ JavaScript**', '', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('3503d03a-c809-548a-ac32-34aae38b882c', '259fe09b-c0a5-5faf-8b7b-7b68465b1ad1', 'file', 'Deneyimle', 'Experience', 'embed', 1, '/projects/kozmik-toz-enstalasyon/play', 'https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/', null, 'Kozmik Toz Enstalasyonu', '', 'play', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('bf357637-c09c-5ad4-b50d-0edccd88fb43', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'For more...', null, 'link', 6, null, 'https://github.com/osmanbugrabolat', null, '', '', 'github', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('866ffbc7-0aae-5cfb-b46e-d23302ba2f4e', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Apart Yönetim Sistemi.md', null, 'markdown', 101, '/projects/1', null, null, '', '# Apart Yönetim Sistemi
+- **Vanilla ES6+ JavaScript**', '# Kozmik Toz Enstalasyonu
+
+This project is an interactive, AI-powered audiovisual art experience built with **MediaPipe**. It detects users'' hand movements through a webcam and, in response, generates dynamic "cosmic dust" on screen along with synchronized sounds and music.
+
+[Experience the Project (Live Demo)](https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/)
+
+## Features
+
+- **Real-Time Hand Tracking:** High-precision hand tracking with MediaPipe Hand Landmarker technology.
+- **Interactive Gestures:**
+    - **Pinch:** Controls the strength and direction of the particles'' attraction.
+    - **Fist:** Changes particle interactions and sound effects.
+    - **Clap:** Bringing both hands together triggers visual bursts and special sound effects.
+- **Two Different Realms:**
+    - *Lydian Realm:* The default realm, with cool space tones such as blue, purple, and turquoise.
+    - *Phrygian Realm:* A parallel realm with warm tones such as red, orange, and golden yellow.
+    - *Realm Switching:* Raising both hands to the very top of the screen (the top 15% of the area) switches between the two realms.
+- **Depth Perception (Z-Axis):** The hand''s distance from the camera is calculated based on its size on screen. This creates a 3D feel and enriches the system''s responses.
+- **Independent Engines:**
+    - `art_engine.js`: Computes the visual spectacle we see on screen and the particle physics.
+    - `audio_engine.js`: Synthesizes dynamic sound based on hand movements and the current realm.
+
+## Downloading and Installing from GitHub
+
+Since the project includes an AI model (`hand_landmarker.task`) and several modular JavaScript files, browser security (CORS) rules require you to run these files through a local web server.
+
+Here is a step-by-step installation guide:
+
+### Method 1: Using Git (Recommended)
+
+1. **Clone the Repo:** Open your terminal or command prompt and run the following command to download the project to your computer:
+
+    ```
+    git clone https://github.com/osmanbugrabolat/kozmik-toz-enstalasyon.git
+    ```
+
+2. **Enter the Project Folder:**
+
+    ```
+    cd kozmik-toz-enstalasyon
+    ```
+
+### Method 2: Downloading as a ZIP
+
+1. Click the green **"Code"** button in the top-right corner of this GitHub page.
+2. Select **"Download ZIP"** from the menu that opens to download the files to your computer.
+3. Extract the downloaded ZIP file into a folder.
+4. Open the extracted folder in VS Code or any other code editor you prefer.
+
+### Running the Project
+
+To open the project in your browser, you need to start a local server. There are two easy ways to do this:
+
+- **Option A (If Node.js Is Installed):** In your terminal, from the project folder, run the following command:
+
+    ```
+    npx serve .
+    ```
+
+- **Option B (If You Use VS Code):** In VS Code, go to the Extensions section and install the **"Live Server"** extension. Once installed, right-click the `index.html` file and select **"Open with Live Server"**.
+
+Your browser will open automatically and the project will start running (usually at `http://localhost:3000` or `http://127.0.0.1:5500`).
+Approve the **Camera Permission** requested by the browser, **click the screen once** to start the audio, and show your hands to the camera to start controlling the universe!
+
+## File Structure
+
+- `index.html`: The project''s main structure, video and canvas components.
+- `style.css`: Interface design and full-screen layouts.
+- `script.js`: Loading the MediaPipe hand detection engine, gesture detection (fist, clap, etc.), and the main control loop.
+- `art_engine.js`: Canvas-based interactive drawing and visual simulation engine.
+- `audio_engine.js`: Dynamic sound engine that responds to hand movements and depth.
+- `hand_landmarker.task`: The hand tracking AI model file used by MediaPipe.
+
+## Technologies Used
+
+- **HTML5 Canvas API** (For visualization)
+- **Web Audio API** (For sound synthesis)
+- **MediaPipe Tasks Vision** (For AI / Hand Tracking)
+- **Vanilla ES6+ JavaScript**', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('3503d03a-c809-548a-ac32-34aae38b882c', '259fe09b-c0a5-5faf-8b7b-7b68465b1ad1', 'file', 'Deneyimle', 'Experience', 'embed', 1, '/projects/kozmik-toz-enstalasyon/play', 'https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/', null, 'Kozmik Toz Enstalasyonu', 'Cosmic Dust Installation', 'play', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('bf357637-c09c-5ad4-b50d-0edccd88fb43', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Daha fazlası...', 'For more...', 'link', 6, null, 'https://github.com/osmanbugrabolat', null, '', '', 'github', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('866ffbc7-0aae-5cfb-b46e-d23302ba2f4e', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Apart Yönetim Sistemi.md', 'Apartment Management System.md', 'markdown', 101, '/projects/1', null, null, '# Apart Yönetim Sistemi
+
+2026 · Aktif
+
+Gerçek zamanlı güncellemeler, kiracı yönetimi, ödeme takibi ve otomatik raporlama sunan kapsamlı bir apart yönetim platformu.
+
+## Teknolojiler
+
+`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS`
+
+## Bağlantılar
+
+- [Kaynak Kod](https://github.com/osmanbugrabolat)
+- [Canlı Demo](http://localhost:3000)', '# Apart Yönetim Sistemi
 
 2026 · Active
 
@@ -466,7 +905,19 @@ Comprehensive apartment management platform with real-time updates, tenant manag
 
 - [Source Code](https://github.com/osmanbugrabolat)
 - [Live Demo](http://localhost:3000)', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('070a8b5e-9caf-5cf2-b8a1-03fa923c8b31', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Portfolyo AI.md', null, 'markdown', 102, '/projects/2', null, null, '', '# Portfolyo AI
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('070a8b5e-9caf-5cf2-b8a1-03fa923c8b31', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Portfolyo AI.md', null, 'markdown', 102, '/projects/2', null, null, '# Portfolyo AI
+
+2026 · Aktif
+
+VS Code''dan ilham alan temaya sahip, yapay zekâ destekli bir portfolyo sitesi. Akıllı içerik üretimi ve kod editörü benzeri etkileşimli gezinme sunar.
+
+## Teknolojiler
+
+`Next.js` `TypeScript` `AI/ML` `Tailwind CSS`
+
+## Bağlantılar
+
+- [Kaynak Kod](https://github.com/osmanbugrabolat)', '# Portfolyo AI
 
 2026 · Active
 
@@ -479,7 +930,19 @@ AI-powered portfolio website with a VS Code-inspired theme. Features intelligent
 ## Links
 
 - [Source Code](https://github.com/osmanbugrabolat)', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('21d37801-7a8d-5259-84b7-02fa1f6845c8', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Fountain Detection AI.md', null, 'markdown', 103, '/projects/3', null, null, '', '# Fountain Detection AI
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('21d37801-7a8d-5259-84b7-02fa1f6845c8', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Fountain Detection AI.md', null, 'markdown', 103, '/projects/3', null, null, '# Fountain Detection AI
+
+2025 · Tamamlandı
+
+Görsellerdeki tarihi Osmanlı çeşmelerini (hayrat çeşme) yüksek doğrulukla tespit etmek için ince ayar yapılmış YOLOv8 ve YOLOv11 modeli.
+
+## Teknolojiler
+
+`Python` `YOLOv11` `Ultralytics` `OpenCV` `PyTorch`
+
+## Bağlantılar
+
+- [Kaynak Kod](https://github.com/osmanbugrabolat)', '# Fountain Detection AI
 
 2025 · Completed
 
@@ -492,7 +955,19 @@ Fine-tuned YOLOv8 & YOLOv11 model for detecting historical Ottoman fountains (ha
 ## Links
 
 - [Source Code](https://github.com/osmanbugrabolat)', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5e519983-91ba-5e25-885a-9ea71221c5dd', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Web Scraper & Dataset Builder.md', null, 'markdown', 104, '/projects/4', null, null, '', '# Web Scraper & Dataset Builder
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5e519983-91ba-5e25-885a-9ea71221c5dd', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Web Scraper & Dataset Builder.md', null, 'markdown', 104, '/projects/4', null, null, '# Web Scraper & Dataset Builder
+
+2025 · Tamamlandı
+
+Google Görseller arama sonuçlarından özel bilgisayarlı görü veri setleri oluşturmak için geliştirilmiş otomatik görsel toplama aracı.
+
+## Teknolojiler
+
+`Python` `Selenium` `BeautifulSoup` `Requests`
+
+## Bağlantılar
+
+- [Kaynak Kod](https://github.com/osmanbugrabolat)', '# Web Scraper & Dataset Builder
 
 2025 · Completed
 
@@ -506,12 +981,26 @@ Automated image scraping tool for building custom computer vision datasets from 
 
 - [Source Code](https://github.com/osmanbugrabolat)', 'markdown', false) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('69079713-4708-5fb1-9e39-947bd0405284', null, 'folder', 'articles', 2, 'book', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('c5fc124e-8b8b-5e11-a9f8-0d418afe0bca', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Altyapıyı Unutun, Koda Odaklanın: FaaS', null, 'link', 0, null, 'https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739', null, '', '', 'medium', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('6621e2f6-a695-56ee-973f-4d66c7f63dbf', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Açık Kaynak vs Açık Ağırlık', null, 'link', 1, null, 'https://medium.com/@osmanbugrabolat/yapay-zeka-d%C3%BCnyas%C4%B1nda-kavram-karma%C5%9Fas%C4%B1-open-source-model-vs-open-weight-model-32ccccd2f0f5', null, '', '', 'medium', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('d3d49547-07e6-5a4a-a6f3-ba5d8b3de8b0', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Yapay Zeka İletişiminin Sessiz Devrimi: MCP', null, 'link', 2, null, 'https://medium.com/@osmanbugrabolat/yapay-zeka-i%CC%87leti%C5%9Fiminin-sessiz-devrimi-model-context-protocol-83ca52c1a82c', null, '', '', 'medium', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('e163353c-cf03-5593-bd3f-05b8aaeee658', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Yeni Geleceğin Başlangıcı: Yapay Zeka', null, 'link', 3, null, 'https://medium.com/@osmanbugrabolat/yeni-gelece%C4%9Fin-ba%C5%9Flang%C4%B1c%C4%B1-yapay-zeka-9313cb13e31f', null, '', '', 'medium', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('1b68d2ea-b63d-51ac-8a09-de263d186e41', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'For more...', null, 'link', 4, null, 'https://medium.com/@osmanbugrabolat', null, '', '', 'medium', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('eddb7709-14f7-56bd-9b49-a8ce6d658bc3', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'articles.md', null, 'markdown', 99, '/articles', null, null, '', '# Articles
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('c5fc124e-8b8b-5e11-a9f8-0d418afe0bca', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Altyapıyı Unutun, Koda Odaklanın: FaaS', 'Forget the Infrastructure, Focus on Code: FaaS', 'link', 0, null, 'https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739', null, '', '', 'medium', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('6621e2f6-a695-56ee-973f-4d66c7f63dbf', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Açık Kaynak vs Açık Ağırlık', 'Open Source vs Open Weight', 'link', 1, null, 'https://medium.com/@osmanbugrabolat/yapay-zeka-d%C3%BCnyas%C4%B1nda-kavram-karma%C5%9Fas%C4%B1-open-source-model-vs-open-weight-model-32ccccd2f0f5', null, '', '', 'medium', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('d3d49547-07e6-5a4a-a6f3-ba5d8b3de8b0', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Yapay Zeka İletişiminin Sessiz Devrimi: MCP', 'The Silent Revolution in AI Communication: MCP', 'link', 2, null, 'https://medium.com/@osmanbugrabolat/yapay-zeka-i%CC%87leti%C5%9Fiminin-sessiz-devrimi-model-context-protocol-83ca52c1a82c', null, '', '', 'medium', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('e163353c-cf03-5593-bd3f-05b8aaeee658', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Yeni Geleceğin Başlangıcı: Yapay Zeka', 'The Beginning of a New Future: Artificial Intelligence', 'link', 3, null, 'https://medium.com/@osmanbugrabolat/yeni-gelece%C4%9Fin-ba%C5%9Flang%C4%B1c%C4%B1-yapay-zeka-9313cb13e31f', null, '', '', 'medium', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('1b68d2ea-b63d-51ac-8a09-de263d186e41', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Daha fazlası...', 'For more...', 'link', 4, null, 'https://medium.com/@osmanbugrabolat', null, '', '', 'medium', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('eddb7709-14f7-56bd-9b49-a8ce6d658bc3', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'makaleler.md', 'articles.md', 'markdown', 99, '/articles', null, null, '# Makaleler
+
+Öğrendiklerimi paylaşmayı ve teknoloji yolculuğum hakkında yazmayı seviyorum. İşte son yazılarımdan bazıları.
+
+## [Next.js ile VS Code Temalı Bir Portfolyo Geliştirmek](#)
+
+Haziran 2026 • 5 dakikalık okuma
+
+Bu portfolyo sitesini Next.js, Tailwind CSS ve özel arayüz bileşenleriyle VS Code arayüzünü taklit edecek şekilde nasıl geliştirdiğime derinlemesine bir bakış.
+
+## [Özel Nesne Tespiti için YOLO Modellerine İnce Ayar Yapmak](#)
+
+Mayıs 2026 • 8 dakikalık okuma
+
+Tarihi çeşmelerin tespitine odaklanarak YOLOv11 ve YOLOv8 modellerine özel veri setleriyle adım adım ince ayar yapma rehberi.', '# Articles
 
 I enjoy sharing what I learn and writing about my journey in tech. Here are some of my recent articles.
 
@@ -527,9 +1016,9 @@ May 2026 • 8 min read
 
 A step-by-step guide to fine-tuning YOLOv11 and YOLOv8 on custom datasets, focusing on historical fountains detection.', 'markdown', false) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('29b22436-2747-5554-8354-8ca57a2a13aa', null, 'folder', 'certificates', 3, 'certificate', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('07587d2e-7a01-5751-a35c-31e9e21eb53c', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'SQL & Oracle Database', null, 'image', 0, '/certificates/oracle', null, '/certificates/oracle_cert.jpg', '', '', 'image', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('dc28d025-038f-50bb-89f6-aa243559cfb8', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'Python & Tensorflow', null, 'image', 1, '/certificates/python', null, '/certificates/python_tensorflow.jpg', '', '', 'image', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('aae23d22-260e-501d-b413-b9cc07b3e152', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'R Programming', null, 'image', 2, '/certificates/r-lang', null, '/certificates/r_programming.jpg', '', '', 'image', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('07587d2e-7a01-5751-a35c-31e9e21eb53c', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'SQL ve Oracle Veritabanı', 'SQL & Oracle Database', 'image', 0, '/certificates/oracle', null, '/certificates/oracle_cert.jpg', '', '', 'image', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('dc28d025-038f-50bb-89f6-aa243559cfb8', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'Python ve TensorFlow', 'Python & TensorFlow', 'image', 1, '/certificates/python', null, '/certificates/python_tensorflow.jpg', '', '', 'image', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('aae23d22-260e-501d-b413-b9cc07b3e152', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'R Programlama', 'R Programming', 'image', 2, '/certificates/r-lang', null, '/certificates/r_programming.jpg', '', '', 'image', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('1178ec62-e8f1-58ad-a752-755d0db4da02', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'Huawei HCCDA-AI', null, 'image', 3, '/certificates/hwend-177820', null, '/certificates/HWEND_177820.png', '', '', 'image', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('6be4e85b-2d17-5b6e-b238-89ba11d05850', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'Huawei HCCDP-AI', null, 'image', 4, '/certificates/hwend-721526', null, '/certificates/HWEND_721526.png', '', '', 'image', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('379d97c0-7c15-541f-956f-efea524f058f', '29b22436-2747-5554-8354-8ca57a2a13aa', 'file', 'Huawei HCCDP-Cloud Migration', null, 'image', 5, '/certificates/hwend-036679', null, '/certificates/HWEND_036679.png', '', '', 'image', true) on conflict (id) do nothing;
@@ -540,8 +1029,22 @@ insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, 
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('1891ffa8-203a-5631-b9e9-8b1089584ff9', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'LinkedIn', null, 'link', 0, null, 'https://linkedin.com/in/osmanbugrabolat', null, '', '', 'linkedin', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('c64af12c-f1f2-5a0c-ba99-d4a3407bcfab', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'GitHub', null, 'link', 1, null, 'https://github.com/osmanbugrabolat', null, '', '', 'github', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('7ea8f40f-3ba0-5b1f-b049-8a2e460f80a5', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'Medium', null, 'link', 2, null, 'https://medium.com/@osmanbugrabolat', null, '', '', 'medium', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('2a061be8-1ee3-5fad-a21a-047c75e87fd7', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'E-Mail', null, 'link', 3, null, 'mailto:osmanbugrabolat@gmail.com', null, '', '', 'email', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('a0b104dc-61d0-56d0-8fe8-af7be79fec95', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'contact.md', null, 'markdown', 99, '/contact', null, null, '', '# Contact & Connect
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('2a061be8-1ee3-5fad-a21a-047c75e87fd7', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'E-posta', 'E-Mail', 'link', 3, null, 'mailto:osmanbugrabolat@gmail.com', null, '', '', 'email', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('a0b104dc-61d0-56d0-8fe8-af7be79fec95', '40506c79-7c4f-5d86-820b-2faf76736766', 'file', 'iletisim.md', 'contact.md', 'markdown', 99, '/contact', null, null, '# İletişim ve Bağlantılar
+
+Yeni projeleri, yaratıcı fikirleri ya da vizyonunuzun bir parçası olma fırsatlarını konuşmaya her zaman açığım.
+
+## Bana Ulaşın
+
+Bana ulaşmanın en iyi yolu e-posta. Genellikle 24-48 saat içinde dönüş yapıyorum.
+
+{{contact-details}}
+
+## Sosyal Profiller
+
+{{social-links}}
+
+> *"Kod mizah gibidir. Açıklamak zorunda kalıyorsan, kötüdür."* – Cory House', '# Contact & Connect
 
 I''m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
 
@@ -598,7 +1101,7 @@ insert into public.skills (id, category_id, name, level, icon, sort_order) value
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('74e0c00f-a08e-5432-86a7-62cbc074c839', '986ec933-379d-525f-9252-bd6a969ca52b', 'Trello', 80, 'trello', 1) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('9264012c-73fd-5957-97db-c294ba1be9df', '986ec933-379d-525f-9252-bd6a969ca52b', 'Jira', 70, 'jira', 2) on conflict (id) do nothing;
 
-insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('65755aca-a88f-5d90-89d9-2096cdc78f76', 'Freelance', '', 'Full Stack Developer', '2024 – Günümüz', '2024 – Present', 'Uzaktan', 'Remote', '', 'Designing and developing custom web applications for clients. Specialized in Next.js, TypeScript, and database architecture.', array[]::text[], array['Built Apart Yönetim Sistemi for property management', 'Developed AI-powered portfolio websites', 'Delivered 5+ projects on time and within scope']::text[], array['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS']::text[], 0) on conflict (id) do nothing;
-insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('750b46d1-bd96-5dc3-a95f-568605e45234', 'Self-Directed Learning', '', 'AI/ML Engineer (Learning)', '2025 – Günümüz', '2025 – Present', 'Türkiye', 'Turkey', '', 'Deep diving into computer vision and machine learning. Working on fine-tuning YOLO models for object detection tasks.', array[]::text[], array['Fine-tuned YOLOv8 & YOLOv11 for fountain detection', 'Built custom datasets from web scraped images', 'Achieved 85%+ mAP on custom dataset']::text[], array['Python', 'PyTorch', 'Ultralytics', 'OpenCV', 'NumPy']::text[], 1) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('65755aca-a88f-5d90-89d9-2096cdc78f76', 'Freelance', 'Full Stack Geliştirici', 'Full Stack Developer', '2024 – Günümüz', '2024 – Present', 'Uzaktan', 'Remote', 'Müşteriler için özel web uygulamaları tasarlıyor ve geliştiriyorum. Next.js, TypeScript ve veritabanı mimarisi konularında uzmanım.', 'Designing and developing custom web applications for clients. Specialized in Next.js, TypeScript, and database architecture.', array['Gayrimenkul yönetimi için Apart Yönetim Sistemi''ni geliştirdim', 'Yapay zekâ destekli portfolyo siteleri geliştirdim', '5''ten fazla projeyi zamanında ve kapsamına uygun teslim ettim']::text[], array['Built Apart Yönetim Sistemi for property management', 'Developed AI-powered portfolio websites', 'Delivered 5+ projects on time and within scope']::text[], array['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS']::text[], 0) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('750b46d1-bd96-5dc3-a95f-568605e45234', 'Self-Directed Learning', 'Yapay Zekâ / ML Mühendisi (Öğrenme Süreci)', 'AI/ML Engineer (Learning)', '2025 – Günümüz', '2025 – Present', 'Türkiye', 'Turkey', 'Bilgisayarlı görü ve makine öğrenmesi alanlarında derinleşiyorum. Nesne tespiti görevleri için YOLO modellerine ince ayar yapmak üzerine çalışıyorum.', 'Deep diving into computer vision and machine learning. Working on fine-tuning YOLO models for object detection tasks.', array['Çeşme tespiti için YOLOv8 ve YOLOv11 modellerine ince ayar yaptım', 'Web''den toplanan görsellerle özel veri setleri oluşturdum', 'Özel veri setinde %85''in üzerinde mAP elde ettim']::text[], array['Fine-tuned YOLOv8 & YOLOv11 for fountain detection', 'Built custom datasets from web scraped images', 'Achieved 85%+ mAP on custom dataset']::text[], array['Python', 'PyTorch', 'Ultralytics', 'OpenCV', 'NumPy']::text[], 1) on conflict (id) do nothing;
 
 commit;
