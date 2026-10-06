@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { VscEye, VscEyeClosed, VscLock, VscMail, VscWarning, VscVscode, VscInfo } from "react-icons/vsc";
+import { VscEye, VscEyeClosed, VscLock, VscMail, VscWarning, VscInfo } from "react-icons/vsc";
 import { login, type LoginState } from "./actions";
 
 export default function LoginForm({ expired }: { expired: boolean }) {
@@ -11,7 +11,6 @@ export default function LoginForm({ expired }: { expired: boolean }) {
   return (
     <form action={action} className="adm-login-card" noValidate={false}>
       <div className="adm-login-brand">
-        <VscVscode size={28} aria-hidden />
         <div>
           <h1>Yönetim Paneli</h1>
           <p>my-portfolio-website</p>
