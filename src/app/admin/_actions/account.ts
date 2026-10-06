@@ -4,6 +4,7 @@ import { PasswordSchema } from "@/lib/admin-schemas";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
+import ws from "ws";
 import { adminAction, ActionError, type ActionResult } from "@/lib/server/admin-action";
 import { audit, getAdmin } from "@/lib/server/auth";
 import { serverEnv } from "@/lib/server/env";
@@ -26,6 +27,7 @@ const changePasswordImpl = adminAction({
     // Re-authenticate on a throwaway client so the current session cookies stay untouched.
     const verifier = createClient(serverEnv.supabaseUrl, serverEnv.supabasePublishableKey, {
       auth: { persistSession: false, autoRefreshToken: false },
+      realtime: { transport: ws as unknown as typeof WebSocket },
     });
     const { error: verifyError } = await verifier.auth.signInWithPassword({ email: user.email, password: current_password });
     if (verifyError) {

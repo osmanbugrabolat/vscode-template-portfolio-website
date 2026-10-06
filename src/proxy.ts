@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import ws from "ws";
 import {
   ADMIN_SESSION_COOKIE,
   adminSessionCookieOptions,
@@ -70,6 +71,8 @@ export async function proxy(request: NextRequest) {
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
         "",
       {
+        // Node < 22 has no native WebSocket; supabase-js needs one to construct the client.
+        realtime: { transport: ws as unknown as typeof WebSocket },
         cookieOptions: { httpOnly: true, secure: !isDev, sameSite: "lax", path: "/" },
         cookies: {
           getAll: () => request.cookies.getAll(),

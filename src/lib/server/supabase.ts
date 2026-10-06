@@ -2,6 +2,7 @@ import "server-only";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import ws from "ws";
 import { serverEnv } from "./env";
 
 /**
@@ -17,7 +18,14 @@ export function authCookieOptions(): CookieOptions {
   };
 }
 
-const noSession = { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } };
+/**
+ * supabase-js always builds a realtime client, which throws on Node runtimes
+ * without a native WebSocket (Node < 22). We never use realtime; giving it the
+ * `ws` implementation keeps client creation working on any Node version.
+ */
+const realtime = { transport: ws as unknown as typeof WebSocket };
+
+const noSession = { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }, realtime };
 
 /** Anonymous client for public, cacheable reads. RLS limits it to published content. */
 export function createPublicClient(): SupabaseClient {
@@ -37,6 +45,7 @@ export async function createSessionClient(): Promise<SupabaseClient> {
   const cookieStore = await cookies();
   const options = authCookieOptions();
   return createServerClient(serverEnv.supabaseUrl, serverEnv.supabasePublishableKey, {
+    realtime,
     cookieOptions: options,
     cookies: {
       getAll: () => cookieStore.getAll(),
