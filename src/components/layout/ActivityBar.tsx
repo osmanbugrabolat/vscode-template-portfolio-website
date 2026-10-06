@@ -1,9 +1,8 @@
 "use client";
 
-import { VscFiles, VscCode, VscGithub, VscMail, VscPerson } from "react-icons/vsc";
+import { VscFiles, VscCode, VscCopilot, VscGithub, VscMail, VscPerson } from "react-icons/vsc";
 import { FaLinkedin, FaMedium } from "react-icons/fa";
 import { TbFileCv } from "react-icons/tb";
-import { LuBot } from "react-icons/lu";
 import { Icon } from "@/lib/icons";
 import { nodeName, type ExplorerItem } from "@/lib/cms/types";
 import LanguageMenu from "./LanguageMenu";
@@ -39,7 +38,7 @@ export default function ActivityBar({ items, settings, activeActivity, onActivit
   const { language } = useLanguage();
   const hasRoute = (route: string) => items.some((i) => i.kind === "file" && i.route === route && i.file_type !== "link");
   const cv: Activity | null = hasRoute("/cv") ? { id: "cv", label: "CV", route: "/cv", icon: <TbFileCv size={26} strokeWidth={1.5} /> } : null;
-  const copilot: Activity = { id: "copilot", label: "BuğrAI", icon: <LuBot size={24} /> };
+  const copilot: Activity = { id: "copilot", label: "BuğrAI", icon: <VscCopilot size={24} /> };
 
   const desktop: Activity[] = [
     { id: "explorer", label: LABELS.explorer[language], icon: <VscFiles size={24} /> },

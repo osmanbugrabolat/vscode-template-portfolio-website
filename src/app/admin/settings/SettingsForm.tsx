@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { VscSettingsGear, VscPerson, VscMortarBoard, VscGlobe, VscRobot, VscLink } from "react-icons/vsc";
+import { VscSettingsGear, VscPerson, VscMortarBoard, VscGlobe, VscCopilot, VscLink } from "react-icons/vsc";
 import type { SiteSettings } from "@/lib/cms/types";
 import type { MediaItem } from "@/lib/server/media-list";
 import { saveSettings } from "../_actions/content";
@@ -92,7 +92,7 @@ export default function SettingsForm({ settings: s, media }: { settings: SiteSet
         </div>
       </Section>
 
-      <Section title="BuğrAI ve terminal" icon={<VscRobot aria-hidden />}>
+      <Section title="BuğrAI ve terminal" icon={<VscCopilot aria-hidden />}>
         <div className="adm-form-grid">
           <TextAreaField label="Karşılama mesajı (Türkçe)" name="chat_greeting_tr" defaultValue={s.chat_greeting_tr} maxLength={500} rows={3} errors={errors} />
           <TextAreaField label="Greeting (English)" name="chat_greeting_en" defaultValue={s.chat_greeting_en} maxLength={500} rows={3} errors={errors} />

@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { VscAdd, VscBeaker, VscCircleSlash, VscHistory, VscQuestion, VscRobot, VscSearch, VscTrash, VscInfo, VscPlay } from "react-icons/vsc";
+import { VscAdd, VscBeaker, VscCircleSlash, VscHistory, VscQuestion, VscCopilot, VscSearch, VscTrash, VscInfo, VscPlay } from "react-icons/vsc";
 import type { IntentLink } from "@/lib/chatbot/types";
 import { clearChatLogs, deleteIntent, previewMatch, saveIntent } from "../_actions/chatbot";
 import { DeleteButton, FormError, LangTabs, PageHeader, SelectField, SubmitButton, TextAreaField, TextField, Toggle, useAdminAction } from "../_components/ui";
@@ -89,14 +89,14 @@ export default function ChatbotAdmin({ intents, unanswered, logs, initialTab }: 
     <>
       <PageHeader
         title="BuğrAI Soru ve Cevaplar"
-        icon={<VscRobot aria-hidden />}
+        icon={<VscCopilot aria-hidden />}
         description="BuğrAI yapay zeka kullanmaz: ziyaretçinin yazdığını buradaki soru kalıplarıyla karşılaştırır. Ne kadar çeşitli kalıp eklerseniz o kadar iyi anlar."
       />
 
       <div className="adm-tabs" role="tablist">
         {(
           [
-            ["intents", "Konular", <VscRobot key="i" />, intents.length],
+            ["intents", "Konular", <VscCopilot key="i" />, intents.length],
             ["unanswered", "Cevapsız sorular", <VscQuestion key="u" />, unanswered.length],
             ["logs", "Son sorular", <VscHistory key="l" />, logs.length],
             ["test", "Test et", <VscBeaker key="t" />, null],
@@ -260,7 +260,7 @@ function IntentForm({
     <form onSubmit={onSubmit} className="adm-form">
       <div className="adm-card-header">
         <h2>
-          <VscRobot aria-hidden /> {intent ? intent.title_tr : "Yeni konu"}
+          <VscCopilot aria-hidden /> {intent ? intent.title_tr : "Yeni konu"}
         </h2>
       </div>
       <div className="adm-card-body adm-form">

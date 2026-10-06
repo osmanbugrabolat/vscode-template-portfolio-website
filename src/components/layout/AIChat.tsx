@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { VscArrowRight, VscChevronDown, VscLinkExternal } from "react-icons/vsc";
-import { LuBot } from "react-icons/lu";
+import { VscArrowRight, VscChevronDown, VscCopilot, VscLinkExternal } from "react-icons/vsc";
 import { useLanguage } from "./LanguageContext";
 import type { ChatLink, ChatResponse, IntentOption, Lang } from "@/lib/chatbot/types";
 
@@ -119,7 +118,7 @@ export default function AIChat({ onClose, width, greeting }: { onClose?: () => v
     <div className="vscode-aichat" style={width ? { width } : undefined}>
       <div className="aichat-header">
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <LuBot size={16} />
+          <VscCopilot size={16} />
           BuğrAI
         </div>
         {onClose && (
@@ -225,7 +224,7 @@ export default function AIChat({ onClose, width, greeting }: { onClose?: () => v
               onClick={() => setShowDropdown(!showDropdown)}
               style={{ fontSize: "11px", color: "#aaa", display: "flex", alignItems: "center", gap: "6px", cursor: "pointer", fontWeight: "500", padding: "4px 8px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", userSelect: "none" }}
             >
-              <LuBot size={14} /> {model} <VscChevronDown size={14} style={{ transform: showDropdown ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }} />
+              <VscCopilot size={14} /> {model} <VscChevronDown size={14} style={{ transform: showDropdown ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }} />
             </div>
             
             {showDropdown && (

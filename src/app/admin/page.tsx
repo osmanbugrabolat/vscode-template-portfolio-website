@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { VscBriefcase, VscCode, VscFiles, VscHistory, VscQuestion, VscRobot, VscEyeClosed, VscArrowRight } from "react-icons/vsc";
+import { VscBriefcase, VscCode, VscFiles, VscHistory, VscQuestion, VscCopilot, VscEyeClosed, VscArrowRight } from "react-icons/vsc";
 import { requireAdmin } from "@/lib/server/auth";
 import { PageHeader } from "./_components/ui";
 import { actionLabel, entityLabel, formatDate } from "./_components/labels";
@@ -25,7 +25,7 @@ export default async function AdminDashboard() {
     { label: "Yayında olmayan", value: hidden.count ?? 0, icon: VscEyeClosed, href: "/admin/explorer" },
     { label: "Yetenek", value: skills.count ?? 0, icon: VscCode, href: "/admin/skills" },
     { label: "Deneyim", value: experiences.count ?? 0, icon: VscBriefcase, href: "/admin/experience" },
-    { label: "BuğrAI konusu", value: intents.count ?? 0, icon: VscRobot, href: "/admin/chatbot" },
+    { label: "BuğrAI konusu", value: intents.count ?? 0, icon: VscCopilot, href: "/admin/chatbot" },
   ];
 
   return (
