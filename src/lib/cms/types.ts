@@ -1,8 +1,8 @@
 import type { Lang } from "@/lib/chatbot/types";
 
-export type FileType = "markdown" | "home" | "experience" | "skills" | "pdf" | "image" | "embed" | "link";
+export type FileType = "markdown" | "home" | "experience" | "skills" | "pdf" | "image" | "embed" | "link" | "cv";
 
-export const FILE_TYPES: FileType[] = ["markdown", "home", "experience", "skills", "pdf", "image", "embed", "link"];
+export const FILE_TYPES: FileType[] = ["markdown", "home", "experience", "skills", "pdf", "image", "embed", "link", "cv"];
 
 export interface ExplorerNode {
   id: string;
@@ -119,6 +119,7 @@ export const DEFAULT_FILE_ICON: Record<FileType, string> = {
   image: "image",
   embed: "play",
   link: "link",
+  cv: "pdf",
 };
 
 export const STATUS_LANGUAGE: Record<FileType, string> = {
@@ -130,4 +131,5 @@ export const STATUS_LANGUAGE: Record<FileType, string> = {
   image: "Image",
   embed: "Game",
   link: "Link",
+  cv: "PDF",
 };

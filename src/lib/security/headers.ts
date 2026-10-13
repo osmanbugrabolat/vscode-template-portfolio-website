@@ -21,8 +21,8 @@ export function buildContentSecurityPolicy({ nonce, isDev, supabaseUrl }: { nonc
     "font-src": ["'self'", "data:"],
     // Admin uploads go straight from the browser to Supabase Storage with a signed URL.
     "connect-src": ["'self'", ...(supabaseOrigin ? [supabaseOrigin] : []), ...(isDev ? ["ws:", "wss:", "http://127.0.0.1:*", "http://localhost:*"] : [])],
-    // Playable projects and PDFs are shown in iframes.
-    "frame-src": ["'self'", "https:", ...(supabaseOrigin ? [supabaseOrigin] : [])],
+    // Playable projects and PDFs are shown in iframes; the admin CV preview is a blob: PDF.
+    "frame-src": ["'self'", "blob:", "https:", ...(supabaseOrigin ? [supabaseOrigin] : [])],
     "media-src": ["'self'", "https:"],
     "object-src": ["'none'"],
     "base-uri": ["'self'"],

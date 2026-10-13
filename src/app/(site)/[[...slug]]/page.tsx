@@ -61,6 +61,8 @@ export default async function ContentPage({ params }: Props) {
       return <SkillsView categories={data.skillCategories} />;
     case "pdf":
       return node.asset_url ? <PdfView src={node.asset_url} title={name} lang={lang} /> : notFound();
+    case "cv":
+      return <PdfView src={`/cv-pdf/${lang}`} title={name} lang={lang} />;
     case "image":
       return node.asset_url ? <ImageView src={node.asset_url} alt={name} /> : notFound();
     case "embed":

@@ -15,21 +15,23 @@
     "avatar_url": "/bugra.png",
     "available_for_work": false,
     "current_focus_tr": [
-      "Ölçeklenebilir web ve mobil uygulamalar geliştirmek",
-      "Yapay zekâ ve makine öğrenmesi entegrasyonlarını keşfetmek"
+      "Ilgar Teknoloji'de SuPublic projesinin yapay zekâ model yapısını kurgulamak ve proje yönetimini yürütmek",
+      "Bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmek",
+      "MLOps ile yapay zekâ servislerinin otomasyonu ve dağıtımı"
     ],
     "current_focus_en": [
-      "Building scalable Web & Mobil applications",
-      "Exploring AI/ML integrations"
+      "Designing the AI model structure and leading project management for SuPublic at Ilgar Teknoloji",
+      "Integrating computer vision and deep learning models into cloud infrastructure",
+      "Automating and deploying AI services with MLOps"
     ],
     "education_degree_tr": "Bilgisayar Mühendisliği",
     "education_degree_en": "Computer Engineering",
-    "education_school": "University",
-    "education_years": "2020 – 2024",
-    "education_gpa": "3.4 / 4.0",
+    "education_school": "Selçuk Üniversitesi",
+    "education_years": "2021 – 2026",
+    "education_gpa": "3.75 / 4",
     "seo_title": "Osman Buğra BOLAT",
-    "seo_description_tr": "Osman Buğra BOLAT'ın portfolyosu: Next.js, TypeScript ve modern web teknolojilerinde uzmanlaşmış yapay zekâ ve bulut mühendisi.",
-    "seo_description_en": "Portfolio of Buğra Bolat — Full Stack Developer specializing in Next.js, TypeScript, and modern web technologies.",
+    "seo_description_tr": "Osman Buğra BOLAT'ın portfolyosu: bilgisayarlı görü, derin öğrenme ve bulut altyapıları üzerine çalışan yapay zekâ mühendisi ve proje yöneticisi.",
+    "seo_description_en": "Portfolio of Osman Buğra BOLAT, an AI engineer and project manager working on computer vision, deep learning and cloud infrastructure.",
     "chat_greeting_tr": "Merhaba! Ben BuğrAI. Osman Buğra'nın portfolyosu hakkında merak ettiğiniz her şeyi sorabilirsiniz.",
     "chat_greeting_en": "Hi! I'm BuğrAI. Ask me anything about Osman Buğra's portfolio.",
     "terminal_whoami": "Osman Buğra BOLAT - AI powered AI & Cloud Engineer"
@@ -55,8 +57,8 @@
       "route": "/",
       "url": null,
       "asset_url": null,
-      "content_tr": "{{profile-header}}\n\n## Hakkımda\n\nSelçuk Üniversitesi Teknoloji Fakültesi'ni fakülte üçüncüsü ve bölüm ikincisi olarak 3.75 not ortalamasıyla tamamlamış (2026) bir bilgisayar mühendisiyim. Öğrenimim boyunca teknik odağımı bilgisayarlı görü ve derin öğrenme modellerinin bulut altyapılarına entegrasyonu üzerine yoğunlaştırdım ve bu alanlardaki uzmanlığımı geliştirmeye devam ediyorum.\n\nLisans yıllarımda Docker, CI/CD süreçleri, DevOps ve MLOps prensiplerine dayalı yapay zekâ tabanlı operasyonel süreçlerin otomasyonu ve dağıtımı konusunda uygulamalı deneyim kazandım.\n\nBu güçlü akademik temeli, teknoloji topluluğu liderliği ve proje yönetimi rolleriyle geliştirdiğim liderlik ve iletişim becerileriyle birleştiriyorum. Karmaşık projelerin operasyonel gereksinimlerine hızla uyum sağlayan, teknik süreçlerde sorumluluk alan ve iş birliğine dayalı ekip ortamlarında başarılı olan dinamik bir mühendisim.\n\n## Şu Anki Odak\n\n{{current-focus}}\n\n## Teknoloji Yığını ve Ekosistem\n\nFikirleri hayata geçirmek için kullandığım teknolojilere genel bir bakış:\n\n{{tech-stack}}",
-      "content_en": "{{profile-header}}\n\n## About Me\n\nAs a computer engineering graduate ranking 3rd in the Faculty of Technology and 2nd in my department at Selçuk University (graduated in 2026 with a 3.75 GPA), I have aligned my technical focus on integrating Computer Vision and Deep Learning models into cloud infrastructures throughout my studies, and I continue to advance my expertise in these fields.\n\nDuring my undergraduate years, I gained hands-on experience in the automation and deployment of AI-based operational processes based on Docker, CI/CD pipelines, DevOps, and MLOps principles.\n\nI combine this strong academic foundation with leadership and communication skills developed through technology community leadership and project management roles. I am a dynamic engineer who quickly adapts to the operational requirements of complex projects, takes responsibility in technical processes, and thrives in collaborative team environments.\n\n## Current Focus\n\n{{current-focus}}\n\n## Tech Stack & Ecosystem\n\nA high-level overview of the technologies I use to bring ideas to life:\n\n{{tech-stack}}",
+      "content_tr": "{{profile-header}}\n\n## Hakkımda\n\nSelçuk Üniversitesi Bilgisayar Mühendisliği bölümünden bölüm ikincisi ve Teknoloji Fakültesi üçüncüsü olarak mezun oldum. Üniversite yıllarım boyunca bilgisayarlı görü ve derin öğrenme alanlarına yöneldim; özellikle bu modellerin bulut altyapılarına entegrasyonu üzerine çalıştım ve bu alanda kendimi geliştirmeye devam ediyorum. Docker, CI/CD, DevOps ve MLOps yaklaşımlarıyla yapay zekâ tabanlı süreçlerin otomasyonu ve canlıya alınması konusunda uygulamalı deneyim kazandım. Teknoloji topluluklarında üstlendiğim liderlik ve proje yönetimi görevleri sayesinde iletişim ve ekip yönetimi becerilerimi de güçlendirdim. Karmaşık projelere kısa sürede uyum sağlayan, sorumluluk almaktan çekinmeyen ve ekip çalışmasından keyif alan bir mühendisim.\n\n## Şu Anki Odak\n\n{{current-focus}}\n\n## Teknoloji Yığını ve Ekosistem\n\nFikirleri hayata geçirmek için kullandığım teknolojilere genel bir bakış:\n\n{{tech-stack}}",
+      "content_en": "{{profile-header}}\n\n## About Me\n\nI graduated from Selçuk University with a degree in Computer Engineering, ranking 2nd in my department and 3rd in the Faculty of Technology. Throughout my studies, I focused on computer vision and deep learning, particularly on integrating these models into cloud infrastructures, and I continue to grow my expertise in this field. I gained hands-on experience in automating and deploying AI-based processes using Docker, CI/CD, DevOps, and MLOps practices. Leadership and project management roles in technology communities have also strengthened my communication and team management skills. I am an engineer who adapts quickly to complex projects, readily takes ownership, and enjoys working as part of a team.\n\n## Current Focus\n\n{{current-focus}}\n\n## Tech Stack & Ecosystem\n\nA high-level overview of the technologies I use to bring ideas to life:\n\n{{tech-stack}}",
       "icon": "markdown",
       "show_in_explorer": true
     },
@@ -322,7 +324,7 @@
       "name": "Daha fazlası...",
       "name_en": "For more...",
       "file_type": "link",
-      "sort_order": 6,
+      "sort_order": 200,
       "route": null,
       "url": "https://github.com/osmanbugrabolat",
       "asset_url": null,
@@ -330,70 +332,6 @@
       "content_en": "",
       "icon": "github",
       "show_in_explorer": true
-    },
-    {
-      "key": "pf-1",
-      "parent": "projects",
-      "kind": "file",
-      "name": "Apart Yönetim Sistemi.md",
-      "name_en": "Apartment Management System.md",
-      "file_type": "markdown",
-      "sort_order": 101,
-      "route": "/projects/1",
-      "url": null,
-      "asset_url": null,
-      "content_tr": "# Apart Yönetim Sistemi\n\n2026 · Aktif\n\nGerçek zamanlı güncellemeler, kiracı yönetimi, ödeme takibi ve otomatik raporlama sunan kapsamlı bir apart yönetim platformu.\n\n## Teknolojiler\n\n`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS`\n\n## Bağlantılar\n\n- [Kaynak Kod](https://github.com/osmanbugrabolat)\n- [Canlı Demo](http://localhost:3000)",
-      "content_en": "# Apart Yönetim Sistemi\n\n2026 · Active\n\nComprehensive apartment management platform with real-time updates, tenant management, payment tracking, and automated reporting.\n\n## Tech Stack\n\n`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)\n- [Live Demo](http://localhost:3000)",
-      "icon": "markdown",
-      "show_in_explorer": false
-    },
-    {
-      "key": "pf-2",
-      "parent": "projects",
-      "kind": "file",
-      "name": "Portfolyo AI.md",
-      "name_en": null,
-      "file_type": "markdown",
-      "sort_order": 102,
-      "route": "/projects/2",
-      "url": null,
-      "asset_url": null,
-      "content_tr": "# Portfolyo AI\n\n2026 · Aktif\n\nVS Code'dan ilham alan temaya sahip, yapay zekâ destekli bir portfolyo sitesi. Akıllı içerik üretimi ve kod editörü benzeri etkileşimli gezinme sunar.\n\n## Teknolojiler\n\n`Next.js` `TypeScript` `AI/ML` `Tailwind CSS`\n\n## Bağlantılar\n\n- [Kaynak Kod](https://github.com/osmanbugrabolat)",
-      "content_en": "# Portfolyo AI\n\n2026 · Active\n\nAI-powered portfolio website with a VS Code-inspired theme. Features intelligent content generation and interactive code-like navigation.\n\n## Tech Stack\n\n`Next.js` `TypeScript` `AI/ML` `Tailwind CSS`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)",
-      "icon": "markdown",
-      "show_in_explorer": false
-    },
-    {
-      "key": "pf-3",
-      "parent": "projects",
-      "kind": "file",
-      "name": "Fountain Detection AI.md",
-      "name_en": null,
-      "file_type": "markdown",
-      "sort_order": 103,
-      "route": "/projects/3",
-      "url": null,
-      "asset_url": null,
-      "content_tr": "# Fountain Detection AI\n\n2025 · Tamamlandı\n\nGörsellerdeki tarihi Osmanlı çeşmelerini (hayrat çeşme) yüksek doğrulukla tespit etmek için ince ayar yapılmış YOLOv8 ve YOLOv11 modeli.\n\n## Teknolojiler\n\n`Python` `YOLOv11` `Ultralytics` `OpenCV` `PyTorch`\n\n## Bağlantılar\n\n- [Kaynak Kod](https://github.com/osmanbugrabolat)",
-      "content_en": "# Fountain Detection AI\n\n2025 · Completed\n\nFine-tuned YOLOv8 & YOLOv11 model for detecting historical Ottoman fountains (hayrat çeşme) in images with high accuracy.\n\n## Tech Stack\n\n`Python` `YOLOv11` `Ultralytics` `OpenCV` `PyTorch`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)",
-      "icon": "markdown",
-      "show_in_explorer": false
-    },
-    {
-      "key": "pf-4",
-      "parent": "projects",
-      "kind": "file",
-      "name": "Web Scraper & Dataset Builder.md",
-      "name_en": null,
-      "file_type": "markdown",
-      "sort_order": 104,
-      "route": "/projects/4",
-      "url": null,
-      "asset_url": null,
-      "content_tr": "# Web Scraper & Dataset Builder\n\n2025 · Tamamlandı\n\nGoogle Görseller arama sonuçlarından özel bilgisayarlı görü veri setleri oluşturmak için geliştirilmiş otomatik görsel toplama aracı.\n\n## Teknolojiler\n\n`Python` `Selenium` `BeautifulSoup` `Requests`\n\n## Bağlantılar\n\n- [Kaynak Kod](https://github.com/osmanbugrabolat)",
-      "content_en": "# Web Scraper & Dataset Builder\n\n2025 · Completed\n\nAutomated image scraping tool for building custom computer vision datasets from Google Images search results.\n\n## Tech Stack\n\n`Python` `Selenium` `BeautifulSoup` `Requests`\n\n## Links\n\n- [Source Code](https://github.com/osmanbugrabolat)",
-      "icon": "markdown",
-      "show_in_explorer": false
     },
     {
       "key": "articles",
@@ -748,11 +686,11 @@
       "kind": "file",
       "name": "cv.pdf",
       "name_en": null,
-      "file_type": "pdf",
+      "file_type": "cv",
       "sort_order": 10,
       "route": "/cv",
       "url": null,
-      "asset_url": "/cv.pdf",
+      "asset_url": null,
       "content_tr": "",
       "content_en": "",
       "icon": "pdf",
@@ -789,6 +727,86 @@
       "content_en": "",
       "icon": "typescript",
       "show_in_explorer": false
+    },
+    {
+      "key": "cvp-fizyoterapi-uygulamasi",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Fizyoterapi Uygulaması.md",
+      "name_en": "Physiotherapy App.md",
+      "file_type": "markdown",
+      "sort_order": 101,
+      "route": "/projects/fizyoterapi-uygulamasi",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Yapay Zekâ Destekli Fizyoterapi Uygulaması\n\n**Android Kotlin** ve **Python/FastAPI** kullanarak çift rollü mimariye sahip, yapay zekâ destekli bir fizyoterapi mobil uygulaması geliştirdim. Ön yüzde MediaPipe ve CameraX entegrasyonuyla gerçek zamanlı poz tahmini ve hareket fazı tespiti gerçekleştirerek otomatik eklem açısı hesaplaması ve uyarlanabilir tekrar sayımı sağladım. SQLAlchemy ve Alembic ile yönetilen güvenli bir **PostgreSQL** veritabanı tasarladım ve backend altyapısını Easypanel üzerinde Docker ile konteynerleştirilmiş bir servis olarak dağıttım.\n\n## Teknolojiler\n\n`Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`\n",
+      "content_en": "# AI-Powered Physiotherapy Application\n\nDeveloped an AI-powered physiotherapy mobile application using **Android Kotlin** and **Python/FastAPI** with a dual-role architecture. Implemented real-time pose estimation and movement phase detection by integrating MediaPipe and CameraX on the frontend, enabling automatic joint angle calculations and adaptive repetition counting. Designed a secure **PostgreSQL** database managed via SQLAlchemy and Alembic, and deployed the backend infrastructure as a containerized service using Docker on Easypanel.\n\n## Technologies\n\n`Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`\n",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "cvp-hsd-turkiye-web-v1",
+      "parent": "projects",
+      "kind": "file",
+      "name": "HSD Türkiye Web Sitesi v1.md",
+      "name_en": "HSD Türkiye Website v1.md",
+      "file_type": "markdown",
+      "sort_order": 102,
+      "route": "/projects/hsd-turkiye-web-v1",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# HSD Türkiye Web Sitesi v1\n\nHSD Türkiye'nin gereksinimlerini belirlemek için kapsamlı bir ihtiyaç analizi gerçekleştirdik ve topluluk yönetimine odaklanan bir ERP platformu geliştirdik. Backend tarafında **.NET Core MVC** mimarisini, frontend tarafında ise HTML, CSS ve JavaScript teknolojilerini kullanan bu platform, kampüs elçileri ve topluluk yöneticilerinin tüm idari süreçlerini verimli bir şekilde yönetebilmeleri için gereken tüm bileşenleri içermektedir.\n\n## Teknolojiler\n\n`.NET Core MVC` `HTML` `CSS` `JavaScript`\n\n## Bağlantılar\n\n- [www.hsdturkiye.com](https://www.hsdturkiye.com)\n",
+      "content_en": "# HSD Türkiye Website v1\n\nTo determine HSD Turkey's requirements, we conducted a comprehensive needs analysis and developed an ERP platform focused on community management. This platform, which utilizes **.NET Core MVC** architecture on the backend and HTML, CSS, and JavaScript technologies on the frontend, includes all the necessary components for campus ambassadors and community managers to efficiently manage all their administrative processes.\n\n## Technologies\n\n`.NET Core MVC` `HTML` `CSS` `JavaScript`\n\n## Links\n\n- [www.hsdturkiye.com](https://www.hsdturkiye.com)\n",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "cvp-hsd-turkiye-web-v2",
+      "parent": "projects",
+      "kind": "file",
+      "name": "HSD Türkiye Web Sitesi v2.md",
+      "name_en": "HSD Türkiye Website v2.md",
+      "file_type": "markdown",
+      "sort_order": 103,
+      "route": "/projects/hsd-turkiye-web-v2",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# HSD Türkiye Web Sitesi v2\n\nWeb sitesinin ilk sürümünün (v1) topluluk erişimine kapalı olması ve modern mimari standartlardan yoksun olması nedeniyle **.Net Core Web API** ve **Nuxt.js** teknolojilerini kullanarak yeni bir web sitesi geliştirdik. Projeyi Huawei Cloud altyapısı üzerinde **VPC, ECS, SWR, RDS, OBS, ELB** ve **AS** gibi servislerden yararlanarak tamamen ölçeklenebilir bir mimariyle inşa ettik. Bu sayede projenin esnek ve yüksek performanslı bir ortamda çalışmasını sağlarken modern bir teknoloji yığınına geçiş yaptık.\n\n## Teknolojiler\n\n`.NET Core Web API` `Nuxt.js` `Huawei Cloud`\n",
+      "content_en": "# HSD Türkiye Website v2\n\nDue to the initial version (v1) of the website being closed to community access and lacking modern architectural standards, we developed a new website using **.Net Core Web API** and **Nuxt.js** technologies. We built the project on Huawei Cloud infrastructure, utilizing services such as **VPC, ECS, SWR, RDS, OBS, ELB,** and **AS,** creating a fully scalable architecture. This allowed us to transition to a modern technology stack while ensuring the project operates in a flexible and high-performance environment.\n\n## Technologies\n\n`.NET Core Web API` `Nuxt.js` `Huawei Cloud`\n",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "cvp-goruntu-on-isleme",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Görüntü Ön İşleme Platformu.md",
+      "name_en": "Image Preprocessing Platform.md",
+      "file_type": "markdown",
+      "sort_order": 104,
+      "route": "/projects/goruntu-on-isleme",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Görüntü Ön İşleme Platformu\n\nPython tabanlı **FastAPI** ve **Django** kullanarak yüksek performanslı bir görüntü ön işleme platformu geliştirdim. Platform; uzamsal dönüşümler, histogram optimizasyonu ve gürültü modellerinin (Gauss, Tuz & Biber) eklenmesi ve giderilmesi gibi kapsamlı algoritmik modüller içermektedir. FastAPI'nin asenkron yapısı yoğun hesaplama gerektiren işlemlerde düşük gecikme sağlarken Django sistemin modülerliğini optimize etmektedir. Proje, ham verilerin işlenerek analiz ve derin öğrenme süreçlerine hazırlanmasını sağlayan uçtan uca bir teknik altyapı sunmaktadır.\n\n## Teknolojiler\n\n`Python` `FastAPI` `Django` `OpenCV`\n\n## Bağlantılar\n\n- [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)\n",
+      "content_en": "# Image Preprocessing Platform\n\nI developed a high-performance image preprocessing platform using Python-based **FastAPI** and **Django**. The platform includes comprehensive algorithmic modules such as spatial transformations, histogram optimization, and the addition and removal of noise models (Gaussian, Salt & Pepper). FastAPI's asynchronous nature ensures low latency in computationally intensive tasks, while Django optimizes system modularity. The project provides an end-to-end technical infrastructure that enables the processing of raw data, preparing it for analysis and deep learning processes.\n\n## Technologies\n\n`Python` `FastAPI` `Django` `OpenCV`\n\n## Links\n\n- [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)\n",
+      "icon": "markdown",
+      "show_in_explorer": true
+    },
+    {
+      "key": "cvp-dermatolojik-hastalik-tespiti",
+      "parent": "projects",
+      "kind": "file",
+      "name": "Dermatolojik Hastalık Tespiti.md",
+      "name_en": "Dermatological Disease Detection.md",
+      "file_type": "markdown",
+      "sort_order": 105,
+      "route": "/projects/dermatolojik-hastalik-tespiti",
+      "url": null,
+      "asset_url": null,
+      "content_tr": "# Dermatolojik Hastalık Tespiti\n\nFitzpatrick17k veri setini kullanarak farklı cilt tiplerine duyarlı bir cilt hastalığı teşhis modeli geliştirdim. **EfficientNet-B3 mimarisi** üzerindeki ince ayar (fine-tuning) sürecinde, modelin yalnızca hastalığa odaklanmasını değil cilt tipi çeşitliliğini de dikkate almasını sağlamak için özel kayıp fonksiyonları entegre ettim. Eğitim aşamasının ardından modeli FastAPI kullanarak bir **Hetzner** sunucusu üzerinde çıkarım (inference) servisi olarak dağıttım.\n\n## Teknolojiler\n\n`Python` `EfficientNet-B3` `FastAPI` `Hetzner`\n",
+      "content_en": "# Dermatological Disease Detection\n\nUsing the Fitzpatrick17k dataset, I developed a skin disease diagnosis model sensitive to different skin types. During the fine-tuning process on the **EfficientNet-B3 architecture,** I integrated custom loss functions to ensure the model not only focuses on the disease but also considers skin type variability. Following the training phase, I deployed the model as an inference service on a **Hetzner** server using FastAPI.\n\n## Technologies\n\n`Python` `EfficientNet-B3` `FastAPI` `Hetzner`\n",
+      "icon": "markdown",
+      "show_in_explorer": true
     }
   ],
   "skill_categories": [
@@ -894,6 +912,18 @@
           "level": 70,
           "icon": "flutter",
           "sort_order": 3
+        },
+        {
+          "name": "Nuxt.js",
+          "level": 65,
+          "icon": "nuxt",
+          "sort_order": 4
+        },
+        {
+          "name": "Kotlin (Android)",
+          "level": 60,
+          "icon": "kotlin",
+          "sort_order": 5
         }
       ]
     },
@@ -921,6 +951,18 @@
           "level": 60,
           "icon": "prisma",
           "sort_order": 2
+        },
+        {
+          "name": ".NET",
+          "level": 70,
+          "icon": "dotnet",
+          "sort_order": 3
+        },
+        {
+          "name": "Django",
+          "level": 60,
+          "icon": "django",
+          "sort_order": 4
         }
       ]
     },
@@ -1041,62 +1083,485 @@
   ],
   "experiences": [
     {
-      "company": "Freelance",
-      "position_tr": "Full Stack Geliştirici",
-      "position_en": "Full Stack Developer",
-      "duration_tr": "2024 – Günümüz",
-      "duration_en": "2024 – Present",
-      "location_tr": "Uzaktan",
-      "location_en": "Remote",
-      "description_tr": "Müşteriler için özel web uygulamaları tasarlıyor ve geliştiriyorum. Next.js, TypeScript ve veritabanı mimarisi konularında uzmanım.",
-      "description_en": "Designing and developing custom web applications for clients. Specialized in Next.js, TypeScript, and database architecture.",
-      "highlights_tr": [
-        "Gayrimenkul yönetimi için Apart Yönetim Sistemi'ni geliştirdim",
-        "Yapay zekâ destekli portfolyo siteleri geliştirdim",
-        "5'ten fazla projeyi zamanında ve kapsamına uygun teslim ettim"
-      ],
-      "highlights_en": [
-        "Built Apart Yönetim Sistemi for property management",
-        "Developed AI-powered portfolio websites",
-        "Delivered 5+ projects on time and within scope"
-      ],
-      "tech": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma",
-        "Tailwind CSS"
-      ],
+      "company": "Ilgar Teknoloji",
+      "position_tr": "Proje Yöneticisi & Yapay Zekâ Mühendisi",
+      "position_en": "Project Manager & AI Engineer",
+      "duration_tr": "Haziran 2026 – Günümüz",
+      "duration_en": "June 2026 – Present",
+      "location_tr": "",
+      "location_en": "",
+      "description_tr": "SuPublic projesinde, projenin ihtiyaç duyduğu yapay zekâ model yapısının kurgulanmasından ve proje yönetiminden sorumluyum. Model mimarisinin tasarımı ve teknik yol haritasının belirlenmesinin yanı sıra projenin planlama, önceliklendirme ve teslim süreçlerini yönetiyor; geliştirme ekibi ve paydaşlar arasındaki koordinasyonu sağlıyorum.",
+      "description_en": "Responsible for designing the AI model structure and for project management on the SuPublic project. Beyond designing the model architecture and defining the technical roadmap, I manage the project's planning, prioritization, and delivery, and coordinate between the development team and stakeholders.",
+      "highlights_tr": [],
+      "highlights_en": [],
+      "tech": [],
       "sort_order": 0
     },
     {
-      "company": "Self-Directed Learning",
-      "position_tr": "Yapay Zekâ / ML Mühendisi (Öğrenme Süreci)",
-      "position_en": "AI/ML Engineer (Learning)",
-      "duration_tr": "2025 – Günümüz",
-      "duration_en": "2025 – Present",
-      "location_tr": "Türkiye",
-      "location_en": "Turkey",
-      "description_tr": "Bilgisayarlı görü ve makine öğrenmesi alanlarında derinleşiyorum. Nesne tespiti görevleri için YOLO modellerine ince ayar yapmak üzerine çalışıyorum.",
-      "description_en": "Deep diving into computer vision and machine learning. Working on fine-tuning YOLO models for object detection tasks.",
-      "highlights_tr": [
-        "Çeşme tespiti için YOLOv8 ve YOLOv11 modellerine ince ayar yaptım",
-        "Web'den toplanan görsellerle özel veri setleri oluşturdum",
-        "Özel veri setinde %85'in üzerinde mAP elde ettim"
-      ],
-      "highlights_en": [
-        "Fine-tuned YOLOv8 & YOLOv11 for fountain detection",
-        "Built custom datasets from web scraped images",
-        "Achieved 85%+ mAP on custom dataset"
-      ],
+      "company": "Huawei Türkiye",
+      "position_tr": "Bölge Lideri",
+      "position_en": "Regional Leader",
+      "duration_tr": "Eylül 2025 – Eylül 2026",
+      "duration_en": "September 2025 – September 2026",
+      "location_tr": "",
+      "location_en": "",
+      "description_tr": "İç Anadolu Bölgesi'ndeki altı HSD elçiliğini yönettim ve denetledim; elçiliklerin yönetim süreçlerini ve etkinliklerini destekledim.",
+      "description_en": "Managed and supervised six HSD embassies in the Central Anatolia region, supporting their management processes and activities.",
+      "highlights_tr": [],
+      "highlights_en": [],
+      "tech": [],
+      "sort_order": 10
+    },
+    {
+      "company": "Huawei Türkiye",
+      "position_tr": "Stajyer",
+      "position_en": "Intern",
+      "duration_tr": "Temmuz 2024 – Temmuz 2025",
+      "duration_en": "July 2024 – July 2025",
+      "location_tr": "",
+      "location_en": "",
+      "description_tr": "Geliştirme iş akışlarını otomatikleştirmek ve verimliliği artırmak için özel CLI araçları ve Bash betikleri geliştirdim. Git ile kesintisiz sürüm kontrolü ve iş birliğini sürdürürken Linux sistemlerinde Docker kullanarak konteynerleştirilmiş ortamları yönetme konusunda uygulamalı deneyim kazandım.",
+      "description_en": "Developed custom CLI tools and Bash scripts to automate development workflows and improve efficiency. Gained hands-on experience in managing containerized environments using Docker on Linux systems, while maintaining seamless version control and collaboration through Git.",
+      "highlights_tr": [],
+      "highlights_en": [],
       "tech": [
-        "Python",
-        "PyTorch",
-        "Ultralytics",
-        "OpenCV",
-        "NumPy"
+        "Bash",
+        "Docker",
+        "Linux",
+        "Git"
       ],
-      "sort_order": 1
+      "sort_order": 20
+    },
+    {
+      "company": "Divizyon",
+      "position_tr": "Yazılım Program Yöneticisi Asistanı",
+      "position_en": "Software Program Manager Assistant",
+      "duration_tr": "Aralık 2024 – Ekim 2025",
+      "duration_en": "December 2024 – October 2025",
+      "location_tr": "",
+      "location_en": "",
+      "description_tr": "Agile ve Scrum metodolojilerinin uygulandığı yazılım geliştirme projelerinde Program Yöneticisi Asistanı olarak görev aldım. Mükemmeliyet Merkezi (CoE) temsilcisi olarak sprint planlama, günlük scrum ve retrospektif toplantılarına aktif olarak katıldım; birden fazla ekipte çevik standartların ve en iyi uygulamaların benimsenmesine öncülük ettim.",
+      "description_en": "Served as a Program Manager Assistant in software development projects utilizing Agile and Scrum methodologies. As a Center of Excellence (CoE) representative, I actively participated in sprint planning, daily scrums, and retrospectives, driving the adoption of agile standards and best practices across multiple teams.",
+      "highlights_tr": [],
+      "highlights_en": [],
+      "tech": [
+        "Agile",
+        "Scrum"
+      ],
+      "sort_order": 30
+    },
+    {
+      "company": "Huawei Türkiye",
+      "position_tr": "Kampüs Elçisi",
+      "position_en": "Campus Ambassador",
+      "duration_tr": "Ağustos 2024 – Eylül 2025",
+      "duration_en": "August 2024 – September 2025",
+      "location_tr": "",
+      "location_en": "",
+      "description_tr": "HSD Selçuk Üniversitesi'nde Huawei Kampüs Elçisi olarak eğitimler ve etkinlikler düzenledim; proje ekiplerinin kurulması ve koordinasyonu sürecinde yönetim becerileri kazandım.",
+      "description_en": "Organized trainings and events as a Huawei Campus Ambassador at HSD Selçuk University, gaining management skills through the establishment and coordination of project teams.",
+      "highlights_tr": [],
+      "highlights_en": [],
+      "tech": [],
+      "sort_order": 40
     }
-  ]
+  ],
+  "cv": {
+    "tr": {
+      "name": "Osman Buğra BOLAT",
+      "title": "Bilgisayar Mühendisi",
+      "contacts": [
+        {
+          "label": "osmanbugrabolat@gmail.com",
+          "url": "mailto:osmanbugrabolat@gmail.com"
+        },
+        {
+          "label": "osmanbugrabolat.com.tr",
+          "url": "https://osmanbugrabolat.com.tr"
+        },
+        {
+          "label": "+90 561 618 6618",
+          "url": "tel:+905616186618"
+        },
+        {
+          "label": "linkedin.com/in/osmanbugrabolat",
+          "url": "https://linkedin.com/in/osmanbugrabolat"
+        },
+        {
+          "label": "https://github.com/osmanbugrabolat",
+          "url": "https://github.com/osmanbugrabolat"
+        }
+      ],
+      "about": "Selçuk Üniversitesi Bilgisayar Mühendisliği bölümünden bölüm ikincisi ve Teknoloji Fakültesi üçüncüsü olarak mezun oldum. Üniversite yıllarım boyunca bilgisayarlı görü ve derin öğrenme alanlarına yöneldim; özellikle bu modellerin bulut altyapılarına entegrasyonu üzerine çalıştım ve bu alanda kendimi geliştirmeye devam ediyorum. Docker, CI/CD, DevOps ve MLOps yaklaşımlarıyla yapay zekâ tabanlı süreçlerin otomasyonu ve canlıya alınması konusunda uygulamalı deneyim kazandım. Teknoloji topluluklarında üstlendiğim liderlik ve proje yönetimi görevleri sayesinde iletişim ve ekip yönetimi becerilerimi de güçlendirdim. Karmaşık projelere kısa sürede uyum sağlayan, sorumluluk almaktan çekinmeyen ve ekip çalışmasından keyif alan bir mühendisim.",
+      "education": [
+        {
+          "school": "Selçuk Üniversitesi",
+          "date": "Eylül 2021 - Haziran 2026",
+          "degree": "Bilgisayar Mühendisliği",
+          "gpa": "3.75/4"
+        }
+      ],
+      "experiences": [
+        {
+          "company": "Ilgar Teknoloji",
+          "position": "Proje Yöneticisi & Yapay Zekâ Mühendisi",
+          "date": "Haziran 2026 - Günümüz",
+          "bullets": [
+            "**SuPublic** projesinde, projenin ihtiyaç duyduğu yapay zekâ model yapısının kurgulanmasından ve proje yönetiminden sorumluyum. Model mimarisinin tasarımı ve teknik yol haritasının belirlenmesinin yanı sıra projenin planlama, önceliklendirme ve teslim süreçlerini yönetiyor; geliştirme ekibi ve paydaşlar arasındaki koordinasyonu sağlıyorum."
+          ]
+        },
+        {
+          "company": "Huawei Türkiye",
+          "position": "Bölge Lideri",
+          "date": "Eylül 2025 - Eylül 2026",
+          "bullets": [
+            "İç Anadolu Bölgesi'ndeki altı HSD elçiliğini yönettim ve denetledim; elçiliklerin yönetim süreçlerini ve etkinliklerini destekledim."
+          ]
+        },
+        {
+          "company": "Huawei Türkiye",
+          "position": "Stajyer",
+          "date": "Temmuz 2024 - Temmuz 2025",
+          "bullets": [
+            "Geliştirme iş akışlarını otomatikleştirmek ve verimliliği artırmak için özel CLI araçları ve Bash betikleri geliştirdim. Git ile kesintisiz sürüm kontrolü ve iş birliğini sürdürürken Linux sistemlerinde Docker kullanarak konteynerleştirilmiş ortamları yönetme konusunda uygulamalı deneyim kazandım."
+          ]
+        },
+        {
+          "company": "Divizyon",
+          "position": "Yazılım Program Yöneticisi Asistanı",
+          "date": "Aralık 2024 - Ekim 2025",
+          "bullets": [
+            "Agile ve Scrum metodolojilerinin uygulandığı yazılım geliştirme projelerinde Program Yöneticisi Asistanı olarak görev aldım. Mükemmeliyet Merkezi (CoE) temsilcisi olarak sprint planlama, günlük scrum ve retrospektif toplantılarına aktif olarak katıldım; birden fazla ekipte çevik standartların ve en iyi uygulamaların benimsenmesine öncülük ettim."
+          ]
+        },
+        {
+          "company": "Huawei Türkiye",
+          "position": "Kampüs Elçisi",
+          "date": "Ağustos 2024 - Eylül 2025",
+          "bullets": [
+            "HSD Selçuk Üniversitesi'nde Huawei Kampüs Elçisi olarak eğitimler ve etkinlikler düzenledim; proje ekiplerinin kurulması ve koordinasyonu sürecinde yönetim becerileri kazandım."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Yapay Zekâ Destekli Fizyoterapi Uygulaması",
+          "url": "",
+          "bullets": [
+            "**Android Kotlin** ve **Python/FastAPI** kullanarak çift rollü mimariye sahip, yapay zekâ destekli bir fizyoterapi mobil uygulaması geliştirdim. Ön yüzde MediaPipe ve CameraX entegrasyonuyla gerçek zamanlı poz tahmini ve hareket fazı tespiti gerçekleştirerek otomatik eklem açısı hesaplaması ve uyarlanabilir tekrar sayımı sağladım. SQLAlchemy ve Alembic ile yönetilen güvenli bir **PostgreSQL** veritabanı tasarladım ve backend altyapısını Easypanel üzerinde Docker ile konteynerleştirilmiş bir servis olarak dağıttım."
+          ]
+        },
+        {
+          "title": "HSD Türkiye Web Sitesi v1",
+          "url": "https://www.hsdturkiye.com",
+          "bullets": [
+            "HSD Türkiye'nin gereksinimlerini belirlemek için kapsamlı bir ihtiyaç analizi gerçekleştirdik ve topluluk yönetimine odaklanan bir ERP platformu geliştirdik. Backend tarafında **.NET Core MVC** mimarisini, frontend tarafında ise HTML, CSS ve JavaScript teknolojilerini kullanan bu platform, kampüs elçileri ve topluluk yöneticilerinin tüm idari süreçlerini verimli bir şekilde yönetebilmeleri için gereken tüm bileşenleri içermektedir."
+          ]
+        },
+        {
+          "title": "HSD Türkiye Web Sitesi v2",
+          "url": "",
+          "bullets": [
+            "Web sitesinin ilk sürümünün (v1) topluluk erişimine kapalı olması ve modern mimari standartlardan yoksun olması nedeniyle **.Net Core Web API** ve **Nuxt.js** teknolojilerini kullanarak yeni bir web sitesi geliştirdik. Projeyi Huawei Cloud altyapısı üzerinde **VPC, ECS, SWR, RDS, OBS, ELB** ve **AS** gibi servislerden yararlanarak tamamen ölçeklenebilir bir mimariyle inşa ettik. Bu sayede projenin esnek ve yüksek performanslı bir ortamda çalışmasını sağlarken modern bir teknoloji yığınına geçiş yaptık."
+          ]
+        },
+        {
+          "title": "Görüntü Ön İşleme Platformu",
+          "url": "https://github.com/osmanbugrabolat/goruntuIsleme/tree/main",
+          "bullets": [
+            "Python tabanlı **FastAPI** ve **Django** kullanarak yüksek performanslı bir görüntü ön işleme platformu geliştirdim. Platform; uzamsal dönüşümler, histogram optimizasyonu ve gürültü modellerinin (Gauss, Tuz & Biber) eklenmesi ve giderilmesi gibi kapsamlı algoritmik modüller içermektedir. FastAPI'nin asenkron yapısı yoğun hesaplama gerektiren işlemlerde düşük gecikme sağlarken Django sistemin modülerliğini optimize etmektedir. Proje, ham verilerin işlenerek analiz ve derin öğrenme süreçlerine hazırlanmasını sağlayan uçtan uca bir teknik altyapı sunmaktadır."
+          ]
+        },
+        {
+          "title": "Dermatolojik Hastalık Tespiti",
+          "url": "",
+          "bullets": [
+            "Fitzpatrick17k veri setini kullanarak farklı cilt tiplerine duyarlı bir cilt hastalığı teşhis modeli geliştirdim. **EfficientNet-B3 mimarisi** üzerindeki ince ayar (fine-tuning) sürecinde, modelin yalnızca hastalığa odaklanmasını değil cilt tipi çeşitliliğini de dikkate almasını sağlamak için özel kayıp fonksiyonları entegre ettim. Eğitim aşamasının ardından modeli FastAPI kullanarak bir **Hetzner** sunucusu üzerinde çıkarım (inference) servisi olarak dağıttım."
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "title": "Programlama Dilleri",
+          "items": [
+            "Python",
+            ".Net",
+            "Node.js"
+          ]
+        },
+        {
+          "title": "Araçlar",
+          "items": [
+            "Git & GitHub",
+            "Jira & Trello",
+            "Bulut Servisleri/Platformları"
+          ]
+        },
+        {
+          "title": "Framework'ler ve Teknolojiler",
+          "items": [
+            "OpenCV",
+            "TensorFlow",
+            "Scikit-Learn"
+          ]
+        }
+      ],
+      "certificates": [
+        {
+          "name": "HCCDP AI",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_721526.png"
+        },
+        {
+          "name": "HCCDA AI",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_177820.png"
+        },
+        {
+          "name": "HCCDA Tech Essentials",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_727737.png"
+        },
+        {
+          "name": "HCCDA Cloud Native",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_690969.png"
+        },
+        {
+          "name": "HCCDP Cloud Migration",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_036679.png"
+        },
+        {
+          "name": "HCCDP Solution Architectures",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_580148.png"
+        },
+        {
+          "name": "Python ve TensorFlow ile Veri Bilimi",
+          "issuer": "BTK Akademi",
+          "url": "https://osmanbugrabolat.com.tr/certificates/python_tensorflow.jpg"
+        },
+        {
+          "name": "R ile Veri Bilimine Giriş",
+          "issuer": "BTK Akademi",
+          "url": "https://osmanbugrabolat.com.tr/certificates/r_programming.jpg"
+        }
+      ],
+      "languages": [
+        {
+          "name": "Türkçe",
+          "level": "Ana Dil",
+          "details": []
+        },
+        {
+          "name": "İngilizce",
+          "level": "",
+          "details": [
+            "Okuma - Orta",
+            "Dinleme - Orta",
+            "Konuşma - Başlangıç"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "name": "Osman Buğra BOLAT",
+      "title": "Computer Engineer",
+      "contacts": [
+        {
+          "label": "osmanbugrabolat@gmail.com",
+          "url": "mailto:osmanbugrabolat@gmail.com"
+        },
+        {
+          "label": "osmanbugrabolat.com.tr",
+          "url": "https://osmanbugrabolat.com.tr"
+        },
+        {
+          "label": "+90 561 618 6618",
+          "url": "tel:+905616186618"
+        },
+        {
+          "label": "linkedin.com/in/osmanbugrabolat",
+          "url": "https://linkedin.com/in/osmanbugrabolat"
+        },
+        {
+          "label": "https://github.com/osmanbugrabolat",
+          "url": "https://github.com/osmanbugrabolat"
+        }
+      ],
+      "about": "I graduated from Selçuk University with a degree in Computer Engineering, ranking 2nd in my department and 3rd in the Faculty of Technology. Throughout my studies, I focused on computer vision and deep learning, particularly on integrating these models into cloud infrastructures, and I continue to grow my expertise in this field. I gained hands-on experience in automating and deploying AI-based processes using Docker, CI/CD, DevOps, and MLOps practices. Leadership and project management roles in technology communities have also strengthened my communication and team management skills. I am an engineer who adapts quickly to complex projects, readily takes ownership, and enjoys working as part of a team.",
+      "education": [
+        {
+          "school": "Selçuk University",
+          "date": "September 2021 - June 2026",
+          "degree": "Computer Engineering",
+          "gpa": "3.75/4"
+        }
+      ],
+      "experiences": [
+        {
+          "company": "Ilgar Teknoloji",
+          "position": "Project Manager & AI Engineer",
+          "date": "June 2026 - Present",
+          "bullets": [
+            "Responsible for designing the AI model structure and for project management on the **SuPublic** project. Beyond designing the model architecture and defining the technical roadmap, I manage the project's planning, prioritization, and delivery, and coordinate between the development team and stakeholders."
+          ]
+        },
+        {
+          "company": "Huawei Türkiye",
+          "position": "Regional Leader",
+          "date": "September 2025 - September 2026",
+          "bullets": [
+            "Managed and supervised six HSD embassies in the Central Anatolia region, supporting their management processes and activities."
+          ]
+        },
+        {
+          "company": "Huawei Türkiye",
+          "position": "Intern",
+          "date": "July 2024 - July 2025",
+          "bullets": [
+            "Developed custom CLI tools and Bash scripts to automate development workflows and improve efficiency. Gained hands-on experience in managing containerized environments using Docker on Linux systems, while maintaining seamless version control and collaboration through Git."
+          ]
+        },
+        {
+          "company": "Divizyon",
+          "position": "Software Program Manager Assistant",
+          "date": "December 2024 - October 2025",
+          "bullets": [
+            "Served as a Program Manager Assistant in software development projects utilizing Agile and Scrum methodologies. As a Center of Excellence (CoE) representative, I actively participated in sprint planning, daily scrums, and retrospectives, driving the adoption of agile standards and best practices across multiple teams."
+          ]
+        },
+        {
+          "company": "Huawei Türkiye",
+          "position": "Campus Ambassador",
+          "date": "August 2024 - September 2025",
+          "bullets": [
+            "Organized trainings and events as a Huawei Campus Ambassador at HSD Selçuk University, gaining management skills through the establishment and coordination of project teams."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "AI-Powered Physiotherapy Application",
+          "url": "",
+          "bullets": [
+            "Developed an AI-powered physiotherapy mobile application using **Android Kotlin** and **Python/FastAPI** with a dual-role architecture. Implemented real-time pose estimation and movement phase detection by integrating MediaPipe and CameraX on the frontend, enabling automatic joint angle calculations and adaptive repetition counting. Designed a secure **PostgreSQL** database managed via SQLAlchemy and Alembic, and deployed the backend infrastructure as a containerized service using Docker on Easypanel."
+          ]
+        },
+        {
+          "title": "HSD Türkiye Website v1",
+          "url": "https://www.hsdturkiye.com",
+          "bullets": [
+            "To determine HSD Turkey's requirements, we conducted a comprehensive needs analysis and developed an ERP platform focused on community management. This platform, which utilizes **.NET Core MVC** architecture on the backend and HTML, CSS, and JavaScript technologies on the frontend, includes all the necessary components for campus ambassadors and community managers to efficiently manage all their administrative processes."
+          ]
+        },
+        {
+          "title": "HSD Türkiye Website v2",
+          "url": "",
+          "bullets": [
+            "Due to the initial version (v1) of the website being closed to community access and lacking modern architectural standards, we developed a new website using **.Net Core Web API** and **Nuxt.js** technologies. We built the project on Huawei Cloud infrastructure, utilizing services such as **VPC, ECS, SWR, RDS, OBS, ELB,** and **AS,** creating a fully scalable architecture. This allowed us to transition to a modern technology stack while ensuring the project operates in a flexible and high-performance environment."
+          ]
+        },
+        {
+          "title": "Image Preprocessing Platform",
+          "url": "https://github.com/osmanbugrabolat/goruntuIsleme/tree/main",
+          "bullets": [
+            "I developed a high-performance image preprocessing platform using Python-based **FastAPI** and **Django**. The platform includes comprehensive algorithmic modules such as spatial transformations, histogram optimization, and the addition and removal of noise models (Gaussian, Salt & Pepper). FastAPI's asynchronous nature ensures low latency in computationally intensive tasks, while Django optimizes system modularity. The project provides an end-to-end technical infrastructure that enables the processing of raw data, preparing it for analysis and deep learning processes."
+          ]
+        },
+        {
+          "title": "Dermatological Disease Detection",
+          "url": "",
+          "bullets": [
+            "Using the Fitzpatrick17k dataset, I developed a skin disease diagnosis model sensitive to different skin types. During the fine-tuning process on the **EfficientNet-B3 architecture,** I integrated custom loss functions to ensure the model not only focuses on the disease but also considers skin type variability. Following the training phase, I deployed the model as an inference service on a **Hetzner** server using FastAPI."
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "title": "Programming Languages",
+          "items": [
+            "Python",
+            ".Net",
+            "Node.js"
+          ]
+        },
+        {
+          "title": "Tools",
+          "items": [
+            "Git & GitHub",
+            "Jira & Trello",
+            "Cloud Services/Platforms"
+          ]
+        },
+        {
+          "title": "Frameworks and Technologies",
+          "items": [
+            "OpenCV",
+            "TensorFlow",
+            "Scikit-Learn"
+          ]
+        }
+      ],
+      "certificates": [
+        {
+          "name": "HCCDP AI",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_721526.png"
+        },
+        {
+          "name": "HCCDA AI",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_177820.png"
+        },
+        {
+          "name": "HCCDA Tech Essentials",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_727737.png"
+        },
+        {
+          "name": "HCCDA Cloud Native",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_690969.png"
+        },
+        {
+          "name": "HCCDP Cloud Migration",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_036679.png"
+        },
+        {
+          "name": "HCCDP Solution Architectures",
+          "issuer": "Huawei",
+          "url": "https://osmanbugrabolat.com.tr/certificates/HWEND_580148.png"
+        },
+        {
+          "name": "Python and Tensorflow for Data Science",
+          "issuer": "BTK Akademi",
+          "url": "https://osmanbugrabolat.com.tr/certificates/python_tensorflow.jpg"
+        },
+        {
+          "name": "Introduction to Data Science with R",
+          "issuer": "BTK Akademi",
+          "url": "https://osmanbugrabolat.com.tr/certificates/r_programming.jpg"
+        }
+      ],
+      "languages": [
+        {
+          "name": "Turkish",
+          "level": "Native Language",
+          "details": []
+        },
+        {
+          "name": "English",
+          "level": "",
+          "details": [
+            "Reading - Intermediate",
+            "Listening - Intermediate",
+            "Speaking - Beginner"
+          ]
+        }
+      ]
+    }
+  }
 }

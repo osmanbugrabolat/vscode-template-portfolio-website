@@ -1525,3 +1525,95 @@
     animation: none !important;
   }
 }
+
+/* ---------- CV editor ---------- */
+.adm-cv-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 44%);
+  gap: 16px;
+  align-items: start;
+}
+
+.adm-cv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.adm-cv-preview {
+  position: sticky;
+  top: 0;
+  height: calc(100dvh - var(--adm-topbar-h) - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.adm-cv-preview iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #525659;
+}
+
+.adm-cv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adm-cv-item {
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-radius);
+  padding: 10px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.adm-cv-item.is-compact {
+  padding-bottom: 10px;
+}
+
+.adm-cv-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  min-width: 0;
+}
+
+.adm-cv-item-head > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adm-cv-row3 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: 10px;
+}
+
+.adm-cv-issues {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 1100px) {
+  .adm-cv-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .adm-cv-preview {
+    position: static;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .adm-cv-row3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

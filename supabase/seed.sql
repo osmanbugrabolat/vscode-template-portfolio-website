@@ -131,11 +131,11 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('about-me', 'about', 100, 'Buğra kimdir?', 'Who is Buğra?', 'Osman Buğra BOLAT, Selçuk Üniversitesi Bilgisayar Mühendisliği mezunu (2026, GPA 3.75) bir yapay zekâ ve bulut mühendisidir. Teknoloji Fakültesi 3.''sü, bölüm 2.''si olarak mezun oldu.
+values ('about-me', 'about', 100, 'Buğra kimdir?', 'Who is Buğra?', 'Osman Buğra BOLAT, Selçuk Üniversitesi Bilgisayar Mühendisliği mezunu (2026, GPA 3.75) bir yapay zekâ mühendisi ve proje yöneticisidir. Teknoloji Fakültesi 3.''sü, bölüm 2.''si olarak mezun oldu.
 
-Öğrenimi boyunca bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmeye odaklandı. Docker, CI/CD, DevOps ve MLOps ile yapay zekâ tabanlı süreçlerin otomasyonu ve dağıtımında deneyim kazandı. Şu anda Huawei Türkiye''de Bölge Lideri olarak İç Anadolu''daki altı HSD topluluğunu yönetiyor.', 'Osman Buğra BOLAT is an AI & cloud engineer and a Computer Engineering graduate of Selçuk University (2026, GPA 3.75), ranking 3rd in the Faculty of Technology and 2nd in his department.
+Öğrenimi boyunca bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmeye odaklandı. Docker, CI/CD, DevOps ve MLOps ile yapay zekâ tabanlı süreçlerin otomasyonu ve dağıtımında deneyim kazandı. Şu anda Ilgar Teknoloji''de Proje Yöneticisi ve Yapay Zekâ Mühendisi olarak SuPublic projesinde çalışıyor.', 'Osman Buğra BOLAT is an AI engineer and project manager, and a Computer Engineering graduate of Selçuk University (2026, GPA 3.75), ranking 3rd in the Faculty of Technology and 2nd in his department.
 
-Throughout his studies he focused on integrating computer vision and deep learning models into cloud infrastructure, and gained hands-on experience automating and deploying AI-based processes with Docker, CI/CD, DevOps and MLOps. He currently works as a Regional Leader at Huawei Türkiye, overseeing six HSD communities in Central Anatolia.', array['kimdir', 'hakkinda', 'tanit', 'bahset', 'about', 'yourself', 'introduce', 'bugra', 'osman', 'bolat']::text[], '[{"label":{"tr":"WhoAmI.md","en":"WhoAmI.md"},"href":"/"}]'::jsonb, array['education', 'experience-overview', 'projects-overview']::text[])
+Throughout his studies he focused on integrating computer vision and deep learning models into cloud infrastructure, and gained hands-on experience automating and deploying AI-based processes with Docker, CI/CD, DevOps and MLOps. He currently works as a Project Manager & AI Engineer at Ilgar Teknoloji on the SuPublic project.', array['kimdir', 'hakkinda', 'tanit', 'bahset', 'about', 'yourself', 'introduce', 'bugra', 'osman', 'bolat']::text[], '[{"label":{"tr":"WhoAmI.md","en":"WhoAmI.md"},"href":"/"}]'::jsonb, array['education', 'experience-overview', 'projects-overview']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -166,7 +166,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('title-role', 'about', 40, 'Mesleği ne?', 'What does he do?', 'Buğra bir Bilgisayar Mühendisi; kendini "AI powered AI & Cloud Engineer" olarak tanımlıyor. Yapay zekâ (özellikle bilgisayarlı görü), bulut mimarileri ve MLOps üzerine çalışıyor. Şu anki görevi Huawei Türkiye Bölge Liderliği.', 'Buğra is a Computer Engineer who describes himself as an "AI powered AI & Cloud Engineer". He works on AI (especially computer vision), cloud architectures and MLOps. His current role is Regional Leader at Huawei Türkiye.', array['meslek', 'unvan', 'pozisyon', 'uzmanlik', 'job', 'title', 'profession', 'role', 'specialty']::text[], '[]'::jsonb, array['current-role', 'skills-overview']::text[])
+values ('title-role', 'about', 40, 'Mesleği ne?', 'What does he do?', 'Buğra bir Bilgisayar Mühendisi; kendini "AI powered AI & Cloud Engineer" olarak tanımlıyor. Yapay zekâ (özellikle bilgisayarlı görü), bulut mimarileri ve MLOps üzerine çalışıyor. Şu anki görevi Ilgar Teknoloji''de Proje Yöneticisi ve Yapay Zekâ Mühendisi.', 'Buğra is a Computer Engineer who describes himself as an "AI powered AI & Cloud Engineer". He works on AI (especially computer vision), cloud architectures and MLOps. His current role is Project Manager & AI Engineer at Ilgar Teknoloji.', array['meslek', 'unvan', 'pozisyon', 'uzmanlik', 'job', 'title', 'profession', 'role', 'specialty']::text[], '[]'::jsonb, array['current-role', 'skills-overview']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -193,7 +193,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('location', 'about', 10, 'Nerede yaşıyor?', 'Where is he based?', 'Buğra Türkiye''de yaşıyor Selçuk Üniversitesi''nde okudu ve şu anda İç Anadolu bölgesindeki HSD topluluklarından sorumlu.', 'Buğra is based in Turkey He studied at Selçuk University and currently oversees the HSD communities in the Central Anatolia region.', array['nerede', 'nereli', 'sehir', 'konum', 'ulke', 'location', 'live', 'city', 'country', 'based']::text[], '[]'::jsonb, array['contact-email', 'about-me']::text[])
+values ('location', 'about', 10, 'Nerede yaşıyor?', 'Where is he based?', 'Buğra Türkiye''de yaşıyor. Selçuk Üniversitesi''nde okudu.', 'Buğra is based in Turkey. He studied at Selçuk University.', array['nerede', 'nereli', 'sehir', 'konum', 'ulke', 'location', 'live', 'city', 'country', 'based']::text[], '[]'::jsonb, array['contact-email', 'about-me']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -308,14 +308,12 @@ on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
 values ('current-focus', 'about', 15, 'Şu an neye odaklanıyor?', 'What is he focusing on now?', 'Buğra''nın şu anki odak noktaları:
-• Ölçeklenebilir web ve mobil uygulamalar geliştirmek
-• Yapay zekâ / makine öğrenmesi entegrasyonlarını keşfetmek
-
-Bunun yanında Huawei Türkiye''de Bölge Lideri olarak HSD topluluklarını yönetiyor.', 'Buğra is currently focused on:
-• Building scalable web & mobile applications
-• Exploring AI/ML integrations
-
-Alongside that, he leads HSD communities as a Regional Leader at Huawei Türkiye.', array['odak', 'ilgi', 'guncel', 'hedef', 'focus', 'interests', 'goals', 'currently']::text[], '[]'::jsonb, array['current-role', 'projects-overview']::text[])
+• Ilgar Teknoloji''de SuPublic projesinin yapay zekâ model yapısını kurgulamak ve proje yönetimini yürütmek
+• Bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmek
+• MLOps ile yapay zekâ servislerinin otomasyonu ve dağıtımı', 'Buğra is currently focused on:
+• Designing the AI model structure and leading project management for SuPublic at Ilgar Teknoloji
+• Integrating computer vision and deep learning models into cloud infrastructure
+• Automating and deploying AI services with MLOps', array['odak', 'ilgi', 'guncel', 'hedef', 'focus', 'interests', 'goals', 'currently']::text[], '[]'::jsonb, array['current-role', 'projects-overview']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -373,7 +371,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('cv', 'about', 65, 'CV''sini görebilir miyim?', 'Can I see his CV?', 'Tabii! Buğra''nın CV''sini sitede görüntüleyebilir ya da PDF olarak indirebilirsiniz.', 'Of course! You can view Buğra''s CV on the site or download it as a PDF.', array['cv', 'ozgecmis', 'resume', 'pdf', 'vitae']::text[], '[{"label":{"tr":"CV''yi görüntüle","en":"View CV"},"href":"/cv"},{"label":{"tr":"PDF indir","en":"Download PDF"},"href":"/cv.pdf"}]'::jsonb, array['experience-overview', 'education']::text[])
+values ('cv', 'about', 65, 'CV''sini görebilir miyim?', 'Can I see his CV?', 'Tabii! Buğra''nın CV''sini sitede görüntüleyebilir ya da PDF olarak indirebilirsiniz.', 'Of course! You can view Buğra''s CV on the site or download it as a PDF.', array['cv', 'ozgecmis', 'resume', 'pdf', 'vitae']::text[], '[{"label":{"tr":"CV''yi görüntüle","en":"View CV"},"href":"/cv"},{"label":{"tr":"Türkçe PDF","en":"Turkish PDF"},"href":"/cv-pdf/tr"},{"label":{"tr":"İngilizce PDF","en":"English PDF"},"href":"/cv-pdf/en"}]'::jsonb, array['experience-overview', 'education']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -401,18 +399,20 @@ on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
 values ('experience-overview', 'experience', 90, 'İş deneyimleri neler?', 'What is his work experience?', 'Buğra''nın deneyimleri:
-• Huawei Türkiye: Bölge Lideri (Eylül 2025 – Günümüz)
+• Ilgar Teknoloji: Proje Yöneticisi & Yapay Zekâ Mühendisi (Haziran 2026 – Günümüz)
+• Huawei Türkiye: Bölge Lideri (Eylül 2025 – Eylül 2026)
+• Huawei Türkiye: Stajyer (Temmuz 2024 – Temmuz 2025)
 • Divizyon: Yazılım Program Yöneticisi Asistanı (Aralık 2024 – Ekim 2025)
 • Huawei Türkiye: Kampüs Elçisi (Ağustos 2024 – Eylül 2025)
-• Huawei Türkiye: Stajyer (Temmuz 2024 – Temmuz 2025)
 
 Detayını merak ettiğiniz bir rolü sorabilirsiniz.', 'Buğra''s experience:
-• Huawei Türkiye: Regional Leader (Sep 2025 – Present)
+• Ilgar Teknoloji: Project Manager & AI Engineer (Jun 2026 – Present)
+• Huawei Türkiye: Regional Leader (Sep 2025 – Sep 2026)
+• Huawei Türkiye: Intern (Jul 2024 – Jul 2025)
 • Divizyon: Software Program Manager Assistant (Dec 2024 – Oct 2025)
 • Huawei Türkiye: Campus Ambassador (Aug 2024 – Sep 2025)
-• Huawei Türkiye: Intern (Jul 2024 – Jul 2025)
 
-Ask me about any role for details.', array['deneyim', 'tecrube', 'kariyer', 'calistin', 'sirket', 'gecmis', 'experience', 'career', 'worked', 'companies', 'employment']::text[], '[{"label":{"tr":"CV''yi aç","en":"Open CV"},"href":"/cv"}]'::jsonb, array['current-role', 'divizyon', 'huawei-internship']::text[])
+Ask me about any role for details.', array['deneyim', 'tecrube', 'kariyer', 'calistin', 'sirket', 'gecmis', 'experience', 'career', 'worked', 'companies', 'employment']::text[], '[{"label":{"tr":"CV''yi aç","en":"Open CV"},"href":"/cv"}]'::jsonb, array['current-role', 'regional-leader', 'divizyon']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -443,30 +443,52 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('current-role', 'experience', 45, 'Huawei''de ne yapıyor?', 'What does he do at Huawei?', 'Buğra Eylül 2025''ten beri Huawei Türkiye''de Bölge Lideri. İç Anadolu bölgesindeki altı HSD (Huawei Student Developers) elçiliğini yönetip denetliyor, bu toplulukların yönetim süreçlerini ve etkinliklerini destekliyor.', 'Since September 2025 Buğra has been a Regional Leader at Huawei Türkiye. He manages and supervises six HSD (Huawei Student Developers) embassies in Central Anatolia, supporting their management processes and activities.', array['huawei', 'bolge', 'lider', 'liderlik', 'simdiki', 'regional', 'leader', 'current']::text[], '[]'::jsonb, array['hsd', 'campus-ambassador', 'huawei-internship']::text[])
+values ('current-role', 'experience', 45, 'Şu an nerede çalışıyor?', 'Where does he work now?', 'Buğra Haziran 2026''dan beri Ilgar Teknoloji''de Proje Yöneticisi ve Yapay Zekâ Mühendisi. SuPublic projesinde, projenin ihtiyaç duyduğu yapay zekâ model yapısının kurgulanmasından ve proje yönetiminden sorumlu: model mimarisini tasarlıyor, teknik yol haritasını belirliyor; planlama, önceliklendirme ve teslim süreçlerini yönetiyor.', 'Since June 2026 Buğra has been a Project Manager & AI Engineer at Ilgar Teknoloji. On the SuPublic project he is responsible for designing the AI model structure and for project management: he designs the model architecture, defines the technical roadmap, and manages planning, prioritization and delivery.', array['ilgar', 'supublic', 'simdiki', 'guncel', 'current', 'proje', 'yonetici']::text[], '[]'::jsonb, array['regional-leader', 'experience-overview', 'skills-ai-ml']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
   follow_ups = excluded.follow_ups;
 delete from public.chat_patterns where intent_id = 'current-role';
 insert into public.chat_patterns (intent_id, lang, pattern) values
-  ('current-role', 'tr', 'huaweide ne yapıyorsun'),
   ('current-role', 'tr', 'şu an nerede çalışıyorsun'),
   ('current-role', 'tr', 'şimdiki işin ne'),
-  ('current-role', 'tr', 'bölge lideri ne demek'),
-  ('current-role', 'tr', 'bölge liderliği'),
-  ('current-role', 'tr', 'huawei bölge lideri'),
   ('current-role', 'tr', 'şu anki görevin'),
   ('current-role', 'tr', 'güncel pozisyonun'),
-  ('current-role', 'tr', 'huawei'),
-  ('current-role', 'en', 'what do you do at huawei'),
+  ('current-role', 'tr', 'ilgar teknoloji'),
+  ('current-role', 'tr', 'ilgar teknolojide ne yapıyorsun'),
+  ('current-role', 'tr', 'supublic nedir'),
+  ('current-role', 'tr', 'supublic projesi'),
   ('current-role', 'en', 'where do you work now'),
   ('current-role', 'en', 'current job'),
   ('current-role', 'en', 'current role'),
-  ('current-role', 'en', 'regional leader'),
-  ('current-role', 'en', 'huawei regional leader'),
   ('current-role', 'en', 'what is your current position'),
-  ('current-role', 'en', 'huawei')
+  ('current-role', 'en', 'ilgar teknoloji'),
+  ('current-role', 'en', 'what do you do at ilgar'),
+  ('current-role', 'en', 'what is supublic'),
+  ('current-role', 'en', 'supublic project')
+on conflict do nothing;
+
+insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
+values ('regional-leader', 'experience', 44, 'Huawei bölge liderliğinde ne yaptı?', 'What did he do as Huawei Regional Leader?', 'Buğra Eylül 2025 – Eylül 2026 arasında Huawei Türkiye''de Bölge Lideriydi. İç Anadolu bölgesindeki altı HSD (Huawei Student Developers) elçiliğini yönetip denetledi, bu toplulukların yönetim süreçlerini ve etkinliklerini destekledi.', 'From September 2025 to September 2026 Buğra was a Regional Leader at Huawei Türkiye. He managed and supervised six HSD (Huawei Student Developers) embassies in Central Anatolia, supporting their management processes and activities.', array['huawei', 'bolge', 'lider', 'liderlik', 'regional', 'leader']::text[], '[]'::jsonb, array['hsd', 'campus-ambassador', 'huawei-internship']::text[])
+on conflict (id) do update set category = excluded.category, priority = excluded.priority,
+  title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
+  answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
+  follow_ups = excluded.follow_ups;
+delete from public.chat_patterns where intent_id = 'regional-leader';
+insert into public.chat_patterns (intent_id, lang, pattern) values
+  ('regional-leader', 'tr', 'huaweide ne yaptın'),
+  ('regional-leader', 'tr', 'huaweide ne yapıyorsun'),
+  ('regional-leader', 'tr', 'bölge lideri ne demek'),
+  ('regional-leader', 'tr', 'bölge liderliği'),
+  ('regional-leader', 'tr', 'huawei bölge lideri'),
+  ('regional-leader', 'tr', 'bölge liderliğinde ne yaptın'),
+  ('regional-leader', 'tr', 'huawei'),
+  ('regional-leader', 'en', 'what did you do at huawei'),
+  ('regional-leader', 'en', 'what do you do at huawei'),
+  ('regional-leader', 'en', 'regional leader'),
+  ('regional-leader', 'en', 'huawei regional leader'),
+  ('regional-leader', 'en', 'regional leadership'),
+  ('regional-leader', 'en', 'huawei')
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
@@ -476,7 +498,7 @@ values ('huawei-internship', 'experience', 20, 'Huawei stajında neler yaptı?',
 • Versiyon kontrolü ve ekip çalışması için Git kullandı', 'Huawei Türkiye internship (Jul 2024 – Jul 2025):
 • Built custom CLI tools and Bash scripts to automate development workflows
 • Managed containerized environments with Docker on Linux
-• Used Git for version control and collaboration', array['staj', 'stajyer', 'stajyerlik', 'intern', 'internship', 'bash', 'cli']::text[], '[]'::jsonb, array['current-role', 'skills-tools']::text[])
+• Used Git for version control and collaboration', array['staj', 'stajyer', 'stajyerlik', 'intern', 'internship', 'bash', 'cli']::text[], '[]'::jsonb, array['regional-leader', 'skills-tools']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -528,7 +550,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('campus-ambassador', 'experience', 15, 'Kampüs elçiliği nasıldı?', 'What was the campus ambassador role?', 'Buğra Ağustos 2024 – Eylül 2025 arasında HSD Selçuk Üniversitesi''nde Huawei Kampüs Elçisi oldu. Eğitimler ve etkinlikler düzenledi, proje ekipleri kurup koordine ederek yönetim deneyimi kazandı.', 'From August 2024 to September 2025 Buğra was a Huawei Campus Ambassador at HSD Selçuk University. He organized trainings and events, and built management skills by setting up and coordinating project teams.', array['elci', 'elcisi', 'elcilik', 'kampus', 'ambassador', 'campus', 'etkinlik', 'events']::text[], '[]'::jsonb, array['hsd', 'current-role']::text[])
+values ('campus-ambassador', 'experience', 15, 'Kampüs elçiliği nasıldı?', 'What was the campus ambassador role?', 'Buğra Ağustos 2024 – Eylül 2025 arasında HSD Selçuk Üniversitesi''nde Huawei Kampüs Elçisi oldu. Eğitimler ve etkinlikler düzenledi, proje ekipleri kurup koordine ederek yönetim deneyimi kazandı.', 'From August 2024 to September 2025 Buğra was a Huawei Campus Ambassador at HSD Selçuk University. He organized trainings and events, and built management skills by setting up and coordinating project teams.', array['elci', 'elcisi', 'elcilik', 'kampus', 'ambassador', 'campus', 'etkinlik', 'events']::text[], '[]'::jsonb, array['hsd', 'regional-leader']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -550,7 +572,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('hsd', 'experience', 25, 'HSD nedir?', 'What is HSD?', 'HSD (Huawei Student Developers), Huawei''nin üniversite öğrencilerine yönelik teknoloji topluluğu. Buğra önce HSD Selçuk Üniversitesi''nde Kampüs Elçisi oldu, şimdi Bölge Lideri olarak İç Anadolu''daki altı HSD elçiliğinden sorumlu. HSD Türkiye için web sitesi (v1 ve v2) ve "Sihirli Sapan – HSD Edition" oyununu da geliştirdi.', 'HSD (Huawei Student Developers) is Huawei''s tech community for university students. Buğra started as Campus Ambassador at HSD Selçuk University and now, as Regional Leader, oversees six HSD embassies in Central Anatolia. He also built the HSD Türkiye website (v1 and v2) and the "Sihirli Sapan – HSD Edition" game.', array['hsd', 'topluluk', 'community', 'student', 'developers', 'gonullu', 'volunteer']::text[], '[{"label":{"tr":"Sihirli Sapan – HSD Edition","en":"Sihirli Sapan – HSD Edition"},"href":"/projects/sihirli-sapan-hsd-edition"}]'::jsonb, array['project-hsd-website', 'project-sihirli-sapan-hsd', 'current-role']::text[])
+values ('hsd', 'experience', 25, 'HSD nedir?', 'What is HSD?', 'HSD (Huawei Student Developers), Huawei''nin üniversite öğrencilerine yönelik teknoloji topluluğu. Buğra önce HSD Selçuk Üniversitesi''nde Kampüs Elçisi oldu, şimdi Bölge Lideri olarak İç Anadolu''daki altı HSD elçiliğinden sorumlu. HSD Türkiye için web sitesi (v1 ve v2) ve "Sihirli Sapan – HSD Edition" oyununu da geliştirdi.', 'HSD (Huawei Student Developers) is Huawei''s tech community for university students. Buğra started as Campus Ambassador at HSD Selçuk University and now, as Regional Leader, oversees six HSD embassies in Central Anatolia. He also built the HSD Türkiye website (v1 and v2) and the "Sihirli Sapan – HSD Edition" game.', array['hsd', 'topluluk', 'community', 'student', 'developers', 'gonullu', 'volunteer']::text[], '[{"label":{"tr":"Sihirli Sapan – HSD Edition","en":"Sihirli Sapan – HSD Edition"},"href":"/projects/sihirli-sapan-hsd-edition"}]'::jsonb, array['project-hsd-website', 'project-sihirli-sapan-hsd', 'regional-leader']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -870,7 +892,7 @@ values ('project-physiotherapy', 'projects', 20, 'Fizyoterapi uygulaması nedir?
 • Real-time pose estimation and movement phase detection with MediaPipe and CameraX
 • Automatic joint angle calculation and adaptive repetition counting
 • PostgreSQL database (SQLAlchemy, Alembic)
-• Backend deployed with Docker on Easypanel', array['fizyoterapi', 'fizik', 'tedavi', 'poz', 'android', 'kotlin', 'physiotherapy', 'therapy', 'pose', 'mobile']::text[], '[]'::jsonb, array['project-dermatology', 'skills-backend']::text[])
+• Backend deployed with Docker on Easypanel', array['fizyoterapi', 'fizik', 'tedavi', 'poz', 'android', 'kotlin', 'physiotherapy', 'therapy', 'pose', 'mobile']::text[], '[{"label":{"tr":"Proje sayfası","en":"Project page"},"href":"/projects/fizyoterapi-uygulamasi"}]'::jsonb, array['project-dermatology', 'skills-backend']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -894,7 +916,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('project-dermatology', 'projects', 15, 'Dermatolojik hastalık tespiti projesi nedir?', 'What is the dermatology detection project?', 'Dermatolojik Hastalık Tespiti: Fitzpatrick17k veri setiyle EfficientNet-B3 modelinin ince ayarı. Farklı cilt tiplerindeki değişkenliği hesaba katan özel kayıp fonksiyonları kullanıldı. Model, Hetzner sunucusunda FastAPI çıkarım servisi olarak yayında.', 'Dermatological Disease Detection: fine-tuning EfficientNet-B3 on the Fitzpatrick17k dataset, with custom loss functions that account for skin type variability. The model is deployed as a FastAPI inference service on a Hetzner server.', array['dermatoloji', 'cilt', 'deri', 'efficientnet', 'fitzpatrick', 'dermatology', 'skin', 'medical']::text[], '[]'::jsonb, array['skills-ai-ml', 'project-physiotherapy']::text[])
+values ('project-dermatology', 'projects', 15, 'Dermatolojik hastalık tespiti projesi nedir?', 'What is the dermatology detection project?', 'Dermatolojik Hastalık Tespiti: Fitzpatrick17k veri setiyle EfficientNet-B3 modelinin ince ayarı. Farklı cilt tiplerindeki değişkenliği hesaba katan özel kayıp fonksiyonları kullanıldı. Model, Hetzner sunucusunda FastAPI çıkarım servisi olarak yayında.', 'Dermatological Disease Detection: fine-tuning EfficientNet-B3 on the Fitzpatrick17k dataset, with custom loss functions that account for skin type variability. The model is deployed as a FastAPI inference service on a Hetzner server.', array['dermatoloji', 'cilt', 'deri', 'efficientnet', 'fitzpatrick', 'dermatology', 'skin', 'medical']::text[], '[{"label":{"tr":"Proje sayfası","en":"Project page"},"href":"/projects/dermatolojik-hastalik-tespiti"}]'::jsonb, array['skills-ai-ml', 'project-physiotherapy']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -921,7 +943,7 @@ values ('project-hsd-website', 'projects', 15, 'HSD Türkiye web sitesi projesi 
 • v1 (hsdturkiye.com): İhtiyaç analizi sonrası topluluk yönetimi için bir ERP platformu. Kampüs elçileri ve topluluk yöneticileri için.NET Core MVC backend ve HTML/CSS/JS frontend.
 • v2: v1 topluluk erişimine kapalı olduğu ve modern standartları karşılamadığı için baştan yazıldı..NET Core Web API + Nuxt.js; Huawei Cloud üzerinde VPC, ECS, SWR, RDS, OBS, ELB ve AS ile tamamen ölçeklenebilir mimari.', 'HSD Türkiye Website
 • v1 (hsdturkiye.com): an ERP platform for community management, designed after a needs analysis..NET Core MVC backend and HTML/CSS/JS frontend for campus ambassadors and community managers.
-• v2: rebuilt because v1 was closed to community access and lacked modern standards..NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture.', array['hsdturkiye', 'website', 'site', 'erp', 'nuxt', 'net', 'dotnet']::text[], '[]'::jsonb, array['skills-cloud', 'hsd']::text[])
+• v2: rebuilt because v1 was closed to community access and lacked modern standards..NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture.', array['hsdturkiye', 'website', 'site', 'erp', 'nuxt', 'net', 'dotnet']::text[], '[{"label":{"tr":"v1 sayfası","en":"v1 page"},"href":"/projects/hsd-turkiye-web-v1"},{"label":{"tr":"v2 sayfası","en":"v2 page"},"href":"/projects/hsd-turkiye-web-v2"}]'::jsonb, array['skills-cloud', 'hsd']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -947,7 +969,7 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('project-image-processing', 'projects', 10, 'Görüntü Ön İşleme Platformu nedir?', 'What is the Image Preprocessing Platform?', 'Görüntü Ön İşleme Platformu: FastAPI ve Django ile geliştirilmiş bir web platformu. Uzamsal dönüşümler, histogram optimizasyonu ve gürültü modelleri ekleme/çıkarma (Gaussian, Salt & Pepper) gibi işlemler sunuyor.', 'Image Preprocessing Platform: a web platform built with FastAPI and Django, offering spatial transformations, histogram optimization, and adding/removing noise models (Gaussian, Salt & Pepper).', array['goruntu', 'isleme', 'histogram', 'gurultu', 'django', 'image', 'preprocessing', 'noise']::text[], '[{"label":{"tr":"GitHub","en":"GitHub"},"href":"https://github.com/osmanbugrabolat/goruntuIsleme/tree/main"}]'::jsonb, array['mediapipe-projects', 'skills-backend']::text[])
+values ('project-image-processing', 'projects', 10, 'Görüntü Ön İşleme Platformu nedir?', 'What is the Image Preprocessing Platform?', 'Görüntü Ön İşleme Platformu: FastAPI ve Django ile geliştirilmiş bir web platformu. Uzamsal dönüşümler, histogram optimizasyonu ve gürültü modelleri ekleme/çıkarma (Gaussian, Salt & Pepper) gibi işlemler sunuyor.', 'Image Preprocessing Platform: a web platform built with FastAPI and Django, offering spatial transformations, histogram optimization, and adding/removing noise models (Gaussian, Salt & Pepper).', array['goruntu', 'isleme', 'histogram', 'gurultu', 'django', 'image', 'preprocessing', 'noise']::text[], '[{"label":{"tr":"Proje sayfası","en":"Project page"},"href":"/projects/goruntu-on-isleme"},{"label":{"tr":"GitHub","en":"GitHub"},"href":"https://github.com/osmanbugrabolat/goruntuIsleme/tree/main"}]'::jsonb, array['mediapipe-projects', 'skills-backend']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,

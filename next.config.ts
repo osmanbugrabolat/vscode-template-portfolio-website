@@ -11,6 +11,11 @@ const supabaseHost = (() => {
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // CV fonts are read from disk at runtime (src/lib/cv/render.tsx).
+  outputFileTracingIncludes: {
+    "/cv-pdf/*": ["./src/lib/cv/fonts/*.ttf"],
+    "/admin/cv": ["./src/lib/cv/fonts/*.ttf"],
+  },
   reactStrictMode: true,
   images: {
     remotePatterns: supabaseHost
@@ -22,6 +27,10 @@ const nextConfig: NextConfig = {
       // Uploads go directly to Supabase Storage; actions only carry form fields.
       bodySizeLimit: "1mb",
     },
+  },
+  async redirects() {
+    // The CV used to be a static file; old links now get the generated one.
+    return [{ source: "/cv.pdf", destination: "/cv-pdf/tr", permanent: false }];
   },
   async headers() {
     // API routes skip the proxy, so they get their baseline headers here.

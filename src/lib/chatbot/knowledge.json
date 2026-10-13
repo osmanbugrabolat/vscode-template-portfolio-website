@@ -251,8 +251,8 @@
         "en": "Who is Buğra?"
       },
       "answer": {
-        "tr": "Osman Buğra BOLAT, Selçuk Üniversitesi Bilgisayar Mühendisliği mezunu (2026, GPA 3.75) bir yapay zekâ ve bulut mühendisidir. Teknoloji Fakültesi 3.'sü, bölüm 2.'si olarak mezun oldu.\n\nÖğrenimi boyunca bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmeye odaklandı. Docker, CI/CD, DevOps ve MLOps ile yapay zekâ tabanlı süreçlerin otomasyonu ve dağıtımında deneyim kazandı. Şu anda Huawei Türkiye'de Bölge Lideri olarak İç Anadolu'daki altı HSD topluluğunu yönetiyor.",
-        "en": "Osman Buğra BOLAT is an AI & cloud engineer and a Computer Engineering graduate of Selçuk University (2026, GPA 3.75), ranking 3rd in the Faculty of Technology and 2nd in his department.\n\nThroughout his studies he focused on integrating computer vision and deep learning models into cloud infrastructure, and gained hands-on experience automating and deploying AI-based processes with Docker, CI/CD, DevOps and MLOps. He currently works as a Regional Leader at Huawei Türkiye, overseeing six HSD communities in Central Anatolia."
+        "tr": "Osman Buğra BOLAT, Selçuk Üniversitesi Bilgisayar Mühendisliği mezunu (2026, GPA 3.75) bir yapay zekâ mühendisi ve proje yöneticisidir. Teknoloji Fakültesi 3.'sü, bölüm 2.'si olarak mezun oldu.\n\nÖğrenimi boyunca bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmeye odaklandı. Docker, CI/CD, DevOps ve MLOps ile yapay zekâ tabanlı süreçlerin otomasyonu ve dağıtımında deneyim kazandı. Şu anda Ilgar Teknoloji'de Proje Yöneticisi ve Yapay Zekâ Mühendisi olarak SuPublic projesinde çalışıyor.",
+        "en": "Osman Buğra BOLAT is an AI engineer and project manager, and a Computer Engineering graduate of Selçuk University (2026, GPA 3.75), ranking 3rd in the Faculty of Technology and 2nd in his department.\n\nThroughout his studies he focused on integrating computer vision and deep learning models into cloud infrastructure, and gained hands-on experience automating and deploying AI-based processes with Docker, CI/CD, DevOps and MLOps. He currently works as a Project Manager & AI Engineer at Ilgar Teknoloji on the SuPublic project."
       },
       "patterns": {
         "tr": [
@@ -317,8 +317,8 @@
         "en": "What does he do?"
       },
       "answer": {
-        "tr": "Buğra bir Bilgisayar Mühendisi; kendini \"AI powered AI & Cloud Engineer\" olarak tanımlıyor. Yapay zekâ (özellikle bilgisayarlı görü), bulut mimarileri ve MLOps üzerine çalışıyor. Şu anki görevi Huawei Türkiye Bölge Liderliği.",
-        "en": "Buğra is a Computer Engineer who describes himself as an \"AI powered AI & Cloud Engineer\". He works on AI (especially computer vision), cloud architectures and MLOps. His current role is Regional Leader at Huawei Türkiye."
+        "tr": "Buğra bir Bilgisayar Mühendisi; kendini \"AI powered AI & Cloud Engineer\" olarak tanımlıyor. Yapay zekâ (özellikle bilgisayarlı görü), bulut mimarileri ve MLOps üzerine çalışıyor. Şu anki görevi Ilgar Teknoloji'de Proje Yöneticisi ve Yapay Zekâ Mühendisi.",
+        "en": "Buğra is a Computer Engineer who describes himself as an \"AI powered AI & Cloud Engineer\". He works on AI (especially computer vision), cloud architectures and MLOps. His current role is Project Manager & AI Engineer at Ilgar Teknoloji."
       },
       "patterns": {
         "tr": [
@@ -369,8 +369,8 @@
         "en": "Where is he based?"
       },
       "answer": {
-        "tr": "Buğra Türkiye'de yaşıyor Selçuk Üniversitesi'nde okudu ve şu anda İç Anadolu bölgesindeki HSD topluluklarından sorumlu.",
-        "en": "Buğra is based in Turkey He studied at Selçuk University and currently oversees the HSD communities in the Central Anatolia region."
+        "tr": "Buğra Türkiye'de yaşıyor. Selçuk Üniversitesi'nde okudu.",
+        "en": "Buğra is based in Turkey. He studied at Selçuk University."
       },
       "patterns": {
         "tr": [
@@ -593,8 +593,8 @@
         "en": "What is he focusing on now?"
       },
       "answer": {
-        "tr": "Buğra'nın şu anki odak noktaları:\n• Ölçeklenebilir web ve mobil uygulamalar geliştirmek\n• Yapay zekâ / makine öğrenmesi entegrasyonlarını keşfetmek\n\nBunun yanında Huawei Türkiye'de Bölge Lideri olarak HSD topluluklarını yönetiyor.",
-        "en": "Buğra is currently focused on:\n• Building scalable web & mobile applications\n• Exploring AI/ML integrations\n\nAlongside that, he leads HSD communities as a Regional Leader at Huawei Türkiye."
+        "tr": "Buğra'nın şu anki odak noktaları:\n• Ilgar Teknoloji'de SuPublic projesinin yapay zekâ model yapısını kurgulamak ve proje yönetimini yürütmek\n• Bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmek\n• MLOps ile yapay zekâ servislerinin otomasyonu ve dağıtımı",
+        "en": "Buğra is currently focused on:\n• Designing the AI model structure and leading project management for SuPublic at Ilgar Teknoloji\n• Integrating computer vision and deep learning models into cloud infrastructure\n• Automating and deploying AI services with MLOps"
       },
       "patterns": {
         "tr": [
@@ -757,10 +757,17 @@
         },
         {
           "label": {
-            "tr": "PDF indir",
-            "en": "Download PDF"
+            "tr": "Türkçe PDF",
+            "en": "Turkish PDF"
           },
-          "href": "/cv.pdf"
+          "href": "/cv-pdf/tr"
+        },
+        {
+          "label": {
+            "tr": "İngilizce PDF",
+            "en": "English PDF"
+          },
+          "href": "/cv-pdf/en"
         }
       ],
       "followUps": [
@@ -777,8 +784,8 @@
         "en": "What is his work experience?"
       },
       "answer": {
-        "tr": "Buğra'nın deneyimleri:\n• Huawei Türkiye: Bölge Lideri (Eylül 2025 – Günümüz)\n• Divizyon: Yazılım Program Yöneticisi Asistanı (Aralık 2024 – Ekim 2025)\n• Huawei Türkiye: Kampüs Elçisi (Ağustos 2024 – Eylül 2025)\n• Huawei Türkiye: Stajyer (Temmuz 2024 – Temmuz 2025)\n\nDetayını merak ettiğiniz bir rolü sorabilirsiniz.",
-        "en": "Buğra's experience:\n• Huawei Türkiye: Regional Leader (Sep 2025 – Present)\n• Divizyon: Software Program Manager Assistant (Dec 2024 – Oct 2025)\n• Huawei Türkiye: Campus Ambassador (Aug 2024 – Sep 2025)\n• Huawei Türkiye: Intern (Jul 2024 – Jul 2025)\n\nAsk me about any role for details."
+        "tr": "Buğra'nın deneyimleri:\n• Ilgar Teknoloji: Proje Yöneticisi & Yapay Zekâ Mühendisi (Haziran 2026 – Günümüz)\n• Huawei Türkiye: Bölge Lideri (Eylül 2025 – Eylül 2026)\n• Huawei Türkiye: Stajyer (Temmuz 2024 – Temmuz 2025)\n• Divizyon: Yazılım Program Yöneticisi Asistanı (Aralık 2024 – Ekim 2025)\n• Huawei Türkiye: Kampüs Elçisi (Ağustos 2024 – Eylül 2025)\n\nDetayını merak ettiğiniz bir rolü sorabilirsiniz.",
+        "en": "Buğra's experience:\n• Ilgar Teknoloji: Project Manager & AI Engineer (Jun 2026 – Present)\n• Huawei Türkiye: Regional Leader (Sep 2025 – Sep 2026)\n• Huawei Türkiye: Intern (Jul 2024 – Jul 2025)\n• Divizyon: Software Program Manager Assistant (Dec 2024 – Oct 2025)\n• Huawei Türkiye: Campus Ambassador (Aug 2024 – Sep 2025)\n\nAsk me about any role for details."
       },
       "patterns": {
         "tr": [
@@ -831,8 +838,8 @@
       ],
       "followUps": [
         "current-role",
-        "divizyon",
-        "huawei-internship"
+        "regional-leader",
+        "divizyon"
       ]
     },
     {
@@ -840,33 +847,79 @@
       "category": "experience",
       "priority": 45,
       "title": {
-        "tr": "Huawei'de ne yapıyor?",
-        "en": "What does he do at Huawei?"
+        "tr": "Şu an nerede çalışıyor?",
+        "en": "Where does he work now?"
       },
       "answer": {
-        "tr": "Buğra Eylül 2025'ten beri Huawei Türkiye'de Bölge Lideri. İç Anadolu bölgesindeki altı HSD (Huawei Student Developers) elçiliğini yönetip denetliyor, bu toplulukların yönetim süreçlerini ve etkinliklerini destekliyor.",
-        "en": "Since September 2025 Buğra has been a Regional Leader at Huawei Türkiye. He manages and supervises six HSD (Huawei Student Developers) embassies in Central Anatolia, supporting their management processes and activities."
+        "tr": "Buğra Haziran 2026'dan beri Ilgar Teknoloji'de Proje Yöneticisi ve Yapay Zekâ Mühendisi. SuPublic projesinde, projenin ihtiyaç duyduğu yapay zekâ model yapısının kurgulanmasından ve proje yönetiminden sorumlu: model mimarisini tasarlıyor, teknik yol haritasını belirliyor; planlama, önceliklendirme ve teslim süreçlerini yönetiyor.",
+        "en": "Since June 2026 Buğra has been a Project Manager & AI Engineer at Ilgar Teknoloji. On the SuPublic project he is responsible for designing the AI model structure and for project management: he designs the model architecture, defines the technical roadmap, and manages planning, prioritization and delivery."
       },
       "patterns": {
         "tr": [
-          "huaweide ne yapıyorsun",
           "şu an nerede çalışıyorsun",
           "şimdiki işin ne",
-          "bölge lideri ne demek",
-          "bölge liderliği",
-          "huawei bölge lideri",
           "şu anki görevin",
           "güncel pozisyonun",
-          "huawei"
+          "ilgar teknoloji",
+          "ilgar teknolojide ne yapıyorsun",
+          "supublic nedir",
+          "supublic projesi"
         ],
         "en": [
-          "what do you do at huawei",
           "where do you work now",
           "current job",
           "current role",
+          "what is your current position",
+          "ilgar teknoloji",
+          "what do you do at ilgar",
+          "what is supublic",
+          "supublic project"
+        ]
+      },
+      "keywords": [
+        "ilgar",
+        "supublic",
+        "simdiki",
+        "guncel",
+        "current",
+        "proje",
+        "yonetici"
+      ],
+      "links": [],
+      "followUps": [
+        "regional-leader",
+        "experience-overview",
+        "skills-ai-ml"
+      ]
+    },
+    {
+      "id": "regional-leader",
+      "category": "experience",
+      "priority": 44,
+      "title": {
+        "tr": "Huawei bölge liderliğinde ne yaptı?",
+        "en": "What did he do as Huawei Regional Leader?"
+      },
+      "answer": {
+        "tr": "Buğra Eylül 2025 – Eylül 2026 arasında Huawei Türkiye'de Bölge Lideriydi. İç Anadolu bölgesindeki altı HSD (Huawei Student Developers) elçiliğini yönetip denetledi, bu toplulukların yönetim süreçlerini ve etkinliklerini destekledi.",
+        "en": "From September 2025 to September 2026 Buğra was a Regional Leader at Huawei Türkiye. He managed and supervised six HSD (Huawei Student Developers) embassies in Central Anatolia, supporting their management processes and activities."
+      },
+      "patterns": {
+        "tr": [
+          "huaweide ne yaptın",
+          "huaweide ne yapıyorsun",
+          "bölge lideri ne demek",
+          "bölge liderliği",
+          "huawei bölge lideri",
+          "bölge liderliğinde ne yaptın",
+          "huawei"
+        ],
+        "en": [
+          "what did you do at huawei",
+          "what do you do at huawei",
           "regional leader",
           "huawei regional leader",
-          "what is your current position",
+          "regional leadership",
           "huawei"
         ]
       },
@@ -875,10 +928,8 @@
         "bolge",
         "lider",
         "liderlik",
-        "simdiki",
         "regional",
-        "leader",
-        "current"
+        "leader"
       ],
       "links": [],
       "followUps": [
@@ -928,7 +979,7 @@
       ],
       "links": [],
       "followUps": [
-        "current-role",
+        "regional-leader",
         "skills-tools"
       ]
     },
@@ -1024,7 +1075,7 @@
       "links": [],
       "followUps": [
         "hsd",
-        "current-role"
+        "regional-leader"
       ]
     },
     {
@@ -1080,7 +1131,7 @@
       "followUps": [
         "project-hsd-website",
         "project-sihirli-sapan-hsd",
-        "current-role"
+        "regional-leader"
       ]
     },
     {
@@ -1665,7 +1716,15 @@
         "pose",
         "mobile"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": {
+            "tr": "Proje sayfası",
+            "en": "Project page"
+          },
+          "href": "/projects/fizyoterapi-uygulamasi"
+        }
+      ],
       "followUps": [
         "project-dermatology",
         "skills-backend"
@@ -1712,7 +1771,15 @@
         "skin",
         "medical"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": {
+            "tr": "Proje sayfası",
+            "en": "Project page"
+          },
+          "href": "/projects/dermatolojik-hastalik-tespiti"
+        }
+      ],
       "followUps": [
         "skills-ai-ml",
         "project-physiotherapy"
@@ -1761,7 +1828,22 @@
         "net",
         "dotnet"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": {
+            "tr": "v1 sayfası",
+            "en": "v1 page"
+          },
+          "href": "/projects/hsd-turkiye-web-v1"
+        },
+        {
+          "label": {
+            "tr": "v2 sayfası",
+            "en": "v2 page"
+          },
+          "href": "/projects/hsd-turkiye-web-v2"
+        }
+      ],
       "followUps": [
         "skills-cloud",
         "hsd"
@@ -1807,6 +1889,13 @@
         "noise"
       ],
       "links": [
+        {
+          "label": {
+            "tr": "Proje sayfası",
+            "en": "Project page"
+          },
+          "href": "/projects/goruntu-on-isleme"
+        },
         {
           "label": {
             "tr": "GitHub",

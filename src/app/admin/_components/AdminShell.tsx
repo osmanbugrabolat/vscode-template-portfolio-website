@@ -16,6 +16,7 @@ import {
   VscSettingsGear,
   VscSignOut,
   VscBriefcase,
+  VscFilePdf,
   VscVscode,
 } from "react-icons/vsc";
 import { logout } from "../_actions/account";
@@ -29,6 +30,7 @@ const NAV = [
   { href: "/admin/settings", label: "Site Ayarları", icon: VscSettingsGear },
   { href: "/admin/skills", label: "Yetenekler", icon: VscCode },
   { href: "/admin/experience", label: "Deneyim", icon: VscBriefcase },
+  { href: "/admin/cv", label: "CV", icon: VscFilePdf },
   { href: "/admin/media", label: "Medya", icon: VscFileMedia },
   { section: "BuğrAI" },
   { href: "/admin/chatbot", label: "Soru ve Cevaplar", icon: VscCopilot },

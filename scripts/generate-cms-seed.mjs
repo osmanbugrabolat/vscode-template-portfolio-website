@@ -67,6 +67,12 @@ for (const exp of cms.experiences) {
   lines.push(insert("experiences", { id: uuidFor("experience", `${exp.company}:${exp.sort_order}`), ...exp }));
 }
 
+lines.push("");
+
+for (const [lang, data] of Object.entries(cms.cv ?? {})) {
+  lines.push(`insert into public.cv_documents (lang, data) values (${lit(lang)}, ${lit(JSON.stringify(data))}::jsonb) on conflict (lang) do nothing;`);
+}
+
 lines.push("", "commit;", "");
 writeFileSync(join(root, "supabase/seed-cms.sql"), lines.join("\n"));
-console.log(`supabase/seed-cms.sql: ${cms.nodes.length} nodes, ${cms.skill_categories.length} skill categories, ${cms.experiences.length} experiences`);
+console.log(`supabase/seed-cms.sql: ${cms.nodes.length} nodes, ${cms.skill_categories.length} skill categories, ${cms.experiences.length} experiences, ${Object.keys(cms.cv ?? {}).length} CV documents`);

@@ -15,7 +15,6 @@ export interface MediaItem {
 
 /** Files bundled with the site under /public that content may reference. */
 export const STATIC_ASSETS: MediaItem[] = [
-  { path: "public/cv.pdf", url: "/cv.pdf", name: "cv.pdf", size: 0, mime: "application/pdf", createdAt: null, kind: "pdf" },
   { path: "public/bugra.png", url: "/bugra.png", name: "bugra.png", size: 0, mime: "image/png", createdAt: null, kind: "image" },
   ...["oracle_cert.jpg", "python_tensorflow.jpg", "r_programming.jpg", "HWEND_177820.png", "HWEND_721526.png", "HWEND_036679.png", "HWEND_580148.png", "HWEND_690969.png", "HWEND_727737.png"].map(
     (f): MediaItem => ({

@@ -47,6 +47,7 @@ const FILE_TYPE_INFO: Record<FileType, { label: string; help: string }> = {
   pdf: { label: "PDF görüntüleyici", help: "Bir PDF dosyasını sayfa içinde gösterir (örn. CV)." },
   image: { label: "Görsel görüntüleyici", help: "Bir görseli tam ekran gösterir (örn. sertifika)." },
   embed: { label: "Gömülü uygulama / oyun", help: "Başka bir https sitesini (örn. GitHub Pages oyunu) çerçeve içinde açar." },
+  cv: { label: "CV (panelden)", help: "CV bölümünde düzenlenen CV'yi ziyaretçinin diline göre PDF olarak gösterir." },
   link: { label: "Dış bağlantı", help: "Tıklanınca yeni sekmede bir adres ya da e-posta açar. Kendi sayfası yoktur." },
 };
 

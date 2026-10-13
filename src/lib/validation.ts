@@ -37,7 +37,7 @@ function textSchema(max: number, min: number, singleLineOnly: boolean) {
 export const text = (max: number, min = 0) => textSchema(max, min, false);
 export const singleLine = (max: number, min = 0) => textSchema(max, min, true);
 
-export const RESERVED_ROUTE = /^\/(api|admin|admin-login|_next|auth)(\/|$)/;
+export const RESERVED_ROUTE = /^\/(api|admin|admin-login|_next|auth|cv-pdf)(\/|$)/;
 export const ROUTE_PATTERN = /^\/([a-z0-9]+(-[a-z0-9]+)*(\/[a-z0-9]+(-[a-z0-9]+)*)*)?$/;
 
 export const routeSchema = z

@@ -21,6 +21,7 @@ const ENTITIES: Record<string, string> = {
   skill: "Yetenek",
   skill_category: "Yetenek kategorisi",
   experience: "Deneyim",
+  cv: "CV",
   chat_intent: "BuğrAI",
   chat_logs: "BuğrAI kayıtları",
   chat_matcher: "BuğrAI testi",

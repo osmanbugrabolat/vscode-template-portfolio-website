@@ -2,18 +2,14 @@
 -- Initial content only: ON CONFLICT DO NOTHING keeps later admin edits intact.
 begin;
 
-insert into public.site_settings (id, name, title_tr, title_en, subtitle_tr, subtitle_en, location_tr, location_en, email, github_url, linkedin_url, medium_url, website_url, avatar_url, available_for_work, current_focus_tr, current_focus_en, education_degree_tr, education_degree_en, education_school, education_years, education_gpa, seo_title, seo_description_tr, seo_description_en, chat_greeting_tr, chat_greeting_en, terminal_whoami) values (1, 'Osman Buğra BOLAT', 'Yapay Zekâ Destekli Yapay Zekâ ve Bulut Mühendisi', 'AI powered AI & Cloud Engineer', 'Her mühendisin yapması gerektiği gibi, problem çözerim.', 'Like every engineer should, I solve problems.', 'Türkiye', 'Turkey', 'osmanbugrabolat@gmail.com', 'https://github.com/osmanbugrabolat', 'https://linkedin.com/in/osmanbugrabolat', 'https://medium.com/@osmanbugrabolat', 'https://osmanbugrabolat.com.tr', '/bugra.png', false, array['Ölçeklenebilir web ve mobil uygulamalar geliştirmek', 'Yapay zekâ ve makine öğrenmesi entegrasyonlarını keşfetmek']::text[], array['Building scalable Web & Mobil applications', 'Exploring AI/ML integrations']::text[], 'Bilgisayar Mühendisliği', 'Computer Engineering', 'University', '2020 – 2024', '3.4 / 4.0', 'Osman Buğra BOLAT', 'Osman Buğra BOLAT''ın portfolyosu: Next.js, TypeScript ve modern web teknolojilerinde uzmanlaşmış yapay zekâ ve bulut mühendisi.', 'Portfolio of Buğra Bolat — Full Stack Developer specializing in Next.js, TypeScript, and modern web technologies.', 'Merhaba! Ben BuğrAI. Osman Buğra''nın portfolyosu hakkında merak ettiğiniz her şeyi sorabilirsiniz.', 'Hi! I''m BuğrAI. Ask me anything about Osman Buğra''s portfolio.', 'Osman Buğra BOLAT - AI powered AI & Cloud Engineer') on conflict (id) do nothing;
+insert into public.site_settings (id, name, title_tr, title_en, subtitle_tr, subtitle_en, location_tr, location_en, email, github_url, linkedin_url, medium_url, website_url, avatar_url, available_for_work, current_focus_tr, current_focus_en, education_degree_tr, education_degree_en, education_school, education_years, education_gpa, seo_title, seo_description_tr, seo_description_en, chat_greeting_tr, chat_greeting_en, terminal_whoami) values (1, 'Osman Buğra BOLAT', 'Yapay Zekâ Destekli Yapay Zekâ ve Bulut Mühendisi', 'AI powered AI & Cloud Engineer', 'Her mühendisin yapması gerektiği gibi, problem çözerim.', 'Like every engineer should, I solve problems.', 'Türkiye', 'Turkey', 'osmanbugrabolat@gmail.com', 'https://github.com/osmanbugrabolat', 'https://linkedin.com/in/osmanbugrabolat', 'https://medium.com/@osmanbugrabolat', 'https://osmanbugrabolat.com.tr', '/bugra.png', false, array['Ilgar Teknoloji''de SuPublic projesinin yapay zekâ model yapısını kurgulamak ve proje yönetimini yürütmek', 'Bilgisayarlı görü ve derin öğrenme modellerini bulut altyapılarına entegre etmek', 'MLOps ile yapay zekâ servislerinin otomasyonu ve dağıtımı']::text[], array['Designing the AI model structure and leading project management for SuPublic at Ilgar Teknoloji', 'Integrating computer vision and deep learning models into cloud infrastructure', 'Automating and deploying AI services with MLOps']::text[], 'Bilgisayar Mühendisliği', 'Computer Engineering', 'Selçuk Üniversitesi', '2021 – 2026', '3.75 / 4', 'Osman Buğra BOLAT', 'Osman Buğra BOLAT''ın portfolyosu: bilgisayarlı görü, derin öğrenme ve bulut altyapıları üzerine çalışan yapay zekâ mühendisi ve proje yöneticisi.', 'Portfolio of Osman Buğra BOLAT, an AI engineer and project manager working on computer vision, deep learning and cloud infrastructure.', 'Merhaba! Ben BuğrAI. Osman Buğra''nın portfolyosu hakkında merak ettiğiniz her şeyi sorabilirsiniz.', 'Hi! I''m BuğrAI. Ask me anything about Osman Buğra''s portfolio.', 'Osman Buğra BOLAT - AI powered AI & Cloud Engineer') on conflict (id) do nothing;
 
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('39187750-6cde-592d-b967-a018a7487af5', null, 'folder', 'about-me', 0, 'person', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('2979537e-ca14-5116-95ef-df81892e6a63', '39187750-6cde-592d-b967-a018a7487af5', 'file', 'WhoAmI.md', null, 'home', 0, '/', null, null, '{{profile-header}}
 
 ## Hakkımda
 
-Selçuk Üniversitesi Teknoloji Fakültesi''ni fakülte üçüncüsü ve bölüm ikincisi olarak 3.75 not ortalamasıyla tamamlamış (2026) bir bilgisayar mühendisiyim. Öğrenimim boyunca teknik odağımı bilgisayarlı görü ve derin öğrenme modellerinin bulut altyapılarına entegrasyonu üzerine yoğunlaştırdım ve bu alanlardaki uzmanlığımı geliştirmeye devam ediyorum.
-
-Lisans yıllarımda Docker, CI/CD süreçleri, DevOps ve MLOps prensiplerine dayalı yapay zekâ tabanlı operasyonel süreçlerin otomasyonu ve dağıtımı konusunda uygulamalı deneyim kazandım.
-
-Bu güçlü akademik temeli, teknoloji topluluğu liderliği ve proje yönetimi rolleriyle geliştirdiğim liderlik ve iletişim becerileriyle birleştiriyorum. Karmaşık projelerin operasyonel gereksinimlerine hızla uyum sağlayan, teknik süreçlerde sorumluluk alan ve iş birliğine dayalı ekip ortamlarında başarılı olan dinamik bir mühendisim.
+Selçuk Üniversitesi Bilgisayar Mühendisliği bölümünden bölüm ikincisi ve Teknoloji Fakültesi üçüncüsü olarak mezun oldum. Üniversite yıllarım boyunca bilgisayarlı görü ve derin öğrenme alanlarına yöneldim; özellikle bu modellerin bulut altyapılarına entegrasyonu üzerine çalıştım ve bu alanda kendimi geliştirmeye devam ediyorum. Docker, CI/CD, DevOps ve MLOps yaklaşımlarıyla yapay zekâ tabanlı süreçlerin otomasyonu ve canlıya alınması konusunda uygulamalı deneyim kazandım. Teknoloji topluluklarında üstlendiğim liderlik ve proje yönetimi görevleri sayesinde iletişim ve ekip yönetimi becerilerimi de güçlendirdim. Karmaşık projelere kısa sürede uyum sağlayan, sorumluluk almaktan çekinmeyen ve ekip çalışmasından keyif alan bir mühendisim.
 
 ## Şu Anki Odak
 
@@ -27,11 +23,7 @@ Fikirleri hayata geçirmek için kullandığım teknolojilere genel bir bakış:
 
 ## About Me
 
-As a computer engineering graduate ranking 3rd in the Faculty of Technology and 2nd in my department at Selçuk University (graduated in 2026 with a 3.75 GPA), I have aligned my technical focus on integrating Computer Vision and Deep Learning models into cloud infrastructures throughout my studies, and I continue to advance my expertise in these fields.
-
-During my undergraduate years, I gained hands-on experience in the automation and deployment of AI-based operational processes based on Docker, CI/CD pipelines, DevOps, and MLOps principles.
-
-I combine this strong academic foundation with leadership and communication skills developed through technology community leadership and project management roles. I am a dynamic engineer who quickly adapts to the operational requirements of complex projects, takes responsibility in technical processes, and thrives in collaborative team environments.
+I graduated from Selçuk University with a degree in Computer Engineering, ranking 2nd in my department and 3rd in the Faculty of Technology. Throughout my studies, I focused on computer vision and deep learning, particularly on integrating these models into cloud infrastructures, and I continue to grow my expertise in this field. I gained hands-on experience in automating and deploying AI-based processes using Docker, CI/CD, DevOps, and MLOps practices. Leadership and project management roles in technology communities have also strengthened my communication and team management skills. I am an engineer who adapts quickly to complex projects, readily takes ownership, and enjoys working as part of a team.
 
 ## Current Focus
 
@@ -877,109 +869,7 @@ Approve the **Camera Permission** requested by the browser, **click the screen o
 - **MediaPipe Tasks Vision** (For AI / Hand Tracking)
 - **Vanilla ES6+ JavaScript**', 'markdown', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('3503d03a-c809-548a-ac32-34aae38b882c', '259fe09b-c0a5-5faf-8b7b-7b68465b1ad1', 'file', 'Deneyimle', 'Experience', 'embed', 1, '/projects/kozmik-toz-enstalasyon/play', 'https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/', null, 'Kozmik Toz Enstalasyonu', 'Cosmic Dust Installation', 'play', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('bf357637-c09c-5ad4-b50d-0edccd88fb43', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Daha fazlası...', 'For more...', 'link', 6, null, 'https://github.com/osmanbugrabolat', null, '', '', 'github', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('866ffbc7-0aae-5cfb-b46e-d23302ba2f4e', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Apart Yönetim Sistemi.md', 'Apartment Management System.md', 'markdown', 101, '/projects/1', null, null, '# Apart Yönetim Sistemi
-
-2026 · Aktif
-
-Gerçek zamanlı güncellemeler, kiracı yönetimi, ödeme takibi ve otomatik raporlama sunan kapsamlı bir apart yönetim platformu.
-
-## Teknolojiler
-
-`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS`
-
-## Bağlantılar
-
-- [Kaynak Kod](https://github.com/osmanbugrabolat)
-- [Canlı Demo](http://localhost:3000)', '# Apart Yönetim Sistemi
-
-2026 · Active
-
-Comprehensive apartment management platform with real-time updates, tenant management, payment tracking, and automated reporting.
-
-## Tech Stack
-
-`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS`
-
-## Links
-
-- [Source Code](https://github.com/osmanbugrabolat)
-- [Live Demo](http://localhost:3000)', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('070a8b5e-9caf-5cf2-b8a1-03fa923c8b31', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Portfolyo AI.md', null, 'markdown', 102, '/projects/2', null, null, '# Portfolyo AI
-
-2026 · Aktif
-
-VS Code''dan ilham alan temaya sahip, yapay zekâ destekli bir portfolyo sitesi. Akıllı içerik üretimi ve kod editörü benzeri etkileşimli gezinme sunar.
-
-## Teknolojiler
-
-`Next.js` `TypeScript` `AI/ML` `Tailwind CSS`
-
-## Bağlantılar
-
-- [Kaynak Kod](https://github.com/osmanbugrabolat)', '# Portfolyo AI
-
-2026 · Active
-
-AI-powered portfolio website with a VS Code-inspired theme. Features intelligent content generation and interactive code-like navigation.
-
-## Tech Stack
-
-`Next.js` `TypeScript` `AI/ML` `Tailwind CSS`
-
-## Links
-
-- [Source Code](https://github.com/osmanbugrabolat)', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('21d37801-7a8d-5259-84b7-02fa1f6845c8', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Fountain Detection AI.md', null, 'markdown', 103, '/projects/3', null, null, '# Fountain Detection AI
-
-2025 · Tamamlandı
-
-Görsellerdeki tarihi Osmanlı çeşmelerini (hayrat çeşme) yüksek doğrulukla tespit etmek için ince ayar yapılmış YOLOv8 ve YOLOv11 modeli.
-
-## Teknolojiler
-
-`Python` `YOLOv11` `Ultralytics` `OpenCV` `PyTorch`
-
-## Bağlantılar
-
-- [Kaynak Kod](https://github.com/osmanbugrabolat)', '# Fountain Detection AI
-
-2025 · Completed
-
-Fine-tuned YOLOv8 & YOLOv11 model for detecting historical Ottoman fountains (hayrat çeşme) in images with high accuracy.
-
-## Tech Stack
-
-`Python` `YOLOv11` `Ultralytics` `OpenCV` `PyTorch`
-
-## Links
-
-- [Source Code](https://github.com/osmanbugrabolat)', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5e519983-91ba-5e25-885a-9ea71221c5dd', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Web Scraper & Dataset Builder.md', null, 'markdown', 104, '/projects/4', null, null, '# Web Scraper & Dataset Builder
-
-2025 · Tamamlandı
-
-Google Görseller arama sonuçlarından özel bilgisayarlı görü veri setleri oluşturmak için geliştirilmiş otomatik görsel toplama aracı.
-
-## Teknolojiler
-
-`Python` `Selenium` `BeautifulSoup` `Requests`
-
-## Bağlantılar
-
-- [Kaynak Kod](https://github.com/osmanbugrabolat)', '# Web Scraper & Dataset Builder
-
-2025 · Completed
-
-Automated image scraping tool for building custom computer vision datasets from Google Images search results.
-
-## Tech Stack
-
-`Python` `Selenium` `BeautifulSoup` `Requests`
-
-## Links
-
-- [Source Code](https://github.com/osmanbugrabolat)', 'markdown', false) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('bf357637-c09c-5ad4-b50d-0edccd88fb43', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Daha fazlası...', 'For more...', 'link', 200, null, 'https://github.com/osmanbugrabolat', null, '', '', 'github', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('69079713-4708-5fb1-9e39-947bd0405284', null, 'folder', 'articles', 2, 'book', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('c5fc124e-8b8b-5e11-a9f8-0d418afe0bca', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Altyapıyı Unutun, Koda Odaklanın: FaaS', 'Forget the Infrastructure, Focus on Code: FaaS', 'link', 0, null, 'https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739', null, '', '', 'medium', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('6621e2f6-a695-56ee-973f-4d66c7f63dbf', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Açık Kaynak vs Açık Ağırlık', 'Open Source vs Open Weight', 'link', 1, null, 'https://medium.com/@osmanbugrabolat/yapay-zeka-d%C3%BCnyas%C4%B1nda-kavram-karma%C5%9Fas%C4%B1-open-source-model-vs-open-weight-model-32ccccd2f0f5', null, '', '', 'medium', true) on conflict (id) do nothing;
@@ -1059,9 +949,100 @@ The best way to reach me is via email. I usually respond within 24-48 hours.
 {{social-links}}
 
 > *"Code is like humor. When you have to explain it, it’s bad."* – Cory House', 'markdown', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('48257011-566e-50d1-bd13-a683d2deef5b', null, 'file', 'cv.pdf', null, 'pdf', 10, '/cv', null, '/cv.pdf', '', '', 'pdf', false) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('48257011-566e-50d1-bd13-a683d2deef5b', null, 'file', 'cv.pdf', null, 'cv', 10, '/cv', null, null, '', '', 'pdf', false) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('14ab6162-3ebc-5ac1-a1a6-81528882b35a', null, 'file', 'experience.ts', null, 'experience', 11, '/experience', null, null, '', '', 'typescript', false) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('0ab97883-e131-5aae-a152-630fd6b39cd5', null, 'file', 'skills.ts', null, 'skills', 12, '/skills', null, null, '', '', 'typescript', false) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('8cc43113-ff91-5219-a153-31f732232f0a', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Fizyoterapi Uygulaması.md', 'Physiotherapy App.md', 'markdown', 101, '/projects/fizyoterapi-uygulamasi', null, null, '# Yapay Zekâ Destekli Fizyoterapi Uygulaması
+
+**Android Kotlin** ve **Python/FastAPI** kullanarak çift rollü mimariye sahip, yapay zekâ destekli bir fizyoterapi mobil uygulaması geliştirdim. Ön yüzde MediaPipe ve CameraX entegrasyonuyla gerçek zamanlı poz tahmini ve hareket fazı tespiti gerçekleştirerek otomatik eklem açısı hesaplaması ve uyarlanabilir tekrar sayımı sağladım. SQLAlchemy ve Alembic ile yönetilen güvenli bir **PostgreSQL** veritabanı tasarladım ve backend altyapısını Easypanel üzerinde Docker ile konteynerleştirilmiş bir servis olarak dağıttım.
+
+## Teknolojiler
+
+`Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`
+', '# AI-Powered Physiotherapy Application
+
+Developed an AI-powered physiotherapy mobile application using **Android Kotlin** and **Python/FastAPI** with a dual-role architecture. Implemented real-time pose estimation and movement phase detection by integrating MediaPipe and CameraX on the frontend, enabling automatic joint angle calculations and adaptive repetition counting. Designed a secure **PostgreSQL** database managed via SQLAlchemy and Alembic, and deployed the backend infrastructure as a containerized service using Docker on Easypanel.
+
+## Technologies
+
+`Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('76eac753-09ee-5209-b85d-bdb1880f8976', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'HSD Türkiye Web Sitesi v1.md', 'HSD Türkiye Website v1.md', 'markdown', 102, '/projects/hsd-turkiye-web-v1', null, null, '# HSD Türkiye Web Sitesi v1
+
+HSD Türkiye''nin gereksinimlerini belirlemek için kapsamlı bir ihtiyaç analizi gerçekleştirdik ve topluluk yönetimine odaklanan bir ERP platformu geliştirdik. Backend tarafında **.NET Core MVC** mimarisini, frontend tarafında ise HTML, CSS ve JavaScript teknolojilerini kullanan bu platform, kampüs elçileri ve topluluk yöneticilerinin tüm idari süreçlerini verimli bir şekilde yönetebilmeleri için gereken tüm bileşenleri içermektedir.
+
+## Teknolojiler
+
+`.NET Core MVC` `HTML` `CSS` `JavaScript`
+
+## Bağlantılar
+
+- [www.hsdturkiye.com](https://www.hsdturkiye.com)
+', '# HSD Türkiye Website v1
+
+To determine HSD Turkey''s requirements, we conducted a comprehensive needs analysis and developed an ERP platform focused on community management. This platform, which utilizes **.NET Core MVC** architecture on the backend and HTML, CSS, and JavaScript technologies on the frontend, includes all the necessary components for campus ambassadors and community managers to efficiently manage all their administrative processes.
+
+## Technologies
+
+`.NET Core MVC` `HTML` `CSS` `JavaScript`
+
+## Links
+
+- [www.hsdturkiye.com](https://www.hsdturkiye.com)
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('df16160f-86b3-50a3-961c-970174aff43c', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'HSD Türkiye Web Sitesi v2.md', 'HSD Türkiye Website v2.md', 'markdown', 103, '/projects/hsd-turkiye-web-v2', null, null, '# HSD Türkiye Web Sitesi v2
+
+Web sitesinin ilk sürümünün (v1) topluluk erişimine kapalı olması ve modern mimari standartlardan yoksun olması nedeniyle **.Net Core Web API** ve **Nuxt.js** teknolojilerini kullanarak yeni bir web sitesi geliştirdik. Projeyi Huawei Cloud altyapısı üzerinde **VPC, ECS, SWR, RDS, OBS, ELB** ve **AS** gibi servislerden yararlanarak tamamen ölçeklenebilir bir mimariyle inşa ettik. Bu sayede projenin esnek ve yüksek performanslı bir ortamda çalışmasını sağlarken modern bir teknoloji yığınına geçiş yaptık.
+
+## Teknolojiler
+
+`.NET Core Web API` `Nuxt.js` `Huawei Cloud`
+', '# HSD Türkiye Website v2
+
+Due to the initial version (v1) of the website being closed to community access and lacking modern architectural standards, we developed a new website using **.Net Core Web API** and **Nuxt.js** technologies. We built the project on Huawei Cloud infrastructure, utilizing services such as **VPC, ECS, SWR, RDS, OBS, ELB,** and **AS,** creating a fully scalable architecture. This allowed us to transition to a modern technology stack while ensuring the project operates in a flexible and high-performance environment.
+
+## Technologies
+
+`.NET Core Web API` `Nuxt.js` `Huawei Cloud`
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('8db45a43-9647-5457-8fd8-a5fdfe1a69d9', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Görüntü Ön İşleme Platformu.md', 'Image Preprocessing Platform.md', 'markdown', 104, '/projects/goruntu-on-isleme', null, null, '# Görüntü Ön İşleme Platformu
+
+Python tabanlı **FastAPI** ve **Django** kullanarak yüksek performanslı bir görüntü ön işleme platformu geliştirdim. Platform; uzamsal dönüşümler, histogram optimizasyonu ve gürültü modellerinin (Gauss, Tuz & Biber) eklenmesi ve giderilmesi gibi kapsamlı algoritmik modüller içermektedir. FastAPI''nin asenkron yapısı yoğun hesaplama gerektiren işlemlerde düşük gecikme sağlarken Django sistemin modülerliğini optimize etmektedir. Proje, ham verilerin işlenerek analiz ve derin öğrenme süreçlerine hazırlanmasını sağlayan uçtan uca bir teknik altyapı sunmaktadır.
+
+## Teknolojiler
+
+`Python` `FastAPI` `Django` `OpenCV`
+
+## Bağlantılar
+
+- [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)
+', '# Image Preprocessing Platform
+
+I developed a high-performance image preprocessing platform using Python-based **FastAPI** and **Django**. The platform includes comprehensive algorithmic modules such as spatial transformations, histogram optimization, and the addition and removal of noise models (Gaussian, Salt & Pepper). FastAPI''s asynchronous nature ensures low latency in computationally intensive tasks, while Django optimizes system modularity. The project provides an end-to-end technical infrastructure that enables the processing of raw data, preparing it for analysis and deep learning processes.
+
+## Technologies
+
+`Python` `FastAPI` `Django` `OpenCV`
+
+## Links
+
+- [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('249284fc-cf1c-5baf-b406-90aa75c78bb1', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Dermatolojik Hastalık Tespiti.md', 'Dermatological Disease Detection.md', 'markdown', 105, '/projects/dermatolojik-hastalik-tespiti', null, null, '# Dermatolojik Hastalık Tespiti
+
+Fitzpatrick17k veri setini kullanarak farklı cilt tiplerine duyarlı bir cilt hastalığı teşhis modeli geliştirdim. **EfficientNet-B3 mimarisi** üzerindeki ince ayar (fine-tuning) sürecinde, modelin yalnızca hastalığa odaklanmasını değil cilt tipi çeşitliliğini de dikkate almasını sağlamak için özel kayıp fonksiyonları entegre ettim. Eğitim aşamasının ardından modeli FastAPI kullanarak bir **Hetzner** sunucusu üzerinde çıkarım (inference) servisi olarak dağıttım.
+
+## Teknolojiler
+
+`Python` `EfficientNet-B3` `FastAPI` `Hetzner`
+', '# Dermatological Disease Detection
+
+Using the Fitzpatrick17k dataset, I developed a skin disease diagnosis model sensitive to different skin types. During the fine-tuning process on the **EfficientNet-B3 architecture,** I integrated custom loss functions to ensure the model not only focuses on the disease but also considers skin type variability. Following the training phase, I deployed the model as an inference service on a **Hetzner** server using FastAPI.
+
+## Technologies
+
+`Python` `EfficientNet-B3` `FastAPI` `Hetzner`
+', 'markdown', true) on conflict (id) do nothing;
 
 insert into public.skill_categories (id, key, label_tr, label_en, type_name, sort_order) values ('986e24f9-8f70-5284-ad34-c7ba92b9f008', 'ai_ml', 'AI-ML', 'AI-ML', 'MLTool[]', 0) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('6168bdaa-2101-5865-ad8f-1383465a86f3', '986e24f9-8f70-5284-ad34-c7ba92b9f008', 'Ultralytics YOLO', 75, 'ultralytics', 0) on conflict (id) do nothing;
@@ -1079,10 +1060,14 @@ insert into public.skills (id, category_id, name, level, icon, sort_order) value
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('8fd68e5b-9099-595a-81d0-d840c3c3a9da', '83c8c932-d236-5be3-8e13-be162d93b348', 'React', 85, 'react', 1) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('a10607f0-ae24-559e-bccd-31f8022fdea7', '83c8c932-d236-5be3-8e13-be162d93b348', 'React Native', 80, 'react', 2) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('c3cfdb3e-d0cc-5d22-a2cb-9b36e5e10124', '83c8c932-d236-5be3-8e13-be162d93b348', 'Flutter', 70, 'flutter', 3) on conflict (id) do nothing;
+insert into public.skills (id, category_id, name, level, icon, sort_order) values ('a01ea74b-6120-5bea-b0b2-cb9b241a3cc1', '83c8c932-d236-5be3-8e13-be162d93b348', 'Nuxt.js', 65, 'nuxt', 4) on conflict (id) do nothing;
+insert into public.skills (id, category_id, name, level, icon, sort_order) values ('ea048dc8-4075-5d59-808d-563096315acf', '83c8c932-d236-5be3-8e13-be162d93b348', 'Kotlin (Android)', 60, 'kotlin', 5) on conflict (id) do nothing;
 insert into public.skill_categories (id, key, label_tr, label_en, type_name, sort_order) values ('17415bc4-ff37-521a-b140-96da0e840567', 'backend', 'Backend', 'Backend', 'Framework[]', 3) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('330b8171-3797-53ed-9271-a764d84b3c8e', '17415bc4-ff37-521a-b140-96da0e840567', 'Python FastAPI', 75, 'fastapi', 0) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('d4a9e4cc-207e-51bd-9e60-b56aec9e5c5b', '17415bc4-ff37-521a-b140-96da0e840567', 'Node.js', 70, 'nodejs', 1) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('885457fb-f9e5-5910-a367-c6e1b81c5d72', '17415bc4-ff37-521a-b140-96da0e840567', 'Prisma ORM', 60, 'prisma', 2) on conflict (id) do nothing;
+insert into public.skills (id, category_id, name, level, icon, sort_order) values ('2577ee23-76cd-55d6-986a-1a3e530799e0', '17415bc4-ff37-521a-b140-96da0e840567', '.NET', 70, 'dotnet', 3) on conflict (id) do nothing;
+insert into public.skills (id, category_id, name, level, icon, sort_order) values ('0ec2a01c-4b80-527b-8bb1-86ea6ef68eb5', '17415bc4-ff37-521a-b140-96da0e840567', 'Django', 60, 'django', 4) on conflict (id) do nothing;
 insert into public.skill_categories (id, key, label_tr, label_en, type_name, sort_order) values ('1e88c297-1cdd-560a-9646-1dcacb57c506', 'databases', 'Veritabanları', 'Databases', 'Database[]', 4) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('a59905d5-b7c3-557f-969d-75e505f6d117', '1e88c297-1cdd-560a-9646-1dcacb57c506', 'PostgreSQL', 75, 'postgresql', 0) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('b77262ee-5af3-5e12-8da3-b0b9c5a6ee17', '1e88c297-1cdd-560a-9646-1dcacb57c506', 'MSSQL', 65, 'mssql', 1) on conflict (id) do nothing;
@@ -1101,7 +1086,13 @@ insert into public.skills (id, category_id, name, level, icon, sort_order) value
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('74e0c00f-a08e-5432-86a7-62cbc074c839', '986ec933-379d-525f-9252-bd6a969ca52b', 'Trello', 80, 'trello', 1) on conflict (id) do nothing;
 insert into public.skills (id, category_id, name, level, icon, sort_order) values ('9264012c-73fd-5957-97db-c294ba1be9df', '986ec933-379d-525f-9252-bd6a969ca52b', 'Jira', 70, 'jira', 2) on conflict (id) do nothing;
 
-insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('65755aca-a88f-5d90-89d9-2096cdc78f76', 'Freelance', 'Full Stack Geliştirici', 'Full Stack Developer', '2024 – Günümüz', '2024 – Present', 'Uzaktan', 'Remote', 'Müşteriler için özel web uygulamaları tasarlıyor ve geliştiriyorum. Next.js, TypeScript ve veritabanı mimarisi konularında uzmanım.', 'Designing and developing custom web applications for clients. Specialized in Next.js, TypeScript, and database architecture.', array['Gayrimenkul yönetimi için Apart Yönetim Sistemi''ni geliştirdim', 'Yapay zekâ destekli portfolyo siteleri geliştirdim', '5''ten fazla projeyi zamanında ve kapsamına uygun teslim ettim']::text[], array['Built Apart Yönetim Sistemi for property management', 'Developed AI-powered portfolio websites', 'Delivered 5+ projects on time and within scope']::text[], array['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS']::text[], 0) on conflict (id) do nothing;
-insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('750b46d1-bd96-5dc3-a95f-568605e45234', 'Self-Directed Learning', 'Yapay Zekâ / ML Mühendisi (Öğrenme Süreci)', 'AI/ML Engineer (Learning)', '2025 – Günümüz', '2025 – Present', 'Türkiye', 'Turkey', 'Bilgisayarlı görü ve makine öğrenmesi alanlarında derinleşiyorum. Nesne tespiti görevleri için YOLO modellerine ince ayar yapmak üzerine çalışıyorum.', 'Deep diving into computer vision and machine learning. Working on fine-tuning YOLO models for object detection tasks.', array['Çeşme tespiti için YOLOv8 ve YOLOv11 modellerine ince ayar yaptım', 'Web''den toplanan görsellerle özel veri setleri oluşturdum', 'Özel veri setinde %85''in üzerinde mAP elde ettim']::text[], array['Fine-tuned YOLOv8 & YOLOv11 for fountain detection', 'Built custom datasets from web scraped images', 'Achieved 85%+ mAP on custom dataset']::text[], array['Python', 'PyTorch', 'Ultralytics', 'OpenCV', 'NumPy']::text[], 1) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('1288a326-276b-5064-b259-ab9873ad95fe', 'Ilgar Teknoloji', 'Proje Yöneticisi & Yapay Zekâ Mühendisi', 'Project Manager & AI Engineer', 'Haziran 2026 – Günümüz', 'June 2026 – Present', '', '', 'SuPublic projesinde, projenin ihtiyaç duyduğu yapay zekâ model yapısının kurgulanmasından ve proje yönetiminden sorumluyum. Model mimarisinin tasarımı ve teknik yol haritasının belirlenmesinin yanı sıra projenin planlama, önceliklendirme ve teslim süreçlerini yönetiyor; geliştirme ekibi ve paydaşlar arasındaki koordinasyonu sağlıyorum.', 'Responsible for designing the AI model structure and for project management on the SuPublic project. Beyond designing the model architecture and defining the technical roadmap, I manage the project''s planning, prioritization, and delivery, and coordinate between the development team and stakeholders.', array[]::text[], array[]::text[], array[]::text[], 0) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('564e0dea-6ca7-59b8-a2cf-5dd7fdd6607e', 'Huawei Türkiye', 'Bölge Lideri', 'Regional Leader', 'Eylül 2025 – Eylül 2026', 'September 2025 – September 2026', '', '', 'İç Anadolu Bölgesi''ndeki altı HSD elçiliğini yönettim ve denetledim; elçiliklerin yönetim süreçlerini ve etkinliklerini destekledim.', 'Managed and supervised six HSD embassies in the Central Anatolia region, supporting their management processes and activities.', array[]::text[], array[]::text[], array[]::text[], 10) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('2560d90c-e11c-5301-9c54-f1e4d0361395', 'Huawei Türkiye', 'Stajyer', 'Intern', 'Temmuz 2024 – Temmuz 2025', 'July 2024 – July 2025', '', '', 'Geliştirme iş akışlarını otomatikleştirmek ve verimliliği artırmak için özel CLI araçları ve Bash betikleri geliştirdim. Git ile kesintisiz sürüm kontrolü ve iş birliğini sürdürürken Linux sistemlerinde Docker kullanarak konteynerleştirilmiş ortamları yönetme konusunda uygulamalı deneyim kazandım.', 'Developed custom CLI tools and Bash scripts to automate development workflows and improve efficiency. Gained hands-on experience in managing containerized environments using Docker on Linux systems, while maintaining seamless version control and collaboration through Git.', array[]::text[], array[]::text[], array['Bash', 'Docker', 'Linux', 'Git']::text[], 20) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('70ab0d6d-0cb3-5caa-9681-5b66191aa520', 'Divizyon', 'Yazılım Program Yöneticisi Asistanı', 'Software Program Manager Assistant', 'Aralık 2024 – Ekim 2025', 'December 2024 – October 2025', '', '', 'Agile ve Scrum metodolojilerinin uygulandığı yazılım geliştirme projelerinde Program Yöneticisi Asistanı olarak görev aldım. Mükemmeliyet Merkezi (CoE) temsilcisi olarak sprint planlama, günlük scrum ve retrospektif toplantılarına aktif olarak katıldım; birden fazla ekipte çevik standartların ve en iyi uygulamaların benimsenmesine öncülük ettim.', 'Served as a Program Manager Assistant in software development projects utilizing Agile and Scrum methodologies. As a Center of Excellence (CoE) representative, I actively participated in sprint planning, daily scrums, and retrospectives, driving the adoption of agile standards and best practices across multiple teams.', array[]::text[], array[]::text[], array['Agile', 'Scrum']::text[], 30) on conflict (id) do nothing;
+insert into public.experiences (id, company, position_tr, position_en, duration_tr, duration_en, location_tr, location_en, description_tr, description_en, highlights_tr, highlights_en, tech, sort_order) values ('9433c8eb-f781-542d-aacc-6506b5c28589', 'Huawei Türkiye', 'Kampüs Elçisi', 'Campus Ambassador', 'Ağustos 2024 – Eylül 2025', 'August 2024 – September 2025', '', '', 'HSD Selçuk Üniversitesi''nde Huawei Kampüs Elçisi olarak eğitimler ve etkinlikler düzenledim; proje ekiplerinin kurulması ve koordinasyonu sürecinde yönetim becerileri kazandım.', 'Organized trainings and events as a Huawei Campus Ambassador at HSD Selçuk University, gaining management skills through the establishment and coordination of project teams.', array[]::text[], array[]::text[], array[]::text[], 40) on conflict (id) do nothing;
+
+insert into public.cv_documents (lang, data) values ('tr', '{"name":"Osman Buğra BOLAT","title":"Bilgisayar Mühendisi","contacts":[{"label":"osmanbugrabolat@gmail.com","url":"mailto:osmanbugrabolat@gmail.com"},{"label":"osmanbugrabolat.com.tr","url":"https://osmanbugrabolat.com.tr"},{"label":"+90 561 618 6618","url":"tel:+905616186618"},{"label":"linkedin.com/in/osmanbugrabolat","url":"https://linkedin.com/in/osmanbugrabolat"},{"label":"https://github.com/osmanbugrabolat","url":"https://github.com/osmanbugrabolat"}],"about":"Selçuk Üniversitesi Bilgisayar Mühendisliği bölümünden bölüm ikincisi ve Teknoloji Fakültesi üçüncüsü olarak mezun oldum. Üniversite yıllarım boyunca bilgisayarlı görü ve derin öğrenme alanlarına yöneldim; özellikle bu modellerin bulut altyapılarına entegrasyonu üzerine çalıştım ve bu alanda kendimi geliştirmeye devam ediyorum. Docker, CI/CD, DevOps ve MLOps yaklaşımlarıyla yapay zekâ tabanlı süreçlerin otomasyonu ve canlıya alınması konusunda uygulamalı deneyim kazandım. Teknoloji topluluklarında üstlendiğim liderlik ve proje yönetimi görevleri sayesinde iletişim ve ekip yönetimi becerilerimi de güçlendirdim. Karmaşık projelere kısa sürede uyum sağlayan, sorumluluk almaktan çekinmeyen ve ekip çalışmasından keyif alan bir mühendisim.","education":[{"school":"Selçuk Üniversitesi","date":"Eylül 2021 - Haziran 2026","degree":"Bilgisayar Mühendisliği","gpa":"3.75/4"}],"experiences":[{"company":"Ilgar Teknoloji","position":"Proje Yöneticisi & Yapay Zekâ Mühendisi","date":"Haziran 2026 - Günümüz","bullets":["**SuPublic** projesinde, projenin ihtiyaç duyduğu yapay zekâ model yapısının kurgulanmasından ve proje yönetiminden sorumluyum. Model mimarisinin tasarımı ve teknik yol haritasının belirlenmesinin yanı sıra projenin planlama, önceliklendirme ve teslim süreçlerini yönetiyor; geliştirme ekibi ve paydaşlar arasındaki koordinasyonu sağlıyorum."]},{"company":"Huawei Türkiye","position":"Bölge Lideri","date":"Eylül 2025 - Eylül 2026","bullets":["İç Anadolu Bölgesi''ndeki altı HSD elçiliğini yönettim ve denetledim; elçiliklerin yönetim süreçlerini ve etkinliklerini destekledim."]},{"company":"Huawei Türkiye","position":"Stajyer","date":"Temmuz 2024 - Temmuz 2025","bullets":["Geliştirme iş akışlarını otomatikleştirmek ve verimliliği artırmak için özel CLI araçları ve Bash betikleri geliştirdim. Git ile kesintisiz sürüm kontrolü ve iş birliğini sürdürürken Linux sistemlerinde Docker kullanarak konteynerleştirilmiş ortamları yönetme konusunda uygulamalı deneyim kazandım."]},{"company":"Divizyon","position":"Yazılım Program Yöneticisi Asistanı","date":"Aralık 2024 - Ekim 2025","bullets":["Agile ve Scrum metodolojilerinin uygulandığı yazılım geliştirme projelerinde Program Yöneticisi Asistanı olarak görev aldım. Mükemmeliyet Merkezi (CoE) temsilcisi olarak sprint planlama, günlük scrum ve retrospektif toplantılarına aktif olarak katıldım; birden fazla ekipte çevik standartların ve en iyi uygulamaların benimsenmesine öncülük ettim."]},{"company":"Huawei Türkiye","position":"Kampüs Elçisi","date":"Ağustos 2024 - Eylül 2025","bullets":["HSD Selçuk Üniversitesi''nde Huawei Kampüs Elçisi olarak eğitimler ve etkinlikler düzenledim; proje ekiplerinin kurulması ve koordinasyonu sürecinde yönetim becerileri kazandım."]}],"projects":[{"title":"Yapay Zekâ Destekli Fizyoterapi Uygulaması","url":"","bullets":["**Android Kotlin** ve **Python/FastAPI** kullanarak çift rollü mimariye sahip, yapay zekâ destekli bir fizyoterapi mobil uygulaması geliştirdim. Ön yüzde MediaPipe ve CameraX entegrasyonuyla gerçek zamanlı poz tahmini ve hareket fazı tespiti gerçekleştirerek otomatik eklem açısı hesaplaması ve uyarlanabilir tekrar sayımı sağladım. SQLAlchemy ve Alembic ile yönetilen güvenli bir **PostgreSQL** veritabanı tasarladım ve backend altyapısını Easypanel üzerinde Docker ile konteynerleştirilmiş bir servis olarak dağıttım."]},{"title":"HSD Türkiye Web Sitesi v1","url":"https://www.hsdturkiye.com","bullets":["HSD Türkiye''nin gereksinimlerini belirlemek için kapsamlı bir ihtiyaç analizi gerçekleştirdik ve topluluk yönetimine odaklanan bir ERP platformu geliştirdik. Backend tarafında **.NET Core MVC** mimarisini, frontend tarafında ise HTML, CSS ve JavaScript teknolojilerini kullanan bu platform, kampüs elçileri ve topluluk yöneticilerinin tüm idari süreçlerini verimli bir şekilde yönetebilmeleri için gereken tüm bileşenleri içermektedir."]},{"title":"HSD Türkiye Web Sitesi v2","url":"","bullets":["Web sitesinin ilk sürümünün (v1) topluluk erişimine kapalı olması ve modern mimari standartlardan yoksun olması nedeniyle **.Net Core Web API** ve **Nuxt.js** teknolojilerini kullanarak yeni bir web sitesi geliştirdik. Projeyi Huawei Cloud altyapısı üzerinde **VPC, ECS, SWR, RDS, OBS, ELB** ve **AS** gibi servislerden yararlanarak tamamen ölçeklenebilir bir mimariyle inşa ettik. Bu sayede projenin esnek ve yüksek performanslı bir ortamda çalışmasını sağlarken modern bir teknoloji yığınına geçiş yaptık."]},{"title":"Görüntü Ön İşleme Platformu","url":"https://github.com/osmanbugrabolat/goruntuIsleme/tree/main","bullets":["Python tabanlı **FastAPI** ve **Django** kullanarak yüksek performanslı bir görüntü ön işleme platformu geliştirdim. Platform; uzamsal dönüşümler, histogram optimizasyonu ve gürültü modellerinin (Gauss, Tuz & Biber) eklenmesi ve giderilmesi gibi kapsamlı algoritmik modüller içermektedir. FastAPI''nin asenkron yapısı yoğun hesaplama gerektiren işlemlerde düşük gecikme sağlarken Django sistemin modülerliğini optimize etmektedir. Proje, ham verilerin işlenerek analiz ve derin öğrenme süreçlerine hazırlanmasını sağlayan uçtan uca bir teknik altyapı sunmaktadır."]},{"title":"Dermatolojik Hastalık Tespiti","url":"","bullets":["Fitzpatrick17k veri setini kullanarak farklı cilt tiplerine duyarlı bir cilt hastalığı teşhis modeli geliştirdim. **EfficientNet-B3 mimarisi** üzerindeki ince ayar (fine-tuning) sürecinde, modelin yalnızca hastalığa odaklanmasını değil cilt tipi çeşitliliğini de dikkate almasını sağlamak için özel kayıp fonksiyonları entegre ettim. Eğitim aşamasının ardından modeli FastAPI kullanarak bir **Hetzner** sunucusu üzerinde çıkarım (inference) servisi olarak dağıttım."]}],"skills":[{"title":"Programlama Dilleri","items":["Python",".Net","Node.js"]},{"title":"Araçlar","items":["Git & GitHub","Jira & Trello","Bulut Servisleri/Platformları"]},{"title":"Framework''ler ve Teknolojiler","items":["OpenCV","TensorFlow","Scikit-Learn"]}],"certificates":[{"name":"HCCDP AI","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_721526.png"},{"name":"HCCDA AI","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_177820.png"},{"name":"HCCDA Tech Essentials","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_727737.png"},{"name":"HCCDA Cloud Native","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_690969.png"},{"name":"HCCDP Cloud Migration","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_036679.png"},{"name":"HCCDP Solution Architectures","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_580148.png"},{"name":"Python ve TensorFlow ile Veri Bilimi","issuer":"BTK Akademi","url":"https://osmanbugrabolat.com.tr/certificates/python_tensorflow.jpg"},{"name":"R ile Veri Bilimine Giriş","issuer":"BTK Akademi","url":"https://osmanbugrabolat.com.tr/certificates/r_programming.jpg"}],"languages":[{"name":"Türkçe","level":"Ana Dil","details":[]},{"name":"İngilizce","level":"","details":["Okuma - Orta","Dinleme - Orta","Konuşma - Başlangıç"]}]}'::jsonb) on conflict (lang) do nothing;
+insert into public.cv_documents (lang, data) values ('en', '{"name":"Osman Buğra BOLAT","title":"Computer Engineer","contacts":[{"label":"osmanbugrabolat@gmail.com","url":"mailto:osmanbugrabolat@gmail.com"},{"label":"osmanbugrabolat.com.tr","url":"https://osmanbugrabolat.com.tr"},{"label":"+90 561 618 6618","url":"tel:+905616186618"},{"label":"linkedin.com/in/osmanbugrabolat","url":"https://linkedin.com/in/osmanbugrabolat"},{"label":"https://github.com/osmanbugrabolat","url":"https://github.com/osmanbugrabolat"}],"about":"I graduated from Selçuk University with a degree in Computer Engineering, ranking 2nd in my department and 3rd in the Faculty of Technology. Throughout my studies, I focused on computer vision and deep learning, particularly on integrating these models into cloud infrastructures, and I continue to grow my expertise in this field. I gained hands-on experience in automating and deploying AI-based processes using Docker, CI/CD, DevOps, and MLOps practices. Leadership and project management roles in technology communities have also strengthened my communication and team management skills. I am an engineer who adapts quickly to complex projects, readily takes ownership, and enjoys working as part of a team.","education":[{"school":"Selçuk University","date":"September 2021 - June 2026","degree":"Computer Engineering","gpa":"3.75/4"}],"experiences":[{"company":"Ilgar Teknoloji","position":"Project Manager & AI Engineer","date":"June 2026 - Present","bullets":["Responsible for designing the AI model structure and for project management on the **SuPublic** project. Beyond designing the model architecture and defining the technical roadmap, I manage the project''s planning, prioritization, and delivery, and coordinate between the development team and stakeholders."]},{"company":"Huawei Türkiye","position":"Regional Leader","date":"September 2025 - September 2026","bullets":["Managed and supervised six HSD embassies in the Central Anatolia region, supporting their management processes and activities."]},{"company":"Huawei Türkiye","position":"Intern","date":"July 2024 - July 2025","bullets":["Developed custom CLI tools and Bash scripts to automate development workflows and improve efficiency. Gained hands-on experience in managing containerized environments using Docker on Linux systems, while maintaining seamless version control and collaboration through Git."]},{"company":"Divizyon","position":"Software Program Manager Assistant","date":"December 2024 - October 2025","bullets":["Served as a Program Manager Assistant in software development projects utilizing Agile and Scrum methodologies. As a Center of Excellence (CoE) representative, I actively participated in sprint planning, daily scrums, and retrospectives, driving the adoption of agile standards and best practices across multiple teams."]},{"company":"Huawei Türkiye","position":"Campus Ambassador","date":"August 2024 - September 2025","bullets":["Organized trainings and events as a Huawei Campus Ambassador at HSD Selçuk University, gaining management skills through the establishment and coordination of project teams."]}],"projects":[{"title":"AI-Powered Physiotherapy Application","url":"","bullets":["Developed an AI-powered physiotherapy mobile application using **Android Kotlin** and **Python/FastAPI** with a dual-role architecture. Implemented real-time pose estimation and movement phase detection by integrating MediaPipe and CameraX on the frontend, enabling automatic joint angle calculations and adaptive repetition counting. Designed a secure **PostgreSQL** database managed via SQLAlchemy and Alembic, and deployed the backend infrastructure as a containerized service using Docker on Easypanel."]},{"title":"HSD Türkiye Website v1","url":"https://www.hsdturkiye.com","bullets":["To determine HSD Turkey''s requirements, we conducted a comprehensive needs analysis and developed an ERP platform focused on community management. This platform, which utilizes **.NET Core MVC** architecture on the backend and HTML, CSS, and JavaScript technologies on the frontend, includes all the necessary components for campus ambassadors and community managers to efficiently manage all their administrative processes."]},{"title":"HSD Türkiye Website v2","url":"","bullets":["Due to the initial version (v1) of the website being closed to community access and lacking modern architectural standards, we developed a new website using **.Net Core Web API** and **Nuxt.js** technologies. We built the project on Huawei Cloud infrastructure, utilizing services such as **VPC, ECS, SWR, RDS, OBS, ELB,** and **AS,** creating a fully scalable architecture. This allowed us to transition to a modern technology stack while ensuring the project operates in a flexible and high-performance environment."]},{"title":"Image Preprocessing Platform","url":"https://github.com/osmanbugrabolat/goruntuIsleme/tree/main","bullets":["I developed a high-performance image preprocessing platform using Python-based **FastAPI** and **Django**. The platform includes comprehensive algorithmic modules such as spatial transformations, histogram optimization, and the addition and removal of noise models (Gaussian, Salt & Pepper). FastAPI''s asynchronous nature ensures low latency in computationally intensive tasks, while Django optimizes system modularity. The project provides an end-to-end technical infrastructure that enables the processing of raw data, preparing it for analysis and deep learning processes."]},{"title":"Dermatological Disease Detection","url":"","bullets":["Using the Fitzpatrick17k dataset, I developed a skin disease diagnosis model sensitive to different skin types. During the fine-tuning process on the **EfficientNet-B3 architecture,** I integrated custom loss functions to ensure the model not only focuses on the disease but also considers skin type variability. Following the training phase, I deployed the model as an inference service on a **Hetzner** server using FastAPI."]}],"skills":[{"title":"Programming Languages","items":["Python",".Net","Node.js"]},{"title":"Tools","items":["Git & GitHub","Jira & Trello","Cloud Services/Platforms"]},{"title":"Frameworks and Technologies","items":["OpenCV","TensorFlow","Scikit-Learn"]}],"certificates":[{"name":"HCCDP AI","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_721526.png"},{"name":"HCCDA AI","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_177820.png"},{"name":"HCCDA Tech Essentials","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_727737.png"},{"name":"HCCDA Cloud Native","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_690969.png"},{"name":"HCCDP Cloud Migration","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_036679.png"},{"name":"HCCDP Solution Architectures","issuer":"Huawei","url":"https://osmanbugrabolat.com.tr/certificates/HWEND_580148.png"},{"name":"Python and Tensorflow for Data Science","issuer":"BTK Akademi","url":"https://osmanbugrabolat.com.tr/certificates/python_tensorflow.jpg"},{"name":"Introduction to Data Science with R","issuer":"BTK Akademi","url":"https://osmanbugrabolat.com.tr/certificates/r_programming.jpg"}],"languages":[{"name":"Turkish","level":"Native Language","details":[]},{"name":"English","level":"","details":["Reading - Intermediate","Listening - Intermediate","Speaking - Beginner"]}]}'::jsonb) on conflict (lang) do nothing;
 
 commit;

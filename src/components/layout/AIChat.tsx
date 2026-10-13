@@ -56,7 +56,7 @@ function toMessage(res: ChatResponse): Message {
 }
 
 function isInternal(href: string) {
-  return href.startsWith("/") && !href.startsWith("//") && !href.endsWith(".pdf");
+  return href.startsWith("/") && !href.startsWith("//") && !href.endsWith(".pdf") && !href.startsWith("/cv-pdf/");
 }
 
 /** Only site paths, https and mailto links are rendered; anything else is dropped. */
