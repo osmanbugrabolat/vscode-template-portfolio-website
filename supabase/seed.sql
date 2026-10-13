@@ -596,23 +596,25 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('projects-overview', 'projects', 95, 'Hangi projeleri yaptı?', 'What projects has he built?', 'Sitedeki projeler (çoğu tarayıcıda oynanabilir!):
-• Neon Pong AI: el hareketiyle oynanan Pong
-• Flying Birds AI: parmakla yönetilen kuş oyunu
-• Sihirli Sapan: el takipli Angry Birds klonu
-• Sihirli Sapan – HSD Edition
+values ('projects-overview', 'projects', 95, 'Hangi projeleri yaptı?', 'What projects has he built?', 'Sitedeki projeler:
+• Fizyoterapi Uygulaması: MediaPipe ile poz tahmini yapan yapay zekâ destekli mobil uygulama
+• Dermatolojik Hastalık Tespiti: farklı cilt tiplerine duyarlı EfficientNet-B3 modeli
+• HSD Türkiye Web Sitesi v1 & v2: topluluk yönetimi platformu, v2 Huawei Cloud üzerinde
+• Görüntü Ön İşleme Platformu: FastAPI ve Django ile görüntü işleme modülleri
+• Neon Pong AI, Flying Birds AI, Sihirli Sapan (ve HSD Edition): el takibiyle tarayıcıda oynanan oyunlar
 • Magic Frame AR: ellerle çizilen çerçevede yapay zekâ filtreleri
 • Kozmik Toz Enstalasyonu: etkileşimli ses-görsel sanat
 
-CV''deki diğer projeler: Yapay Zekâ Destekli Fizyoterapi Uygulaması, Dermatolojik Hastalık Tespiti, HSD Türkiye Web Sitesi (v1 & v2), Görüntü Ön İşleme Platformu.', 'Projects on the site (most are playable in the browser!):
-• Neon Pong AI: Pong controlled by hand gestures
-• Flying Birds AI: a bird game steered with your finger
-• Sihirli Sapan: a hand-tracked Angry Birds clone
-• Sihirli Sapan – HSD Edition
+Her projenin klasöründe bir README var; detayını merak ettiğinizi sorabilirsiniz.', 'Projects on the site:
+• Physiotherapy App: an AI-powered mobile app with MediaPipe pose estimation
+• Dermatological Disease Detection: an EfficientNet-B3 model sensitive to different skin types
+• HSD Türkiye Website v1 & v2: a community management platform, v2 on Huawei Cloud
+• Image Preprocessing Platform: image processing modules with FastAPI and Django
+• Neon Pong AI, Flying Birds AI, Sihirli Sapan (and HSD Edition): hand-tracked games playable in the browser
 • Magic Frame AR: AI filters inside a frame drawn with your hands
 • Cosmic Dust Installation: interactive audio-visual art
 
-More from his CV: AI-Powered Physiotherapy App, Dermatological Disease Detection, HSD Türkiye Website (v1 & v2), Image Preprocessing Platform.', array['proje', 'projeler', 'gelistirdin', 'calismalar', 'portfolyo', 'project', 'projects', 'built', 'portfolio', 'made']::text[], '[{"label":{"tr":"GitHub","en":"GitHub"},"href":"https://github.com/osmanbugrabolat"}]'::jsonb, array['playable-games', 'project-physiotherapy', 'mediapipe-projects']::text[])
+Each project folder has a README; ask me about any of them for details.', array['proje', 'projeler', 'gelistirdin', 'calismalar', 'portfolyo', 'project', 'projects', 'built', 'portfolio', 'made']::text[], '[{"label":{"tr":"GitHub","en":"GitHub"},"href":"https://github.com/osmanbugrabolat"}]'::jsonb, array['project-physiotherapy', 'project-dermatology', 'project-hsd-website', 'playable-games']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -892,7 +894,7 @@ values ('project-physiotherapy', 'projects', 20, 'Fizyoterapi uygulaması nedir?
 • Real-time pose estimation and movement phase detection with MediaPipe and CameraX
 • Automatic joint angle calculation and adaptive repetition counting
 • PostgreSQL database (SQLAlchemy, Alembic)
-• Backend deployed with Docker on Easypanel', array['fizyoterapi', 'fizik', 'tedavi', 'poz', 'android', 'kotlin', 'physiotherapy', 'therapy', 'pose', 'mobile']::text[], '[{"label":{"tr":"Proje sayfası","en":"Project page"},"href":"/projects/fizyoterapi-uygulamasi"}]'::jsonb, array['project-dermatology', 'skills-backend']::text[])
+• Backend deployed with Docker on Easypanel', array['fizyoterapi', 'fizik', 'tedavi', 'poz', 'android', 'kotlin', 'physiotherapy', 'therapy', 'pose', 'mobile']::text[], '[{"label":{"tr":"README","en":"README"},"href":"/projects/fizyoterapi-uygulamasi"}]'::jsonb, array['project-dermatology', 'skills-backend']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -906,17 +908,20 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
   ('project-physiotherapy', 'tr', 'mobil uygulama projen'),
   ('project-physiotherapy', 'tr', 'kotlin projesi'),
   ('project-physiotherapy', 'tr', 'sağlık uygulaması'),
+  ('project-physiotherapy', 'tr', 'fizyoterapi-uygulamasi'),
+  ('project-physiotherapy', 'tr', 'fizyoterapi projesi'),
   ('project-physiotherapy', 'en', 'physiotherapy app'),
   ('project-physiotherapy', 'en', 'physical therapy project'),
   ('project-physiotherapy', 'en', 'pose estimation'),
   ('project-physiotherapy', 'en', 'android app'),
   ('project-physiotherapy', 'en', 'mobile app project'),
   ('project-physiotherapy', 'en', 'kotlin project'),
-  ('project-physiotherapy', 'en', 'health app')
+  ('project-physiotherapy', 'en', 'health app'),
+  ('project-physiotherapy', 'en', 'physiotherapy project')
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('project-dermatology', 'projects', 15, 'Dermatolojik hastalık tespiti projesi nedir?', 'What is the dermatology detection project?', 'Dermatolojik Hastalık Tespiti: Fitzpatrick17k veri setiyle EfficientNet-B3 modelinin ince ayarı. Farklı cilt tiplerindeki değişkenliği hesaba katan özel kayıp fonksiyonları kullanıldı. Model, Hetzner sunucusunda FastAPI çıkarım servisi olarak yayında.', 'Dermatological Disease Detection: fine-tuning EfficientNet-B3 on the Fitzpatrick17k dataset, with custom loss functions that account for skin type variability. The model is deployed as a FastAPI inference service on a Hetzner server.', array['dermatoloji', 'cilt', 'deri', 'efficientnet', 'fitzpatrick', 'dermatology', 'skin', 'medical']::text[], '[{"label":{"tr":"Proje sayfası","en":"Project page"},"href":"/projects/dermatolojik-hastalik-tespiti"}]'::jsonb, array['skills-ai-ml', 'project-physiotherapy']::text[])
+values ('project-dermatology', 'projects', 15, 'Dermatolojik hastalık tespiti projesi nedir?', 'What is the dermatology detection project?', 'Dermatolojik Hastalık Tespiti: Fitzpatrick17k veri setiyle EfficientNet-B3 modelinin ince ayarı. Farklı cilt tiplerindeki değişkenliği hesaba katan özel kayıp fonksiyonları kullanıldı. Model, Hetzner sunucusunda FastAPI çıkarım servisi olarak yayında.', 'Dermatological Disease Detection: fine-tuning EfficientNet-B3 on the Fitzpatrick17k dataset, with custom loss functions that account for skin type variability. The model is deployed as a FastAPI inference service on a Hetzner server.', array['dermatoloji', 'cilt', 'deri', 'efficientnet', 'fitzpatrick', 'dermatology', 'skin', 'medical']::text[], '[{"label":{"tr":"README","en":"README"},"href":"/projects/dermatolojik-hastalik-tespiti"}]'::jsonb, array['skills-ai-ml', 'project-physiotherapy']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -930,20 +935,23 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
   ('project-dermatology', 'tr', 'derin öğrenme projen'),
   ('project-dermatology', 'tr', 'sağlık yapay zeka projesi'),
   ('project-dermatology', 'tr', 'model eğittin mi'),
+  ('project-dermatology', 'tr', 'dermatolojik hastalık tespiti'),
+  ('project-dermatology', 'tr', 'dermatolojik-hastalik-tespiti'),
   ('project-dermatology', 'en', 'dermatology project'),
   ('project-dermatology', 'en', 'skin disease detection'),
   ('project-dermatology', 'en', 'efficientnet'),
   ('project-dermatology', 'en', 'deep learning project'),
   ('project-dermatology', 'en', 'medical ai project'),
-  ('project-dermatology', 'en', 'did you train a model')
+  ('project-dermatology', 'en', 'did you train a model'),
+  ('project-dermatology', 'en', 'dermatological disease detection')
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
 values ('project-hsd-website', 'projects', 15, 'HSD Türkiye web sitesi projesi nedir?', 'What is the HSD Türkiye website project?', 'HSD Türkiye Web Sitesi
-• v1 (hsdturkiye.com): İhtiyaç analizi sonrası topluluk yönetimi için bir ERP platformu. Kampüs elçileri ve topluluk yöneticileri için.NET Core MVC backend ve HTML/CSS/JS frontend.
-• v2: v1 topluluk erişimine kapalı olduğu ve modern standartları karşılamadığı için baştan yazıldı..NET Core Web API + Nuxt.js; Huawei Cloud üzerinde VPC, ECS, SWR, RDS, OBS, ELB ve AS ile tamamen ölçeklenebilir mimari.', 'HSD Türkiye Website
-• v1 (hsdturkiye.com): an ERP platform for community management, designed after a needs analysis..NET Core MVC backend and HTML/CSS/JS frontend for campus ambassadors and community managers.
-• v2: rebuilt because v1 was closed to community access and lacked modern standards..NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture.', array['hsdturkiye', 'website', 'site', 'erp', 'nuxt', 'net', 'dotnet']::text[], '[{"label":{"tr":"v1 sayfası","en":"v1 page"},"href":"/projects/hsd-turkiye-web-v1"},{"label":{"tr":"v2 sayfası","en":"v2 page"},"href":"/projects/hsd-turkiye-web-v2"}]'::jsonb, array['skills-cloud', 'hsd']::text[])
+• v1 (hsdturkiye.com): İhtiyaç analizi sonrası topluluk yönetimi için bir ERP platformu. Kampüs elçileri ve topluluk yöneticileri için .NET Core MVC backend ve HTML/CSS/JS frontend.
+• v2: v1 topluluk erişimine kapalı olduğu ve modern standartları karşılamadığı için baştan yazıldı. .NET Core Web API + Nuxt.js; Huawei Cloud üzerinde VPC, ECS, SWR, RDS, OBS, ELB ve AS ile tamamen ölçeklenebilir mimari.', 'HSD Türkiye Website
+• v1 (hsdturkiye.com): an ERP platform for community management, designed after a needs analysis. .NET Core MVC backend and HTML/CSS/JS frontend for campus ambassadors and community managers.
+• v2: rebuilt because v1 was closed to community access and lacked modern standards. .NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture.', array['hsdturkiye', 'website', 'site', 'erp', 'nuxt', 'net', 'dotnet']::text[], '[{"label":{"tr":"v1 README","en":"v1 README"},"href":"/projects/hsd-turkiye-web-v1"},{"label":{"tr":"v2 README","en":"v2 README"},"href":"/projects/hsd-turkiye-web-v2"},{"label":{"tr":"hsdturkiye.com","en":"hsdturkiye.com"},"href":"https://www.hsdturkiye.com"}]'::jsonb, array['skills-cloud', 'hsd']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -958,6 +966,10 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
   ('project-hsd-website', 'tr', 'nuxt projesi'),
   ('project-hsd-website', 'tr', 'huawei cloud projesi'),
   ('project-hsd-website', 'tr', 'bulut projen'),
+  ('project-hsd-website', 'tr', 'hsd-turkiye-web-v1'),
+  ('project-hsd-website', 'tr', 'hsd-turkiye-web-v2'),
+  ('project-hsd-website', 'tr', 'hsd türkiye web sitesi v1'),
+  ('project-hsd-website', 'tr', 'hsd türkiye web sitesi v2'),
   ('project-hsd-website', 'en', 'hsd website'),
   ('project-hsd-website', 'en', 'hsd turkiye website'),
   ('project-hsd-website', 'en', 'hsdturkiye.com'),
@@ -965,11 +977,13 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
   ('project-hsd-website', 'en', '.net core project'),
   ('project-hsd-website', 'en', 'nuxt project'),
   ('project-hsd-website', 'en', 'huawei cloud project'),
-  ('project-hsd-website', 'en', 'cloud project')
+  ('project-hsd-website', 'en', 'cloud project'),
+  ('project-hsd-website', 'en', 'hsd turkiye website v1'),
+  ('project-hsd-website', 'en', 'hsd turkiye website v2')
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)
-values ('project-image-processing', 'projects', 10, 'Görüntü Ön İşleme Platformu nedir?', 'What is the Image Preprocessing Platform?', 'Görüntü Ön İşleme Platformu: FastAPI ve Django ile geliştirilmiş bir web platformu. Uzamsal dönüşümler, histogram optimizasyonu ve gürültü modelleri ekleme/çıkarma (Gaussian, Salt & Pepper) gibi işlemler sunuyor.', 'Image Preprocessing Platform: a web platform built with FastAPI and Django, offering spatial transformations, histogram optimization, and adding/removing noise models (Gaussian, Salt & Pepper).', array['goruntu', 'isleme', 'histogram', 'gurultu', 'django', 'image', 'preprocessing', 'noise']::text[], '[{"label":{"tr":"Proje sayfası","en":"Project page"},"href":"/projects/goruntu-on-isleme"},{"label":{"tr":"GitHub","en":"GitHub"},"href":"https://github.com/osmanbugrabolat/goruntuIsleme/tree/main"}]'::jsonb, array['mediapipe-projects', 'skills-backend']::text[])
+values ('project-image-processing', 'projects', 10, 'Görüntü Ön İşleme Platformu nedir?', 'What is the Image Preprocessing Platform?', 'Görüntü Ön İşleme Platformu: FastAPI ve Django ile geliştirilmiş bir web platformu. Uzamsal dönüşümler, histogram optimizasyonu ve gürültü modelleri ekleme/çıkarma (Gaussian, Salt & Pepper) gibi işlemler sunuyor.', 'Image Preprocessing Platform: a web platform built with FastAPI and Django, offering spatial transformations, histogram optimization, and adding/removing noise models (Gaussian, Salt & Pepper).', array['goruntu', 'isleme', 'histogram', 'gurultu', 'django', 'image', 'preprocessing', 'noise']::text[], '[{"label":{"tr":"README","en":"README"},"href":"/projects/goruntu-on-isleme"},{"label":{"tr":"Kaynak kod","en":"Source code"},"href":"https://github.com/osmanbugrabolat/goruntuIsleme/tree/main"}]'::jsonb, array['mediapipe-projects', 'skills-backend']::text[])
 on conflict (id) do update set category = excluded.category, priority = excluded.priority,
   title_tr = excluded.title_tr, title_en = excluded.title_en, answer_tr = excluded.answer_tr,
   answer_en = excluded.answer_en, keywords = excluded.keywords, links = excluded.links,
@@ -982,11 +996,14 @@ insert into public.chat_patterns (intent_id, lang, pattern) values
   ('project-image-processing', 'tr', 'gürültü filtresi'),
   ('project-image-processing', 'tr', 'django projesi'),
   ('project-image-processing', 'tr', 'goruntuIsleme'),
+  ('project-image-processing', 'tr', 'goruntu-on-isleme'),
+  ('project-image-processing', 'tr', 'görüntü ön işleme platformu nedir'),
   ('project-image-processing', 'en', 'image processing platform'),
   ('project-image-processing', 'en', 'image preprocessing'),
   ('project-image-processing', 'en', 'histogram project'),
   ('project-image-processing', 'en', 'noise filter project'),
-  ('project-image-processing', 'en', 'django project')
+  ('project-image-processing', 'en', 'django project'),
+  ('project-image-processing', 'en', 'image preprocessing platform')
 on conflict do nothing;
 
 insert into public.chat_intents (id, category, priority, title_tr, title_en, answer_tr, answer_en, keywords, links, follow_ups)

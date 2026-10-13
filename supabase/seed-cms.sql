@@ -869,6 +869,104 @@ Approve the **Camera Permission** requested by the browser, **click the screen o
 - **MediaPipe Tasks Vision** (For AI / Hand Tracking)
 - **Vanilla ES6+ JavaScript**', 'markdown', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('3503d03a-c809-548a-ac32-34aae38b882c', '259fe09b-c0a5-5faf-8b7b-7b68465b1ad1', 'file', 'Deneyimle', 'Experience', 'embed', 1, '/projects/kozmik-toz-enstalasyon/play', 'https://osmanbugrabolat.github.io/kozmik-toz-enstalasyon/', null, 'Kozmik Toz Enstalasyonu', 'Cosmic Dust Installation', 'play', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('55018204-2907-5e69-a024-db3c4fd449a6', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'fizyoterapi-uygulamasi', 6, null, true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('81b7fee9-a41a-5485-bbcf-7a9c2eab60cf', '55018204-2907-5e69-a024-db3c4fd449a6', 'file', 'README.md', null, 'markdown', 0, '/projects/fizyoterapi-uygulamasi', null, null, '# Yapay Zekâ Destekli Fizyoterapi Uygulaması
+
+**Android Kotlin** ve **Python/FastAPI** kullanarak çift rollü mimariye sahip, yapay zekâ destekli bir fizyoterapi mobil uygulaması geliştirdim. Ön yüzde MediaPipe ve CameraX entegrasyonuyla gerçek zamanlı poz tahmini ve hareket fazı tespiti gerçekleştirerek otomatik eklem açısı hesaplaması ve uyarlanabilir tekrar sayımı sağladım. SQLAlchemy ve Alembic ile yönetilen güvenli bir **PostgreSQL** veritabanı tasarladım ve backend altyapısını Easypanel üzerinde Docker ile konteynerleştirilmiş bir servis olarak dağıttım.
+
+## Teknolojiler
+
+`Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`
+', '# AI-Powered Physiotherapy Application
+
+Developed an AI-powered physiotherapy mobile application using **Android Kotlin** and **Python/FastAPI** with a dual-role architecture. Implemented real-time pose estimation and movement phase detection by integrating MediaPipe and CameraX on the frontend, enabling automatic joint angle calculations and adaptive repetition counting. Designed a secure **PostgreSQL** database managed via SQLAlchemy and Alembic, and deployed the backend infrastructure as a containerized service using Docker on Easypanel.
+
+## Technologies
+
+`Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('dd199d5a-f05c-532a-8839-165f1a606da6', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'hsd-turkiye-web-v1', 7, null, true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('7951fc33-648c-589b-9c26-b5ff2f8a9741', 'dd199d5a-f05c-532a-8839-165f1a606da6', 'file', 'README.md', null, 'markdown', 0, '/projects/hsd-turkiye-web-v1', null, null, '# HSD Türkiye Web Sitesi v1
+
+HSD Türkiye''nin gereksinimlerini belirlemek için kapsamlı bir ihtiyaç analizi gerçekleştirdik ve topluluk yönetimine odaklanan bir ERP platformu geliştirdik. Backend tarafında **.NET Core MVC** mimarisini, frontend tarafında ise HTML, CSS ve JavaScript teknolojilerini kullanan bu platform, kampüs elçileri ve topluluk yöneticilerinin tüm idari süreçlerini verimli bir şekilde yönetebilmeleri için gereken tüm bileşenleri içermektedir.
+
+## Teknolojiler
+
+`.NET Core MVC` `HTML` `CSS` `JavaScript`
+
+## Bağlantılar
+
+- [www.hsdturkiye.com](https://www.hsdturkiye.com)
+', '# HSD Türkiye Website v1
+
+To determine HSD Turkey''s requirements, we conducted a comprehensive needs analysis and developed an ERP platform focused on community management. This platform, which utilizes **.NET Core MVC** architecture on the backend and HTML, CSS, and JavaScript technologies on the frontend, includes all the necessary components for campus ambassadors and community managers to efficiently manage all their administrative processes.
+
+## Technologies
+
+`.NET Core MVC` `HTML` `CSS` `JavaScript`
+
+## Links
+
+- [www.hsdturkiye.com](https://www.hsdturkiye.com)
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('968945ba-11cf-5163-a670-b5e08ee7fe6c', 'dd199d5a-f05c-532a-8839-165f1a606da6', 'file', 'Web Sitesi', 'Website', 'link', 1, null, 'https://www.hsdturkiye.com', null, '', '', 'globe', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('ed7017f7-0ef2-5a37-9405-6898705709d3', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'hsd-turkiye-web-v2', 8, null, true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('8f8e40b5-174f-506c-b6a1-6803da03ad4b', 'ed7017f7-0ef2-5a37-9405-6898705709d3', 'file', 'README.md', null, 'markdown', 0, '/projects/hsd-turkiye-web-v2', null, null, '# HSD Türkiye Web Sitesi v2
+
+Web sitesinin ilk sürümünün (v1) topluluk erişimine kapalı olması ve modern mimari standartlardan yoksun olması nedeniyle **.Net Core Web API** ve **Nuxt.js** teknolojilerini kullanarak yeni bir web sitesi geliştirdik. Projeyi Huawei Cloud altyapısı üzerinde **VPC, ECS, SWR, RDS, OBS, ELB** ve **AS** gibi servislerden yararlanarak tamamen ölçeklenebilir bir mimariyle inşa ettik. Bu sayede projenin esnek ve yüksek performanslı bir ortamda çalışmasını sağlarken modern bir teknoloji yığınına geçiş yaptık.
+
+## Teknolojiler
+
+`.NET Core Web API` `Nuxt.js` `Huawei Cloud`
+', '# HSD Türkiye Website v2
+
+Due to the initial version (v1) of the website being closed to community access and lacking modern architectural standards, we developed a new website using **.Net Core Web API** and **Nuxt.js** technologies. We built the project on Huawei Cloud infrastructure, utilizing services such as **VPC, ECS, SWR, RDS, OBS, ELB,** and **AS,** creating a fully scalable architecture. This allowed us to transition to a modern technology stack while ensuring the project operates in a flexible and high-performance environment.
+
+## Technologies
+
+`.NET Core Web API` `Nuxt.js` `Huawei Cloud`
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('c8573816-6f9b-5256-b735-c017bef77e99', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'goruntu-on-isleme', 9, null, true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5d3ced54-ccb9-50ef-9a3a-357cd398ca17', 'c8573816-6f9b-5256-b735-c017bef77e99', 'file', 'README.md', null, 'markdown', 0, '/projects/goruntu-on-isleme', null, null, '# Görüntü Ön İşleme Platformu
+
+Python tabanlı **FastAPI** ve **Django** kullanarak yüksek performanslı bir görüntü ön işleme platformu geliştirdim. Platform; uzamsal dönüşümler, histogram optimizasyonu ve gürültü modellerinin (Gauss, Tuz & Biber) eklenmesi ve giderilmesi gibi kapsamlı algoritmik modüller içermektedir. FastAPI''nin asenkron yapısı yoğun hesaplama gerektiren işlemlerde düşük gecikme sağlarken Django sistemin modülerliğini optimize etmektedir. Proje, ham verilerin işlenerek analiz ve derin öğrenme süreçlerine hazırlanmasını sağlayan uçtan uca bir teknik altyapı sunmaktadır.
+
+## Teknolojiler
+
+`Python` `FastAPI` `Django` `OpenCV`
+
+## Bağlantılar
+
+- [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)
+', '# Image Preprocessing Platform
+
+I developed a high-performance image preprocessing platform using Python-based **FastAPI** and **Django**. The platform includes comprehensive algorithmic modules such as spatial transformations, histogram optimization, and the addition and removal of noise models (Gaussian, Salt & Pepper). FastAPI''s asynchronous nature ensures low latency in computationally intensive tasks, while Django optimizes system modularity. The project provides an end-to-end technical infrastructure that enables the processing of raw data, preparing it for analysis and deep learning processes.
+
+## Technologies
+
+`Python` `FastAPI` `Django` `OpenCV`
+
+## Links
+
+- [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)
+', 'markdown', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('d37a37af-e730-5db2-8c3e-52417db18f8d', 'c8573816-6f9b-5256-b735-c017bef77e99', 'file', 'Kaynak Kod', 'Source Code', 'link', 1, null, 'https://github.com/osmanbugrabolat/goruntuIsleme/tree/main', null, '', '', 'github', true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('a07e67c4-06c9-579e-a0c8-a71657449ad9', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'folder', 'dermatolojik-hastalik-tespiti', 10, null, true) on conflict (id) do nothing;
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('723be3d5-24c8-5260-a37d-74c7ad7c6e92', 'a07e67c4-06c9-579e-a0c8-a71657449ad9', 'file', 'README.md', null, 'markdown', 0, '/projects/dermatolojik-hastalik-tespiti', null, null, '# Dermatolojik Hastalık Tespiti
+
+Fitzpatrick17k veri setini kullanarak farklı cilt tiplerine duyarlı bir cilt hastalığı teşhis modeli geliştirdim. **EfficientNet-B3 mimarisi** üzerindeki ince ayar (fine-tuning) sürecinde, modelin yalnızca hastalığa odaklanmasını değil cilt tipi çeşitliliğini de dikkate almasını sağlamak için özel kayıp fonksiyonları entegre ettim. Eğitim aşamasının ardından modeli FastAPI kullanarak bir **Hetzner** sunucusu üzerinde çıkarım (inference) servisi olarak dağıttım.
+
+## Teknolojiler
+
+`Python` `EfficientNet-B3` `FastAPI` `Hetzner`
+', '# Dermatological Disease Detection
+
+Using the Fitzpatrick17k dataset, I developed a skin disease diagnosis model sensitive to different skin types. During the fine-tuning process on the **EfficientNet-B3 architecture,** I integrated custom loss functions to ensure the model not only focuses on the disease but also considers skin type variability. Following the training phase, I deployed the model as an inference service on a **Hetzner** server using FastAPI.
+
+## Technologies
+
+`Python` `EfficientNet-B3` `FastAPI` `Hetzner`
+', 'markdown', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('bf357637-c09c-5ad4-b50d-0edccd88fb43', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Daha fazlası...', 'For more...', 'link', 200, null, 'https://github.com/osmanbugrabolat', null, '', '', 'github', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, sort_order, icon, show_in_explorer) values ('69079713-4708-5fb1-9e39-947bd0405284', null, 'folder', 'articles', 2, 'book', true) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('c5fc124e-8b8b-5e11-a9f8-0d418afe0bca', '69079713-4708-5fb1-9e39-947bd0405284', 'file', 'Altyapıyı Unutun, Koda Odaklanın: FaaS', 'Forget the Infrastructure, Focus on Code: FaaS', 'link', 0, null, 'https://medium.com/@osmanbugrabolat/altyap%C4%B1y%C4%B1-unutun-koda-odaklan%C4%B1n-function-as-a-service-faas-58978592d739', null, '', '', 'medium', true) on conflict (id) do nothing;
@@ -952,7 +1050,7 @@ The best way to reach me is via email. I usually respond within 24-48 hours.
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('48257011-566e-50d1-bd13-a683d2deef5b', null, 'file', 'cv.pdf', null, 'cv', 10, '/cv', null, null, '', '', 'pdf', false) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('14ab6162-3ebc-5ac1-a1a6-81528882b35a', null, 'file', 'experience.ts', null, 'experience', 11, '/experience', null, null, '', '', 'typescript', false) on conflict (id) do nothing;
 insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('0ab97883-e131-5aae-a152-630fd6b39cd5', null, 'file', 'skills.ts', null, 'skills', 12, '/skills', null, null, '', '', 'typescript', false) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('8cc43113-ff91-5219-a153-31f732232f0a', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Fizyoterapi Uygulaması.md', 'Physiotherapy App.md', 'markdown', 101, '/projects/fizyoterapi-uygulamasi', null, null, '# Yapay Zekâ Destekli Fizyoterapi Uygulaması
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('81b7fee9-a41a-5485-bbcf-7a9c2eab60cf', '55018204-2907-5e69-a024-db3c4fd449a6', 'file', 'README.md', null, 'markdown', 0, '/projects/fizyoterapi-uygulamasi', null, null, '# Yapay Zekâ Destekli Fizyoterapi Uygulaması
 
 **Android Kotlin** ve **Python/FastAPI** kullanarak çift rollü mimariye sahip, yapay zekâ destekli bir fizyoterapi mobil uygulaması geliştirdim. Ön yüzde MediaPipe ve CameraX entegrasyonuyla gerçek zamanlı poz tahmini ve hareket fazı tespiti gerçekleştirerek otomatik eklem açısı hesaplaması ve uyarlanabilir tekrar sayımı sağladım. SQLAlchemy ve Alembic ile yönetilen güvenli bir **PostgreSQL** veritabanı tasarladım ve backend altyapısını Easypanel üzerinde Docker ile konteynerleştirilmiş bir servis olarak dağıttım.
 
@@ -967,7 +1065,7 @@ Developed an AI-powered physiotherapy mobile application using **Android Kotlin*
 
 `Kotlin` `Android` `Python` `FastAPI` `MediaPipe` `CameraX` `PostgreSQL` `Docker`
 ', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('76eac753-09ee-5209-b85d-bdb1880f8976', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'HSD Türkiye Web Sitesi v1.md', 'HSD Türkiye Website v1.md', 'markdown', 102, '/projects/hsd-turkiye-web-v1', null, null, '# HSD Türkiye Web Sitesi v1
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('7951fc33-648c-589b-9c26-b5ff2f8a9741', 'dd199d5a-f05c-532a-8839-165f1a606da6', 'file', 'README.md', null, 'markdown', 0, '/projects/hsd-turkiye-web-v1', null, null, '# HSD Türkiye Web Sitesi v1
 
 HSD Türkiye''nin gereksinimlerini belirlemek için kapsamlı bir ihtiyaç analizi gerçekleştirdik ve topluluk yönetimine odaklanan bir ERP platformu geliştirdik. Backend tarafında **.NET Core MVC** mimarisini, frontend tarafında ise HTML, CSS ve JavaScript teknolojilerini kullanan bu platform, kampüs elçileri ve topluluk yöneticilerinin tüm idari süreçlerini verimli bir şekilde yönetebilmeleri için gereken tüm bileşenleri içermektedir.
 
@@ -990,7 +1088,7 @@ To determine HSD Turkey''s requirements, we conducted a comprehensive needs anal
 
 - [www.hsdturkiye.com](https://www.hsdturkiye.com)
 ', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('df16160f-86b3-50a3-961c-970174aff43c', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'HSD Türkiye Web Sitesi v2.md', 'HSD Türkiye Website v2.md', 'markdown', 103, '/projects/hsd-turkiye-web-v2', null, null, '# HSD Türkiye Web Sitesi v2
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('8f8e40b5-174f-506c-b6a1-6803da03ad4b', 'ed7017f7-0ef2-5a37-9405-6898705709d3', 'file', 'README.md', null, 'markdown', 0, '/projects/hsd-turkiye-web-v2', null, null, '# HSD Türkiye Web Sitesi v2
 
 Web sitesinin ilk sürümünün (v1) topluluk erişimine kapalı olması ve modern mimari standartlardan yoksun olması nedeniyle **.Net Core Web API** ve **Nuxt.js** teknolojilerini kullanarak yeni bir web sitesi geliştirdik. Projeyi Huawei Cloud altyapısı üzerinde **VPC, ECS, SWR, RDS, OBS, ELB** ve **AS** gibi servislerden yararlanarak tamamen ölçeklenebilir bir mimariyle inşa ettik. Bu sayede projenin esnek ve yüksek performanslı bir ortamda çalışmasını sağlarken modern bir teknoloji yığınına geçiş yaptık.
 
@@ -1005,7 +1103,7 @@ Due to the initial version (v1) of the website being closed to community access 
 
 `.NET Core Web API` `Nuxt.js` `Huawei Cloud`
 ', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('8db45a43-9647-5457-8fd8-a5fdfe1a69d9', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Görüntü Ön İşleme Platformu.md', 'Image Preprocessing Platform.md', 'markdown', 104, '/projects/goruntu-on-isleme', null, null, '# Görüntü Ön İşleme Platformu
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('5d3ced54-ccb9-50ef-9a3a-357cd398ca17', 'c8573816-6f9b-5256-b735-c017bef77e99', 'file', 'README.md', null, 'markdown', 0, '/projects/goruntu-on-isleme', null, null, '# Görüntü Ön İşleme Platformu
 
 Python tabanlı **FastAPI** ve **Django** kullanarak yüksek performanslı bir görüntü ön işleme platformu geliştirdim. Platform; uzamsal dönüşümler, histogram optimizasyonu ve gürültü modellerinin (Gauss, Tuz & Biber) eklenmesi ve giderilmesi gibi kapsamlı algoritmik modüller içermektedir. FastAPI''nin asenkron yapısı yoğun hesaplama gerektiren işlemlerde düşük gecikme sağlarken Django sistemin modülerliğini optimize etmektedir. Proje, ham verilerin işlenerek analiz ve derin öğrenme süreçlerine hazırlanmasını sağlayan uçtan uca bir teknik altyapı sunmaktadır.
 
@@ -1028,7 +1126,7 @@ I developed a high-performance image preprocessing platform using Python-based *
 
 - [github.com/osmanbugrabolat/goruntuIsleme/tree/main](https://github.com/osmanbugrabolat/goruntuIsleme/tree/main)
 ', 'markdown', true) on conflict (id) do nothing;
-insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('249284fc-cf1c-5baf-b406-90aa75c78bb1', '12ec0a70-b90b-5dcd-9e16-5b9704ec4275', 'file', 'Dermatolojik Hastalık Tespiti.md', 'Dermatological Disease Detection.md', 'markdown', 105, '/projects/dermatolojik-hastalik-tespiti', null, null, '# Dermatolojik Hastalık Tespiti
+insert into public.explorer_nodes (id, parent_id, kind, name, name_en, file_type, sort_order, route, url, asset_url, content_tr, content_en, icon, show_in_explorer) values ('723be3d5-24c8-5260-a37d-74c7ad7c6e92', 'a07e67c4-06c9-579e-a0c8-a71657449ad9', 'file', 'README.md', null, 'markdown', 0, '/projects/dermatolojik-hastalik-tespiti', null, null, '# Dermatolojik Hastalık Tespiti
 
 Fitzpatrick17k veri setini kullanarak farklı cilt tiplerine duyarlı bir cilt hastalığı teşhis modeli geliştirdim. **EfficientNet-B3 mimarisi** üzerindeki ince ayar (fine-tuning) sürecinde, modelin yalnızca hastalığa odaklanmasını değil cilt tipi çeşitliliğini de dikkate almasını sağlamak için özel kayıp fonksiyonları entegre ettim. Eğitim aşamasının ardından modeli FastAPI kullanarak bir **Hetzner** sunucusu üzerinde çıkarım (inference) servisi olarak dağıttım.
 

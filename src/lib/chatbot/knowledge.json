@@ -1143,8 +1143,8 @@
         "en": "What projects has he built?"
       },
       "answer": {
-        "tr": "Sitedeki projeler (çoğu tarayıcıda oynanabilir!):\n• Neon Pong AI: el hareketiyle oynanan Pong\n• Flying Birds AI: parmakla yönetilen kuş oyunu\n• Sihirli Sapan: el takipli Angry Birds klonu\n• Sihirli Sapan – HSD Edition\n• Magic Frame AR: ellerle çizilen çerçevede yapay zekâ filtreleri\n• Kozmik Toz Enstalasyonu: etkileşimli ses-görsel sanat\n\nCV'deki diğer projeler: Yapay Zekâ Destekli Fizyoterapi Uygulaması, Dermatolojik Hastalık Tespiti, HSD Türkiye Web Sitesi (v1 & v2), Görüntü Ön İşleme Platformu.",
-        "en": "Projects on the site (most are playable in the browser!):\n• Neon Pong AI: Pong controlled by hand gestures\n• Flying Birds AI: a bird game steered with your finger\n• Sihirli Sapan: a hand-tracked Angry Birds clone\n• Sihirli Sapan – HSD Edition\n• Magic Frame AR: AI filters inside a frame drawn with your hands\n• Cosmic Dust Installation: interactive audio-visual art\n\nMore from his CV: AI-Powered Physiotherapy App, Dermatological Disease Detection, HSD Türkiye Website (v1 & v2), Image Preprocessing Platform."
+        "tr": "Sitedeki projeler:\n• Fizyoterapi Uygulaması: MediaPipe ile poz tahmini yapan yapay zekâ destekli mobil uygulama\n• Dermatolojik Hastalık Tespiti: farklı cilt tiplerine duyarlı EfficientNet-B3 modeli\n• HSD Türkiye Web Sitesi v1 & v2: topluluk yönetimi platformu, v2 Huawei Cloud üzerinde\n• Görüntü Ön İşleme Platformu: FastAPI ve Django ile görüntü işleme modülleri\n• Neon Pong AI, Flying Birds AI, Sihirli Sapan (ve HSD Edition): el takibiyle tarayıcıda oynanan oyunlar\n• Magic Frame AR: ellerle çizilen çerçevede yapay zekâ filtreleri\n• Kozmik Toz Enstalasyonu: etkileşimli ses-görsel sanat\n\nHer projenin klasöründe bir README var; detayını merak ettiğinizi sorabilirsiniz.",
+        "en": "Projects on the site:\n• Physiotherapy App: an AI-powered mobile app with MediaPipe pose estimation\n• Dermatological Disease Detection: an EfficientNet-B3 model sensitive to different skin types\n• HSD Türkiye Website v1 & v2: a community management platform, v2 on Huawei Cloud\n• Image Preprocessing Platform: image processing modules with FastAPI and Django\n• Neon Pong AI, Flying Birds AI, Sihirli Sapan (and HSD Edition): hand-tracked games playable in the browser\n• Magic Frame AR: AI filters inside a frame drawn with your hands\n• Cosmic Dust Installation: interactive audio-visual art\n\nEach project folder has a README; ask me about any of them for details."
       },
       "patterns": {
         "tr": [
@@ -1195,9 +1195,10 @@
         }
       ],
       "followUps": [
-        "playable-games",
         "project-physiotherapy",
-        "mediapipe-projects"
+        "project-dermatology",
+        "project-hsd-website",
+        "playable-games"
       ]
     },
     {
@@ -1692,7 +1693,9 @@
           "android uygulaman",
           "mobil uygulama projen",
           "kotlin projesi",
-          "sağlık uygulaması"
+          "sağlık uygulaması",
+          "fizyoterapi-uygulamasi",
+          "fizyoterapi projesi"
         ],
         "en": [
           "physiotherapy app",
@@ -1701,7 +1704,8 @@
           "android app",
           "mobile app project",
           "kotlin project",
-          "health app"
+          "health app",
+          "physiotherapy project"
         ]
       },
       "keywords": [
@@ -1719,8 +1723,8 @@
       "links": [
         {
           "label": {
-            "tr": "Proje sayfası",
-            "en": "Project page"
+            "tr": "README",
+            "en": "README"
           },
           "href": "/projects/fizyoterapi-uygulamasi"
         }
@@ -1750,7 +1754,9 @@
           "efficientnet",
           "derin öğrenme projen",
           "sağlık yapay zeka projesi",
-          "model eğittin mi"
+          "model eğittin mi",
+          "dermatolojik hastalık tespiti",
+          "dermatolojik-hastalik-tespiti"
         ],
         "en": [
           "dermatology project",
@@ -1758,7 +1764,8 @@
           "efficientnet",
           "deep learning project",
           "medical ai project",
-          "did you train a model"
+          "did you train a model",
+          "dermatological disease detection"
         ]
       },
       "keywords": [
@@ -1774,8 +1781,8 @@
       "links": [
         {
           "label": {
-            "tr": "Proje sayfası",
-            "en": "Project page"
+            "tr": "README",
+            "en": "README"
           },
           "href": "/projects/dermatolojik-hastalik-tespiti"
         }
@@ -1794,8 +1801,8 @@
         "en": "What is the HSD Türkiye website project?"
       },
       "answer": {
-        "tr": "HSD Türkiye Web Sitesi\n• v1 (hsdturkiye.com): İhtiyaç analizi sonrası topluluk yönetimi için bir ERP platformu. Kampüs elçileri ve topluluk yöneticileri için.NET Core MVC backend ve HTML/CSS/JS frontend.\n• v2: v1 topluluk erişimine kapalı olduğu ve modern standartları karşılamadığı için baştan yazıldı..NET Core Web API + Nuxt.js; Huawei Cloud üzerinde VPC, ECS, SWR, RDS, OBS, ELB ve AS ile tamamen ölçeklenebilir mimari.",
-        "en": "HSD Türkiye Website\n• v1 (hsdturkiye.com): an ERP platform for community management, designed after a needs analysis..NET Core MVC backend and HTML/CSS/JS frontend for campus ambassadors and community managers.\n• v2: rebuilt because v1 was closed to community access and lacked modern standards..NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture."
+        "tr": "HSD Türkiye Web Sitesi\n• v1 (hsdturkiye.com): İhtiyaç analizi sonrası topluluk yönetimi için bir ERP platformu. Kampüs elçileri ve topluluk yöneticileri için .NET Core MVC backend ve HTML/CSS/JS frontend.\n• v2: v1 topluluk erişimine kapalı olduğu ve modern standartları karşılamadığı için baştan yazıldı. .NET Core Web API + Nuxt.js; Huawei Cloud üzerinde VPC, ECS, SWR, RDS, OBS, ELB ve AS ile tamamen ölçeklenebilir mimari.",
+        "en": "HSD Türkiye Website\n• v1 (hsdturkiye.com): an ERP platform for community management, designed after a needs analysis. .NET Core MVC backend and HTML/CSS/JS frontend for campus ambassadors and community managers.\n• v2: rebuilt because v1 was closed to community access and lacked modern standards. .NET Core Web API + Nuxt.js on Huawei Cloud, using VPC, ECS, SWR, RDS, OBS, ELB and AS for a fully scalable architecture."
       },
       "patterns": {
         "tr": [
@@ -1806,7 +1813,11 @@
           "net core projesi",
           "nuxt projesi",
           "huawei cloud projesi",
-          "bulut projen"
+          "bulut projen",
+          "hsd-turkiye-web-v1",
+          "hsd-turkiye-web-v2",
+          "hsd türkiye web sitesi v1",
+          "hsd türkiye web sitesi v2"
         ],
         "en": [
           "hsd website",
@@ -1816,7 +1827,9 @@
           ".net core project",
           "nuxt project",
           "huawei cloud project",
-          "cloud project"
+          "cloud project",
+          "hsd turkiye website v1",
+          "hsd turkiye website v2"
         ]
       },
       "keywords": [
@@ -1831,17 +1844,24 @@
       "links": [
         {
           "label": {
-            "tr": "v1 sayfası",
-            "en": "v1 page"
+            "tr": "v1 README",
+            "en": "v1 README"
           },
           "href": "/projects/hsd-turkiye-web-v1"
         },
         {
           "label": {
-            "tr": "v2 sayfası",
-            "en": "v2 page"
+            "tr": "v2 README",
+            "en": "v2 README"
           },
           "href": "/projects/hsd-turkiye-web-v2"
+        },
+        {
+          "label": {
+            "tr": "hsdturkiye.com",
+            "en": "hsdturkiye.com"
+          },
+          "href": "https://www.hsdturkiye.com"
         }
       ],
       "followUps": [
@@ -1868,14 +1888,17 @@
           "histogram projesi",
           "gürültü filtresi",
           "django projesi",
-          "goruntuIsleme"
+          "goruntuIsleme",
+          "goruntu-on-isleme",
+          "görüntü ön işleme platformu nedir"
         ],
         "en": [
           "image processing platform",
           "image preprocessing",
           "histogram project",
           "noise filter project",
-          "django project"
+          "django project",
+          "image preprocessing platform"
         ]
       },
       "keywords": [
@@ -1891,15 +1914,15 @@
       "links": [
         {
           "label": {
-            "tr": "Proje sayfası",
-            "en": "Project page"
+            "tr": "README",
+            "en": "README"
           },
           "href": "/projects/goruntu-on-isleme"
         },
         {
           "label": {
-            "tr": "GitHub",
-            "en": "GitHub"
+            "tr": "Kaynak kod",
+            "en": "Source code"
           },
           "href": "https://github.com/osmanbugrabolat/goruntuIsleme/tree/main"
         }
