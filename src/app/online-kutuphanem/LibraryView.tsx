@@ -1,14 +1,17 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { VscBook, VscClose, VscFilter, VscSearch, VscStarFull } from "react-icons/vsc";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { VscClose, VscFilter, VscLibrary, VscSearch, VscStarFull } from "react-icons/vsc";
+import { coverTheme, spineSize } from "@/lib/books/appearance";
 import type { Book, BookStatus } from "@/lib/books/types";
 
 type Lang = "tr" | "en";
 type Filter = "all" | BookStatus;
+type View = "shelf" | "grid";
 
 const T = {
   tr: {
+    brand: "Kitaplık",
     title: "Okuduklarım",
     intro: (owner: string) => `${owner}'ın dijital kütüphanesi. Okuduğu, okumakta olduğu ve sırada bekleyen kitaplar.`,
     search: "Kitap ya da yazar ara",
@@ -19,6 +22,9 @@ const T = {
     clear: "Filtreleri temizle",
     showAll: "Tümünü göster",
     showLess: "Daha az göster",
+    view: "Görünüm",
+    shelf: "Raf",
+    grid: "Kapaklar",
     started: "Başlangıç",
     duration: "Okuma süresi",
     days: (n: number) => `${n} gün`,
@@ -34,10 +40,13 @@ const T = {
     notes: "Notlarım",
     summaryHeading: "Özet",
     pages: "sayfa",
+    year: "Basım yılı",
     finished: "Bitirme tarihi",
+    count: (n: number) => `${n} kitap`,
     close: "Kapat",
   },
   en: {
+    brand: "Bookshelf",
     title: "Reading list",
     intro: (owner: string) => `${owner}'s digital library. Books finished, in progress and waiting in the queue.`,
     search: "Search by title or author",
@@ -48,6 +57,9 @@ const T = {
     clear: "Clear filters",
     showAll: "Show all",
     showLess: "Show less",
+    view: "View",
+    shelf: "Shelf",
+    grid: "Covers",
     started: "Started",
     duration: "Reading time",
     days: (n: number) => `${n} ${n === 1 ? "day" : "days"}`,
@@ -63,19 +75,31 @@ const T = {
     notes: "My notes",
     summaryHeading: "Summary",
     pages: "pages",
+    year: "Year",
     finished: "Finished",
+    count: (n: number) => `${n} ${n === 1 ? "book" : "books"}`,
     close: "Close",
   },
 } as const;
 
+type Strings = (typeof T)[Lang];
+
+/** "A, B" is two authors for filtering purposes. */
+function authorsOf(book: Book): string[] {
+  return [...new Set(book.author.split(",").map((a) => a.trim()).filter(Boolean))];
+}
+
+/** Covers without an image get a typographic cover in one of the shelf colours. */
 function Cover({ book, className }: { book: Book; className: string }) {
-  return book.cover_url ? (
+  if (book.cover_url) {
     // eslint-disable-next-line @next/next/no-img-element -- covers come from arbitrary book APIs
-    <img className={className} src={book.cover_url} alt={book.title} loading="lazy" referrerPolicy="no-referrer" />
-  ) : (
-    <div className={`${className} lib-cover-empty`} role="img" aria-label={book.title}>
-      <VscBook aria-hidden />
-      <span>{book.title}</span>
+    return <img className={className} src={book.cover_url} alt={book.title} loading="lazy" referrerPolicy="no-referrer" />;
+  }
+  const theme = coverTheme(book);
+  return (
+    <div className={`${className} lib-cover-fallback`} role="img" aria-label={book.title} style={{ background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
+      <span className="lib-cover-author">{book.author}</span>
+      <span className="lib-cover-title">{book.title}</span>
     </div>
   );
 }
@@ -90,10 +114,71 @@ function Rating({ value }: { value: number }) {
   );
 }
 
-/** "A, B" is two authors for filtering purposes. */
-function authorsOf(book: Book): string[] {
-  return [...new Set(book.author.split(",").map((a) => a.trim()).filter(Boolean))];
+// ------------------------------------------------------------------ shelf
+
+const SPINE_GAP = 6;
+
+function spineBackground(book: Book): { background: string; color: string } {
+  if (book.cover_url) {
+    const url = book.cover_url.replace(/["\\()\s]/g, encodeURIComponent);
+    // The spine is the cover's left edge: usually a plain colour band, with a dark veil so the title stays readable.
+    return { background: `linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)), url("${url}") left center / auto 100%`, color: "#ffffff" };
+  }
+  const theme = coverTheme(book);
+  return { background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg };
 }
+
+/** Books stand on boards: rows are packed by real spine widths for the available width. */
+function Shelf({ books, onOpen }: { books: Book[]; onOpen: (book: Book) => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(900);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const rows = useMemo(() => {
+    const available = Math.max(160, width - 32);
+    const out: Book[][] = [];
+    let used = 0;
+    for (const book of books) {
+      const w = spineSize(book).width + SPINE_GAP;
+      if (!out.length || used + w > available) {
+        out.push([]);
+        used = 0;
+      }
+      out[out.length - 1].push(book);
+      used += w;
+    }
+    return out;
+  }, [books, width]);
+
+  return (
+    <div ref={ref} className="lib-shelf">
+      {rows.map((row, i) => (
+        <div key={i} className="lib-shelf-row">
+          <div className="lib-shelf-books">
+            {row.map((book) => {
+              const { width: w, height: h } = spineSize(book);
+              return (
+                <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: h, ...spineBackground(book) }}>
+                  <span>{book.title}</span>
+                </button>
+              );
+            })}
+          </div>
+          <div className="lib-shelf-board" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ------------------------------------------------------------------ filters
 
 function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -117,7 +202,7 @@ function FilterItem({ active, count, onClick, children }: { active: boolean; cou
 
 const FACET_LIMIT = 8;
 
-function FacetList({ items, selected, onSelect, t }: { items: [string, number][]; selected: string | null; onSelect: (v: string | null) => void; t: (typeof T)[Lang] }) {
+function FacetList({ items, selected, onSelect, t }: { items: [string, number][]; selected: string | null; onSelect: (v: string | null) => void; t: Strings }) {
   const [expanded, setExpanded] = useState(false);
   // A selected value stays visible even when it falls outside the collapsed list.
   const visible = expanded ? items : items.filter(([name], i) => i < FACET_LIMIT || name === selected);
@@ -139,6 +224,8 @@ function FacetList({ items, selected, onSelect, t }: { items: [string, number][]
   );
 }
 
+// ------------------------------------------------------------------ page
+
 interface Section {
   key: string;
   title: string;
@@ -152,6 +239,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   const [query, setQuery] = useState("");
   const [genre, setGenre] = useState<string | null>(null);
   const [author, setAuthor] = useState<string | null>(null);
+  const [view, setView] = useState<View>("shelf");
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [open, setOpen] = useState<Book | null>(null);
 
@@ -212,16 +300,10 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
     setGenre(null);
     setAuthor(null);
   };
-
-  const filters: Filter[] = ["all", "read", "reading", "want"];
+  const statuses: Filter[] = ["all", "read", "reading", "want"];
 
   return (
-    <main className="lib">
-      <header className="lib-header">
-        <h1>{t.title}</h1>
-        <p className="lib-intro">{t.intro(owner)}</p>
-      </header>
-
+    <main className={`lib${open ? " is-locked" : ""}`}>
       <div className="lib-layout">
         <button type="button" className="lib-filter-toggle" aria-expanded={filtersOpen} onClick={() => setFiltersOpen((v) => !v)}>
           <VscFilter aria-hidden /> {t.filters}
@@ -229,13 +311,20 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
         </button>
 
         <aside className={`lib-sidebar${filtersOpen ? " is-open" : ""}`} aria-label={t.filters}>
+          <div className="lib-brand">
+            <span className="lib-brand-mark">
+              <VscLibrary aria-hidden />
+            </span>
+            {t.brand}
+          </div>
+
           <label className="lib-search">
             <VscSearch aria-hidden />
             <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t.search} aria-label={t.search} />
           </label>
 
           <FilterGroup title={t.status}>
-            {filters.map((f) => (
+            {statuses.map((f) => (
               <FilterItem key={f} active={filter === f} count={counts[f]} onClick={() => setFilter(f)}>
                 {t[f]}
               </FilterItem>
@@ -261,47 +350,73 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
         </aside>
 
         <div className="lib-content">
-      {sections.length === 0 ? (
-        <p className="lib-empty">{books.length === 0 ? t.empty : t.noMatch}</p>
-      ) : (
-        sections.map((section) => (
-          <section key={section.key} className="lib-section" aria-label={section.title}>
-            <h2>
-              {section.title}
-              <span>{section.books.length}</span>
-            </h2>
-            {section.kind === "reading" ? (
-              <ul className="lib-featured">
-                {section.books.map((book) => (
-                  <li key={book.id}>
-                    <button type="button" className="lib-feature" onClick={() => setOpen(book)}>
-                      <Cover book={book} className="lib-cover" />
-                      <span className="lib-feature-text">
-                        <span className="lib-feature-title">{book.title}</span>
-                        {book.author && <span className="lib-author">{book.author}</span>}
-                        {book.description && <span className="lib-feature-desc">{book.description}</span>}
-                      </span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <ul className="lib-grid">
-                {section.books.map((book) => (
-                  <li key={book.id}>
-                    <button type="button" className="lib-card" onClick={() => setOpen(book)}>
-                      <Cover book={book} className="lib-cover" />
-                      <span className="lib-card-title">{book.title}</span>
-                      {book.author && <span className="lib-author">{book.author}</span>}
-                      {book.rating && <Rating value={book.rating} />}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        ))
-      )}
+          <header className="lib-header">
+            <div>
+              <h1>{t.title}</h1>
+              <p className="lib-intro">{t.intro(owner)}</p>
+            </div>
+            <div className="lib-view" role="group" aria-label={t.view}>
+              <button type="button" aria-pressed={view === "shelf"} onClick={() => setView("shelf")}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
+                  <path d="M5 20V8M10 20V4M15 20V9M20 20V6" />
+                </svg>
+                {t.shelf}
+              </button>
+              <button type="button" aria-pressed={view === "grid"} onClick={() => setView("grid")}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
+                  <rect x="4" y="4" width="7" height="7" rx="1" />
+                  <rect x="13" y="4" width="7" height="7" rx="1" />
+                  <rect x="4" y="13" width="7" height="7" rx="1" />
+                  <rect x="13" y="13" width="7" height="7" rx="1" />
+                </svg>
+                {t.grid}
+              </button>
+            </div>
+          </header>
+
+          {sections.length === 0 ? (
+            <p className="lib-empty">{books.length === 0 ? t.empty : t.noMatch}</p>
+          ) : (
+            sections.map((section) => (
+              <section key={section.key} className="lib-section" aria-label={section.title}>
+                <h2>
+                  {section.title}
+                  <span>{t.count(section.books.length)}</span>
+                </h2>
+                {section.kind === "reading" ? (
+                  <ul className="lib-featured">
+                    {section.books.map((book) => (
+                      <li key={book.id}>
+                        <button type="button" className="lib-feature" onClick={() => setOpen(book)}>
+                          <Cover book={book} className="lib-cover" />
+                          <span className="lib-feature-text">
+                            <span className="lib-feature-title">{book.title}</span>
+                            {book.author && <span className="lib-author">{book.author}</span>}
+                            {book.description && <span className="lib-feature-desc">{book.description}</span>}
+                          </span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : view === "shelf" ? (
+                  <Shelf books={section.books} onOpen={setOpen} />
+                ) : (
+                  <ul className="lib-grid">
+                    {section.books.map((book) => (
+                      <li key={book.id}>
+                        <button type="button" className="lib-card" onClick={() => setOpen(book)}>
+                          <Cover book={book} className="lib-cover" />
+                          <span className="lib-card-title">{book.title}</span>
+                          {book.author && <span className="lib-author">{book.author}</span>}
+                          {book.rating && <Rating value={book.rating} />}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            ))
+          )}
         </div>
       </div>
 
@@ -316,12 +431,7 @@ function Drawer({ book, lang, onClose }: { book: Book; lang: Lang; onClose: () =
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = previous;
-    };
+    return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
   const fmt = (d: string | null) => (d ? new Intl.DateTimeFormat(lang === "en" ? "en-US" : "tr-TR", { dateStyle: "long", timeZone: "UTC" }).format(new Date(d)) : null);
@@ -331,7 +441,7 @@ function Drawer({ book, lang, onClose }: { book: Book; lang: Lang; onClose: () =
       [t.started, fmt(book.started_on)],
       [t.finished, fmt(book.finished_on)],
       [t.duration, days ? t.days(days) : null],
-      [lang === "en" ? "Year" : "Basım yılı", book.published_year ? String(book.published_year) : null],
+      [t.year, book.published_year ? String(book.published_year) : null],
       [t.pages, book.page_count ? String(book.page_count) : null],
     ] as [string, string | null][]
   ).filter((f): f is [string, string] => f[1] !== null);
@@ -339,7 +449,7 @@ function Drawer({ book, lang, onClose }: { book: Book; lang: Lang; onClose: () =
   return (
     <div className="lib-overlay" onClick={onClose}>
       <aside className="lib-drawer" role="dialog" aria-modal="true" aria-label={book.title} onClick={(e) => e.stopPropagation()}>
-        {book.cover_url && <div className="lib-drawer-glow" style={{ backgroundImage: `url("${book.cover_url.replace(/"/g, "%22")}")` }} aria-hidden />}
+        {book.cover_url && <div className="lib-drawer-glow" style={{ backgroundImage: `url("${book.cover_url.replace(/["\\()\s]/g, encodeURIComponent)}")` }} aria-hidden />}
         <button type="button" className="lib-close" onClick={onClose} aria-label={t.close} autoFocus>
           <VscClose />
         </button>
