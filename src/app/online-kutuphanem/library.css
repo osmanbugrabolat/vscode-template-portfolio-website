@@ -43,7 +43,9 @@
   scrollbar-width: thin;
   scrollbar-color: var(--lib-line) transparent;
 }
-.lib-brand { display: flex; align-items: center; gap: 12px; padding-left: 4px; line-height: 1.3; color: var(--lib-strong); font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+.lib-brand { display: flex; align-items: center; gap: 12px; padding-left: 4px; line-height: 1.3; color: var(--lib-strong); font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+.lib-brand-text { display: flex; flex-direction: column; min-width: 0; }
+.lib-brand-text span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .lib-brand-mark { flex: none; display: grid; place-items: center; width: 34px; height: 34px; color: var(--lib-on-accent); background: var(--lib-accent); border-radius: 11px; font-size: 1.125rem; }
 
 .lib-search {

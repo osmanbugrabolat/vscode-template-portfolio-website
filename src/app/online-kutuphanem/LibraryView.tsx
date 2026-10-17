@@ -11,7 +11,7 @@ type View = "shelf" | "grid";
 
 const T = {
   tr: {
-    brand: (owner: string) => `${owner}'ın dijital kütüphanesi`,
+    brand: (owner: string) => [`${owner}'ın`, "dijital kütüphanesi"] as const,
     title: "Okuduklarım",
     search: "Kitap ya da yazar ara",
     filters: "Filtreler",
@@ -45,7 +45,7 @@ const T = {
     close: "Kapat",
   },
   en: {
-    brand: (owner: string) => `${owner}'s digital library`,
+    brand: (owner: string) => [`${owner}'s`, "digital library"] as const,
     title: "Reading list",
     search: "Search by title or author",
     filters: "Filters",
@@ -309,7 +309,11 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
             <span className="lib-brand-mark">
               <VscLibrary aria-hidden />
             </span>
-            <span>{t.brand(owner)}</span>
+            <span className="lib-brand-text">
+              {t.brand(owner).map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </span>
           </div>
 
           <label className="lib-search">
