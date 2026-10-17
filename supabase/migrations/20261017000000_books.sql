@@ -1,6 +1,6 @@
 -- ======================================================================
--- Online library: books the owner has read, edited from /admin/books and
--- shown on the standalone page /online-kutuphanem (not linked from the site).
+-- Digital library: books the owner has read, edited from /admin/books and
+-- shown on the standalone page /dijital-kutuphanem (not linked from the site).
 -- ======================================================================
 
 create table if not exists public.books (
@@ -47,7 +47,7 @@ create trigger books_request_revalidate
 after insert or update or delete on public.books
 for each statement execute function private.request_revalidate();
 
--- /online-kutuphanem is a route handler of its own, so explorer pages may not claim it.
+-- /dijital-kutuphanem is a route handler of its own, so explorer pages may not claim it.
 alter table public.explorer_nodes drop constraint if exists route_not_reserved;
 alter table public.explorer_nodes add constraint route_not_reserved
-  check (route is null or route !~ '^/(api|admin|admin-login|_next|auth|cv-pdf|online-kutuphanem)(/|$)');
+  check (route is null or route !~ '^/(api|admin|admin-login|_next|auth|cv-pdf|dijital-kutuphanem)(/|$)');

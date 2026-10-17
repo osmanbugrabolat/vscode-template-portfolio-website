@@ -11,7 +11,7 @@ const serif = Fraunces({ subsets: ["latin", "latin-ext"], variable: "--font-seri
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getLang();
   return {
-    title: lang === "en" ? "Online Library" : "Online Kütüphanem",
+    title: lang === "en" ? "Digital Library" : "Dijital Kütüphane",
     description: lang === "en" ? "Books I have read." : "Okuduğum kitaplar.",
     robots: { index: false, follow: false },
   };
