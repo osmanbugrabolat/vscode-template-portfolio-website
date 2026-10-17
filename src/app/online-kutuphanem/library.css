@@ -102,8 +102,6 @@ button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-spine:focu
   transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .lib-spine span { max-height: calc(100% - 20px); overflow: hidden; font-family: var(--lib-serif); font-size: 1.125rem; font-weight: 500; letter-spacing: -0.01em; white-space: nowrap; text-overflow: ellipsis; writing-mode: vertical-rl; }
-/* A spine can be cropped from a busy cover: keep the title legible. */
-.lib-spine span { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55); }
 .lib-spine:hover { transform: translateY(-14px); }
 
 /* ------------------------------------------------------------ covers and grid */

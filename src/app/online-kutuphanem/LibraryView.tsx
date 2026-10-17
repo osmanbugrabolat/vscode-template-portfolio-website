@@ -118,12 +118,8 @@ function Rating({ value }: { value: number }) {
 
 const SPINE_GAP = 6;
 
+/** Spines are always plain colour (cover images only show on covers). */
 function spineBackground(book: Book): { background: string; color: string } {
-  if (book.cover_url) {
-    const url = book.cover_url.replace(/["\\()\s]/g, encodeURIComponent);
-    // The spine is the cover's left edge: usually a plain colour band, with a dark veil so the title stays readable.
-    return { background: `linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)), url("${url}") left center / auto 100%`, color: "#ffffff" };
-  }
   const theme = coverTheme(book);
   return { background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg };
 }
