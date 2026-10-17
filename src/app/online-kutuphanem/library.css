@@ -31,7 +31,6 @@
   letter-spacing: -0.03em;
 }
 .lib-intro { margin: 18px 0 0; font-size: 1.0625rem; line-height: 1.6; color: var(--lib-muted); }
-.lib-summary { margin: 14px 0 0; color: var(--lib-saffron); font-size: 0.9375rem; }
 
 .lib-search {
   display: flex;

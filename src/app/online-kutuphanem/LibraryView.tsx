@@ -11,7 +11,6 @@ const T = {
   tr: {
     title: "Okuduklarım",
     intro: (owner: string) => `${owner}'ın dijital kütüphanesi. Okuduğu, okumakta olduğu ve sırada bekleyen kitaplar.`,
-    summary: (books: number, pages: number) => `${books} kitap, ${pages.toLocaleString("tr-TR")} sayfa okundu`,
     search: "Kitap ya da yazar ara",
     filters: "Filtreler",
     status: "Durum",
@@ -41,7 +40,6 @@ const T = {
   en: {
     title: "Reading list",
     intro: (owner: string) => `${owner}'s digital library. Books finished, in progress and waiting in the queue.`,
-    summary: (books: number, pages: number) => `${books} ${books === 1 ? "book" : "books"}, ${pages.toLocaleString("en-US")} pages read`,
     search: "Search by title or author",
     filters: "Filters",
     status: "Status",
@@ -157,11 +155,6 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [open, setOpen] = useState<Book | null>(null);
 
-  const stats = useMemo(() => {
-    const read = books.filter((b) => b.status === "read");
-    return { books: read.length, pages: read.reduce((sum, b) => sum + (b.page_count ?? 0), 0) };
-  }, [books]);
-
   const counts = useMemo(
     () => ({ all: books.length, read: books.filter((b) => b.status === "read").length, reading: books.filter((b) => b.status === "reading").length, want: books.filter((b) => b.status === "want").length }),
     [books],
@@ -227,7 +220,6 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
       <header className="lib-header">
         <h1>{t.title}</h1>
         <p className="lib-intro">{t.intro(owner)}</p>
-        {stats.books > 0 && <p className="lib-summary">{t.summary(stats.books, stats.pages)}</p>}
       </header>
 
       <div className="lib-layout">
