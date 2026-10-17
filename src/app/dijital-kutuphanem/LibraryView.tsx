@@ -282,7 +282,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   const statuses: Filter[] = ["all", "read", "reading", "want"];
 
   return (
-    <main className="lib">
+    <main className={`lib${open ? " is-locked" : ""}`}>
       <div className="lib-layout">
         <button type="button" className="lib-filter-toggle" aria-expanded={filtersOpen} onClick={() => setFiltersOpen((v) => !v)}>
           <VscFilter aria-hidden /> {t.filters}
