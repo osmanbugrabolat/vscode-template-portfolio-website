@@ -775,6 +775,8 @@
   background: var(--adm-panel);
   color: var(--adm-fg);
   padding: 0;
+  /* Tailwind's reset zeroes the margin that centres a modal dialog in the top layer. */
+  margin: auto;
   width: min(460px, calc(100vw - 32px));
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
