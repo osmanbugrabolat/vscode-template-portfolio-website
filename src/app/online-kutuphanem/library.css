@@ -85,7 +85,8 @@ button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-spine:focu
 /* ------------------------------------------------------------ sections */
 .lib-empty { margin: 48px 0; max-width: 40ch; color: var(--lib-muted); line-height: 1.6; }
 .lib-section { margin: 0; }
-.lib-section h2 { display: flex; gap: 14px; align-items: baseline; margin: 0 0 22px; color: var(--lib-strong); font-family: var(--lib-serif); font-size: 2.125rem; font-weight: 500; letter-spacing: -0.02em; }
+.lib-section-head { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; margin: 0 0 22px; }
+.lib-section h2 { display: flex; gap: 14px; align-items: baseline; margin: 0; color: var(--lib-strong); font-family: var(--lib-serif); font-size: 2.125rem; font-weight: 500; letter-spacing: -0.02em; }
 .lib-section h2 span { color: var(--lib-muted); font-family: var(--lib-sans); font-size: 0.8125rem; font-weight: 400; letter-spacing: 0; }
 
 /* ------------------------------------------------------------ shelf */
