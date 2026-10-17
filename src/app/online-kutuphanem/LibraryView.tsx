@@ -10,7 +10,7 @@ type Filter = "all" | BookStatus;
 const T = {
   tr: {
     title: "Okuduklarım",
-    intro: (owner: string) => `${owner} için kitaplık. Okuduğu, okumakta olduğu ve sırada bekleyen kitaplar.`,
+    intro: (owner: string) => `${owner}'ın dijital kütüphanesi. Okuduğu, okumakta olduğu ve sırada bekleyen kitaplar.`,
     summary: (books: number, pages: number) => `${books} kitap, ${pages.toLocaleString("tr-TR")} sayfa okundu`,
     search: "Kitap ya da yazar ara",
     filters: "Filtreler",
@@ -40,7 +40,7 @@ const T = {
   },
   en: {
     title: "Reading list",
-    intro: (owner: string) => `${owner}'s bookshelf: finished, in progress and waiting in the queue.`,
+    intro: (owner: string) => `${owner}'s digital library. Books finished, in progress and waiting in the queue.`,
     summary: (books: number, pages: number) => `${books} ${books === 1 ? "book" : "books"}, ${pages.toLocaleString("en-US")} pages read`,
     search: "Search by title or author",
     filters: "Filters",
