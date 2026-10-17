@@ -8,7 +8,9 @@
   --lib-saffron: #f0b43c;
   --lib-sans: var(--font-ui, system-ui, sans-serif);
   --lib-serif: var(--font-serif, Georgia, serif);
-  min-height: 100dvh;
+  /* The site's global CSS locks html/body scrolling (IDE layout), so this page scrolls itself. */
+  height: 100dvh;
+  overflow-y: auto;
   padding: clamp(40px, 8vw, 96px) max(20px, calc((100vw - 1120px) / 2)) 96px;
   color: var(--lib-fg);
   font-family: var(--lib-sans);
