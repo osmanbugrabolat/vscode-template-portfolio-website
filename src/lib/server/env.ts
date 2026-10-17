@@ -30,6 +30,10 @@ export const serverEnv = {
   get appSecret() {
     return process.env.APP_SECRET ?? `derived:${this.supabaseSecretKey}`;
   },
+  /** Optional: lifts Google Books from the shared anonymous quota to the project's own. */
+  get googleBooksApiKey() {
+    return process.env.GOOGLE_BOOKS_API_KEY || undefined;
+  },
   get isProduction() {
     return process.env.NODE_ENV === "production";
   },

@@ -1,0 +1,23 @@
+import * as z from "zod";
+import { emptyToNull, optionalHttpsUrl, singleLine, text, uuid } from "@/lib/validation";
+import { BOOK_STATUSES } from "./types";
+
+const optionalInt = (min: number, max: number) =>
+  z.preprocess(emptyToNull, z.coerce.number().int().min(min).max(max).nullable());
+
+export const BookSchema = z.object({
+  id: z.preprocess(emptyToNull, uuid.nullable()),
+  title: singleLine(200, 1),
+  author: singleLine(200),
+  cover_url: optionalHttpsUrl,
+  isbn: singleLine(20),
+  published_year: optionalInt(0, 2200),
+  page_count: optionalInt(1, 20000),
+  description: text(4000),
+  status: z.enum(BOOK_STATUSES),
+  rating: optionalInt(1, 5),
+  finished_on: z.preprocess(emptyToNull, z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { error: "Geçerli bir tarih girin." }).nullable()),
+  notes: text(8000),
+});
+
+export const BookSearchSchema = z.object({ q: singleLine(100, 3) });
