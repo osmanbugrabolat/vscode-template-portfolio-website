@@ -7,9 +7,9 @@
   --lib-fg: #aab0c0;
   --lib-strong: #f4efe4;
   --lib-muted: #7d8394;
-  --lib-accent: #8b7bff;
-  --lib-accent-soft: rgba(139, 123, 255, 0.16);
-  --lib-on-accent: #0b0e14;
+  --lib-accent: #ff8a7a;
+  --lib-accent-soft: rgba(255, 138, 122, 0.16);
+  --lib-on-accent: #1a0d0a;
   --lib-sans: var(--font-ui, system-ui, sans-serif);
   --lib-serif: var(--font-serif, Georgia, serif);
   /* The site's global CSS locks html/body scrolling (IDE layout), so this page scrolls itself. */
@@ -129,7 +129,7 @@ button.lib-feature { display: flex; width: 100%; padding: 0; text-align: left; c
 
 /* in progress */
 button.lib-feature { gap: 28px; align-items: center; padding: 28px; background: linear-gradient(120deg, #171c28, #11151e); border: 1px solid var(--lib-line); border-radius: 24px; transition: border-color 0.2s, transform 0.2s; }
-button.lib-feature:hover { border-color: rgba(139, 123, 255, 0.5); transform: translateY(-2px); }
+button.lib-feature:hover { border-color: rgba(255, 138, 122, 0.5); transform: translateY(-2px); }
 button.lib-feature .lib-cover { width: 130px; flex: none; }
 .lib-feature-text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .lib-feature-title { color: var(--lib-strong); font-family: var(--lib-serif); font-size: 1.875rem; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
@@ -149,8 +149,8 @@ button.lib-feature .lib-cover { width: 130px; flex: none; }
 .lib-drawer-status .lib-rating { margin: 0; font-size: 0.8125rem; }
 .lib-status { padding: 3px 12px; font-size: 0.8125rem; border-radius: 999px; }
 .lib-status-read { color: #9ad59a; background: rgba(154, 213, 154, 0.12); }
-.lib-status-reading { color: #b8aeff; background: var(--lib-accent-soft); }
-.lib-status-want { color: #7fd1c1; background: rgba(127, 209, 193, 0.12); }
+.lib-status-reading { color: #ffa99c; background: var(--lib-accent-soft); }
+.lib-status-want { color: #9db4ff; background: rgba(157, 180, 255, 0.12); }
 .lib-genres { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 16px 0 0; padding: 0; list-style: none; }
 .lib-genres li { padding: 3px 12px; color: var(--lib-fg); font-size: 0.75rem; border: 1px solid var(--lib-line); border-radius: 999px; }
 .lib-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 16px; margin: 28px 0 0; padding: 18px 0; border-block: 1px solid var(--lib-line); }
