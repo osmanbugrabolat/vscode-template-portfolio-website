@@ -7,7 +7,9 @@
   --lib-fg: #aab0c0;
   --lib-strong: #f4efe4;
   --lib-muted: #7d8394;
-  --lib-saffron: #f0b43c;
+  --lib-accent: #8b7bff;
+  --lib-accent-soft: rgba(139, 123, 255, 0.16);
+  --lib-on-accent: #0b0e14;
   --lib-sans: var(--font-ui, system-ui, sans-serif);
   --lib-serif: var(--font-serif, Georgia, serif);
   /* The site's global CSS locks html/body scrolling (IDE layout), so this page scrolls itself. */
@@ -42,7 +44,7 @@
   scrollbar-color: var(--lib-line) transparent;
 }
 .lib-brand { display: flex; align-items: center; gap: 10px; padding-left: 4px; color: var(--lib-strong); font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
-.lib-brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: #1a1204; background: var(--lib-saffron); border-radius: 11px; font-size: 1.125rem; }
+.lib-brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: var(--lib-on-accent); background: var(--lib-accent); border-radius: 11px; font-size: 1.125rem; }
 
 .lib-search {
   display: flex;
@@ -56,7 +58,7 @@
   border-radius: 14px;
   transition: border-color 0.15s;
 }
-.lib-search:focus-within { border-color: var(--lib-saffron); }
+.lib-search:focus-within { border-color: var(--lib-accent); }
 .lib-search input { flex: 1; min-width: 0; color: var(--lib-strong); background: none; border: 0; outline: 0; font: inherit; font-size: 0.875rem; }
 .lib-search input::placeholder { color: var(--lib-muted); }
 
@@ -66,10 +68,10 @@
 .lib-filter:hover { color: var(--lib-strong); background: rgba(244, 239, 228, 0.06); }
 .lib-filter[aria-pressed="true"] { color: #0b0e14; background: var(--lib-strong); }
 .lib-filter-count { flex: none; opacity: 0.6; }
-.lib-more, .lib-clear { padding: 6px 14px; color: var(--lib-saffron); background: none; border: 0; font: inherit; font-size: 0.8125rem; text-align: left; cursor: pointer; }
+.lib-more, .lib-clear { padding: 6px 14px; color: var(--lib-accent); background: none; border: 0; font: inherit; font-size: 0.8125rem; text-align: left; cursor: pointer; }
 .lib-more:hover, .lib-clear:hover { text-decoration: underline; }
 .lib-filter:focus-visible, .lib-more:focus-visible, .lib-clear:focus-visible, .lib-filter-toggle:focus-visible, .lib-view button:focus-visible,
-button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-spine:focus-visible, .lib-close:focus-visible { outline: 2px solid var(--lib-saffron); outline-offset: 3px; }
+button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-spine:focus-visible, .lib-close:focus-visible { outline: 2px solid var(--lib-accent); outline-offset: 3px; }
 
 /* ------------------------------------------------------------ header */
 .lib-header { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; }
@@ -131,11 +133,11 @@ button.lib-card:hover .lib-cover { transform: translateY(-6px) rotate(-0.6deg); 
 .lib-card-title { margin-top: 12px; color: var(--lib-strong); font-family: var(--lib-serif); font-size: 1rem; line-height: 1.3; }
 .lib-author { color: var(--lib-muted); font-size: 0.8125rem; line-height: 1.4; }
 .lib-rating { display: inline-flex; gap: 2px; margin-top: 4px; color: rgba(244, 239, 228, 0.16); font-size: 0.6875rem; }
-.lib-rating .is-on { color: var(--lib-saffron); }
+.lib-rating .is-on { color: var(--lib-accent); }
 
 /* in progress */
 button.lib-feature { gap: 28px; align-items: center; padding: 28px; background: linear-gradient(120deg, #171c28, #11151e); border: 1px solid var(--lib-line); border-radius: 24px; transition: border-color 0.2s, transform 0.2s; }
-button.lib-feature:hover { border-color: rgba(240, 180, 60, 0.45); transform: translateY(-2px); }
+button.lib-feature:hover { border-color: rgba(139, 123, 255, 0.5); transform: translateY(-2px); }
 button.lib-feature .lib-cover { width: 130px; flex: none; }
 .lib-feature-text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .lib-feature-title { color: var(--lib-strong); font-family: var(--lib-serif); font-size: 1.875rem; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
@@ -155,8 +157,8 @@ button.lib-feature .lib-cover { width: 130px; flex: none; }
 .lib-drawer-status .lib-rating { margin: 0; font-size: 0.8125rem; }
 .lib-status { padding: 3px 12px; font-size: 0.8125rem; border-radius: 999px; }
 .lib-status-read { color: #9ad59a; background: rgba(154, 213, 154, 0.12); }
-.lib-status-reading { color: var(--lib-saffron); background: rgba(240, 180, 60, 0.14); }
-.lib-status-want { color: #9db4ff; background: rgba(157, 180, 255, 0.12); }
+.lib-status-reading { color: #b8aeff; background: var(--lib-accent-soft); }
+.lib-status-want { color: #7fd1c1; background: rgba(127, 209, 193, 0.12); }
 .lib-genres { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 16px 0 0; padding: 0; list-style: none; }
 .lib-genres li { padding: 3px 12px; color: var(--lib-fg); font-size: 0.75rem; border: 1px solid var(--lib-line); border-radius: 999px; }
 .lib-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 16px; margin: 28px 0 0; padding: 18px 0; border-block: 1px solid var(--lib-line); }
@@ -175,7 +177,7 @@ button.lib-feature .lib-cover { width: 130px; flex: none; }
   .lib-layout { grid-template-columns: minmax(0, 1fr); }
   .lib-content { padding-right: 0; }
   .lib-filter-toggle { position: relative; display: inline-flex; gap: 8px; align-items: center; justify-self: start; margin-bottom: 16px; padding: 10px 18px; color: var(--lib-strong); background: var(--lib-panel); border: 1px solid var(--lib-line); border-radius: 999px; font: inherit; font-size: 0.875rem; cursor: pointer; }
-  .lib-dot { width: 7px; height: 7px; background: var(--lib-saffron); border-radius: 50%; }
+  .lib-dot { width: 7px; height: 7px; background: var(--lib-accent); border-radius: 50%; }
   .lib-sidebar { display: none; position: static; height: auto; margin-bottom: 24px; }
   .lib-sidebar.is-open { display: flex; }
 }
