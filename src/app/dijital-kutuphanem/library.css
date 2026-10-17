@@ -1,15 +1,15 @@
 .lib {
-  --lib-bg: #0b0e14;
-  --lib-panel: #161a24;
-  --lib-panel-2: #10141d;
-  --lib-input: #0f131b;
-  --lib-line: #1f2431;
-  --lib-fg: #aab0c0;
-  --lib-strong: #f4efe4;
-  --lib-muted: #7d8394;
-  --lib-accent: #ff8a7a;
-  --lib-accent-soft: rgba(255, 138, 122, 0.16);
-  --lib-on-accent: #1a0d0a;
+  --lib-bg: #17110c;
+  --lib-panel: #211810;
+  --lib-panel-2: #1b130d;
+  --lib-input: #150f0a;
+  --lib-line: #35291d;
+  --lib-fg: #c2b09a;
+  --lib-strong: #f5ead8;
+  --lib-muted: #8f7d69;
+  --lib-accent: #d9895b;
+  --lib-accent-soft: rgba(217, 137, 91, 0.16);
+  --lib-on-accent: #1d0f07;
   --lib-sans: var(--font-ui, system-ui, sans-serif);
   --lib-serif: var(--font-serif, Georgia, serif);
   /* The site's global CSS locks html/body scrolling (IDE layout), so this page scrolls itself. */
@@ -67,8 +67,8 @@
 .lib-group h3 { margin: 0 0 10px 6px; color: var(--lib-strong); font-size: 0.8125rem; font-weight: 600; }
 .lib-group ul { margin: 0; padding: 0; list-style: none; }
 .lib-filter { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 10px 14px; color: var(--lib-fg); text-align: left; background: none; border: 0; border-radius: 12px; font: inherit; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s, color 0.15s; }
-.lib-filter:hover { color: var(--lib-strong); background: rgba(244, 239, 228, 0.06); }
-.lib-filter[aria-pressed="true"] { color: #0b0e14; background: var(--lib-strong); }
+.lib-filter:hover { color: var(--lib-strong); background: rgba(245, 234, 216, 0.07); }
+.lib-filter[aria-pressed="true"] { color: #1d140d; background: var(--lib-strong); }
 .lib-filter-count { flex: none; opacity: 0.6; }
 .lib-more, .lib-clear { padding: 6px 14px; color: var(--lib-accent); background: none; border: 0; font: inherit; font-size: 0.8125rem; text-align: left; cursor: pointer; }
 .lib-more:hover, .lib-clear:hover { text-decoration: underline; }
@@ -86,7 +86,7 @@ button.lib-feature:focus-visible, .lib-spine:focus-visible, .lib-close:focus-vis
 /* ------------------------------------------------------------ shelf */
 .lib-shelf { display: flex; flex-direction: column; gap: 22px; }
 .lib-shelf-books { display: flex; align-items: flex-end; gap: 6px; padding: 14px 16px 0; }
-.lib-shelf-board { height: 14px; background: linear-gradient(#2a2f3c, #171b24); border-radius: 2px; box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.75); }
+.lib-shelf-board { height: 14px; background: linear-gradient(#6b4a2e, #3f2b19); border-radius: 2px; box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.75); }
 .lib-spine {
   display: flex;
   flex: none;
@@ -124,24 +124,24 @@ button.lib-feature { display: flex; width: 100%; padding: 0; text-align: left; c
 .lib-cover-title { font-family: var(--lib-serif); font-size: 15cqw; font-weight: 500; line-height: 0.98; letter-spacing: -0.02em; overflow-wrap: anywhere; }
 
 .lib-author { color: var(--lib-muted); font-size: 0.8125rem; line-height: 1.4; }
-.lib-rating { display: inline-flex; gap: 2px; margin-top: 4px; color: rgba(244, 239, 228, 0.16); font-size: 0.6875rem; }
+.lib-rating { display: inline-flex; gap: 2px; margin-top: 4px; color: rgba(245, 234, 216, 0.16); font-size: 0.6875rem; }
 .lib-rating .is-on { color: var(--lib-accent); }
 
 /* in progress */
-button.lib-feature { gap: 28px; align-items: center; padding: 28px; background: linear-gradient(120deg, #171c28, #11151e); border: 1px solid var(--lib-line); border-radius: 24px; transition: border-color 0.2s, transform 0.2s; }
-button.lib-feature:hover { border-color: rgba(255, 138, 122, 0.5); transform: translateY(-2px); }
+button.lib-feature { gap: 28px; align-items: center; padding: 28px; background: linear-gradient(120deg, #2a1f15, #1d1510); border: 1px solid var(--lib-line); border-radius: 24px; transition: border-color 0.2s, transform 0.2s; }
+button.lib-feature:hover { border-color: rgba(217, 137, 91, 0.5); transform: translateY(-2px); }
 button.lib-feature .lib-cover { width: 130px; flex: none; }
 .lib-feature-text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .lib-feature-title { color: var(--lib-strong); font-family: var(--lib-serif); font-size: 1.875rem; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
 .lib-feature-desc { display: -webkit-box; margin-top: 8px; overflow: hidden; color: var(--lib-fg); font-size: 0.9375rem; line-height: 1.6; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 
 /* ------------------------------------------------------------ drawer */
-.lib-overlay { position: fixed; inset: 0; z-index: 50; display: flex; justify-content: flex-end; background: rgba(4, 6, 11, 0.65); backdrop-filter: blur(4px); animation: lib-fade 0.2s ease-out; }
+.lib-overlay { position: fixed; inset: 0; z-index: 50; display: flex; justify-content: flex-end; background: rgba(12, 8, 5, 0.7); backdrop-filter: blur(4px); animation: lib-fade 0.2s ease-out; }
 .lib-drawer { position: relative; width: min(480px, 100%); height: 100%; overflow: hidden; background: var(--lib-panel); border-left: 1px solid var(--lib-line); animation: lib-slide 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .lib-drawer-glow { position: absolute; inset: -40px -40px auto; height: 360px; background-size: cover; background-position: center; filter: blur(60px) saturate(1.4); opacity: 0.35; mask-image: linear-gradient(#000, transparent); }
 .lib-drawer-scroll { position: relative; height: 100%; overflow-y: auto; overscroll-behavior: contain; padding: 56px 32px 48px; }
-.lib-close { position: absolute; top: 14px; right: 14px; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; color: var(--lib-strong); background: rgba(11, 14, 20, 0.6); border: 1px solid var(--lib-line); border-radius: 999px; font-size: 1.125rem; cursor: pointer; }
-.lib-close:hover { background: rgba(11, 14, 20, 0.9); }
+.lib-close { position: absolute; top: 14px; right: 14px; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; color: var(--lib-strong); background: rgba(23, 17, 12, 0.6); border: 1px solid var(--lib-line); border-radius: 999px; font-size: 1.125rem; cursor: pointer; }
+.lib-close:hover { background: rgba(23, 17, 12, 0.9); }
 .lib-drawer-cover { width: 180px; margin: 0 auto 28px; }
 .lib-drawer h2 { margin: 0; color: var(--lib-strong); font-family: var(--lib-serif); font-size: 1.875rem; font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; text-align: center; text-wrap: balance; }
 .lib-drawer-author { margin: 8px 0 0; text-align: center; font-size: 0.9375rem; }
@@ -149,8 +149,8 @@ button.lib-feature .lib-cover { width: 130px; flex: none; }
 .lib-drawer-status .lib-rating { margin: 0; font-size: 0.8125rem; }
 .lib-status { padding: 3px 12px; font-size: 0.8125rem; border-radius: 999px; }
 .lib-status-read { color: #9ad59a; background: rgba(154, 213, 154, 0.12); }
-.lib-status-reading { color: #ffa99c; background: var(--lib-accent-soft); }
-.lib-status-want { color: #9db4ff; background: rgba(157, 180, 255, 0.12); }
+.lib-status-reading { color: #efb18a; background: var(--lib-accent-soft); }
+.lib-status-want { color: #9db8d9; background: rgba(157, 184, 217, 0.12); }
 .lib-genres { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 16px 0 0; padding: 0; list-style: none; }
 .lib-genres li { padding: 3px 12px; color: var(--lib-fg); font-size: 0.75rem; border: 1px solid var(--lib-line); border-radius: 999px; }
 .lib-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 16px; margin: 28px 0 0; padding: 18px 0; border-block: 1px solid var(--lib-line); }
