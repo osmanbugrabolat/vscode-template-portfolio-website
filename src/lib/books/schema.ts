@@ -1,5 +1,6 @@
 import * as z from "zod";
 import { emptyToNull, optionalHttpsUrl, singleLine, tagList, text, uuid } from "@/lib/validation";
+import { THEME_COLORS } from "./appearance";
 import { BOOK_STATUSES } from "./types";
 
 const optionalDate = z.preprocess(emptyToNull, z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { error: "Geçerli bir tarih girin." }).nullable());
@@ -24,6 +25,7 @@ export const BookSchema = z.object({
   started_on: optionalDate,
   finished_on: optionalDate,
   genres,
+  spine_color: z.preprocess(emptyToNull, z.enum(THEME_COLORS, { error: "Geçersiz renk." }).nullable()),
   notes: text(8000),
 }).refine((v) => !v.started_on || !v.finished_on || v.started_on <= v.finished_on, {
   path: ["finished_on"],

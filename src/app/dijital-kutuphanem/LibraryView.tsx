@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { VscClose, VscFilter, VscLibrary, VscSearch, VscStarFull } from "react-icons/vsc";
-import { coverTheme, spineSize } from "@/lib/books/appearance";
+import { resolveThemes, spineSize, type CoverTheme } from "@/lib/books/appearance";
 import type { Book, BookStatus } from "@/lib/books/types";
 
 type Lang = "tr" | "en";
@@ -81,12 +81,11 @@ function authorsOf(book: Book): string[] {
 }
 
 /** Covers without an image get a typographic cover in one of the shelf colours. */
-function Cover({ book, className }: { book: Book; className: string }) {
+function Cover({ book, theme, className }: { book: Book; theme: CoverTheme; className: string }) {
   if (book.cover_url) {
     // eslint-disable-next-line @next/next/no-img-element -- covers come from arbitrary book APIs
     return <img className={className} src={book.cover_url} alt={book.title} loading="lazy" referrerPolicy="no-referrer" />;
   }
-  const theme = coverTheme(book);
   return (
     <div className={`${className} lib-cover-fallback`} role="img" aria-label={book.title} style={{ background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
       <span className="lib-cover-author">{book.author}</span>
@@ -109,14 +108,8 @@ function Rating({ value }: { value: number }) {
 
 const SPINE_GAP = 6;
 
-/** Spines are always plain colour (cover images only show on covers). */
-function spineBackground(book: Book): { background: string; color: string } {
-  const theme = coverTheme(book);
-  return { background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg };
-}
-
 /** Books stand on boards: rows are packed by real spine widths for the available width. */
-function Shelf({ books, onOpen }: { books: Book[]; onOpen: (book: Book) => void }) {
+function Shelf({ books, themes, onOpen }: { books: Book[]; themes: Map<string, CoverTheme>; onOpen: (book: Book) => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(900);
 
@@ -151,8 +144,9 @@ function Shelf({ books, onOpen }: { books: Book[]; onOpen: (book: Book) => void 
           <div className="lib-shelf-books">
             {row.map((book) => {
               const { width: w, height: h } = spineSize(book);
+              const theme = themes.get(book.id)!;
               return (
-                <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: h, ...spineBackground(book) }}>
+                <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: h, background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
                   <span>{book.title}</span>
                 </button>
               );
@@ -228,6 +222,8 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   const [author, setAuthor] = useState<string | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [open, setOpen] = useState<Book | null>(null);
+
+  const themes = useMemo(() => resolveThemes(books), [books]);
 
   const counts = useMemo(
     () => ({ all: books.length, read: books.filter((b) => b.status === "read").length, reading: books.filter((b) => b.status === "reading").length, want: books.filter((b) => b.status === "want").length }),
@@ -352,7 +348,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
                     {section.books.map((book) => (
                       <li key={book.id}>
                         <button type="button" className="lib-feature" onClick={() => setOpen(book)}>
-                          <Cover book={book} className="lib-cover" />
+                          <Cover book={book} theme={themes.get(book.id)!} className="lib-cover" />
                           <span className="lib-feature-text">
                             <span className="lib-feature-title">{book.title}</span>
                             {book.author && <span className="lib-author">{book.author}</span>}
@@ -363,7 +359,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
                     ))}
                   </ul>
                 ) : (
-                  <Shelf books={section.books} onOpen={setOpen} />
+                  <Shelf books={section.books} themes={themes} onOpen={setOpen} />
                 )}
               </section>
             ))
@@ -371,12 +367,12 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
         </div>
       </div>
 
-      {open && <Drawer book={open} lang={lang} onClose={() => setOpen(null)} />}
+      {open && <Drawer book={open} theme={themes.get(open.id)!} lang={lang} onClose={() => setOpen(null)} />}
     </main>
   );
 }
 
-function Drawer({ book, lang, onClose }: { book: Book; lang: Lang; onClose: () => void }) {
+function Drawer({ book, theme, lang, onClose }: { book: Book; theme: CoverTheme; lang: Lang; onClose: () => void }) {
   const t = T[lang];
 
   useEffect(() => {
@@ -405,7 +401,7 @@ function Drawer({ book, lang, onClose }: { book: Book; lang: Lang; onClose: () =
           <VscClose />
         </button>
         <div className="lib-drawer-scroll">
-          <Cover book={book} className="lib-drawer-cover" />
+          <Cover book={book} theme={theme} className="lib-drawer-cover" />
           <h2>{book.title}</h2>
           {book.author && <p className="lib-author lib-drawer-author">{book.author}</p>}
           <div className="lib-drawer-status">

@@ -1696,3 +1696,15 @@
     align-items: stretch;
   }
 }
+
+/* shelf colour picker (books) */
+.adm-swatch-field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.adm-swatches { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.adm-swatch { position: relative; display: inline-flex; cursor: pointer; }
+.adm-swatch input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; }
+.adm-swatch > span { display: block; width: 28px; height: 40px; border-radius: 3px 3px 1px 1px; border: 1px solid var(--adm-border); box-shadow: inset 3px 0 0 rgba(255, 255, 255, 0.14); transition: transform 0.12s; }
+.adm-swatch:hover > span { transform: translateY(-2px); }
+.adm-swatch input:checked + span { outline: 2px solid var(--adm-accent-hover); outline-offset: 2px; }
+.adm-swatch input:focus-visible + span { outline: 2px solid var(--adm-accent-hover); outline-offset: 2px; }
+.adm-swatch-auto > span { width: auto; height: auto; padding: 8px 14px; font-size: 0.8125rem; border-radius: 999px; box-shadow: none; color: var(--adm-fg); }
+.adm-swatch-auto input:checked + span { color: var(--adm-fg-strong); background: var(--adm-accent-soft); }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useTransition } from "react";
 import { VscAdd, VscEdit, VscLibrary, VscSearch, VscTrash } from "react-icons/vsc";
+import { THEMES } from "@/lib/books/appearance";
 import { BOOK_STATUS_LABELS, BOOK_STATUSES, type Book, type BookStatus, type BookSuggestion } from "@/lib/books/types";
 import { deleteBook, lookupBooks, saveBook } from "../_actions/books";
 import { DeleteButton, FormError, PageHeader, SelectField, SubmitButton, TextAreaField, TextField, useAdminAction, useToast } from "../_components/ui";
@@ -106,6 +107,7 @@ function BookForm({ book, genreOptions, onDone }: { book?: Book; genreOptions: s
     description: book?.description ?? "",
     genres: book?.genres.join(", ") ?? "",
   });
+  const [spineColor, setSpineColor] = useState(book?.spine_color ?? "");
   const set = (key: keyof Draft) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setDraft((d) => ({ ...d, [key]: e.target.value }));
 
   const pick = (s: BookSuggestion) =>
@@ -184,6 +186,24 @@ function BookForm({ book, genreOptions, onDone }: { book?: Book; genreOptions: s
           <option key={g} value={g} />
         ))}
       </datalist>
+      <fieldset className="adm-field adm-swatch-field">
+        <legend className="adm-label">
+          Raf rengi
+          <span className="adm-label-hint">seçmezseniz otomatik atanır</span>
+        </legend>
+        <div className="adm-swatches">
+          <label className="adm-swatch adm-swatch-auto">
+            <input type="radio" name="spine_color" value="" checked={spineColor === ""} onChange={() => setSpineColor("")} />
+            <span>Otomatik</span>
+          </label>
+          {THEMES.map((t) => (
+            <label key={t.c1} className="adm-swatch" title={t.name}>
+              <input type="radio" name="spine_color" value={t.c1} checked={spineColor === t.c1} onChange={() => setSpineColor(t.c1)} aria-label={t.name} />
+              <span style={{ background: `linear-gradient(160deg, ${t.c1}, ${t.c2})` }} />
+            </label>
+          ))}
+        </div>
+      </fieldset>
       <TextAreaField label="Özet" name="description" value={draft.description} onChange={set("description")} rows={4} maxLength={4000} errors={errors} />
       <TextAreaField label="Notlarım" hint="isteğe bağlı" name="notes" defaultValue={book?.notes} rows={4} maxLength={8000} errors={errors} help="Boş bırakırsanız sayfada not bölümü görünmez." />
 
