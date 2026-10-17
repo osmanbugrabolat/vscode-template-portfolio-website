@@ -7,7 +7,6 @@ import type { Book, BookStatus } from "@/lib/books/types";
 
 type Lang = "tr" | "en";
 type Filter = "all" | BookStatus;
-type View = "shelf" | "grid";
 
 const T = {
   tr: {
@@ -21,9 +20,6 @@ const T = {
     clear: "Filtreleri temizle",
     showAll: "Tümünü göster",
     showLess: "Daha az göster",
-    view: "Görünüm",
-    shelf: "Raf",
-    grid: "Kapaklar",
     started: "Başlangıç",
     duration: "Okuma süresi",
     days: (n: number) => `${n} gün`,
@@ -56,9 +52,6 @@ const T = {
     clear: "Clear filters",
     showAll: "Show all",
     showLess: "Show less",
-    view: "View",
-    shelf: "Shelf",
-    grid: "Covers",
     started: "Started",
     duration: "Reading time",
     days: (n: number) => `${n} ${n === 1 ? "day" : "days"}`,
@@ -235,7 +228,6 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   const [query, setQuery] = useState("");
   const [genre, setGenre] = useState<string | null>(null);
   const [author, setAuthor] = useState<string | null>(null);
-  const [view, setView] = useState<View>("shelf");
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [open, setOpen] = useState<Book | null>(null);
 
@@ -299,26 +291,6 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   };
   const statuses: Filter[] = ["all", "read", "reading", "want"];
 
-  const viewToggle = (
-    <div className="lib-view" role="group" aria-label={t.view}>
-      <button type="button" aria-pressed={view === "shelf"} onClick={() => setView("shelf")}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-          <path d="M5 20V8M10 20V4M15 20V9M20 20V6" />
-        </svg>
-        {t.shelf}
-      </button>
-      <button type="button" aria-pressed={view === "grid"} onClick={() => setView("grid")}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-          <rect x="4" y="4" width="7" height="7" rx="1" />
-          <rect x="13" y="4" width="7" height="7" rx="1" />
-          <rect x="4" y="13" width="7" height="7" rx="1" />
-          <rect x="13" y="13" width="7" height="7" rx="1" />
-        </svg>
-        {t.grid}
-      </button>
-    </div>
-  );
-
   return (
     <main className={`lib${open ? " is-locked" : ""}`}>
       <div className="lib-layout">
@@ -371,26 +343,16 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
         </aside>
 
         <div className="lib-content">
-          {sections.length > 0 && <h1 className="lib-sr-only">{t.title}</h1>}
-          {sections.length === 0 && (
-            <header className="lib-header">
-              <h1 className="lib-sr-only">{t.title}</h1>
-              {viewToggle}
-            </header>
-          )}
-
+          <h1 className="lib-sr-only">{t.title}</h1>
           {sections.length === 0 ? (
             <p className="lib-empty">{books.length === 0 ? t.empty : t.noMatch}</p>
           ) : (
-            sections.map((section, index) => (
+            sections.map((section) => (
               <section key={section.key} className="lib-section" aria-label={section.title}>
-                <div className="lib-section-head">
-                  <h2>
-                    {section.title}
-                    <span>{t.count(section.books.length)}</span>
-                  </h2>
-                  {index === 0 && viewToggle}
-                </div>
+                <h2>
+                  {section.title}
+                  <span>{t.count(section.books.length)}</span>
+                </h2>
                 {section.kind === "reading" ? (
                   <ul className="lib-featured">
                     {section.books.map((book) => (
@@ -406,21 +368,8 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
                       </li>
                     ))}
                   </ul>
-                ) : view === "shelf" ? (
-                  <Shelf books={section.books} onOpen={setOpen} />
                 ) : (
-                  <ul className="lib-grid">
-                    {section.books.map((book) => (
-                      <li key={book.id}>
-                        <button type="button" className="lib-card" onClick={() => setOpen(book)}>
-                          <Cover book={book} className="lib-cover" />
-                          <span className="lib-card-title">{book.title}</span>
-                          {book.author && <span className="lib-author">{book.author}</span>}
-                          {book.rating && <Rating value={book.rating} />}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
+                  <Shelf books={section.books} onOpen={setOpen} />
                 )}
               </section>
             ))
