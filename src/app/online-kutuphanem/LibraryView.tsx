@@ -33,7 +33,8 @@ const T = {
     want: "Okuyacağım",
     readingNow: "Şu an okuyorum",
     queue: "Sırada bekleyenler",
-    undated: "Tarihsiz",
+    readIn: (year: string) => `${year} yılında okuduklarım`,
+    undated: "Tarihi girilmemiş okuduklarım",
     empty: "Henüz kitap yok.",
     noMatch: "Aramanızla eşleşen kitap yok. Başka bir yazım deneyin.",
     notes: "Notlarım",
@@ -67,7 +68,8 @@ const T = {
     want: "Want to read",
     readingNow: "Reading now",
     queue: "Up next",
-    undated: "Undated",
+    readIn: (year: string) => `Read in ${year}`,
+    undated: "Read, no date",
     empty: "No books yet.",
     noMatch: "No books match your search. Try another spelling.",
     notes: "My notes",
@@ -278,7 +280,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
       const year = b.finished_on?.slice(0, 4) ?? "";
       byYear.set(year, [...(byYear.get(year) ?? []), b]);
     }
-    for (const [year, list] of byYear) out.push({ key: `y${year}`, title: year || t.undated, kind: "shelf", books: list });
+    for (const [year, list] of byYear) out.push({ key: `y${year}`, title: year ? t.readIn(year) : t.undated, kind: "shelf", books: list });
 
     const reading = matches.filter((b) => b.status === "reading");
     if (reading.length) out.push({ key: "reading", title: t.readingNow, kind: "reading", books: reading });
