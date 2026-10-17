@@ -9,6 +9,7 @@ import { DeleteButton, FormError, PageHeader, SelectField, SubmitButton, TextAre
 export default function BooksEditor({ books }: { books: Book[] }) {
   const [editing, setEditing] = useState<string | "new" | null>(null);
   const close = () => setEditing(null);
+  const genreOptions = [...new Set(books.flatMap((b) => b.genres))].sort((a, b) => a.localeCompare(b, "tr"));
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function BooksEditor({ books }: { books: Book[] }) {
 
       {editing === "new" && (
         <div className="adm-card">
-          <BookForm onDone={close} />
+          <BookForm genreOptions={genreOptions} onDone={close} />
         </div>
       )}
 
@@ -41,7 +42,7 @@ export default function BooksEditor({ books }: { books: Book[] }) {
             {books.map((book) =>
               editing === book.id ? (
                 <li key={book.id} className="adm-list-item" style={{ display: "block" }}>
-                  <BookForm book={book} onDone={close} />
+                  <BookForm book={book} genreOptions={genreOptions} onDone={close} />
                 </li>
               ) : (
                 <li key={book.id} className="adm-list-item">
@@ -52,7 +53,7 @@ export default function BooksEditor({ books }: { books: Book[] }) {
                       <span className="adm-badge">{BOOK_STATUS_LABELS[book.status]}</span>
                     </div>
                     <div className="adm-help">
-                      {[book.author, book.published_year, book.rating ? `${book.rating}/5` : null].filter(Boolean).join(" · ")}
+                      {[book.author, book.published_year, book.rating ? `${book.rating}/5` : null, book.genres.join(", ")].filter(Boolean).join(" · ")}
                     </div>
                   </div>
                   <div className="adm-btn-group">
@@ -90,9 +91,10 @@ interface Draft {
   published_year: string;
   page_count: string;
   description: string;
+  genres: string;
 }
 
-function BookForm({ book, onDone }: { book?: Book; onDone: () => void }) {
+function BookForm({ book, genreOptions, onDone }: { book?: Book; genreOptions: string[]; onDone: () => void }) {
   const { state, onSubmit, pending, errors } = useAdminAction(saveBook, { onSuccess: onDone });
   const [draft, setDraft] = useState<Draft>({
     title: book?.title ?? "",
@@ -102,6 +104,7 @@ function BookForm({ book, onDone }: { book?: Book; onDone: () => void }) {
     published_year: book?.published_year?.toString() ?? "",
     page_count: book?.page_count?.toString() ?? "",
     description: book?.description ?? "",
+    genres: book?.genres.join(", ") ?? "",
   });
   const set = (key: keyof Draft) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setDraft((d) => ({ ...d, [key]: e.target.value }));
 
@@ -114,6 +117,7 @@ function BookForm({ book, onDone }: { book?: Book; onDone: () => void }) {
       published_year: s.published_year?.toString() ?? "",
       page_count: s.page_count?.toString() ?? "",
       description: s.description,
+      genres: s.genres.join(", "),
     });
 
   return (
@@ -161,10 +165,27 @@ function BookForm({ book, onDone }: { book?: Book; onDone: () => void }) {
             </option>
           ))}
         </SelectField>
+        <TextField label="Başlama tarihi" name="started_on" type="date" defaultValue={book?.started_on ?? ""} errors={errors} />
         <TextField label="Bitirme tarihi" name="finished_on" type="date" defaultValue={book?.finished_on ?? ""} errors={errors} />
       </div>
+      <TextField
+        label="Türler"
+        hint="virgülle ayırın"
+        name="genres"
+        value={draft.genres}
+        onChange={set("genres")}
+        list="book-genre-options"
+        maxLength={400}
+        errors={errors}
+        help="Sitedeki tür filtresi bu etiketlerden oluşur. Örn: Roman, Klasik"
+      />
+      <datalist id="book-genre-options">
+        {genreOptions.map((g) => (
+          <option key={g} value={g} />
+        ))}
+      </datalist>
       <TextAreaField label="Özet" name="description" value={draft.description} onChange={set("description")} rows={4} maxLength={4000} errors={errors} />
-      <TextAreaField label="Notlarım" name="notes" defaultValue={book?.notes} rows={4} maxLength={8000} errors={errors} help="Kitap hakkındaki kişisel düşünceleriniz; sayfada görünür." />
+      <TextAreaField label="Notlarım" hint="isteğe bağlı" name="notes" defaultValue={book?.notes} rows={4} maxLength={8000} errors={errors} help="Boş bırakırsanız sayfada not bölümü görünmez." />
 
       <div className="adm-form-actions">
         <SubmitButton pending={pending}>{book ? "Kaydet" : "Kitabı ekle"}</SubmitButton>

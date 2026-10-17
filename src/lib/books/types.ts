@@ -18,12 +18,14 @@ export interface Book {
   description: string;
   status: BookStatus;
   rating: number | null;
+  started_on: string | null;
   finished_on: string | null;
+  genres: string[];
   notes: string;
   created_at: string;
 }
 
-export const BOOK_COLUMNS = "id, title, author, cover_url, isbn, published_year, page_count, description, status, rating, finished_on, notes, created_at";
+export const BOOK_COLUMNS = "id, title, author, cover_url, isbn, published_year, page_count, description, status, rating, started_on, finished_on, genres, notes, created_at";
 
 /** One suggestion from the book lookup in the admin panel. */
 export interface BookSuggestion {
@@ -35,4 +37,5 @@ export interface BookSuggestion {
   published_year: number | null;
   page_count: number | null;
   description: string;
+  genres: string[];
 }

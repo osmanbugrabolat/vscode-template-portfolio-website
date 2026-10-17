@@ -31,40 +31,6 @@
 .lib-intro { margin: 18px 0 0; font-size: 1.0625rem; line-height: 1.6; color: var(--lib-muted); }
 .lib-summary { margin: 14px 0 0; color: var(--lib-saffron); font-size: 0.9375rem; }
 
-/* ------------------------------------------------------------ toolbar */
-.lib-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  align-items: center;
-  justify-content: space-between;
-  margin: 48px -8px 8px;
-  padding: 12px 8px;
-  background: linear-gradient(var(--lib-bg) 70%, transparent);
-}
-.lib-segment { display: inline-flex; padding: 3px; background: var(--lib-surface); border: 1px solid var(--lib-line); border-radius: 999px; }
-.lib-segment button {
-  display: inline-flex;
-  gap: 6px;
-  align-items: baseline;
-  padding: 7px 16px;
-  color: var(--lib-muted);
-  background: none;
-  border: 0;
-  border-radius: 999px;
-  font: inherit;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-.lib-segment button span { font-size: 0.75rem; opacity: 0.7; }
-.lib-segment button:hover { color: var(--lib-strong); }
-.lib-segment button[aria-selected="true"] { color: #0d1220; background: var(--lib-strong); }
-.lib-segment button[aria-selected="true"] span { opacity: 0.6; }
-
 .lib-search {
   display: flex;
   align-items: center;
@@ -115,7 +81,7 @@ button.lib-card, button.lib-feature {
   cursor: pointer;
 }
 button.lib-card { flex-direction: column; gap: 4px; }
-button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-close:focus-visible, .lib-segment button:focus-visible {
+button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-close:focus-visible {
   outline: 2px solid var(--lib-saffron);
   outline-offset: 4px;
   border-radius: 6px;
@@ -240,8 +206,6 @@ button.lib-feature .lib-cover { width: 120px; flex: none; align-self: flex-start
 
 @media (max-width: 640px) {
   .lib-grid { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 28px 16px; }
-  .lib-segment { width: 100%; overflow-x: auto; }
-  .lib-segment button { flex: 1; justify-content: center; padding-inline: 10px; }
   .lib-search { width: 100%; }
   button.lib-feature { padding: 14px; gap: 16px; }
   button.lib-feature .lib-cover { width: 92px; }
@@ -252,4 +216,33 @@ button.lib-feature .lib-cover { width: 120px; flex: none; align-self: flex-start
 @media (prefers-reduced-motion: reduce) {
   .lib-overlay, .lib-drawer { animation: none; }
   .lib-cover, button.lib-feature { transition: none; }
+}
+
+/* ------------------------------------------------------------ sidebar layout */
+.lib-layout { display: grid; grid-template-columns: 248px minmax(0, 1fr); gap: 0 56px; margin-top: 48px; align-items: start; }
+.lib-content { min-width: 0; }
+.lib-content > .lib-section:first-child, .lib-content > .lib-empty:first-child { margin-top: 0; }
+.lib-filter-toggle { display: none; }
+
+.lib-sidebar { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 28px; max-height: calc(100dvh - 48px); overflow-y: auto; padding: 4px 10px 4px 10px; margin: -4px -10px; scrollbar-width: thin; scrollbar-color: var(--lib-line) transparent; }
+.lib-sidebar .lib-search { width: 100%; }
+.lib-group h3 { margin: 0 0 8px; color: var(--lib-strong); font-family: var(--lib-serif); font-size: 1.0625rem; font-weight: 500; }
+.lib-group ul { margin: 0; padding: 0; list-style: none; }
+.lib-filter { display: flex; gap: 12px; align-items: baseline; justify-content: space-between; width: 100%; padding: 6px 10px; margin-left: -10px; width: calc(100% + 10px); color: var(--lib-fg); text-align: left; background: none; border: 0; border-radius: 8px; font: inherit; font-size: 0.875rem; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.lib-filter:hover { color: var(--lib-strong); background: rgba(233, 230, 221, 0.05); }
+.lib-filter[aria-pressed="true"] { color: var(--lib-strong); background: rgba(240, 180, 60, 0.14); box-shadow: inset 2px 0 0 var(--lib-saffron); }
+.lib-filter:focus-visible, .lib-more:focus-visible, .lib-clear:focus-visible, .lib-filter-toggle:focus-visible { outline: 2px solid var(--lib-saffron); outline-offset: 2px; }
+.lib-filter-count { flex: none; color: var(--lib-muted); font-size: 0.75rem; }
+.lib-more, .lib-clear { padding: 6px 0; color: var(--lib-saffron); background: none; border: 0; font: inherit; font-size: 0.8125rem; text-align: left; cursor: pointer; }
+.lib-more:hover, .lib-clear:hover { text-decoration: underline; }
+
+.lib-genres { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 16px 0 0; padding: 0; list-style: none; }
+.lib-genres li { padding: 3px 12px; color: var(--lib-fg); font-size: 0.75rem; border: 1px solid var(--lib-line); border-radius: 999px; }
+
+@media (max-width: 860px) {
+  .lib-layout { grid-template-columns: minmax(0, 1fr); margin-top: 32px; }
+  .lib-filter-toggle { position: relative; display: inline-flex; gap: 8px; align-items: center; justify-self: start; margin-bottom: 16px; padding: 9px 18px; color: var(--lib-strong); background: var(--lib-surface); border: 1px solid var(--lib-line); border-radius: 999px; font: inherit; font-size: 0.875rem; cursor: pointer; }
+  .lib-dot { width: 7px; height: 7px; background: var(--lib-saffron); border-radius: 50%; }
+  .lib-sidebar { display: none; position: static; max-height: none; margin-bottom: 32px; padding: 20px; background: var(--lib-surface); border: 1px solid var(--lib-line); border-radius: 16px; }
+  .lib-sidebar.is-open { display: flex; }
 }

@@ -37,6 +37,12 @@ function plain(value: unknown, max: number): string {
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 const int = (v: unknown) => (typeof v === "number" && Number.isInteger(v) && v > 0 ? v : null);
 
+/** Google gives paths like "Fiction / Classics": keep each distinct part, at most three. */
+function genresFrom(categories: string[] | undefined): string[] {
+  const parts = (categories ?? []).flatMap((c) => c.split("/")).map((c) => c.trim()).filter((c) => c && c.length <= 40);
+  return [...new Set(parts)].slice(0, 3);
+}
+
 interface GoogleVolume {
   id?: string;
   volumeInfo?: {
@@ -48,6 +54,7 @@ interface GoogleVolume {
     description?: string;
     imageLinks?: { thumbnail?: string; smallThumbnail?: string };
     industryIdentifiers?: { type?: string; identifier?: string }[];
+    categories?: string[];
   };
 }
 
@@ -73,6 +80,7 @@ async function searchGoogle(q: string): Promise<BookSuggestion[]> {
         published_year: Number.isInteger(year) && year > 0 ? year : null,
         page_count: int(v.pageCount),
         description: plain(v.description, 4000),
+        genres: genresFrom(v.categories),
       },
     ];
   });
@@ -114,6 +122,7 @@ async function searchOpenLibrary(q: string): Promise<BookSuggestion[]> {
         published_year: int(d.first_publish_year),
         page_count: int(d.number_of_pages_median),
         description: "",
+        genres: [],
       },
     ];
   });
