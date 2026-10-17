@@ -1,6 +1,7 @@
 "use client";
 
-import { VscFiles, VscCode, VscCopilot, VscGithub, VscMail, VscPerson } from "react-icons/vsc";
+import Link from "next/link";
+import { VscFiles, VscCode, VscCopilot, VscGithub, VscLibrary, VscMail, VscPerson } from "react-icons/vsc";
 import { FaLinkedin, FaMedium } from "react-icons/fa";
 import { TbFileCv } from "react-icons/tb";
 import { Icon } from "@/lib/icons";
@@ -25,7 +26,10 @@ const LABELS = {
   technologies: { tr: "Teknolojiler", en: "Technologies" },
   about: { tr: "Hakkımda", en: "About Me" },
   email: { tr: "E-posta", en: "Email" },
+  library: { tr: "Dijital Kütüphane", en: "Digital Library" },
 };
+
+const LIBRARY_HREF = "/dijital-kutuphanem";
 
 interface Activity {
   id: string;
@@ -89,6 +93,11 @@ export default function ActivityBar({ items, settings, activeActivity, onActivit
           </button>
         ))}
 
+        <Link href={LIBRARY_HREF} className="activity-item desktop-only" aria-label={LABELS.library[language]}>
+          <VscLibrary size={24} />
+          <span className="activity-tooltip">{LABELS.library[language]}</span>
+        </Link>
+
         {mobile.map((a) => (
           <button
             type="button"
@@ -100,6 +109,10 @@ export default function ActivityBar({ items, settings, activeActivity, onActivit
             {a.icon}
           </button>
         ))}
+
+        <Link href={LIBRARY_HREF} className="activity-item mobile-only" aria-label={LABELS.library[language]}>
+          <VscLibrary size={24} />
+        </Link>
 
         <LanguageMenu className="mobile-only" />
       </div>

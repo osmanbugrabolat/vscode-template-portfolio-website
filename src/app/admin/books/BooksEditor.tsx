@@ -19,7 +19,7 @@ export default function BooksEditor({ books }: { books: Book[] }) {
         icon={<VscLibrary aria-hidden />}
         description={
           <>
-            Okuduğunuz kitaplar <code>/dijital-kutuphanem</code> adresinde görünür. Sitede bu sayfaya giden bir bağlantı yoktur; adresi bilenler açabilir.
+            Okuduğunuz kitaplar <code>/dijital-kutuphanem</code> adresinde görünür. Ana sitede BuğrAI simgesinin altındaki kütüphane simgesi bu sayfaya gider.
           </>
         }
         actions={
