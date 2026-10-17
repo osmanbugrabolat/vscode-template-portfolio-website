@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { VscClose, VscFilter, VscLibrary, VscSearch, VscStarFull } from "react-icons/vsc";
 import { resolveThemes, spineSize, type CoverTheme } from "@/lib/books/appearance";
 import type { Book, BookStatus } from "@/lib/books/types";
@@ -106,55 +106,24 @@ function Rating({ value }: { value: number }) {
 
 // ------------------------------------------------------------------ shelf
 
-const SPINE_GAP = 6;
-
-/** Books stand on boards: rows are packed by real spine widths for the available width. */
-function Shelf({ books, themes, onOpen }: { books: Book[]; themes: Map<string, CoverTheme>; onOpen: (book: Book) => void }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(900);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width));
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const rows = useMemo(() => {
-    const available = Math.max(160, width - 32);
-    const out: Book[][] = [];
-    let used = 0;
-    for (const book of books) {
-      const w = spineSize(book).width + SPINE_GAP;
-      if (!out.length || used + w > available) {
-        out.push([]);
-        used = 0;
-      }
-      out[out.length - 1].push(book);
-      used += w;
-    }
-    return out;
-  }, [books, width]);
-
+/** One row of books on a board. When the shelf is full it scrolls sideways instead of wrapping. */
+function Shelf({ books, themes, onOpen, label }: { books: Book[]; themes: Map<string, CoverTheme>; onOpen: (book: Book) => void; label: string }) {
   return (
-    <div ref={ref} className="lib-shelf">
-      {rows.map((row, i) => (
-        <div key={i} className="lib-shelf-row">
-          <div className="lib-shelf-books">
-            {row.map((book) => {
-              const { width: w, height: h } = spineSize(book);
-              const theme = themes.get(book.id)!;
-              return (
-                <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: h, background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
-                  <span>{book.title}</span>
-                </button>
-              );
-            })}
-          </div>
-          <div className="lib-shelf-board" />
+    <div className="lib-shelf" role="region" aria-label={label} tabIndex={0}>
+      <div className="lib-shelf-track">
+        <div className="lib-shelf-books">
+          {books.map((book) => {
+            const { width: w, height: h } = spineSize(book);
+            const theme = themes.get(book.id)!;
+            return (
+              <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: h, background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
+                <span>{book.title}</span>
+              </button>
+            );
+          })}
         </div>
-      ))}
+        <div className="lib-shelf-board" />
+      </div>
     </div>
   );
 }
@@ -282,7 +251,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
   const statuses: Filter[] = ["all", "read", "reading", "want"];
 
   return (
-    <main className={`lib${open ? " is-locked" : ""}`}>
+    <main className="lib">
       <div className="lib-layout">
         <button type="button" className="lib-filter-toggle" aria-expanded={filtersOpen} onClick={() => setFiltersOpen((v) => !v)}>
           <VscFilter aria-hidden /> {t.filters}
@@ -359,7 +328,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
                     ))}
                   </ul>
                 ) : (
-                  <Shelf books={section.books} themes={themes} onOpen={setOpen} />
+                  <Shelf books={section.books} themes={themes} onOpen={setOpen} label={section.title} />
                 )}
               </section>
             ))
