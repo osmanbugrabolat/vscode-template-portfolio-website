@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { Fraunces } from "next/font/google";
 import { getBooks } from "@/lib/books/data";
 import { getLang, getSiteData } from "@/lib/cms/data";
 import LibraryView from "./LibraryView";
 import "./library.css";
+
+const serif = Fraunces({ subsets: ["latin", "latin-ext"], variable: "--font-serif", display: "swap" });
 
 // Not linked from the site on purpose: it is shared by address only.
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,5 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LibraryPage() {
   const [books, lang, { settings }] = await Promise.all([getBooks(), getLang(), getSiteData()]);
-  return <LibraryView books={books} lang={lang} owner={settings.name} />;
+  return (
+    <div className={serif.variable}>
+      <LibraryView books={books} lang={lang} owner={settings.name} />
+    </div>
+  );
 }
