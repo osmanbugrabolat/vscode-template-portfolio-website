@@ -271,8 +271,6 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
         (!author || authorsOf(b).includes(author)),
     );
     const out: Section[] = [];
-    const reading = matches.filter((b) => b.status === "reading");
-    if (reading.length) out.push({ key: "reading", title: t.readingNow, kind: "reading", books: reading });
 
     // Finished books are grouped by the year they were finished (books arrive newest first).
     const byYear = new Map<string, Book[]>();
@@ -281,6 +279,9 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
       byYear.set(year, [...(byYear.get(year) ?? []), b]);
     }
     for (const [year, list] of byYear) out.push({ key: `y${year}`, title: year || t.undated, kind: "shelf", books: list });
+
+    const reading = matches.filter((b) => b.status === "reading");
+    if (reading.length) out.push({ key: "reading", title: t.readingNow, kind: "reading", books: reading });
 
     const want = matches.filter((b) => b.status === "want");
     if (want.length) out.push({ key: "want", title: t.queue, kind: "shelf", books: want });
@@ -349,7 +350,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
 
         <div className="lib-content">
           <header className="lib-header">
-            <h1>{t.title}</h1>
+            <h1 className="lib-sr-only">{t.title}</h1>
             <div className="lib-view" role="group" aria-label={t.view}>
               <button type="button" aria-pressed={view === "shelf"} onClick={() => setView("shelf")}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">

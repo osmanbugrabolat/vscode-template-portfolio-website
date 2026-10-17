@@ -76,8 +76,8 @@
 button.lib-card:focus-visible, button.lib-feature:focus-visible, .lib-spine:focus-visible, .lib-close:focus-visible { outline: 2px solid var(--lib-accent); outline-offset: 3px; }
 
 /* ------------------------------------------------------------ header */
-.lib-header { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; }
-.lib-header h1 { margin: 0; color: var(--lib-strong); font-family: var(--lib-serif); font-size: clamp(2.75rem, 6vw, 5rem); font-weight: 500; line-height: 0.95; letter-spacing: -0.035em; }
+.lib-header { display: flex; justify-content: flex-end; }
+.lib-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .lib-view { display: inline-flex; padding: 4px; background: var(--lib-panel); border: 1px solid var(--lib-line); border-radius: 999px; }
 .lib-view button { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; color: var(--lib-fg); background: none; border: 0; border-radius: 999px; font: inherit; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s, color 0.15s; }
 .lib-view button[aria-pressed="true"] { color: #0b0e14; background: var(--lib-strong); font-weight: 600; }
