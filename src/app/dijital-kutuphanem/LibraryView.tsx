@@ -29,8 +29,7 @@ const T = {
     want: "Okuyacağım",
     readingNow: "Şu an okuyorum",
     queue: "Sırada bekleyenler",
-    readIn: (year: string) => `${year} yılında okuduklarım`,
-    undated: "Tarihi girilmemiş okuduklarım",
+    readBooks: "Okuduğum Kitaplar",
     empty: "Henüz kitap yok.",
     noMatch: "Aramanızla eşleşen kitap yok. Başka bir yazım deneyin.",
     notes: "Notlarım",
@@ -61,8 +60,7 @@ const T = {
     want: "Want to read",
     readingNow: "Reading now",
     queue: "Up next",
-    readIn: (year: string) => `Read in ${year}`,
-    undated: "Read, no date",
+    readBooks: "Books I've Read",
     empty: "No books yet.",
     noMatch: "No books match your search. Try another spelling.",
     notes: "My notes",
@@ -266,13 +264,9 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
     );
     const out: Section[] = [];
 
-    // Finished books are grouped by the year they were finished (books arrive newest first).
-    const byYear = new Map<string, Book[]>();
-    for (const b of matches.filter((b) => b.status === "read")) {
-      const year = b.finished_on?.slice(0, 4) ?? "";
-      byYear.set(year, [...(byYear.get(year) ?? []), b]);
-    }
-    for (const [year, list] of byYear) out.push({ key: `y${year}`, title: year ? t.readIn(year) : t.undated, kind: "shelf", books: list });
+    // All finished books share one shelf (newest first, as the books arrive).
+    const read = matches.filter((b) => b.status === "read");
+    if (read.length) out.push({ key: "read", title: t.readBooks, kind: "shelf", books: read });
 
     const reading = matches.filter((b) => b.status === "reading");
     if (reading.length) out.push({ key: "reading", title: t.readingNow, kind: "reading", books: reading });
