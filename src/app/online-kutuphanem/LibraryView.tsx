@@ -11,7 +11,7 @@ type View = "shelf" | "grid";
 
 const T = {
   tr: {
-    brand: (owner: string) => [`${owner}'ın`, "dijital kütüphanesi"] as const,
+    brand: (owner: string) => [`${owner}'ın`, "Dijital Kütüphanesi"] as const,
     title: "Okuduklarım",
     search: "Kitap ya da yazar ara",
     filters: "Filtreler",
@@ -45,7 +45,7 @@ const T = {
     close: "Kapat",
   },
   en: {
-    brand: (owner: string) => [`${owner}'s`, "digital library"] as const,
+    brand: (owner: string) => [`${owner}'s`, "Digital Library"] as const,
     title: "Reading list",
     search: "Search by title or author",
     filters: "Filters",
