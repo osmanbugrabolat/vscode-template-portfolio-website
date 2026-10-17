@@ -11,9 +11,8 @@ type View = "shelf" | "grid";
 
 const T = {
   tr: {
-    brand: "Kitaplık",
+    brand: (owner: string) => `${owner}'ın dijital kütüphanesi`,
     title: "Okuduklarım",
-    intro: (owner: string) => `${owner}'ın dijital kütüphanesi. Okuduğu, okumakta olduğu ve sırada bekleyen kitaplar.`,
     search: "Kitap ya da yazar ara",
     filters: "Filtreler",
     status: "Durum",
@@ -46,9 +45,8 @@ const T = {
     close: "Kapat",
   },
   en: {
-    brand: "Bookshelf",
+    brand: (owner: string) => `${owner}'s digital library`,
     title: "Reading list",
-    intro: (owner: string) => `${owner}'s digital library. Books finished, in progress and waiting in the queue.`,
     search: "Search by title or author",
     filters: "Filters",
     status: "Status",
@@ -311,7 +309,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
             <span className="lib-brand-mark">
               <VscLibrary aria-hidden />
             </span>
-            {t.brand}
+            <span>{t.brand(owner)}</span>
           </div>
 
           <label className="lib-search">
@@ -347,10 +345,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
 
         <div className="lib-content">
           <header className="lib-header">
-            <div>
-              <h1>{t.title}</h1>
-              <p className="lib-intro">{t.intro(owner)}</p>
-            </div>
+            <h1>{t.title}</h1>
             <div className="lib-view" role="group" aria-label={t.view}>
               <button type="button" aria-pressed={view === "shelf"} onClick={() => setView("shelf")}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
