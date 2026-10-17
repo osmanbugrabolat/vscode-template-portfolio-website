@@ -113,10 +113,10 @@ function Shelf({ books, themes, onOpen, label }: { books: Book[]; themes: Map<st
       <div className="lib-shelf-track">
         <div className="lib-shelf-books">
           {books.map((book) => {
-            const { width: w, height: h } = spineSize(book);
+            const { width: w, heightRatio } = spineSize(book);
             const theme = themes.get(book.id)!;
             return (
-              <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: h, background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
+              <button key={book.id} type="button" className="lib-spine" aria-label={book.title} title={book.title} onClick={() => onOpen(book)} style={{ width: w, height: `${Math.round(heightRatio * 100)}%`, background: `linear-gradient(160deg, ${theme.c1}, ${theme.c2})`, color: theme.fg }}>
                 <span>{book.title}</span>
               </button>
             );
@@ -307,7 +307,7 @@ export default function LibraryView({ books, lang, owner }: { books: Book[]; lan
             <p className="lib-empty">{books.length === 0 ? t.empty : t.noMatch}</p>
           ) : (
             sections.map((section) => (
-              <section key={section.key} className="lib-section" aria-label={section.title}>
+              <section key={section.key} className={`lib-section lib-section-${section.kind === "reading" ? "reading" : "shelf"}`} aria-label={section.title}>
                 <h2>
                   {section.title}
                   <span>{t.count(section.books.length)}</span>

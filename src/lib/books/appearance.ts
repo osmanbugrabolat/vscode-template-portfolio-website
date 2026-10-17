@@ -44,12 +44,15 @@ function hash(value: string): number {
   return h >>> 0;
 }
 
-/** Spine size in px: thicker with more pages, height varies a little per book. */
-export function spineSize(book: Pick<Book, "id" | "title" | "page_count">): { width: number; height: number } {
+/**
+ * Spine size: thicker with more pages (px width); height is a share of the shelf
+ * height (0.76 to 1.0) so the shelf can scale with the screen.
+ */
+export function spineSize(book: Pick<Book, "id" | "title" | "page_count">): { width: number; heightRatio: number } {
   const h = hash(`${book.id}${book.title}`);
   const pages = book.page_count ?? 260 + (h % 200);
   return {
     width: Math.round(Math.min(64, Math.max(38, 30 + pages / 18))),
-    height: 216 + (h % 7) * 11,
+    heightRatio: 0.76 + (h % 7) * 0.04,
   };
 }
